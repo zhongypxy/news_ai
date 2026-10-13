@@ -1,6 +1,6 @@
 # 验证记录（2026-10-13，UTC+8）
 
-本地 Python 3.11.15、OpenAI SDK 2.54.0。Windows 全套 60 项测试通过，覆盖率 86%；Ruff 和配置/归档完整性检查通过。GitHub Windows/Linux CI 见仓库 Actions。
+本地 Python 3.11.15、OpenAI SDK 2.54.0。Windows 全套 61 项测试通过，覆盖率 86%；Ruff 和配置/归档完整性检查通过。Linux 会跳过 Windows 专属同步集成测试。GitHub CI 见仓库 Actions。
 
 ## 阶段成果
 
@@ -29,12 +29,15 @@
 - Work 无 Key 准备、显式研究与复核、搜索出处、搜索失败不发布、上下文变化拒绝及重跑状态。
 - 独立审查补充：证据清单 hash 绑定，全部已核验候选必须入选或拒绝；遗漏/证据变化阻止发布；超过 12 小时及次日重放已归档包仍正确跳过。
 - Windows 同步脚本和 10:00/11:00/登录时的隐藏运行任务。
+- 用实际 Windows PowerShell 5.1 和临时本地 Git 远端验证同步；修复正常 Git stderr 被视作错误的兼容问题，验证远端新增会同步、本地修改会保留并拒绝同步。
 
 ## 尚存限制
 
 Work 模型、token/订阅消耗不向程序开放，明确记录未知；不能承诺采用 API 配置的 GPT-5.4 Mini/GPT-5.4。Work 编辑与再次复核来自同一会话，不是独立模型或人工审稿。代码校验原文、时间、引用和结构，无法证明全部语义正确或全球新闻无遗漏。
 
 可选 API 云端实测曾返回 AuthenticationError，尚未验证有效凭据下的模型访问、实时 Web Search/Schema 联合调用、计费与完整结果。默认 ENABLE_OPENAI_API 未设置，API 作业跳过。正式 SDK 接口仅经过离线 HTTP 传输测试。
+
+已手动触发关闭状态的 API workflow，GitHub 确认 daily 作业 skipped，没有安装或执行 API 调用步骤。
 
 Work 定时任务已创建并读取确认；首次实际定时唤醒尚待下次执行。需要电脑开机、联网、应用运行和订阅额度可用。
 

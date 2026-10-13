@@ -13,8 +13,16 @@ try {
     if ($taskDirty) { throw 'Local changes found. Commit or save them before synchronizing.' }
     $taskBranch = & git -C $taskRepoRoot branch --show-current
     if ($LASTEXITCODE -ne 0 -or $taskBranch -ne 'main') { throw 'Automatic sync requires the main branch.' }
-    $taskOutput = & git -C $taskRepoRoot pull --ff-only origin main 2>&1
-    $taskExitCode = $LASTEXITCODE
+    # Windows PowerShell 5.1 treats normal Git stderr progress as ErrorRecords.
+    # Read the native exit code while retaining Stop for PowerShell failures.
+    $taskPreviousPreference = $ErrorActionPreference
+    try {
+        $ErrorActionPreference = 'Continue'
+        $taskOutput = & git -C $taskRepoRoot pull --ff-only origin main 2>&1
+        $taskExitCode = $LASTEXITCODE
+    } finally {
+        $ErrorActionPreference = $taskPreviousPreference
+    }
     # Persist fixed status text only; raw Git output may contain private URLs.
     if ($taskExitCode -ne 0) { throw 'Git pull failed. Check connectivity, credentials or branch divergence.' }
     Add-Content -LiteralPath $taskLogFile -Value ("{0:o} Sync succeeded" -f (Get-Date))
