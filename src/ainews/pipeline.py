@@ -11,10 +11,10 @@ from .collectors import Collector
 from .config import load_config
 from .editor import Editor
 from .events import EventStore
-from .models import Quality, Report
+from .models import Quality, Report, SourceStatus
 from .net import SafeHTTP
 from .publish import Publisher, RepositoryLock, atomic_write
-from .quality import QualityError, check_coverage, filter_candidates, require_verified
+from .quality import FatalAPIError, QualityError, check_coverage, filter_candidates, require_verified
 from .render import Renderer
 from .timeutil import report_window, research_window
 
@@ -89,7 +89,15 @@ def run_daily(root, day=None, now=None, ai_factory=AIClient, collector_factory=C
             # Third-round backfill is explicitly last, after the six broad category checks.
             for source in sorted(sources, key=lambda s: s.id == "search_backfill"):
                 context["CANDIDATE_TITLES"] = [{"id": c.id, "title": c.title, "categories": c.categories} for c in all_items][-80:]
-                items, status = collector.collect(source, now)
+                try:
+                    items, status = collector.collect(source, now)
+                except FatalAPIError as exc:
+                    status = SourceStatus(source_id=source.id, name=source.name, kind=source.kind,
+                                          region=source.region, categories=source.categories, status="failed",
+                                          error=str(exc), checked_at=now)
+                    statuses.append(status)
+                    diagnostics["source_status"] = [s.model_dump(mode="json") for s in statuses]
+                    raise
                 all_items.extend(items)
                 statuses.append(status)
                 context["SOURCE_STATUS"] = [s.model_dump(mode="json") for s in statuses]

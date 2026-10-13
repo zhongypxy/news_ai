@@ -1,6 +1,7 @@
 [CmdletBinding()]
-param([string]$RepoPath = (Split-Path -Parent $PSScriptRoot))
+param([string]$RepoPath = '')
 $ErrorActionPreference = 'Stop'
+if (-not $RepoPath) { $RepoPath = Split-Path -Parent $PSScriptRoot }
 $taskRepoRoot = (Resolve-Path -LiteralPath $RepoPath).Path
 $taskLogDir = Join-Path $taskRepoRoot 'logs'
 New-Item -ItemType Directory -Path $taskLogDir -Force | Out-Null

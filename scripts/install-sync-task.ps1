@@ -1,9 +1,10 @@
 [CmdletBinding()]
 param(
-    [string]$RepoPath = (Split-Path -Parent $PSScriptRoot),
+    [string]$RepoPath = '',
     [string]$TaskName = 'GlobalAI-Daily-Sync'
 )
 $ErrorActionPreference = 'Stop'
+if (-not $RepoPath) { $RepoPath = Split-Path -Parent $PSScriptRoot }
 $taskRepoRoot = (Resolve-Path -LiteralPath $RepoPath).Path
 $taskSyncScript = Join-Path $taskRepoRoot 'scripts\sync-windows.ps1'
 if (-not (Test-Path -LiteralPath $taskSyncScript)) { throw 'Sync script not found.' }

@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup
 
 from .models import Candidate, SourceStatus
 from .net import normalize_url, validate_url
+from .quality import FatalAPIError
 from .timeutil import parse_time
 
 
@@ -69,6 +70,8 @@ class Collector:
                     items = self.page(source, response.text, now)
             status.fetched = len(items)
             return items, status
+        except FatalAPIError:
+            raise
         except Exception as exc:
             # Exception messages can contain signed URLs, headers or credentials; never persist them.
             status.status = "failed"

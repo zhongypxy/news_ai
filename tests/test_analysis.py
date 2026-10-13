@@ -131,3 +131,18 @@ def test_timeout_reservation_stops_retries_before_budget_exceeded():
     with pytest.raises(QualityError, match="budget"):
         client.request(DraftItem, "system", {}, "gpt-5.4-mini", "edit")
     assert len(calls) == 1 and client.ledger.budget_used > .04
+
+
+def test_authentication_rejection_is_fatal_without_unknown_charge():
+    import httpx
+    import openai
+    calls = []
+    def create(**kwargs):
+        calls.append(kwargs)
+        response = httpx.Response(401, request=httpx.Request("POST", "https://api.openai.com/v1/responses"))
+        raise openai.AuthenticationError("unsafe secret error text", response=response, body=None)
+    client = AIClient(settings(), sdk=SimpleNamespace(responses=SimpleNamespace(create=create)))
+    with pytest.raises(QualityError, match="HTTP 401") as result:
+        client.request(DraftItem, "system", {}, "gpt-5.4-mini", "edit")
+    assert "secret" not in str(result.value) and len(calls) == 1
+    assert client.ledger.budget_used == 0 and not client.ledger.entries[-1]["billing_unknown"]

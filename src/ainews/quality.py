@@ -10,6 +10,10 @@ class QualityError(RuntimeError):
     """Safe, non-sensitive quality gate error."""
 
 
+class FatalAPIError(QualityError):
+    """Authentication/configuration errors cannot be repaired by trying another news source."""
+
+
 def filter_candidates(items, start, end):
     accepted, rejected, seen = [], [], set()
     for item in items:
