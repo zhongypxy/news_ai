@@ -1,0 +1,669 @@
+{
+  "$defs": {
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "label": {
+          "const": "ANALYSIS",
+          "default": "ANALYSIS",
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "text",
+        "event_ids"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "Scores": {
+      "additionalProperties": false,
+      "properties": {
+        "impact": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Impact",
+          "type": "integer"
+        },
+        "novelty": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Novelty",
+          "type": "integer"
+        },
+        "relevance": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Relevance",
+          "type": "integer"
+        },
+        "confidence": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "integer"
+        },
+        "follow_up": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Follow Up",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "impact",
+        "novelty",
+        "relevance",
+        "confidence",
+        "follow_up"
+      ],
+      "title": "Scores",
+      "type": "object"
+    },
+    "YearCoverage": {
+      "additionalProperties": false,
+      "properties": {
+        "categories_checked": {
+          "items": {
+            "enum": [
+              "models",
+              "agents",
+              "opensource",
+              "business",
+              "applications",
+              "infrastructure"
+            ],
+            "type": "string"
+          },
+          "title": "Categories Checked",
+          "type": "array"
+        },
+        "category_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Category Counts",
+          "type": "object"
+        },
+        "quarter_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Quarter Counts",
+          "type": "object"
+        },
+        "month_counts": {
+          "additionalProperties": {
+            "type": "integer"
+          },
+          "title": "Month Counts",
+          "type": "object"
+        },
+        "cited_domains": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Cited Domains",
+          "type": "array"
+        },
+        "unique_source_urls": {
+          "title": "Unique Source Urls",
+          "type": "integer"
+        },
+        "source_citation_count": {
+          "title": "Source Citation Count",
+          "type": "integer"
+        },
+        "readable_source_urls": {
+          "title": "Readable Source Urls",
+          "type": "integer"
+        },
+        "index_only_source_urls": {
+          "title": "Index Only Source Urls",
+          "type": "integer"
+        },
+        "search_audit": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Search Audit",
+          "type": "array"
+        },
+        "failed_or_limited_sources": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Failed Or Limited Sources",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "categories_checked",
+        "category_counts",
+        "quarter_counts",
+        "month_counts",
+        "cited_domains",
+        "unique_source_urls",
+        "source_citation_count",
+        "readable_source_urls",
+        "index_only_source_urls",
+        "search_audit",
+        "failed_or_limited_sources",
+        "limitations"
+      ],
+      "title": "YearCoverage",
+      "type": "object"
+    },
+    "YearEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_key": {
+          "title": "Event Key",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 180,
+          "minLength": 3,
+          "title": "Title",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "models",
+            "agents",
+            "opensource",
+            "business",
+            "applications",
+            "infrastructure"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "score": {
+          "$ref": "#/$defs/Scores"
+        },
+        "weighted_score": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Weighted Score",
+          "type": "number"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "announced_on": {
+          "format": "date",
+          "title": "Announced On",
+          "type": "string"
+        },
+        "date_basis": {
+          "title": "Date Basis",
+          "type": "string"
+        },
+        "occurred_on": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Occurred On"
+        },
+        "occurred_time_precision": {
+          "enum": [
+            "date",
+            "unknown"
+          ],
+          "title": "Occurred Time Precision",
+          "type": "string"
+        },
+        "collected_on": {
+          "format": "date",
+          "title": "Collected On",
+          "type": "string"
+        },
+        "fact_status": {
+          "const": "FACT",
+          "title": "Fact Status",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 1400,
+          "minLength": 20,
+          "title": "Summary",
+          "type": "string"
+        },
+        "significance": {
+          "maxLength": 1000,
+          "minLength": 10,
+          "title": "Significance",
+          "type": "string"
+        },
+        "analysis": {
+          "maxLength": 1400,
+          "minLength": 10,
+          "title": "Analysis",
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Tags",
+          "type": "array"
+        },
+        "sources": {
+          "items": {
+            "$ref": "#/$defs/YearSource"
+          },
+          "maxItems": 6,
+          "minItems": 1,
+          "title": "Sources",
+          "type": "array"
+        },
+        "verification_limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Verification Limitations",
+          "type": "array"
+        },
+        "relates_to": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Relates To",
+          "type": "array"
+        },
+        "new_information": {
+          "title": "New Information",
+          "type": "string"
+        },
+        "repository_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Repository Url"
+        },
+        "technical_highlights": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Technical Highlights",
+          "type": "array"
+        },
+        "target_users": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Users",
+          "type": "array"
+        },
+        "maturity_limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Maturity Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "event_id",
+        "event_key",
+        "title",
+        "category",
+        "priority",
+        "score",
+        "weighted_score",
+        "confidence",
+        "announced_on",
+        "date_basis",
+        "occurred_on",
+        "occurred_time_precision",
+        "collected_on",
+        "fact_status",
+        "summary",
+        "significance",
+        "analysis",
+        "tags",
+        "sources",
+        "verification_limitations",
+        "relates_to",
+        "new_information",
+        "repository_url",
+        "technical_highlights",
+        "target_users",
+        "maturity_limitations"
+      ],
+      "title": "YearEvent",
+      "type": "object"
+    },
+    "YearQuality": {
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "const": "validated_curated_review",
+          "title": "Status",
+          "type": "string"
+        },
+        "unique_events": {
+          "title": "Unique Events",
+          "type": "integer"
+        },
+        "duplicates_removed": {
+          "title": "Duplicates Removed",
+          "type": "integer"
+        },
+        "examined_candidate_count": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Examined Candidate Count"
+        },
+        "validation": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Validation",
+          "type": "array"
+        },
+        "source_scope": {
+          "title": "Source Scope",
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "unique_events",
+        "duplicates_removed",
+        "examined_candidate_count",
+        "validation",
+        "source_scope"
+      ],
+      "title": "YearQuality",
+      "type": "object"
+    },
+    "YearSource": {
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "source_type": {
+          "enum": [
+            "official",
+            "paper",
+            "media"
+          ],
+          "title": "Source Type",
+          "type": "string"
+        },
+        "published_on": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Published On"
+        },
+        "publication_basis": {
+          "title": "Publication Basis",
+          "type": "string"
+        },
+        "time_precision": {
+          "enum": [
+            "date",
+            "unknown"
+          ],
+          "title": "Time Precision",
+          "type": "string"
+        },
+        "verification_status": {
+          "enum": [
+            "body_read",
+            "index_only_body_unavailable"
+          ],
+          "title": "Verification Status",
+          "type": "string"
+        },
+        "checked_on": {
+          "format": "date",
+          "title": "Checked On",
+          "type": "string"
+        },
+        "verification_note": {
+          "title": "Verification Note",
+          "type": "string"
+        }
+      },
+      "required": [
+        "url",
+        "name",
+        "source_type",
+        "published_on",
+        "publication_basis",
+        "time_precision",
+        "verification_status",
+        "checked_on",
+        "verification_note"
+      ],
+      "title": "YearSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "ytd-1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "editorial_prompt_version": {
+      "const": "V2.0",
+      "title": "Editorial Prompt Version",
+      "type": "string"
+    },
+    "prompt_sha256": {
+      "title": "Prompt Sha256",
+      "type": "string"
+    },
+    "report_kind": {
+      "const": "one_off_year_to_date",
+      "title": "Report Kind",
+      "type": "string"
+    },
+    "report_date": {
+      "format": "date",
+      "title": "Report Date",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "period_start": {
+      "format": "date",
+      "title": "Period Start",
+      "type": "string"
+    },
+    "period_end": {
+      "format": "date",
+      "title": "Period End",
+      "type": "string"
+    },
+    "research_cutoff": {
+      "format": "date-time",
+      "title": "Research Cutoff",
+      "type": "string"
+    },
+    "generated_at": {
+      "format": "date-time",
+      "title": "Generated At",
+      "type": "string"
+    },
+    "timezone": {
+      "const": "Asia/Singapore",
+      "title": "Timezone",
+      "type": "string"
+    },
+    "executive_summary": {
+      "title": "Executive Summary",
+      "type": "string"
+    },
+    "top_stories": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "minItems": 1,
+      "title": "Top Stories",
+      "type": "array"
+    },
+    "quarter_summaries": {
+      "items": {
+        "$ref": "#/$defs/Observation"
+      },
+      "title": "Quarter Summaries",
+      "type": "array"
+    },
+    "trend_signals": {
+      "items": {
+        "$ref": "#/$defs/Observation"
+      },
+      "title": "Trend Signals",
+      "type": "array"
+    },
+    "news_items": {
+      "items": {
+        "$ref": "#/$defs/YearEvent"
+      },
+      "title": "News Items",
+      "type": "array"
+    },
+    "open_source_items": {
+      "items": {
+        "$ref": "#/$defs/YearEvent"
+      },
+      "title": "Open Source Items",
+      "type": "array"
+    },
+    "coverage_report": {
+      "$ref": "#/$defs/YearCoverage"
+    },
+    "quality_report": {
+      "$ref": "#/$defs/YearQuality"
+    },
+    "usage": {
+      "additionalProperties": true,
+      "title": "Usage",
+      "type": "object"
+    },
+    "daily_state_updated": {
+      "const": false,
+      "title": "Daily State Updated",
+      "type": "boolean"
+    },
+    "schedule_changed": {
+      "const": false,
+      "title": "Schedule Changed",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "editorial_prompt_version",
+    "prompt_sha256",
+    "report_kind",
+    "report_date",
+    "title",
+    "period_start",
+    "period_end",
+    "research_cutoff",
+    "generated_at",
+    "timezone",
+    "executive_summary",
+    "top_stories",
+    "quarter_summaries",
+    "trend_signals",
+    "news_items",
+    "open_source_items",
+    "coverage_report",
+    "quality_report",
+    "usage",
+    "daily_state_updated",
+    "schedule_changed"
+  ],
+  "title": "YearReview",
+  "type": "object",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
