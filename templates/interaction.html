@@ -1,0 +1,9 @@
+<script>
+(()=>{'use strict';const root=document.documentElement,theme=document.getElementById('theme');
+try{const saved=localStorage.getItem('ai-daily-theme');if(saved==='dark'||saved==='light')root.dataset.theme=saved}catch(e){}
+theme?.addEventListener('click',()=>{const dark=root.dataset.theme==='dark'||(!root.dataset.theme&&matchMedia('(prefers-color-scheme: dark)').matches);root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('ai-daily-theme',root.dataset.theme)}catch(e){}});
+const search=document.getElementById('search'),category=document.getElementById('category'),priority=document.getElementById('priority');
+const filter=()=>{const q=(search?.value||'').trim().toLocaleLowerCase();let count=0;document.querySelectorAll('[data-searchable]').forEach(card=>{const match=(!q||card.textContent.toLocaleLowerCase().includes(q))&&(!category?.value||card.dataset.category===category.value)&&(!priority?.value||card.dataset.priority===priority.value);card.hidden=!match;if(match)count++});document.querySelectorAll('[data-news-section]').forEach(section=>{section.hidden=!Array.from(section.querySelectorAll('[data-searchable]')).some(card=>!card.hidden)});const counter=document.getElementById('result-count');if(counter)counter.textContent=`显示 ${count} 条`;const empty=document.getElementById('no-results');if(empty)empty.hidden=count!==0};
+[search,category,priority].forEach(el=>el?.addEventListener(el===search?'input':'change',filter));
+})();
+</script>
