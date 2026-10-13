@@ -1,0 +1,118 @@
+# 所有入口均可配置。成功采集不表示当天一定有合格新闻。
+sources:
+  - id: openai
+    name: OpenAI News
+    kind: rss
+    url: https://openai.com/news/rss.xml
+    allowed_domains: [openai.com]
+    region: north_america
+    categories: [models, agents, business]
+    max_items: 40
+  - id: google_ai
+    name: Google AI Blog
+    kind: rss
+    url: https://blog.google/technology/ai/rss/
+    allowed_domains: [blog.google]
+    region: north_america
+    categories: [models, applications, infrastructure]
+    max_items: 30
+  - id: microsoft
+    name: Microsoft AI Blog
+    kind: rss
+    url: https://blogs.microsoft.com/ai/feed/
+    allowed_domains: [blogs.microsoft.com]
+    region: north_america
+    categories: [agents, applications, business]
+  - id: nvidia
+    name: NVIDIA Blog
+    kind: rss
+    url: https://blogs.nvidia.com/feed/
+    allowed_domains: [blogs.nvidia.com]
+    region: north_america
+    categories: [infrastructure, models]
+    max_items: 30
+  - id: huggingface
+    name: Hugging Face Blog
+    kind: rss
+    url: https://huggingface.co/blog/feed.xml
+    allowed_domains: [huggingface.co]
+    region: europe
+    categories: [opensource, models]
+    max_items: 30
+  - id: qwen
+    name: Qwen Official Blog
+    kind: rss
+    url: https://qwenlm.github.io/index.xml
+    allowed_domains: [qwenlm.github.io]
+    region: asia
+    categories: [models, opensource]
+    timezone: Asia/Shanghai
+  - id: vllm
+    name: vLLM Releases
+    kind: api
+    url: https://api.github.com/repos/vllm-project/vllm/releases?per_page=10
+    allowed_domains: [api.github.com, github.com]
+    region: global
+    categories: [opensource, infrastructure]
+    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
+  - id: langgraph
+    name: LangGraph Releases
+    kind: api
+    url: https://api.github.com/repos/langchain-ai/langgraph/releases?per_page=10
+    allowed_domains: [api.github.com, github.com]
+    region: global
+    categories: [agents, opensource]
+    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
+  - id: anthropic
+    name: Anthropic News
+    kind: page
+    url: https://www.anthropic.com/news
+    allowed_domains: [anthropic.com]
+    region: north_america
+    categories: [models, agents, business]
+    item_selector: 'a[href^="/news/"]'
+    title_selector: 'h3, h2, [class*="title"]'
+    link_selector: ':scope'
+    date_selector: time
+    timezone: America/Los_Angeles
+    # Page selectors can change; failures are reported, web search provides alternate coverage.
+  - id: search_models
+    name: 模型与实验室·广度检索
+    kind: web_search
+    categories: [models]
+    queries:
+      - "Latest official AI model releases OpenAI Anthropic Google DeepMind Meta xAI Mistral"
+      - "最新 大模型 发布 DeepSeek 通义千问 智谱 Moonshot MiniMax 官方"
+  - id: search_agents
+    name: Agent 与 Coding·广度检索
+    kind: web_search
+    categories: [agents]
+    queries: ["Latest AI coding agents Codex Claude Code Cursor MCP A2A framework official release"]
+  - id: search_opensource
+    name: 开源生态·广度检索
+    kind: web_search
+    categories: [opensource]
+    queries: ["Recent high value AI open source GitHub releases Hugging Face RAG embedding inference framework"]
+  - id: search_business
+    name: 商业与创业·广度检索
+    kind: web_search
+    categories: [business]
+    queries: ["Latest AI startup product launch funding acquisition partnership official announcement worldwide"]
+  - id: search_applications
+    name: 教育与垂直应用·广度检索
+    kind: web_search
+    categories: [applications]
+    queries:
+      - "Latest AI education AI tutor MagicSchool Buddy.ai teacher learning startup official news"
+      - "最新 AI 医疗 法律 零售 教育 海外 消费应用 产品发布"
+  - id: search_infrastructure
+    name: 基础设施与政策·广度检索
+    kind: web_search
+    categories: [infrastructure]
+    queries: ["Latest AI chip cloud inference safety regulation Europe Asia official government research announcement"]
+  - id: search_backfill
+    name: 重大新闻·72小时补漏
+    kind: web_search
+    categories: [models, agents, opensource, business, applications, infrastructure]
+    queries:
+      - "Check past 72 hours major AI launches coding agents open source emerging startups financing education vertical apps globally; inspect the supplied watchlist and history for missed events"
