@@ -24,7 +24,11 @@ class EventStore:
 
     def history(self, end, days=30):
         cutoff = end-timedelta(days=days)
-        return {key: event for key, event in self.state["events"].items()
+        # Feed the editor compact identity/progress records; persistent state retains every URL/fingerprint.
+        fields = ["event_key", "aliases", "summary", "first_report", "last_report", "last_seen_at"]
+        return {key: {**{field: event[field] for field in fields}, "urls": event["urls"][-3:],
+                      "milestones": event["milestones"][-5:], "latest_update": event["updates"][-1]}
+                for key, event in self.state["events"].items()
                 if datetime.fromisoformat(event["last_seen_at"]) >= cutoff}
 
     def match(self, item, candidates):

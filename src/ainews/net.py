@@ -86,6 +86,8 @@ class SafeHTTP:
                     if total > self.max_bytes:
                         raise ValueError("Response exceeds size limit")
                     chunks.append(chunk)
-                return httpx.Response(response.status_code, headers=response.headers,
+                # iter_bytes already decodes gzip/deflate. Reusing Content-Encoding would decode twice.
+                headers = {k: v for k, v in response.headers.items() if k.lower() not in {"content-encoding", "content-length"}}
+                return httpx.Response(response.status_code, headers=headers,
                                       content=b"".join(chunks), request=response.request)
         raise ValueError("Too many redirects")

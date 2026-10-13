@@ -125,7 +125,9 @@ class Collector:
             raise ValueError("Page selectors no longer match")
         items = []
         for node in nodes[:source.max_items]:
-            title, link, stamp = (node.select_one(s) for s in [source.title_selector, source.link_selector, source.date_selector])
+            title = node.select_one(source.title_selector)
+            link = node if source.link_selector == ":scope" else node.select_one(source.link_selector)
+            stamp = node.select_one(source.date_selector)
             excerpt = node.select_one(source.excerpt_selector)
             if not title or not link:
                 continue
@@ -142,7 +144,7 @@ class Collector:
     def verify(self, item, source):
         """Read a public source; prefer explicit publication metadata, never HTTP Date/updated time."""
         validate_url(item.url, source.allowed_domains)
-        if source.kind == "page" or source.kind == "web_search":
+        if source.respect_robots:
             self.check_robots(item.url, source.allowed_domains or None)
         response = self.http.get(item.url, source.allowed_domains or None)
         content_type = response.headers.get("content-type", "")
@@ -160,17 +162,22 @@ class Collector:
             if meta and meta.get("content"):
                 stamp = meta["content"]
                 break
-        if not stamp:
-            for node in soup.find_all("script", attrs={"type": "application/ld+json"}):
-                try:
-                    blocks = json.loads(node.string or "{}")
-                    blocks = blocks if isinstance(blocks, list) else [blocks]
-                    for block in blocks:
-                        for part in [block] + block.get("@graph", []):
-                            if part.get("datePublished"):
-                                stamp = part["datePublished"]
-                except (ValueError, AttributeError, TypeError):
+        for node in soup.find_all("script", attrs={"type": "application/ld+json"}):
+            try:
+                blocks = json.loads(node.string or "{}")
+            except (ValueError, TypeError):
+                continue
+            blocks = blocks if isinstance(blocks, list) else [blocks]
+            for block in blocks:
+                if not isinstance(block, dict):
                     continue
+                for part in [block] + block.get("@graph", []):
+                    if not isinstance(part, dict):
+                        continue
+                    if part.get("isAccessibleForFree") in {False, "false"}:
+                        raise ValueError("Paywalled source")
+                    if not stamp and part.get("datePublished"):
+                        stamp = part["datePublished"]
         if stamp:
             published, precision = parse_time(stamp, source.timezone)
             if published:
@@ -184,7 +191,7 @@ class Collector:
             raise ValueError("Publication time unavailable")
         for node in soup("script"):
             node.decompose()
-        article = soup.find("article") or soup.find("main") or soup.body or soup
+        article = soup.select_one(".markdown-body") or soup.find("article") or soup.find("main") or soup.body or soup
         text = plain(article.get_text(" ", strip=True), 1800)
         if len(text) < 60:
             raise ValueError("Insufficient original evidence")

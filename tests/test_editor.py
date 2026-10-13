@@ -77,3 +77,34 @@ def test_new_day_repeat_event_is_filtered():
     original = deepcopy(events.state)
     items, synthesis = editor.edit([cand()], events, context())
     assert not items and editor.duplicates == 1 and events.state == original
+
+
+def test_synthesis_cannot_add_unverified_fact():
+    from ainews.models import SynthesisReview
+    result = EditorialBatch(news_items=[draft(priority="P2")], rejected_candidate_ids=[])
+    ai, editor, events = setup([result, review(), Synthesis(executive_summary="Acme被苹果以100亿美元收购，这将改变市场。",
+                             top_stories=[], trend_signals=[]), SynthesisReview(approved=False,
+                             unsupported_claims=["Acquisition not in verified evidence"])])
+    with pytest.raises(QualityError, match="Synthesis factual"):
+        editor.edit([cand()], events, context())
+
+
+def test_same_event_drafts_are_consolidated_to_one_core_story():
+    import hashlib
+
+    from ainews.events import identity
+    from ainews.models import SynthesisReview
+    first = draft(priority="P2")
+    second = draft(priority="P2", candidate_ids=["c2"], milestone="release")
+    combined = draft(priority="P2", candidate_ids=["c1", "c2"], milestone="announcement and release")
+    event_id = "evt_" + hashlib.sha256(identity(first.event_key).encode()).hexdigest()[:20]
+    ai, editor, events = setup([
+        EditorialBatch(news_items=[first, second], rejected_candidate_ids=[]),
+        EditorialBatch(news_items=[combined], rejected_candidate_ids=[]),
+        review(supported_candidate_ids=["c1", "c2"]),
+        Synthesis(executive_summary="Acme公布模型并正式开放使用，相关信息经过核验。", top_stories=[event_id], trend_signals=[]),
+        SynthesisReview(approved=True, unsupported_claims=[]),
+    ])
+    items, synthesis = editor.edit([cand(), cand(id="c2", url="https://example.com/release", excerpt="Release availability")], events, context())
+    assert len(items) == 1 and len(items[0].sources) == 2
+    assert "event_consolidation" in [call[2] for call in ai.calls]

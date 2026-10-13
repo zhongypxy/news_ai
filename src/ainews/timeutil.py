@@ -10,7 +10,7 @@ def parse_time(value, timezone=None):
         return None, "unknown"
     try:
         text = str(value).strip()
-        precision = "date" if re.fullmatch(r"\d{4}-\d{2}-\d{2}", text) else "exact"
+        precision = "exact" if re.search(r"(?:T|\s)\d{1,2}:\d{2}", text) else "date"
         result = parse(text)
         if result.tzinfo is None:
             if not timezone:

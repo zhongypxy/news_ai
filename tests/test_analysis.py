@@ -117,3 +117,17 @@ def test_api_failure_is_redacted_and_bounded():
     assert "secret" not in str(exc.value)
     assert len(calls) == 1  # Permanent errors are never retried.
     assert client.ledger.entries[-1]["billing_unknown"]
+
+
+def test_timeout_reservation_stops_retries_before_budget_exceeded():
+    import httpx
+    import openai
+    calls = []
+    def create(**kwargs):
+        calls.append(kwargs)
+        raise openai.APITimeoutError(request=httpx.Request("POST", "https://api.openai.com/v1/responses"))
+    sdk = SimpleNamespace(responses=SimpleNamespace(create=create))
+    client = AIClient(settings(attempts=3, max_estimated_cost_usd=.05), sdk=sdk, sleep=lambda _: None)
+    with pytest.raises(QualityError, match="budget"):
+        client.request(DraftItem, "system", {}, "gpt-5.4-mini", "edit")
+    assert len(calls) == 1 and client.ledger.budget_used > .04

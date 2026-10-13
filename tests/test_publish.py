@@ -96,3 +96,33 @@ def test_process_lock_rejects_concurrent_writer(tmp_path):
         with pytest.raises(QualityError, match="already"):
             with RepositoryLock(tmp_path):
                 pass
+
+
+def test_no_partial_final_file_when_creation_interrupted(tmp_path, monkeypatch):
+    import os
+    pub = publisher(tmp_path)
+    original = os.link
+    def interruption(src, dst):
+        # The temporary file is complete before the final path appears.
+        assert Path(src).read_bytes().rstrip().endswith(b"</html>")
+        assert not Path(dst).exists()
+        raise OSError("Interrupted before atomic link")
+    monkeypatch.setattr(os, "link", interruption)
+    with pytest.raises(OSError):
+        pub.publish(report(), state())
+    assert not (tmp_path/"reports/2026-10-13.html").exists()
+    monkeypatch.setattr(os, "link", original)
+    pub.recover()
+    assert pub.completed("2026-10-13")
+
+
+def test_recovery_cannot_roll_back_changed_event_state(tmp_path):
+    pub = publisher(tmp_path)
+    def interrupt(stage):
+        if stage == "daily_written":
+            raise OSError("interrupted")
+    with pytest.raises(OSError):
+        pub.publish(report(), state(), checkpoint=interrupt)
+    (tmp_path/"state/events.json").write_text(json.dumps({"version": 1, "events": {"other": {}}, "reports": {}}), encoding="utf-8")
+    with pytest.raises(QualityError, match="Pending"):
+        pub.recover()

@@ -22,6 +22,7 @@ def test_timezone_and_date_only_precision():
     assert parse_time("2026-10-13", "Asia/Shanghai")[1] == "date"
     assert parse_time(None) == (None, "unknown")
     assert parse_time("2026-10-13T09:00:00")[0] is None
+    assert parse_time("Oct 6, 2026", "America/Los_Angeles")[1] == "date"
 
 
 def test_url_normalization_and_security():
@@ -68,6 +69,15 @@ def test_api_and_html_publish_page():
     assert status.status == "ok" and items[0].url == "https://example.com/launch"
 
 
+def test_official_page_can_use_anchor_as_its_own_link():
+    source = Source(id="page", kind="page", url="https://example.com/news", allowed_domains=["example.com"],
+                    item_selector="a", title_selector="h2", link_selector=":scope", date_selector="time",
+                    respect_robots=False, timezone="America/Los_Angeles")
+    items, status = collector('<a href="/launch"><h2>Launch</h2><time>Oct 6, 2026</time></a>', "text/html").collect(source, datetime.now(UTC))
+    assert status.status == "ok" and items[0].url == "https://example.com/launch"
+    assert items[0].time_precision == "date"
+
+
 def test_failed_collection_never_becomes_empty_success():
     source = Source(id="rss", kind="rss", url="https://example.com/rss", allowed_domains=["example.com"])
     items, status = collector("Blocked", status=403).collect(source, datetime.now(UTC))
@@ -85,3 +95,12 @@ def test_redirect_is_checked_before_following():
     with pytest.raises(ValueError):
         client.get("https://example.com/")
     assert len(calls) == 1
+
+
+def test_compressed_response_is_not_decoded_twice():
+    import gzip
+    transport = httpx.MockTransport(lambda request: httpx.Response(200,
+        content=gzip.compress(b'<rss version="2.0"></rss>'),
+        headers={"Content-Encoding": "gzip", "Content-Type": "application/xml"}, request=request))
+    client = SafeHTTP(transport=transport, check_dns=False, attempts=1)
+    assert client.get("https://example.com/feed").text == '<rss version="2.0"></rss>'

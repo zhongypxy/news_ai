@@ -2,6 +2,7 @@ import copy
 import hashlib
 import json
 import os
+import tempfile
 from pathlib import Path
 
 from .models import Report
@@ -21,6 +22,21 @@ def atomic_write(path, content):
         handle.flush()
         os.fsync(handle.fileno())
     os.replace(temp, path)
+
+
+def atomic_create(path, payload):
+    """Publish a complete file in one exclusive operation; never expose partial final content."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix=".publish-", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(payload)
+            handle.flush()
+            os.fsync(handle.fileno())
+        # NTFS/Linux hard-link creation is atomic and fails when the destination exists.
+        os.link(temporary, path)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
 
 
 class RepositoryLock:
@@ -117,7 +133,8 @@ class Publisher:
                                    "sha256": {k: digest(v.encode("utf-8")) for k, v in daily.items()}}
         files = daily | {"state/events.json": json.dumps(updated, ensure_ascii=False, indent=2),
                          "index.html": self.renderer.index(updated["reports"])}
-        atomic_write(self.pending_path, json.dumps({"day": day, "files": files}, ensure_ascii=False).encode("utf-8"))
+        base_hash = digest(self.state_path.read_bytes()) if self.state_path.exists() else None
+        atomic_write(self.pending_path, json.dumps({"day": day, "files": files, "base_state_sha256": base_hash}, ensure_ascii=False).encode("utf-8"))
         self._finish(files, checkpoint)
 
     def _finish(self, files, checkpoint=lambda stage: None):
@@ -130,10 +147,7 @@ class Publisher:
                         raise QualityError("Existing history conflicts with recovery transaction")
                 else:
                     # Exclusive creation prevents accidental overwrite, including concurrent writes.
-                    with path.open("xb") as handle:
-                        handle.write(payload)
-                        handle.flush()
-                        os.fsync(handle.fileno())
+                    atomic_create(path, payload)
             else:
                 atomic_write(path, payload)
             if relative.startswith("data/"):
@@ -153,6 +167,9 @@ class Publisher:
                 if report.report_date.isoformat() != day:
                     raise ValueError()
                 state = json.loads(files["state/events.json"])
+                current_hash = digest(self.state_path.read_bytes()) if self.state_path.exists() else None
+                if current_hash not in {transaction["base_state_sha256"], digest(files["state/events.json"].encode("utf-8"))}:
+                    raise ValueError("State changed since the transaction started")
                 for relative in [f"reports/{day}.html", f"data/{day}.json"]:
                     if digest(files[relative].encode("utf-8")) != state["reports"][day]["sha256"][relative]:
                         raise ValueError()

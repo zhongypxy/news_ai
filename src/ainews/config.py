@@ -20,6 +20,7 @@ class Settings(StrictModel):
     max_candidates: int = Field(default=80, ge=10, le=200)
     max_items: int = Field(default=30, ge=1, le=60)
     max_output_tokens: int = Field(default=10000, ge=1000, le=30000)
+    max_search_tool_calls: int = Field(default=8, ge=1, le=20)
     min_source_success_ratio: float = Field(default=.5, ge=0, le=1)
     min_verified_candidates: int = Field(default=5, ge=1)
     max_verification_failure_ratio: float = Field(default=.6, ge=0, le=1)

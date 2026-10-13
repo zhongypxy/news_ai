@@ -1,4 +1,5 @@
-from .models import Citation, EditorialBatch, NewsItem, Review, Synthesis
+from .events import identity
+from .models import Citation, EditorialBatch, NewsItem, Review, Synthesis, SynthesisReview
 from .net import normalize_url, validate_url
 from .quality import QualityError
 
@@ -30,6 +31,30 @@ class Editor:
             if used | rejected != input_ids or used & rejected:
                 raise QualityError("Editor candidate accounting mismatch")
             self.rejections.extend({"candidate_id": cid, "reason": "editor_rejected"} for cid in rejected)
+            drafts.extend(result.news_items)
+        # Consolidate same-event drafts spanning candidate batches into one core story.
+        grouped = {}
+        for item in drafts:
+            key = item.previous_event_id or identity(item.event_key)
+            grouped.setdefault(key, []).append(item)
+        drafts = []
+        for group in grouped.values():
+            if len(group) == 1:
+                drafts.extend(group)
+                continue
+            ids = {cid for d in group for cid in d.candidate_ids}
+            result = self.ai.request(EditorialBatch, self.prompt + "\nConsolidate these drafts about ONE underlying "
+                                     "event into at most one core story. Combine substantive increments, retain "
+                                     "source IDs and tags. A same-day announcement and release are one story, "
+                                     "not cross-period follow-ups. Only HISTORY can supply previous_event_id.",
+                                     {**context, "DRAFTS": [d.model_dump(mode="json") for d in group],
+                                      "CANDIDATES": [by_id[cid].model_dump(mode="json") for cid in ids]},
+                                     self.settings.mini_model, "event_consolidation")
+            if len(result.news_items) > 1 or any(cid not in ids for d in result.news_items for cid in d.candidate_ids):
+                raise QualityError("Same-event consolidation failed")
+            accounted = {cid for d in result.news_items for cid in d.candidate_ids} | set(result.rejected_candidate_ids)
+            if accounted != ids:
+                raise QualityError("Consolidation candidate accounting mismatch")
             drafts.extend(result.news_items)
         # Sort high-priority news first. max_items never suppresses P0/P1.
         drafts.sort(key=lambda d: (d.priority, -d.score.weighted))
@@ -89,6 +114,8 @@ class Editor:
             if duplicate:
                 self.duplicates += 1
                 continue
+            if event_id in {i.event_id for i in accepted}:
+                raise QualityError("One event cannot produce multiple core stories in the same report")
             if item.repository_url:
                 validate_url(item.repository_url, ["github.com"])
                 repo = normalize_url(item.repository_url)
@@ -131,4 +158,13 @@ class Editor:
         refs = set(synthesis.top_stories) | {key for trend in synthesis.trend_signals for key in trend.event_ids}
         if refs - valid_ids or len(synthesis.top_stories) != len(set(synthesis.top_stories)):
             raise QualityError("Report synthesis contains unknown or duplicated event references")
+        verification = self.ai.request(SynthesisReview,
+                                       "Independently check every factual claim and number in SYNTHESIS against "
+                                       "VERIFIED_NEWS. Reject unsupported new facts and contradictions. Trends "
+                                       "must be explicitly labeled ANALYSIS and grounded in referenced events.",
+                                       {"SYNTHESIS": synthesis.model_dump(mode="json"),
+                                        "VERIFIED_NEWS": [i.model_dump(mode="json") for i in accepted]},
+                                       self.settings.mini_model, "synthesis_verification")
+        if not verification.approved or verification.unsupported_claims:
+            raise QualityError("Synthesis factual verification failed")
         return accepted, synthesis

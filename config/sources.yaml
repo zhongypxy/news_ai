@@ -17,9 +17,9 @@ sources:
     categories: [models, applications, infrastructure]
     max_items: 30
   - id: microsoft
-    name: Microsoft AI Blog
+    name: Microsoft Official Blog
     kind: rss
-    url: https://blogs.microsoft.com/ai/feed/
+    url: https://blogs.microsoft.com/feed/
     allowed_domains: [blogs.microsoft.com]
     region: north_america
     categories: [agents, applications, business]
@@ -40,12 +40,13 @@ sources:
     categories: [opensource, models]
     max_items: 30
   - id: qwen
-    name: Qwen Official Blog
-    kind: rss
-    url: https://qwenlm.github.io/index.xml
-    allowed_domains: [qwenlm.github.io]
+    name: Qwen Code Official Releases
+    kind: api
+    url: https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=20
+    allowed_domains: [api.github.com, github.com]
     region: asia
-    categories: [models, opensource]
+    categories: [agents, opensource]
+    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
     timezone: Asia/Shanghai
   - id: vllm
     name: vLLM Releases

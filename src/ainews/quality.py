@@ -47,8 +47,6 @@ def check_coverage(statuses, settings):
     if not backfill or backfill[0].status != "ok":
         raise QualityError("Third-round major-event backfill search unavailable")
     regions = {s.region for s in good if s.region != "global"}
-    # Search can supplement failed geographic feeds, but its result must actually be assigned to that region.
-    regions |= {r for s in good for r in getattr(s, "result_regions", [])}
     return Coverage(source_status=statuses, categories_checked=sorted(checked), categories_missing=sorted(missing),
                     regions_checked=sorted(regions), limitations=[f"{s.name}: {s.error}" for s in statuses if s.status != "ok"])
 

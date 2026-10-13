@@ -159,6 +159,11 @@ class Synthesis(StrictModel):
     trend_signals: list[Trend] = Field(max_length=3)
 
 
+class SynthesisReview(StrictModel):
+    approved: bool
+    unsupported_claims: list[str]
+
+
 class Coverage(StrictModel):
     source_status: list[SourceStatus]
     categories_checked: list[Category]
