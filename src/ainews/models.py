@@ -47,6 +47,7 @@ class Candidate(StrictModel):
     publication_basis: str = "source_metadata"
     verified: bool = False
     verification_note: str = "not_checked"
+    linked_urls: list[str] = Field(default_factory=list, max_length=30)
 
 
 class SourceStatus(StrictModel):

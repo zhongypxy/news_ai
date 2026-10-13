@@ -1,3 +1,5 @@
+from urllib.parse import urlsplit
+
 from .events import identity
 from .models import Citation, EditorialBatch, NewsItem, Review, Synthesis, SynthesisReview
 from .net import normalize_url, validate_url
@@ -120,7 +122,8 @@ class Editor:
                 validate_url(item.repository_url, ["github.com"])
                 repo = normalize_url(item.repository_url)
                 # GitHub release evidence may be a child of the repository URL.
-                if not any(normalize_url(c.url) == repo or normalize_url(c.url).startswith(repo+"/") for c in evidence):
+                if not any(normalize_url(c.url) == repo or normalize_url(c.url).startswith(repo+"/")
+                           or repo in c.linked_urls for c in evidence):
                     raise QualityError("Repository URL is not grounded in source evidence")
             if item.category == "opensource" and any(not v for v in [item.repository_url, item.technical_highlights,
                                                                       item.target_users, item.maturity_limitations]):
@@ -131,7 +134,9 @@ class Editor:
                 continue
             if len(accepted) >= self.settings.max_items and item.priority == "P2":
                 continue
-            citations = [Citation(candidate_id=c.id, url=c.url, name=self.sources[c.source_id].name or c.source_id,
+            citations = [Citation(candidate_id=c.id, url=c.url,
+                                  name=urlsplit(c.url).hostname if self.sources[c.source_id].kind == 'web_search'
+                                  else self.sources[c.source_id].name or c.source_id,
                                   source_type=self.sources[c.source_id].kind, verification_status="verified",
                                   published_at=c.published_at, time_precision=c.time_precision,
                                   collected_at=c.collected_at, publication_basis=c.publication_basis) for c in evidence]

@@ -1,1 +1,297 @@
-{"version": 1, "events": {}, "reports": {}}
+{
+  "version": 1,
+  "events": {
+    "evt_a58b9be3b7fc5d56c6ef": {
+      "event_key": "meta:muse-wonder:launch",
+      "aliases": [
+        "metamusewonderlaunch"
+      ],
+      "urls": [
+        "https://about.fb.com/news/2026/10/introducing-muse-wonder-models"
+      ],
+      "milestones": [
+        "wonderandwonderfullannounced20261012"
+      ],
+      "evidence_hashes": [
+        "ae9953918b5c4270c8238b688cac42d780e4bb02cb0ae24a9be348c83b72cfa0"
+      ],
+      "summary": "Meta 于10月12日宣布 Muse Wonder 与 Muse Wonder Full，重点展示编程及专业领域的 Agent 任务能力。官方将 Active Memory 描述为跨对话保留并调用相关信息，将 Active Focus 描述为遇到困难时尝试其他路径、恢复错误并持续推进任务。Wonder 已通过 Meta Model API 和 Muse Code 提供，Wonder Full 面向 Muse Code 订阅者；面向 Muse 的部署仍是后续计划。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "wonder and wonder-full announced 2026-10-12",
+          "new_information": "",
+          "summary": "Meta 于10月12日宣布 Muse Wonder 与 Muse Wonder Full，重点展示编程及专业领域的 Agent 任务能力。官方将 Active Memory 描述为跨对话保留并调用相关信息，将 Active Focus 描述为遇到困难时尝试其他路径、恢复错误并持续推进任务。Wonder 已通过 Meta Model API 和 Muse Code 提供，Wonder Full 面向 Muse Code 订阅者；面向 Muse 的部署仍是后续计划。"
+        }
+      ]
+    },
+    "evt_3578b17208ab5f60507f": {
+      "event_key": "microsoft:maia:scaleout-roadmap",
+      "aliases": [
+        "microsoftmaiascaleoutroadmap"
+      ],
+      "urls": [
+        "https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments"
+      ],
+      "milestones": [
+        "maia200productionandmaia3002027roadmapannounced20261012"
+      ],
+      "evidence_hashes": [
+        "1ad3f4eebe56ee2fb91a3d9c689059f26226a67fed79a6a0acad73c8e4838fbb"
+      ],
+      "summary": "微软10月12日表示，Maia 200 已运行包括 Microsoft Copilot 在内的生产负载，并支持 MAI 团队；GitHub Copilot 与 Microsoft Foundry 的覆盖仍属年内计划。公司拟从2027年开始把 Maia 系列扩展到多吉瓦部署，Maia 300 面向长上下文、低延迟交互和持续多步骤任务，预计2027年开始生产部署。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "maia200 production and maia300 2027 roadmap announced 2026-10-12",
+          "new_information": "",
+          "summary": "微软10月12日表示，Maia 200 已运行包括 Microsoft Copilot 在内的生产负载，并支持 MAI 团队；GitHub Copilot 与 Microsoft Foundry 的覆盖仍属年内计划。公司拟从2027年开始把 Maia 系列扩展到多吉瓦部署，Maia 300 面向长上下文、低延迟交互和持续多步骤任务，预计2027年开始生产部署。"
+        }
+      ]
+    },
+    "evt_11e95aab0c2c84d5ee36": {
+      "event_key": "nvidia:vera-rubin:ocp-2026",
+      "aliases": [
+        "nvidiaverarubinocp2026"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories"
+      ],
+      "milestones": [
+        "rackandcomputetraycontributionsandecosystemannouncements20261012"
+      ],
+      "evidence_hashes": [
+        "3026c0dca55ebec76e145212ac01de8e061de10d329f07c6434e55a5595083d4"
+      ],
+      "summary": "在10月12日 OCP Global Summit 公告中，NVIDIA 表示通过开放 MGX 架构向 OCP 贡献 Vera Rubin 机架与计算托盘设计。同期公布的进展涵盖数据中心与电网韧性规范、DSX AI Factory 开源组件，以及与 Meta、Cisco、Google 等的网络协作。与 Google 的 Falcon Transport 支持涉及未来 ConnectX-10 SuperNIC 和 BlueField DPU。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "rack and compute tray contributions and ecosystem announcements 2026-10-12",
+          "new_information": "",
+          "summary": "在10月12日 OCP Global Summit 公告中，NVIDIA 表示通过开放 MGX 架构向 OCP 贡献 Vera Rubin 机架与计算托盘设计。同期公布的进展涵盖数据中心与电网韧性规范、DSX AI Factory 开源组件，以及与 Meta、Cisco、Google 等的网络协作。与 Google 的 Falcon Transport 支持涉及未来 ConnectX-10 SuperNIC 和 BlueField DPU。"
+        }
+      ]
+    },
+    "evt_759dd78e67a70516ba8d": {
+      "event_key": "uk:frontier-ai:resilience-2026",
+      "aliases": [
+        "ukfrontierairesilience2026"
+      ],
+      "urls": [
+        "https://www.gov.uk/government/news/britain-steps-up-national-defences-against-growing-ai-risks"
+      ],
+      "milestones": [
+        "cyberdefenceandautonomousagentincidentmeasuresoctober12"
+      ],
+      "evidence_hashes": [
+        "7e3a7f41e32beec3e5d7cc6cd2465f0dccc1f36395fe865e9d4d2d45f1492bd6"
+      ],
+      "summary": "英国政府10月12日宣布扩大利用前沿 AI 加强网络防御的工作，并由 NCSC 与 AI Security Institute 研究自主 Agent 重大事故的应对及险情报告。政府还表示将探索加强网络安全相关法案与制度安排。公告中的新增保护措施仍处于研究和推进阶段，不能写成已经生效的完整新法律。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "cyber-defence and autonomous-agent incident measures october12",
+          "new_information": "",
+          "summary": "英国政府10月12日宣布扩大利用前沿 AI 加强网络防御的工作，并由 NCSC 与 AI Security Institute 研究自主 Agent 重大事故的应对及险情报告。政府还表示将探索加强网络安全相关法案与制度安排。公告中的新增保护措施仍处于研究和推进阶段，不能写成已经生效的完整新法律。"
+        }
+      ]
+    },
+    "evt_5ea68125208ca5e64227": {
+      "event_key": "spacexsi:x-subscription:launch",
+      "aliases": [
+        "spacexsixsubscriptionlaunch"
+      ],
+      "urls": [
+        "https://x.ai/news/x-subscription"
+      ],
+      "milestones": [
+        "unifiedgrokcursorxsubscriptionannouncedoctober12"
+      ],
+      "evidence_hashes": [
+        "b7a50f73c105ed39c65a76523fc67e1bbd484ba0bce1354fdd7beccec2631864"
+      ],
+      "summary": "SpaceXSI 在10月12日公告中推出 The X Subscription，将 Grok、Grok Bot、Cursor 与 X Premium 组合进同一订阅。公告称，Grok 模型用量在 Grok 与 Cursor 间共享；Cursor Premium 及更高方案仍支持第三方模型，但相关用量通过另行充值按 API 标价计费。全球开放和现有用户切换将分批推进，本期不列未经地区和税费确认的具体价格。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "unified grok cursor x subscription announced october12",
+          "new_information": "",
+          "summary": "SpaceXSI 在10月12日公告中推出 The X Subscription，将 Grok、Grok Bot、Cursor 与 X Premium 组合进同一订阅。公告称，Grok 模型用量在 Grok 与 Cursor 间共享；Cursor Premium 及更高方案仍支持第三方模型，但相关用量通过另行充值按 API 标价计费。全球开放和现有用户切换将分批推进，本期不列未经地区和税费确认的具体价格。"
+        }
+      ]
+    },
+    "evt_2456b7110e9ef68df353": {
+      "event_key": "qwen:qwen-code:0.25.1",
+      "aliases": [
+        "qwenqwencode0251"
+      ],
+      "urls": [
+        "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.1",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1"
+      ],
+      "milestones": [
+        "stableclianddesktop0251released20261011"
+      ],
+      "evidence_hashes": [
+        "108d980689f7cfba76d24a1608d102c00416510e001cc9606bfb393f61e2acd5",
+        "4fe57e20c7445fcc182611e8a3296d0da603e0f7349e053ff80f81bdff666b47"
+      ],
+      "summary": "Qwen Code 10月11日发布稳定版0.25.1及对应 Desktop 发布。本次 CLI 变更包括实验性 Kubernetes CSI 运行时、持久记录 Managed Agent 工具结果、后台 Shell 与 Monitor，以及侧任务对话等；Desktop 变更包含会话创建失败诊断保留、对话内搜索和 MCP 返回媒体处理改进。本期按同一版本事件合并，未把每日 nightly 当独立重要新闻。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "stable cli and desktop 0.25.1 released 2026-10-11",
+          "new_information": "",
+          "summary": "Qwen Code 10月11日发布稳定版0.25.1及对应 Desktop 发布。本次 CLI 变更包括实验性 Kubernetes CSI 运行时、持久记录 Managed Agent 工具结果、后台 Shell 与 Monitor，以及侧任务对话等；Desktop 变更包含会话创建失败诊断保留、对话内搜索和 MCP 返回媒体处理改进。本期按同一版本事件合并，未把每日 nightly 当独立重要新闻。"
+        }
+      ]
+    },
+    "evt_5df73aac5a49bd2445e7": {
+      "event_key": "lighton:colgrep-agent:launch",
+      "aliases": [
+        "lightoncolgrepagentlaunch"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/lightonai/colgrep-agent"
+      ],
+      "milestones": [
+        "localcolgrepagent2breleased20261012"
+      ],
+      "evidence_hashes": [
+        "d7cef76ceccb6e5c94e78e6121ebb0f7c6fe24a98ee3eb68a234dec3beb30d2e"
+      ],
+      "summary": "LightOn 在10月12日发布 ColGrep-Agent-2B：一个在本地运行的代码定位 Agent。它使用 ColGrep 的多向量语义搜索、读取候选文件并追踪引用，返回文件路径、行范围和相关代码，供较大的 Coding Agent 接续处理。作者报告，在未参与训练的13个仓库、52个问题的测试中，相比 grep 基线，委托本地定位减少约34%的 API token；这是作者实验结果。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "local colgrep-agent-2b released 2026-10-12",
+          "new_information": "",
+          "summary": "LightOn 在10月12日发布 ColGrep-Agent-2B：一个在本地运行的代码定位 Agent。它使用 ColGrep 的多向量语义搜索、读取候选文件并追踪引用，返回文件路径、行范围和相关代码，供较大的 Coding Agent 接续处理。作者报告，在未参与训练的13个仓库、52个问题的测试中，相比 grep 基线，委托本地定位减少约34%的 API token；这是作者实验结果。"
+        }
+      ]
+    },
+    "evt_29dff66e54a71fe12fc8": {
+      "event_key": "infinigence:funding:series-c-2026",
+      "aliases": [
+        "infinigencefundingseriesc2026"
+      ],
+      "urls": [
+        "https://finance.sina.com.cn/tech/shenji/2026-10-12/doc-iniuxrzi5363347.shtml"
+      ],
+      "milestones": [
+        "23billioncnyseriescannouncedoctober12"
+      ],
+      "evidence_hashes": [
+        "1917d59dbd357a8689e2a6875d18c1c9b284800cac7b37c31497b11cff9719be"
+      ],
+      "summary": "据新浪科技10月12日的原始报道，无问芯穹宣布完成23亿元人民币 C 轮融资，创立以来累计融资43亿元。报道介绍，公司围绕异构算力、模型服务和企业应用构建 Agentic Infra 布局。融资实际交割日期未取得确切证据，事件时间保留未知；本条按报道发布时间列为72小时重要补录。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "2.3billion-cny series-c announced october12",
+          "new_information": "",
+          "summary": "据新浪科技10月12日的原始报道，无问芯穹宣布完成23亿元人民币 C 轮融资，创立以来累计融资43亿元。报道介绍，公司围绕异构算力、模型服务和企业应用构建 Agentic Infra 布局。融资实际交割日期未取得确切证据，事件时间保留未知；本条按报道发布时间列为72小时重要补录。"
+        }
+      ]
+    },
+    "evt_098c91a308f181b884dc": {
+      "event_key": "langchain:langgraph:2026-10-12-maintenance",
+      "aliases": [
+        "langchainlanggraph20261012maintenance"
+      ],
+      "urls": [
+        "https://github.com/langchain-ai/langgraph/releases/tag/1.2.15",
+        "https://github.com/langchain-ai/langgraph/releases/tag/checkpoint%3D%3D4.3.0",
+        "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.1.3",
+        "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.2",
+        "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.7"
+      ],
+      "milestones": [
+        "langgraph1215checkpoint430sdk047storagefixes"
+      ],
+      "evidence_hashes": [
+        "5b3a41322dbb6e4d1104aca15b2cd40a104a4944ef2f32bcc25efa97e5fbfd51",
+        "6c89119cf326605ad1284b69ca064b09949eab9dd9765114ba049e1063d87bd4",
+        "7d2698a1bfb8dae0c358bd3937507c42122c9e8f73daf3f5513a72d3302be277",
+        "7e443c153d4e3e50e39b7a96c55260f75f2f3bb1e1e5829ec2583e46e699de50",
+        "9aa4964c366ac04a5dea19a65b0ecab95a54f3650dd1b8f50333a9c840923223"
+      ],
+      "summary": "LangGraph 1.2.15、checkpoint 4.3.0及配套 SDK/存储适配器发布，集中修复 DeltaChannel 状态写入、分支恢复、检查点历史和流式生命周期处理。升级前应验证中断、恢复与持久存储路径；这次更新不属于新模型或全新框架发布。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "langgraph1.2.15 checkpoint4.3.0 sdk0.4.7 storage fixes",
+          "new_information": "",
+          "summary": "LangGraph 1.2.15、checkpoint 4.3.0及配套 SDK/存储适配器发布，集中修复 DeltaChannel 状态写入、分支恢复、检查点历史和流式生命周期处理。升级前应验证中断、恢复与持久存储路径；这次更新不属于新模型或全新框架发布。"
+        }
+      ]
+    },
+    "evt_55f72df185a2026ecc14": {
+      "event_key": "scarlet:funding:series-b-2026",
+      "aliases": [
+        "scarletfundingseriesb2026"
+      ],
+      "urls": [
+        "https://www.sesamers.com/funding/scarlet-raises-50m-series-b-ai-medical-devices"
+      ],
+      "milestones": [
+        "50millionusdseriesbreportedoctober12"
+      ],
+      "evidence_hashes": [
+        "b2c208680a3398d83890591e9e107f216daa4a258c49db9f5079c109ceaa4e55"
+      ],
+      "summary": "据 Sesamers 10月12日报道，伦敦的 Scarlet 完成由 Headline 领投的5000万美元 B 轮，拟扩展美国与亚太业务，并增加 AI 审查与工程团队。该公司服务医疗软件与 AI 器械认证；本期未取得公司或投资方原始融资公告，相关金额仍需进一步交叉核验。",
+      "first_report": "2026-10-13",
+      "last_report": "2026-10-13",
+      "last_seen_at": "2026-10-13T03:39:12.469494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-13",
+          "milestone": "50million-usd-series-b reported october12",
+          "new_information": "",
+          "summary": "据 Sesamers 10月12日报道，伦敦的 Scarlet 完成由 Headline 领投的5000万美元 B 轮，拟扩展美国与亚太业务，并增加 AI 审查与工程团队。该公司服务医疗软件与 AI 器械认证；本期未取得公司或投资方原始融资公告，相关金额仍需进一步交叉核验。"
+        }
+      ]
+    }
+  },
+  "reports": {
+    "2026-10-13": {
+      "window_start": "2026-10-12T03:21:16.174971+00:00",
+      "window_end": "2026-10-13T03:21:16.174971+00:00",
+      "count": 10,
+      "summary": "本期重点是持续执行型 Agent、推理基础设施与工程可靠性：Meta 发布 Muse Wonder 系列；微软公布 Maia 的生产进展和2027年部署路线；NVIDIA 在 OCP 扩展开放机架与网络生态。开源精选关注本地代码定位、Qwen Code 运行时和 LangGraph 状态恢复。商业与垂直应用涵盖订阅整合、AI 基础设施融资和医疗认证服务；教育专项已检索，未找到窗口内可核验的重要新增。厂商性能宣称、未来部署与媒体融资报道均保留相应核验边界。",
+      "sha256": {
+        "reports/2026-10-13.html": "e9c598b12102b8ff8324776a8e18259a88fbc71d00f8a0852fe4f2a687104070",
+        "data/2026-10-13.json": "0fee2bad36958b2d26d39185d40635873e70375c196d7ab8e331fecd04a2ac7d"
+      }
+    }
+  }
+}

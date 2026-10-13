@@ -1,0 +1,569 @@
+{
+  "$defs": {
+    "Discovery": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 500,
+          "minLength": 3,
+          "title": "Title",
+          "type": "string"
+        },
+        "url": {
+          "title": "Url",
+          "type": "string"
+        },
+        "region": {
+          "default": "global",
+          "enum": [
+            "north_america",
+            "asia",
+            "europe",
+            "global"
+          ],
+          "title": "Region",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "title",
+        "url"
+      ],
+      "title": "Discovery",
+      "type": "object"
+    },
+    "DraftItem": {
+      "additionalProperties": false,
+      "properties": {
+        "event_key": {
+          "maxLength": 180,
+          "minLength": 3,
+          "title": "Event Key",
+          "type": "string"
+        },
+        "milestone": {
+          "maxLength": 180,
+          "minLength": 3,
+          "title": "Milestone",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 180,
+          "minLength": 3,
+          "title": "Title",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "models",
+            "agents",
+            "opensource",
+            "business",
+            "applications",
+            "infrastructure"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "priority": {
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "score": {
+          "$ref": "#/$defs/Scores"
+        },
+        "confidence": {
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ],
+          "title": "Confidence",
+          "type": "string"
+        },
+        "occurred_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Occurred At"
+        },
+        "is_followup": {
+          "title": "Is Followup",
+          "type": "boolean"
+        },
+        "previous_event_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Previous Event Id"
+        },
+        "new_information": {
+          "maxLength": 1000,
+          "title": "New Information",
+          "type": "string"
+        },
+        "summary": {
+          "maxLength": 1400,
+          "minLength": 10,
+          "title": "Summary",
+          "type": "string"
+        },
+        "significance": {
+          "maxLength": 1000,
+          "title": "Significance",
+          "type": "string"
+        },
+        "analysis": {
+          "maxLength": 1400,
+          "title": "Analysis",
+          "type": "string"
+        },
+        "followup_questions": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Followup Questions",
+          "type": "array"
+        },
+        "candidate_ids": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 6,
+          "minItems": 1,
+          "title": "Candidate Ids",
+          "type": "array"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Tags",
+          "type": "array"
+        },
+        "fact_status": {
+          "enum": [
+            "FACT",
+            "UNVERIFIED"
+          ],
+          "title": "Fact Status",
+          "type": "string"
+        },
+        "repository_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Repository Url"
+        },
+        "technical_highlights": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Technical Highlights"
+        },
+        "target_users": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Target Users"
+        },
+        "maturity_limitations": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Maturity Limitations"
+        }
+      },
+      "required": [
+        "event_key",
+        "milestone",
+        "title",
+        "category",
+        "priority",
+        "score",
+        "confidence",
+        "occurred_at",
+        "is_followup",
+        "previous_event_id",
+        "new_information",
+        "summary",
+        "significance",
+        "analysis",
+        "followup_questions",
+        "candidate_ids",
+        "tags",
+        "fact_status",
+        "repository_url",
+        "technical_highlights",
+        "target_users",
+        "maturity_limitations"
+      ],
+      "title": "DraftItem",
+      "type": "object"
+    },
+    "EditorialBatch": {
+      "additionalProperties": false,
+      "properties": {
+        "news_items": {
+          "items": {
+            "$ref": "#/$defs/DraftItem"
+          },
+          "maxItems": 40,
+          "title": "News Items",
+          "type": "array"
+        },
+        "rejected_candidate_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Rejected Candidate Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "news_items",
+        "rejected_candidate_ids"
+      ],
+      "title": "EditorialBatch",
+      "type": "object"
+    },
+    "Review": {
+      "additionalProperties": false,
+      "properties": {
+        "approved": {
+          "title": "Approved",
+          "type": "boolean"
+        },
+        "supported_candidate_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Supported Candidate Ids",
+          "type": "array"
+        },
+        "issues": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Issues",
+          "type": "array"
+        },
+        "independent_source_count": {
+          "maximum": 10,
+          "minimum": 0,
+          "title": "Independent Source Count",
+          "type": "integer"
+        },
+        "occurred_at_supported": {
+          "title": "Occurred At Supported",
+          "type": "boolean"
+        },
+        "new_information_supported": {
+          "title": "New Information Supported",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "approved",
+        "supported_candidate_ids",
+        "issues",
+        "independent_source_count",
+        "occurred_at_supported",
+        "new_information_supported"
+      ],
+      "title": "Review",
+      "type": "object"
+    },
+    "Scores": {
+      "additionalProperties": false,
+      "properties": {
+        "impact": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Impact",
+          "type": "integer"
+        },
+        "novelty": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Novelty",
+          "type": "integer"
+        },
+        "relevance": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Relevance",
+          "type": "integer"
+        },
+        "confidence": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "integer"
+        },
+        "follow_up": {
+          "maximum": 5,
+          "minimum": 0,
+          "title": "Follow Up",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "impact",
+        "novelty",
+        "relevance",
+        "confidence",
+        "follow_up"
+      ],
+      "title": "Scores",
+      "type": "object"
+    },
+    "SearchCheck": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "queries": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Queries",
+          "type": "array"
+        },
+        "result_urls": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Result Urls",
+          "type": "array"
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "failed"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "note": {
+          "maxLength": 1500,
+          "minLength": 3,
+          "title": "Note",
+          "type": "string"
+        },
+        "checked_at": {
+          "format": "date-time",
+          "title": "Checked At",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_id",
+        "queries",
+        "result_urls",
+        "status",
+        "note",
+        "checked_at"
+      ],
+      "title": "SearchCheck",
+      "type": "object"
+    },
+    "Synthesis": {
+      "additionalProperties": false,
+      "properties": {
+        "executive_summary": {
+          "maxLength": 2000,
+          "minLength": 10,
+          "title": "Executive Summary",
+          "type": "string"
+        },
+        "top_stories": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5,
+          "title": "Top Stories",
+          "type": "array"
+        },
+        "trend_signals": {
+          "items": {
+            "$ref": "#/$defs/Trend"
+          },
+          "maxItems": 3,
+          "title": "Trend Signals",
+          "type": "array"
+        }
+      },
+      "required": [
+        "executive_summary",
+        "top_stories",
+        "trend_signals"
+      ],
+      "title": "Synthesis",
+      "type": "object"
+    },
+    "SynthesisReview": {
+      "additionalProperties": false,
+      "properties": {
+        "approved": {
+          "title": "Approved",
+          "type": "boolean"
+        },
+        "unsupported_claims": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Unsupported Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "approved",
+        "unsupported_claims"
+      ],
+      "title": "SynthesisReview",
+      "type": "object"
+    },
+    "Trend": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "maxLength": 1000,
+          "minLength": 3,
+          "title": "Text",
+          "type": "string"
+        },
+        "event_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "label": {
+          "const": "ANALYSIS",
+          "title": "Label",
+          "type": "string"
+        }
+      },
+      "required": [
+        "text",
+        "event_ids",
+        "label"
+      ],
+      "title": "Trend",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "bundle_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Bundle Sha256",
+      "type": "string"
+    },
+    "evidence_sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Evidence Sha256",
+      "type": "string"
+    },
+    "discoveries": {
+      "items": {
+        "$ref": "#/$defs/Discovery"
+      },
+      "maxItems": 80,
+      "title": "Discoveries",
+      "type": "array"
+    },
+    "search_checks": {
+      "items": {
+        "$ref": "#/$defs/SearchCheck"
+      },
+      "title": "Search Checks",
+      "type": "array"
+    },
+    "editorial": {
+      "$ref": "#/$defs/EditorialBatch"
+    },
+    "reviews": {
+      "additionalProperties": {
+        "$ref": "#/$defs/Review"
+      },
+      "title": "Reviews",
+      "type": "object"
+    },
+    "synthesis": {
+      "$ref": "#/$defs/Synthesis"
+    },
+    "synthesis_review": {
+      "$ref": "#/$defs/SynthesisReview"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "bundle_sha256",
+    "evidence_sha256",
+    "discoveries",
+    "search_checks",
+    "editorial",
+    "reviews",
+    "synthesis",
+    "synthesis_review",
+    "limitations"
+  ],
+  "title": "ResearchPacket",
+  "type": "object"
+}

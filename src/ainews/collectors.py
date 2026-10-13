@@ -4,6 +4,7 @@ from urllib.parse import urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
 import feedparser
+import httpx
 from bs4 import BeautifulSoup
 
 from .models import Candidate, SourceStatus
@@ -83,9 +84,16 @@ class Collector:
         parsed = urlsplit(url)
         origin = f"{parsed.scheme}://{parsed.netloc}"
         if origin not in self.robots:
-            response = self.http.get(origin + "/robots.txt", domains)
             robots = RobotFileParser()
-            robots.parse(response.text.splitlines())
+            try:
+                response = self.http.get(origin + "/robots.txt", domains)
+                robots.parse(response.text.splitlines())
+            except httpx.HTTPStatusError as exc:
+                # RFC 9309 §2.3.1.3: an absent robots file is not a crawl restriction.
+                # Keep authentication/denial and server failures conservative.
+                if exc.response.status_code not in {404, 410}:
+                    raise
+                robots.parse([])
             self.robots[origin] = robots
         if not self.robots[origin].can_fetch("GlobalAIDaily", url):
             raise ValueError("robots.txt disallows collection")
@@ -195,6 +203,17 @@ class Collector:
         for node in soup("script"):
             node.decompose()
         article = soup.select_one(".markdown-body") or soup.find("article") or soup.find("main") or soup.body or soup
+        links = []
+        for node in article.select('a[href]'):
+            url = urljoin(str(response.url), node['href'])
+            try:
+                validate_url(url)
+                url = normalize_url(url)
+            except ValueError:
+                continue
+            if url not in links:
+                links.append(url)
+        item.linked_urls = links[:30]
         text = plain(article.get_text(" ", strip=True), 1800)
         if len(text) < 60:
             raise ValueError("Insufficient original evidence")

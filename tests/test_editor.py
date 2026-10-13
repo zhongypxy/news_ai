@@ -108,3 +108,20 @@ def test_same_event_drafts_are_consolidated_to_one_core_story():
     items, synthesis = editor.edit([cand(), cand(id="c2", url="https://example.com/release", excerpt="Release availability")], events, context())
     assert len(items) == 1 and len(items[0].sources) == 2
     assert "event_consolidation" in [call[2] for call in ai.calls]
+
+
+def test_open_source_repo_link_must_appear_in_verified_original():
+    from ainews.models import SynthesisReview
+    repo = 'https://github.com/acme/search'
+    item = draft(priority='P2', category='opensource', repository_url=repo,
+        technical_highlights='Local search', target_users='Developers', maturity_limitations='Not independently tested')
+    result = EditorialBatch(news_items=[item], rejected_candidate_ids=[])
+    ai, editor, events = setup([result, review(),
+        Synthesis(executive_summary='Acme公开了一款代码搜索工具，适合开发团队试用。', top_stories=[], trend_signals=[]),
+        SynthesisReview(approved=True, unsupported_claims=[])])
+    candidates = [cand(linked_urls=[repo])]
+    items, _ = editor.edit(candidates, events, context())
+    assert items[0].repository_url == repo
+    ai, editor, events = setup([result, review()])
+    with pytest.raises(QualityError, match='Repository URL'):
+        editor.edit([cand()], events, context())

@@ -58,3 +58,20 @@ def test_jsonld_metadata_and_paywall_rejection():
     paywall = body('<script type="application/ld+json">{"@type":"NewsArticle","datePublished":"2026-10-13T00:00:00Z","isAccessibleForFree":false}</script>')
     with pytest.raises(ValueError, match="Paywalled"):
         verifier(paywall).verify(cand(), source())
+def test_missing_robots_file_404_allows_public_page_but_403_fails():
+    import httpx
+    import pytest
+
+    from ainews.collectors import Collector
+
+    class MissingRobots:
+        def get(self, url, domains=None):
+            response = httpx.Response(self.code, request=httpx.Request('GET', url))
+            response.raise_for_status()
+            return response
+    http = MissingRobots()
+    http.code = 404
+    Collector(http).check_robots('https://example.com/article')
+    http.code = 403
+    with pytest.raises(httpx.HTTPStatusError):
+        Collector(http).check_robots('https://example.com/article')
