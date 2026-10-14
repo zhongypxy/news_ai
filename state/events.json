@@ -139,29 +139,39 @@
     "evt_2456b7110e9ef68df353": {
       "event_key": "qwen:qwen-code:0.25.1",
       "aliases": [
-        "qwenqwencode0251"
+        "qwenqwencode0251",
+        "qwenqwencode0252"
       ],
       "urls": [
         "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.1",
-        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1"
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0"
       ],
       "milestones": [
+        "0252preview0tsmodsandpersistentteamplanapproval",
         "stableclianddesktop0251released20261011"
       ],
       "evidence_hashes": [
         "108d980689f7cfba76d24a1608d102c00416510e001cc9606bfb393f61e2acd5",
-        "4fe57e20c7445fcc182611e8a3296d0da603e0f7349e053ff80f81bdff666b47"
+        "4fe57e20c7445fcc182611e8a3296d0da603e0f7349e053ff80f81bdff666b47",
+        "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a"
       ],
-      "summary": "Qwen Code 10月11日发布稳定版0.25.1及对应 Desktop 发布。本次 CLI 变更包括实验性 Kubernetes CSI 运行时、持久记录 Managed Agent 工具结果、后台 Shell 与 Monitor，以及侧任务对话等；Desktop 变更包含会话创建失败诊断保留、对话内搜索和 MCP 返回媒体处理改进。本期按同一版本事件合并，未把每日 nightly 当独立重要新闻。",
+      "summary": "Qwen Code 发布0.25.2-preview.0，在稳定0.25.1基础上扩展 TypeScript Mods 编写、中间件恢复和工具拦截权限检查，并补充成员消息、持久团队计划审批及子任务面板。本次为预览版本；同变更 nightly 不另行报道。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-13",
-      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
           "milestone": "stable cli and desktop 0.25.1 released 2026-10-11",
           "new_information": "",
           "summary": "Qwen Code 10月11日发布稳定版0.25.1及对应 Desktop 发布。本次 CLI 变更包括实验性 Kubernetes CSI 运行时、持久记录 Managed Agent 工具结果、后台 Shell 与 Monitor，以及侧任务对话等；Desktop 变更包含会话创建失败诊断保留、对话内搜索和 MCP 返回媒体处理改进。本期按同一版本事件合并，未把每日 nightly 当独立重要新闻。"
+        },
+        {
+          "report_date": "2026-10-14",
+          "milestone": "0.25.2-preview.0 TS mods and persistent team plan approval",
+          "new_information": "此前0.25.1介绍了基础运行时与后台任务；本次新增 TS Mods 配置、中间件及拦截检查，以及持久计划审批和成员协作路径。",
+          "summary": "Qwen Code 发布0.25.2-preview.0，在稳定0.25.1基础上扩展 TypeScript Mods 编写、中间件恢复和工具拦截权限检查，并补充成员消息、持久团队计划审批及子任务面板。本次为预览版本；同变更 nightly 不另行报道。"
         }
       ]
     },
@@ -280,6 +290,415 @@
           "summary": "据 Sesamers 10月12日报道，伦敦的 Scarlet 完成由 Headline 领投的5000万美元 B 轮，拟扩展美国与亚太业务，并增加 AI 审查与工程团队。该公司服务医疗软件与 AI 器械认证；本期未取得公司或投资方原始融资公告，相关金额仍需进一步交叉核验。"
         }
       ]
+    },
+    "evt_9b55464b7c39cc205c52": {
+      "event_key": "google:gemini-4-argon:release",
+      "aliases": [
+        "googlegemini4argonrelease"
+      ],
+      "urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon"
+      ],
+      "milestones": [
+        "globaldeveloperenterpriseconsumeraccessannounced20261013"
+      ],
+      "evidence_hashes": [
+        "f1d3f6aefb5aea0de2b422c7881f525c971bfe52276574171de8a2ea5eb3969e"
+      ],
+      "summary": "Google 10月13日宣布 Gemini 4 Argon 扩大开放，开发者可经 AI Studio 和 Gemini platform 调用 API；Google AI Pro/Ultra 用户可在 Gemini 应用及搜索 AI Mode 使用，Antigravity 面向 Ultra。企业入口同步扩展，普通公开版保留安全防护。相比9月底可信防御伙伴受限访问，本次新增的是广泛集成与使用渠道。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "global developer enterprise consumer access announced 2026-10-13",
+          "new_information": "",
+          "summary": "Google 10月13日宣布 Gemini 4 Argon 扩大开放，开发者可经 AI Studio 和 Gemini platform 调用 API；Google AI Pro/Ultra 用户可在 Gemini 应用及搜索 AI Mode 使用，Antigravity 面向 Ultra。企业入口同步扩展，普通公开版保留安全防护。相比9月底可信防御伙伴受限访问，本次新增的是广泛集成与使用渠道。"
+        }
+      ]
+    },
+    "evt_809d90eff3a2d0511217": {
+      "event_key": "characterai:chapter11:sale-process",
+      "aliases": [
+        "characteraichapter11saleprocess"
+      ],
+      "urls": [
+        "https://aiweekly.co/alerts/characterai-files-chapter-11-disney-bids-20m-for-ip-license"
+      ],
+      "milestones": [
+        "voluntarychapter11andstalkinghorsesaleprocessannouncedoctober1213"
+      ],
+      "evidence_hashes": [
+        "b9785f00a1e386269da8439c3a21283e6567daa113d3b81bd6504e399a7e9b2d"
+      ],
+      "summary": "据公司说明及 AI Weekly 10月13日的公开报道，Character.ai 启动自愿 Chapter 11 程序，进入法院监督出售流程。Disney 是部分知识产权许可等安排的初始竞标方，不等于已收购整个聊天平台。公司表示平台和订阅暂保持运营；若出售无法带来继续运营方案，平台才会关闭。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "voluntary chapter11 and stalking-horse sale process announced october12-13",
+          "new_information": "",
+          "summary": "据公司说明及 AI Weekly 10月13日的公开报道，Character.ai 启动自愿 Chapter 11 程序，进入法院监督出售流程。Disney 是部分知识产权许可等安排的初始竞标方，不等于已收购整个聊天平台。公司表示平台和订阅暂保持运营；若出售无法带来继续运营方案，平台才会关闭。"
+        }
+      ]
+    },
+    "evt_377f892af17d6e79eccb": {
+      "event_key": "cursor:origin:marketplace-partner-launch",
+      "aliases": [
+        "cursororiginmarketplacepartnerlaunch"
+      ],
+      "urls": [
+        "https://artemissecurity.com/company-news/artemis-origin-marketplace-launch-partner",
+        "https://www.coderabbit.ai/blog/coderabbit-independent-validation-cursor-origin"
+      ],
+      "milestones": [
+        "reviewandreadonlysecuritypartnersannounced20261013"
+      ],
+      "evidence_hashes": [
+        "7fd2c4ceb2bfa2e3fd78957b7d983d95033e1a3f2bb1efb14abcd7cb39acd57c",
+        "98fb6c3dcc6536c502711e0c05e6d3b3d6db9f37bbd3e3422a002a80a8fee359"
+      ],
+      "summary": "CodeRabbit 和 Artemis 10月13日分别宣布加入 Cursor Origin 应用市场。CodeRabbit 为 Origin 原生仓库的拉取请求提供变更说明、逐行问题、讨论与修复后复核；Artemis 关联 Cursor/Origin 活动与安全告警，以只读代码访问辅助调查。CodeRabbit 集成限美国区域及合格套餐；Origin 仍处于早期测试。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "review and read-only security partners announced 2026-10-13",
+          "new_information": "",
+          "summary": "CodeRabbit 和 Artemis 10月13日分别宣布加入 Cursor Origin 应用市场。CodeRabbit 为 Origin 原生仓库的拉取请求提供变更说明、逐行问题、讨论与修复后复核；Artemis 关联 Cursor/Origin 活动与安全告警，以只读代码访问辅助调查。CodeRabbit 集成限美国区域及合格套餐；Origin 仍处于早期测试。"
+        }
+      ]
+    },
+    "evt_77ec720c4843c0653d28": {
+      "event_key": "ggml:llama-windows:launch",
+      "aliases": [
+        "ggmlllamawindowslaunch"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/huggingface/llama-windows"
+      ],
+      "milestones": [
+        "windows11nativetrayappannounced20261013"
+      ],
+      "evidence_hashes": [
+        "671f6c2af303f08596c1da3c8f5d3e7fae6832ef41998d84e01b117237e8cbd0"
+      ],
+      "summary": "Hugging Face 与 ggml 团队介绍 Llama Windows：一个免费、MIT 开源的 Windows 11 原生托盘应用。用户可从 Hub 选择量化模型，一键下载、加载并打开 llama.cpp 网页界面；应用可连接现有服务或管理自己的本地运行时，还提供 OpenAI 兼容 API、共享模型缓存及 Windows on Arm 支持。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "windows11 native tray app announced 2026-10-13",
+          "new_information": "",
+          "summary": "Hugging Face 与 ggml 团队介绍 Llama Windows：一个免费、MIT 开源的 Windows 11 原生托盘应用。用户可从 Hub 选择量化模型，一键下载、加载并打开 llama.cpp 网页界面；应用可连接现有服务或管理自己的本地运行时，还提供 OpenAI 兼容 API、共享模型缓存及 Windows on Arm 支持。"
+        }
+      ]
+    },
+    "evt_6dc9fbb0ae2c1ebdc9c1": {
+      "event_key": "nvidia:speech-agent-skills:domain-asr",
+      "aliases": [
+        "nvidiaspeechagentskillsdomainasr"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/nvidia/fine-tune-asr-with-nvidia-nemotron-speech-skills"
+      ],
+      "milestones": [
+        "domainadaptationworkflowtutorialpublished20261013"
+      ],
+      "evidence_hashes": [
+        "7a8972ff05b377165aa28e1493b2d799130d304a49bf39e344487adcc1825eb9"
+      ],
+      "summary": "NVIDIA 发布领域语音识别适配教程，以空管语音为例说明 Speech Agent Skills 工作流。nemotron-asr-finetune 负责目标和编排，nemo-speech-asr-finetune 专项技能负责NeMo训练与离线评估；流程产物包含实验预算、数据划分、兼容配置、预测及领域／通用英语指标，由研究者审查再推进。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "domain adaptation workflow tutorial published 2026-10-13",
+          "new_information": "",
+          "summary": "NVIDIA 发布领域语音识别适配教程，以空管语音为例说明 Speech Agent Skills 工作流。nemotron-asr-finetune 负责目标和编排，nemo-speech-asr-finetune 专项技能负责NeMo训练与离线评估；流程产物包含实验预算、数据划分、兼容配置、预测及领域／通用英语指标，由研究者审查再推进。"
+        }
+      ]
+    },
+    "evt_24b8b100460f851b2dce": {
+      "event_key": "meta:gem:2026-central-foundation-model",
+      "aliases": [
+        "metagem2026centralfoundationmodel"
+      ],
+      "urls": [
+        "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai"
+      ],
+      "milestones": [
+        "architectureknowledgetransferandtrainingengineeringdisclosed20261013"
+      ],
+      "evidence_hashes": [
+        "00d64d2024a66d1d73677d71ae65db60abbb768dd276e0880774229f2f63db66"
+      ],
+      "summary": "Meta 10月13日披露2026代广告推荐基础模型 GEM：从各平台与目标独立优化，转为跨 Facebook、Instagram 等场景的中央基础模型。工程方案包含 Kunlun 架构、LoopFM 结构化表征和 Solaris 投机预计算，将长期用户行为与大模型表征传给实时下游模型。训练侧通过低精度内核、并行策略及软硬协同改善大规模推荐训练。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "architecture knowledge transfer and training engineering disclosed 2026-10-13",
+          "new_information": "",
+          "summary": "Meta 10月13日披露2026代广告推荐基础模型 GEM：从各平台与目标独立优化，转为跨 Facebook、Instagram 等场景的中央基础模型。工程方案包含 Kunlun 架构、LoopFM 结构化表征和 Solaris 投机预计算，将长期用户行为与大模型表征传给实时下游模型。训练侧通过低精度内核、并行策略及软硬协同改善大规模推荐训练。"
+        }
+      ]
+    },
+    "evt_98120e23c60f98985127": {
+      "event_key": "liquidai:lfm2.5-24b-a2b:launch",
+      "aliases": [
+        "liquidailfm2524ba2blaunch"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b"
+      ],
+      "milestones": [
+        "openweightreasoningmodelandbasereleased20261013"
+      ],
+      "evidence_hashes": [
+        "48a888a2fc14d33dc0eded777aa04b1c9d8a81a95301143176f5c35ca5e9cd7e"
+      ],
+      "summary": "LiquidAI 发布 LFM2.5-24B-A2B 及 Base 开放权重，主打本地多轮工具调用与推理。模型卡列出24B总参数、2.45B激活参数和131072 token上下文；它是纯文本、始终思考的模型，采用短卷积与GQA混合架构，并给出 llama.cpp、MLX、vLLM、SGLang 等部署和 Agent 接入方案。模型采用专用 LFM 许可。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "open-weight reasoning model and base released 2026-10-13",
+          "new_information": "",
+          "summary": "LiquidAI 发布 LFM2.5-24B-A2B 及 Base 开放权重，主打本地多轮工具调用与推理。模型卡列出24B总参数、2.45B激活参数和131072 token上下文；它是纯文本、始终思考的模型，采用短卷积与GQA混合架构，并给出 llama.cpp、MLX、vLLM、SGLang 等部署和 Agent 接入方案。模型采用专用 LFM 许可。"
+        }
+      ]
+    },
+    "evt_a53fe88de9224d1470c7": {
+      "event_key": "uibk:embedding-v1:launch",
+      "aliases": [
+        "uibkembeddingv1launch"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1"
+      ],
+      "milestones": [
+        "unifieddenseandlateinteractionretrievalannounced20261012"
+      ],
+      "evidence_hashes": [
+        "2fc13b65b23c85e7266af8f19d59b1b7d2586fb238967a4459ba85bd6a229926"
+      ],
+      "summary": "作者发布 UIBK-Embedding-v1 介绍及 Apache2.0 权重，模型把 Dense 与 ColBERT 晚交互检索结合在同一编码器中。它将句向量拆分成三个槽位，与token向量放进同一列表，用额外标记维度区分两类向量，使标准MaxSim搜索同时计算两种分数；可配PyLate和PLAID索引，英语模型约179M参数。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "unified dense and late-interaction retrieval announced 2026-10-12",
+          "new_information": "",
+          "summary": "作者发布 UIBK-Embedding-v1 介绍及 Apache2.0 权重，模型把 Dense 与 ColBERT 晚交互检索结合在同一编码器中。它将句向量拆分成三个槽位，与token向量放进同一列表，用额外标记维度区分两类向量，使标准MaxSim搜索同时计算两种分数；可配PyLate和PLAID索引，英语模型约179M参数。"
+        }
+      ]
+    },
+    "evt_f1dcaba5e13d07a3f874": {
+      "event_key": "workday:agentic-platform:rising-2026",
+      "aliases": [
+        "workdayagenticplatformrising2026"
+      ],
+      "urls": [
+        "https://investor.workday.com/news-and-events/press-releases/news-details/2026/Workday-Launches-Autopilot-Agents-That-Get-Real-Work-Done-Across-HR-Finance-and-IT/default.aspx",
+        "https://www.prnewswire.com/news-releases/workday-to-bring-sana-everywhere-employees-work-including-claude-gemini-enterprise-microsoft-copilot-slack-and-teams-302906743.html"
+      ],
+      "milestones": [
+        "sanacrossplatformandautopilotagentsannouncedoctober13"
+      ],
+      "evidence_hashes": [
+        "3ced831c3c90fdff0e35ac6e7c4ffb4b8d9f74a2c03fc85b4a572558af22b6da",
+        "b106047a6d42c5de7c62cfa8d79b2f58ed936c4eb9ce65bc3257734e01aa96c5"
+      ],
+      "summary": "Workday 公布 Sana 跨平台编排与后台 Autopilot 代理。招聘 Autopilot 当日面向早期客户提供，正式可用计划为2027年初；工资、会计及部署新增自动化也计划2027年初早期访问。Sana 在 Claude Cowork 已开放早期访问，完整跨平台体验及 Copilot 新入口按计划于2026年底分阶段推出。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "sana cross-platform and autopilot agents announced october13",
+          "new_information": "",
+          "summary": "Workday 公布 Sana 跨平台编排与后台 Autopilot 代理。招聘 Autopilot 当日面向早期客户提供，正式可用计划为2027年初；工资、会计及部署新增自动化也计划2027年初早期访问。Sana 在 Claude Cowork 已开放早期访问，完整跨平台体验及 Copilot 新入口按计划于2026年底分阶段推出。"
+        }
+      ]
+    },
+    "evt_3c52c67b794c7c681bce": {
+      "event_key": "pluto-security:funding:stealth-exit",
+      "aliases": [
+        "plutosecurityfundingstealthexit"
+      ],
+      "urls": [
+        "https://pluto.security/blog/welcome-to-planet-pluto"
+      ],
+      "milestones": [
+        "42millionfundingandpubliclaunchannouncedoctober13"
+      ],
+      "evidence_hashes": [
+        "04bf87f566cf2a3e98f4bef155d63f54885ae8737af288a6b56ea590234f2967"
+      ],
+      "summary": "Pluto Security 10月13日在官方博客宣布退出隐身模式，并披露4200万美元融资。其产品面向员工使用 AI 代理、编码工具、MCP、浏览器扩展及自建工作流带来的安全需求；公司同时介绍漏洞研究、技术知识库及 Plutonium 社区工具。公告未拆分融资轮次和交易时刻。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "42million funding and public launch announced october13",
+          "new_information": "",
+          "summary": "Pluto Security 10月13日在官方博客宣布退出隐身模式，并披露4200万美元融资。其产品面向员工使用 AI 代理、编码工具、MCP、浏览器扩展及自建工作流带来的安全需求；公司同时介绍漏洞研究、技术知识库及 Plutonium 社区工具。公告未拆分融资轮次和交易时刻。"
+        }
+      ]
+    },
+    "evt_4e81e950042a8d31795d": {
+      "event_key": "houseofmath:launched:classroom-pilot",
+      "aliases": [
+        "houseofmathlaunchedclassroompilot"
+      ],
+      "urls": [
+        "https://www.einpresswire.com/article/948503766/house-of-math-and-launched-establish-strategic-partnership-to-bring-personalized-math-learning-to-u-s-classrooms"
+      ],
+      "milestones": [
+        "floridaclassroomvalidationpartnershipannouncedoctober12"
+      ],
+      "evidence_hashes": [
+        "c85750d858df80b4ee93feb5d58cb54c8fcb1c6224850a3eb023825f3d6b2e07"
+      ],
+      "summary": "LaunchEd 10月12日宣布与挪威House of Math合作，将个性化K-12数学平台引入美国课堂。初期计划在2026-27学年通过LaunchEd Sandbox覆盖佛罗里达多个地区的3至12年级，记录参与度、学习进展和平台效果，并据验证结果决定更广泛商业扩展。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "florida classroom-validation partnership announced october12",
+          "new_information": "",
+          "summary": "LaunchEd 10月12日宣布与挪威House of Math合作，将个性化K-12数学平台引入美国课堂。初期计划在2026-27学年通过LaunchEd Sandbox覆盖佛罗里达多个地区的3至12年级，记录参与度、学习进展和平台效果，并据验证结果决定更广泛商业扩展。"
+        }
+      ]
+    },
+    "evt_f516e9e792ca28544555": {
+      "event_key": "nvidia:france:startup-investment-plans",
+      "aliases": [
+        "nvidiafrancestartupinvestmentplans"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/france-ecosystem-agentic-computing"
+      ],
+      "milestones": [
+        "plannedinvestmentsinfourfrenchstartupsannounced20261013"
+      ],
+      "evidence_hashes": [
+        "5dc99e485bb780f3aad803da9b76f9340ecc28f8256bba3f1f20089067f6c2da"
+      ],
+      "summary": "NVIDIA 10月13日宣布拟投资 Doctolib、Entalpic、Genesis AI 与 Pigment，分别覆盖医疗、材料发现、机器人及企业规划。公告同时梳理法国模型和算力生态。四项均表述为计划投资，本次金额和交割条件未披露；此前欧洲累计投资承诺不能充当这次法国投资的金额。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "planned investments in four French startups announced 2026-10-13",
+          "new_information": "",
+          "summary": "NVIDIA 10月13日宣布拟投资 Doctolib、Entalpic、Genesis AI 与 Pigment，分别覆盖医疗、材料发现、机器人及企业规划。公告同时梳理法国模型和算力生态。四项均表述为计划投资，本次金额和交割条件未披露；此前欧洲累计投资承诺不能充当这次法国投资的金额。"
+        }
+      ]
+    },
+    "evt_cb7d64a7d5e6b83a2f80": {
+      "event_key": "nvidia:rtx-spark:local-agent-software-readiness",
+      "aliases": [
+        "nvidiartxsparklocalagentsoftwarereadiness"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates"
+      ],
+      "milestones": [
+        "pairgaandlocalagentsoftwareupdatesannounced20261013"
+      ],
+      "evidence_hashes": [
+        "593e37418e7531efb279f4b73cddf3c48a8c4d54da86bbf4f3772d44ac2c744d"
+      ],
+      "summary": "NVIDIA 宣布 PAIR 当日退出 beta，新增 llama.cpp 支持、Hub 模型下载和推理配置；Broadcast 2.3 增加离线文件处理与 Agent MCP 控制。编码和本地 Agent 应用同步适配新平台。Nemotron 3.5 Bolt 74B 计划10月15日提供，RTX Spark 笔记本计划10月16日发售，两者不是本期已经交付。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "PAIR GA and local agent software updates announced 2026-10-13",
+          "new_information": "",
+          "summary": "NVIDIA 宣布 PAIR 当日退出 beta，新增 llama.cpp 支持、Hub 模型下载和推理配置；Broadcast 2.3 增加离线文件处理与 Agent MCP 控制。编码和本地 Agent 应用同步适配新平台。Nemotron 3.5 Bolt 74B 计划10月15日提供，RTX Spark 笔记本计划10月16日发售，两者不是本期已经交付。"
+        }
+      ]
+    },
+    "evt_46a5002a520ec3784301": {
+      "event_key": "amd:helion:agentic-rack-blueprint",
+      "aliases": [
+        "amdhelionagenticrackblueprint"
+      ],
+      "urls": [
+        "https://newsroom.amd.com/news/open-rack-blueprint-scale-agentic-ai"
+      ],
+      "milestones": [
+        "openagenticrackblueprintintroduced20261012"
+      ],
+      "evidence_hashes": [
+        "66abf3e6fc654871324ea6b5cefbc6f46f94529d2ac5a61ce438d4805aacd182"
+      ],
+      "summary": "AMD 10月12日介绍 Helion 开放 Agent 机架蓝图，可配置 CPU 主导的 Agent 执行机架，或结合 CPU 与 GPU 的企业方案，并以 token 路由连接模型调用。合作伙伴配置仍在开发，计划2026年11月提供；向 OCP 贡献规范也是后续计划。Helion 不能与面向大规模模型训练推理的 Helios 混称。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "open agentic rack blueprint introduced 2026-10-12",
+          "new_information": "",
+          "summary": "AMD 10月12日介绍 Helion 开放 Agent 机架蓝图，可配置 CPU 主导的 Agent 执行机架，或结合 CPU 与 GPU 的企业方案，并以 token 路由连接模型调用。合作伙伴配置仍在开发，计划2026年11月提供；向 OCP 贡献规范也是后续计划。Helion 不能与面向大规模模型训练推理的 Helios 混称。"
+        }
+      ]
+    },
+    "evt_dd39e976264b163ca9d9": {
+      "event_key": "accordion:stride:acquisition",
+      "aliases": [
+        "accordionstrideacquisition"
+      ],
+      "urls": [
+        "https://www.accordion.com/our-insights/knowledge/accordion-acquires-stride-ai"
+      ],
+      "milestones": [
+        "acquisitionannouncedoctober13"
+      ],
+      "evidence_hashes": [
+        "85876a37a19db74b436762c85484efe6160548b5478914c39711c4b1f0ac8e98"
+      ],
+      "summary": "财务咨询公司Accordion于10月13日宣布已收购软件工程公司Stride。Stride为医疗、金融等行业构建企业代理系统，其工程团队将加入Accordion，支持私募股权投资组合企业的财务与运营AI工作流。交易金额未披露。",
+      "first_report": "2026-10-14",
+      "last_report": "2026-10-14",
+      "last_seen_at": "2026-10-14T01:30:11.962116+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-14",
+          "milestone": "acquisition announced october13",
+          "new_information": "",
+          "summary": "财务咨询公司Accordion于10月13日宣布已收购软件工程公司Stride。Stride为医疗、金融等行业构建企业代理系统，其工程团队将加入Accordion，支持私募股权投资组合企业的财务与运营AI工作流。交易金额未披露。"
+        }
+      ]
     }
   },
   "reports": {
@@ -291,6 +710,16 @@
       "sha256": {
         "reports/2026-10-13.html": "e9c598b12102b8ff8324776a8e18259a88fbc71d00f8a0852fe4f2a687104070",
         "data/2026-10-13.json": "0fee2bad36958b2d26d39185d40635873e70375c196d7ab8e331fecd04a2ac7d"
+      }
+    },
+    "2026-10-14": {
+      "window_start": "2026-10-13T03:21:16.174971+00:00",
+      "window_end": "2026-10-14T01:01:24.644337+00:00",
+      "count": 16,
+      "summary": "本期重点是 Gemini 4 Argon 扩大开放、编码代理接入审阅与安全伙伴，以及本地模型和行业工作流的持续推进。Character.ai 的法院监督出售流程需要继续跟踪服务状态；Disney 初始竞标不等于平台收购已经完成。多项设备与企业自动化仍处于未来计划或早期访问阶段，已逐条区分。对昨日新闻完成去重，另补录72小时内此前遗漏的技术与课堂验证进展。",
+      "sha256": {
+        "reports/2026-10-14.html": "63da9b06f532b00819b51d812b26735ef823209b4e8531cea1e4d026efe14dcf",
+        "data/2026-10-14.json": "326b139bd11d29aaa8c6b5abedf3651a6f4dcc14fcb7890677d720d202bf0d72"
       }
     }
   }

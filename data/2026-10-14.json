@@ -1,0 +1,1342 @@
+{
+  "schema_version": "2.0",
+  "report_date": "2026-10-14",
+  "window_start": "2026-10-13T03:21:16.174971Z",
+  "window_end": "2026-10-14T01:01:24.644337Z",
+  "backfill_start": "2026-10-11T01:01:24.644337Z",
+  "generated_at": "2026-10-14T01:30:11.962116Z",
+  "timezone": "Asia/Singapore",
+  "executive_summary": "本期重点是 Gemini 4 Argon 扩大开放、编码代理接入审阅与安全伙伴，以及本地模型和行业工作流的持续推进。Character.ai 的法院监督出售流程需要继续跟踪服务状态；Disney 初始竞标不等于平台收购已经完成。多项设备与企业自动化仍处于未来计划或早期访问阶段，已逐条区分。对昨日新闻完成去重，另补录72小时内此前遗漏的技术与课堂验证进展。",
+  "top_stories": [
+    "evt_9b55464b7c39cc205c52",
+    "evt_809d90eff3a2d0511217",
+    "evt_377f892af17d6e79eccb",
+    "evt_f1dcaba5e13d07a3f874"
+  ],
+  "news_items": [
+    {
+      "event_key": "google:gemini-4-argon:release",
+      "milestone": "global developer enterprise consumer access announced 2026-10-13",
+      "title": "Gemini 4 Argon 扩大开放：进入开发 API、企业产品及 Pro/Ultra 消费入口",
+      "category": "models",
+      "priority": "P0",
+      "score": {
+        "impact": 5,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 5
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Google 10月13日宣布 Gemini 4 Argon 扩大开放，开发者可经 AI Studio 和 Gemini platform 调用 API；Google AI Pro/Ultra 用户可在 Gemini 应用及搜索 AI Mode 使用，Antigravity 面向 Ultra。企业入口同步扩展，普通公开版保留安全防护。相比9月底可信防御伙伴受限访问，本次新增的是广泛集成与使用渠道。",
+      "significance": "相比9月30日仅向可信安全伙伴开放，本次新增可采购、可集成的开发与企业入口，模型能力进入实际工作流验证阶段。公开版本与特殊安全访问分层，也意味着测试结果和权限范围必须按产品入口核对，不能把受限预览能力直接套到生产部署。",
+      "analysis": "应按产品入口核对权限、配额和任务可靠性；API 统一百万 token 额度需同时容纳输入与输出。官方内部工程收益及排行榜表现未由本期独立复测，不能当作所有团队可复制的固定提升。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "a79a1ccdd4700578ff19"
+      ],
+      "tags": [
+        "Google",
+        "Gemini4Argon",
+        "API",
+        "长上下文",
+        "Agent",
+        "正式开放"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_9b55464b7c39cc205c52",
+      "published_at": "2026-10-13T16:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:01:24.644337Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "a79a1ccdd4700578ff19",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon",
+          "name": "Google AI Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:01:24.644337Z",
+          "publication_basis": "source_metadata"
+        }
+      ],
+      "weighted_score": 4.4,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "characterai:chapter11:sale-process",
+      "milestone": "voluntary chapter11 and stalking-horse sale process announced october12-13",
+      "title": "Character.ai 启动 Chapter 11 和法院监督出售流程，平台暂继续运营",
+      "category": "business",
+      "priority": "P0",
+      "score": {
+        "impact": 5,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 3,
+        "follow_up": 5
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "据公司说明及 AI Weekly 10月13日的公开报道，Character.ai 启动自愿 Chapter 11 程序，进入法院监督出售流程。Disney 是部分知识产权许可等安排的初始竞标方，不等于已收购整个聊天平台。公司表示平台和订阅暂保持运营；若出售无法带来继续运营方案，平台才会关闭。",
+      "significance": "消费 AI 服务的持续运营进入需要跟踪的实际阶段，使用者和企业合作方应关注出售结果、平台服务及数据安排。重组程序和最终资产转移是不同节点，不能从当前公告直接断言平台已经停运。",
+      "analysis": "本期可读取公司说明及公开整理，但没有成功读取法院文件和路透原文；程序引用的发布时间依据是 AI Weekly。保留服务连续性观察，不推断债务细节、诉讼结果、交易金额或整个陪伴 AI 行业的商业前景。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "b088e72235911d98c3dd"
+      ],
+      "tags": [
+        "characterai",
+        "business"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_809d90eff3a2d0511217",
+      "published_at": "2026-10-13T07:58:49Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b088e72235911d98c3dd",
+          "url": "https://aiweekly.co/alerts/characterai-files-chapter-11-disney-bids-20m-for-ip-license",
+          "name": "aiweekly.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T07:58:49Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.25,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "cursor:origin:marketplace-partner-launch",
+      "milestone": "review and read-only security partners announced 2026-10-13",
+      "title": "Cursor Origin 首发伙伴接入：CodeRabbit 审阅与 Artemis 安全调查",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "CodeRabbit 和 Artemis 10月13日分别宣布加入 Cursor Origin 应用市场。CodeRabbit 为 Origin 原生仓库的拉取请求提供变更说明、逐行问题、讨论与修复后复核；Artemis 关联 Cursor/Origin 活动与安全告警，以只读代码访问辅助调查。CodeRabbit 集成限美国区域及合格套餐；Origin 仍处于早期测试。",
+      "significance": "编码代理的交付链开始接入代码审阅和安全调查，团队可在合并之前获得不同工具的观察结果。它们解决不同问题，价值仍取决于权限配置、告警质量与人工决策流程。",
+      "analysis": "独立工具不等同无错误审查。应核对原生与镜像仓库的集成路径，评估误报、漏报、只读权限和撤销机制，并保留测试与同行复核。两家合作方发布合并为同一市场进展，不将市场开放直接写成全部能力生产成熟。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "9f55f7d51a5def85b788",
+        "3805db3324c7fba906f6"
+      ],
+      "tags": [
+        "Cursor",
+        "Origin",
+        "代码审阅",
+        "Agent 安全"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_377f892af17d6e79eccb",
+      "published_at": "2026-10-13T18:39:21Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "9f55f7d51a5def85b788",
+          "url": "https://www.coderabbit.ai/blog/coderabbit-independent-validation-cursor-origin",
+          "name": "www.coderabbit.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T12:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "3805db3324c7fba906f6",
+          "url": "https://artemissecurity.com/company-news/artemis-origin-marketplace-launch-partner",
+          "name": "artemissecurity.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T18:39:21Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "meta:gem:2026-central-foundation-model",
+      "milestone": "architecture knowledge transfer and training engineering disclosed 2026-10-13",
+      "title": "Meta 披露新一代 GEM：用中央基础模型统一广告推荐并向实时模型传递能力",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Meta 10月13日披露2026代广告推荐基础模型 GEM：从各平台与目标独立优化，转为跨 Facebook、Instagram 等场景的中央基础模型。工程方案包含 Kunlun 架构、LoopFM 结构化表征和 Solaris 投机预计算，将长期用户行为与大模型表征传给实时下游模型。训练侧通过低精度内核、并行策略及软硬协同改善大规模推荐训练。",
+      "significance": "基础模型路线正在进入具有严格延迟要求的推荐系统。Meta采用中央模型与实时小模型分层，让昂贵计算通过共享表征和预计算发挥作用，为大型产品如何同时处理规模、实时性与跨场景泛化提供可研究的工程样本。",
+      "analysis": "中央模型不必直接进入每次在线请求，能力可通过离线或近实时表征向下游传递。做推荐、搜索和广告的团队应关注数据新鲜度、回退机制与缓存命中，而不是只扩大参数量；大平台内部收益仍需用自身流量验证。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "9764c2fb527b29c93f5a"
+      ],
+      "tags": [
+        "Meta",
+        "GEM",
+        "推荐系统",
+        "基础模型",
+        "工程优化"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_24b8b100460f851b2dce",
+      "published_at": "2026-10-13T16:01:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "9764c2fb527b29c93f5a",
+          "url": "https://engineering.fb.com/2026/10/13/ml-applications/generative-ads-model-gem-scaling-frontier-ads-ai",
+          "name": "engineering.fb.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:01:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "liquidai:lfm2.5-24b-a2b:launch",
+      "milestone": "open-weight reasoning model and base released 2026-10-13",
+      "title": "LiquidAI 发布 LFM2.5-24B-A2B：面向本地多轮 Agent 的推理模型",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "LiquidAI 发布 LFM2.5-24B-A2B 及 Base 开放权重，主打本地多轮工具调用与推理。模型卡列出24B总参数、2.45B激活参数和131072 token上下文；它是纯文本、始终思考的模型，采用短卷积与GQA混合架构，并给出 llama.cpp、MLX、vLLM、SGLang 等部署和 Agent 接入方案。模型采用专用 LFM 许可。",
+      "significance": "本地 Agent 的选择继续从聊天模型转向针对工具调用和多轮轨迹训练的专用底座。较少的激活参数、量化格式和现有执行框架适配，可以降低试点门槛；对企业而言，许可条件、完整权重占用及真实任务完成率仍比宣传中的每秒 token 更重要。",
+      "analysis": "总参数仍需存储，2.45B激活不代表只需容纳2.45B权重。文章中的边缘设备速度与B300高并发吞吐属于不同条件，不能互相换算。优先用于工具使用和指令遵循，知识密集任务可配检索；适合与现有模型在相同 Agent 框架下比较任务成功率及端到端成本。 LFM Open License 含商业收入条件，达到协议门槛的企业需另核商业授权，不能理解为无条件 Apache/MIT 商用。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "92a761ed5d5a2f415972"
+      ],
+      "tags": [
+        "liquidai",
+        "models"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_98120e23c60f98985127",
+      "published_at": "2026-10-13T17:05:48.636000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:01:24.644337Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "92a761ed5d5a2f415972",
+          "url": "https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T17:05:48.636000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:01:24.644337Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "uibk:embedding-v1:launch",
+      "milestone": "unified dense and late-interaction retrieval announced 2026-10-12",
+      "title": "重要补录｜UIBK 作者介绍 Dense 与晚交互共用索引的 Embedding 模型",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "作者发布 UIBK-Embedding-v1 介绍及 Apache2.0 权重，模型把 Dense 与 ColBERT 晚交互检索结合在同一编码器中。它将句向量拆分成三个槽位，与token向量放进同一列表，用额外标记维度区分两类向量，使标准MaxSim搜索同时计算两种分数；可配PyLate和PLAID索引，英语模型约179M参数。",
+      "significance": "混合检索通常需要多个索引、搜索和融合阶段，这种设计探索把互补信号整合进现有晚交互检索链路。对构建英语RAG的团队，价值在于减少检索架构环节并保留细粒度匹配，而不只是追求某个榜单分数。",
+      "analysis": "一个索引并不等于单向量索引的存储规模：模型仍保存每token向量。试点应同时测召回、查询延迟和索引占用，并审查模型自定义加载代码；不能把英语评测结果外推到中文或多语言知识库。 使用时还需审查模型要求的远程自定义代码；本条是作者技术介绍，不把关联 PyLate 运行库当作当天新发布的模型源仓库。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "a4647d2c3a0145b2a936"
+      ],
+      "tags": [
+        "uibk",
+        "models"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_a53fe88de9224d1470c7",
+      "published_at": "2026-10-12T20:14:56.994000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "a4647d2c3a0145b2a936",
+          "url": "https://huggingface.co/blog/abdoelsayed/uibk-embedding-v1",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-12T20:14:56.994000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "workday:agentic-platform:rising-2026",
+      "milestone": "sana cross-platform and autopilot agents announced october13",
+      "title": "Workday 公布 Sana 跨平台编排与后台 Autopilot 代理，分阶段提供访问",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Workday 公布 Sana 跨平台编排与后台 Autopilot 代理。招聘 Autopilot 当日面向早期客户提供，正式可用计划为2027年初；工资、会计及部署新增自动化也计划2027年初早期访问。Sana 在 Claude Cowork 已开放早期访问，完整跨平台体验及 Copilot 新入口按计划于2026年底分阶段推出。",
+      "significance": "企业 SaaS 把 AI 从查询入口推进到带规则的后台流程和跨应用执行。技术管理者评估这类系统时，需要同时检查继承权限、审批、审计及客户可配置自动化范围，不能仅看代理能完成哪些演示。",
+      "analysis": "现有自助服务正式可用不等于完整跨平台体验全部上线。公告说明系统继承客户权限、政策与审批，但这不是独立的合规或无错误认证；应逐项检查实际开放状态及可撤销的执行范围。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "3e148df25cf63c263645",
+        "99593df6a5c35c93682b"
+      ],
+      "tags": [
+        "workday",
+        "applications"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_f1dcaba5e13d07a3f874",
+      "published_at": "2026-10-13T13:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "3e148df25cf63c263645",
+          "url": "https://investor.workday.com/news-and-events/press-releases/news-details/2026/Workday-Launches-Autopilot-Agents-That-Get-Real-Work-Done-Across-HR-Finance-and-IT/default.aspx",
+          "name": "investor.workday.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T08:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "99593df6a5c35c93682b",
+          "url": "https://www.prnewswire.com/news-releases/workday-to-bring-sana-everywhere-employees-work-including-claude-gemini-enterprise-microsoft-copilot-slack-and-teams-302906743.html",
+          "name": "www.prnewswire.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T13:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "pluto-security:funding:stealth-exit",
+      "milestone": "42million funding and public launch announced october13",
+      "title": "Pluto Security 正式公开，宣布4200万美元融资支持企业 AI 工作区安全",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Pluto Security 10月13日在官方博客宣布退出隐身模式，并披露4200万美元融资。其产品面向员工使用 AI 代理、编码工具、MCP、浏览器扩展及自建工作流带来的安全需求；公司同时介绍漏洞研究、技术知识库及 Plutonium 社区工具。公告未拆分融资轮次和交易时刻。",
+      "significance": "员工自行组合 AI 工具和应用，让企业安全边界延伸到连接器、权限和运行时行为。专门安全产品获得融资，说明企业采购可能从单个模型准入扩展到对整个 AI 工作区的持续治理。",
+      "analysis": "官方确认4200万美元融资，但不说明单轮金额；媒体出现累计种子+A轮和误写B轮的差异。本条避免轮次推断与未独立核验的端点、ARR等规模指标，后续应测试识别、阻断及误报能力。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "bc17ebc0299d21932c45"
+      ],
+      "tags": [
+        "pluto-security",
+        "business"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_3c52c67b794c7c681bce",
+      "published_at": "2026-10-13T16:19:47Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "bc17ebc0299d21932c45",
+          "url": "https://pluto.security/blog/welcome-to-planet-pluto",
+          "name": "pluto.security",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:19:47Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "houseofmath:launched:classroom-pilot",
+      "milestone": "florida classroom-validation partnership announced october12",
+      "title": "重要补录：House of Math 与 LaunchEd 合作，在佛罗里达课堂验证数学AI平台",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "LaunchEd 10月12日宣布与挪威House of Math合作，将个性化K-12数学平台引入美国课堂。初期计划在2026-27学年通过LaunchEd Sandbox覆盖佛罗里达多个地区的3至12年级，记录参与度、学习进展和平台效果，并据验证结果决定更广泛商业扩展。",
+      "significance": "教育AI的商业进展来自真实课堂验证和学校渠道，而非仅发布模型演示。该合作为技术及产品负责人观察适应性学习、教师报告和行政功能如何经试点进入学校采购流程提供具体样本。",
+      "analysis": "合作方称MIND AI识别知识缺口，但试点效果尚未完成验证。9万多学生指潜在合作学校体系规模，不能写成本次已覆盖用户；更广商业扩展有条件，当前应把它视作验证阶段。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "90ad3fadbb070ffd103f"
+      ],
+      "tags": [
+        "houseofmath",
+        "applications"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_4e81e950042a8d31795d",
+      "published_at": "2026-10-12T13:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "90ad3fadbb070ffd103f",
+          "url": "https://www.einpresswire.com/article/948503766/house-of-math-and-launched-establish-strategic-partnership-to-bring-personalized-math-learning-to-u-s-classrooms",
+          "name": "www.einpresswire.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-12T13:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:france:startup-investment-plans",
+      "milestone": "planned investments in four French startups announced 2026-10-13",
+      "title": "NVIDIA 宣布对法国四家创业公司的计划投资，未披露本次金额",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA 10月13日宣布拟投资 Doctolib、Entalpic、Genesis AI 与 Pigment，分别覆盖医疗、材料发现、机器人及企业规划。公告同时梳理法国模型和算力生态。四项均表述为计划投资，本次金额和交割条件未披露；此前欧洲累计投资承诺不能充当这次法国投资的金额。",
+      "significance": "芯片平台企业继续通过资本与生态合作连接具体行业，医疗、物理 AI 和企业流程同时进入布局。对技术管理者，可跟踪这些公司后续产品和资源交付，判断合作是否带来实际集成选择。",
+      "analysis": "投资计划支持生态扩展的方向判断，但不能证明资金已全部到账、产品已提升能力或各项目已获独立成效验证。本期不引用该页面未经复测的行业效率数字。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "9a710479c627a4072886"
+      ],
+      "tags": [
+        "NVIDIA",
+        "法国",
+        "创业投资",
+        "垂直 AI"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_f516e9e792ca28544555",
+      "published_at": "2026-10-13T05:00:31Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:01:24.644337Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "9a710479c627a4072886",
+          "url": "https://blogs.nvidia.com/blog/france-ecosystem-agentic-computing",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T05:00:31Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:01:24.644337Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:rtx-spark:local-agent-software-readiness",
+      "milestone": "PAIR GA and local agent software updates announced 2026-10-13",
+      "title": "NVIDIA 推进本地 Agent 软件准备，PAIR 结束测试阶段",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA 宣布 PAIR 当日退出 beta，新增 llama.cpp 支持、Hub 模型下载和推理配置；Broadcast 2.3 增加离线文件处理与 Agent MCP 控制。编码和本地 Agent 应用同步适配新平台。Nemotron 3.5 Bolt 74B 计划10月15日提供，RTX Spark 笔记本计划10月16日发售，两者不是本期已经交付。",
+      "significance": "本地 AI 的采用门槛正在由单个模型部署扩展到路由、工具接口及安全执行环境。软件准备能帮助工程团队试验混合本地与云端工作流，但实际收益仍需结合设备资源和真实任务验证。",
+      "analysis": "本条聚焦 Agent 软件及工具链，未将游戏与普通硬件更新大量收录。PAIR 正式发布、现有应用更新和未来模型/设备可用日分别对待；不引用厂商速度或吞吐宣传作为通用生产收益。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "d0849acd068d18e54bb7"
+      ],
+      "tags": [
+        "NVIDIA",
+        "PAIR",
+        "本地 Agent",
+        "MCP"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_cb7d64a7d5e6b83a2f80",
+      "published_at": "2026-10-13T12:00:49Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:01:24.644337Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "d0849acd068d18e54bb7",
+          "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T12:00:49Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:01:24.644337Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "amd:helion:agentic-rack-blueprint",
+      "milestone": "open agentic rack blueprint introduced 2026-10-12",
+      "title": "重要补录｜AMD 介绍 Helion Agent 机架蓝图，设备可用性计划在11月",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "AMD 10月12日介绍 Helion 开放 Agent 机架蓝图，可配置 CPU 主导的 Agent 执行机架，或结合 CPU 与 GPU 的企业方案，并以 token 路由连接模型调用。合作伙伴配置仍在开发，计划2026年11月提供；向 OCP 贡献规范也是后续计划。Helion 不能与面向大规模模型训练推理的 Helios 混称。",
+      "significance": "代理工作负载不仅包含模型推理，还涉及工具执行、代码运行及通用计算。灵活机架配置提示基础设施规划要将执行层与推理层分开测量，并按工作流选择资源，而非只比较 GPU 理论算力。",
+      "analysis": "这是架构与生态进展，不能据蓝图发布推导设备已广泛交付或性能已独立验证。短摘被图片授权条款挤占，本期另行读取完整原文核对配置与11月计划；采购评估仍需实际系统测试。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "953c9cc91891a74f3328"
+      ],
+      "tags": [
+        "AMD",
+        "Helion",
+        "Agent 执行",
+        "OCP"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_46a5002a520ec3784301",
+      "published_at": "2026-10-12T13:01:30.197000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "953c9cc91891a74f3328",
+          "url": "https://newsroom.amd.com/news/open-rack-blueprint-scale-agentic-ai",
+          "name": "newsroom.amd.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-12T13:01:30.197000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "accordion:stride:acquisition",
+      "milestone": "acquisition announced october13",
+      "title": "Accordion 收购 Stride，增加面向受监管行业的 AI 实施工程能力",
+      "category": "business",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "财务咨询公司Accordion于10月13日宣布已收购软件工程公司Stride。Stride为医疗、金融等行业构建企业代理系统，其工程团队将加入Accordion，支持私募股权投资组合企业的财务与运营AI工作流。交易金额未披露。",
+      "significance": "专业服务AI的交付仍依赖嵌入客户的工程实施与领域运营人员。此次并购可作为咨询企业把模型能力转成生产系统的商业组织进展观察。",
+      "analysis": "收购增加团队能力，并不证明自动化已带来特定收益；最终系统需按客户业务和监管条件评估。若日报新闻较多，可仅保留简讯，避免与更重要企业发布争夺注意力。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "939c11b9b9038c19de83"
+      ],
+      "tags": [
+        "accordion",
+        "business"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_dd39e976264b163ca9d9",
+      "published_at": "2026-10-13T07:00:30Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "939c11b9b9038c19de83",
+          "url": "https://www.accordion.com/our-insights/knowledge/accordion-acquires-stride-ai",
+          "name": "www.accordion.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T07:00:30Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    }
+  ],
+  "open_source_items": [
+    {
+      "event_key": "ggml:llama-windows:launch",
+      "milestone": "windows11 native tray app announced 2026-10-13",
+      "title": "Llama Windows 发布：把 llama.cpp 放进 Windows 11 托盘",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Hugging Face 与 ggml 团队介绍 Llama Windows：一个免费、MIT 开源的 Windows 11 原生托盘应用。用户可从 Hub 选择量化模型，一键下载、加载并打开 llama.cpp 网页界面；应用可连接现有服务或管理自己的本地运行时，还提供 OpenAI 兼容 API、共享模型缓存及 Windows on Arm 支持。",
+      "significance": "它把本地开放模型从命令行部署推进到普通 Windows 用户可操作的产品形态，同时保留本地服务接口供开发者连接应用和 Agent。统一缓存与模型目录也降低了在企业个人电脑上进行本地 AI 验证的使用成本。",
+      "analysis": "主要创新是分发、运行时管理和交互门槛，而不是新模型智力。适合先在合适内存及加速器设备上验证本地助手或 Agent 接口；应用本身的 MIT 许可证不改变所下载模型的许可，推荐目录也不保证模型能满足全部业务要求。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "548b40510060202eff4d"
+      ],
+      "tags": [
+        "ggml",
+        "opensource"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/ggml-org/Llama-Windows",
+      "technical_highlights": "WinUI3托盘界面；Hub量化模型目录及一键下载；llama.cpp运行时生命周期管理；OpenAI兼容本地服务；x64与ARM64包、共享HF缓存",
+      "target_users": "Windows本地AI用户；开发本地应用和Agent的团队",
+      "maturity_limitations": "初次发布，实际模型和硬件适配仍需验证；模型许可与应用MIT许可分开；不替代业务权限、验收和模型能力评估",
+      "event_id": "evt_77ec720c4843c0653d28",
+      "published_at": "2026-10-13T16:52:58.289000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "548b40510060202eff4d",
+          "url": "https://huggingface.co/blog/huggingface/llama-windows",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:52:58.289000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:speech-agent-skills:domain-asr",
+      "milestone": "domain adaptation workflow tutorial published 2026-10-13",
+      "title": "NVIDIA 展示用 Speech Agent Skills 完成领域 ASR 适配",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA 发布领域语音识别适配教程，以空管语音为例说明 Speech Agent Skills 工作流。nemotron-asr-finetune 负责目标和编排，nemo-speech-asr-finetune 专项技能负责NeMo训练与离线评估；流程产物包含实验预算、数据划分、兼容配置、预测及领域／通用英语指标，由研究者审查再推进。",
+      "significance": "Coding Agent 的用途进一步延伸到模型适配和实验管理。值得关注的是可检查的实验合同与产物，而不是笼统的自动微调：团队可以让 Agent 减少重复配置工作，同时保留基线、验证集和通用能力保持测试。",
+      "analysis": "技能是操作指引，不会自动安装NeMo或提供GPU、数据权利及合格训练集。该例说明领域指标与通用能力要一起评估；空管实验结果不能推算所有行业的识别收益，也不应把安全关键语音任务的评测成功直接等同生产认证。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "692310b7c9e8378cfa27"
+      ],
+      "tags": [
+        "nvidia",
+        "opensource"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/NVIDIA/skills",
+      "technical_highlights": "编排技能与训练专项技能分工；明确基线、数据划分和实验预算；模型架构／分词／预处理兼容检查；领域准确率与通用英语保持共同验收；可检查训练配置与预测产物",
+      "target_users": "领域ASR模型适配团队；语音产品研发及ML平台团队",
+      "maturity_limitations": "教程案例；不保证全自动训练成功；需独立准备GPU、数据及模型许可；声学特征专项分析仍列计划；安全关键应用需另行业务验证",
+      "event_id": "evt_6dc9fbb0ae2c1ebdc9c1",
+      "published_at": "2026-10-13T16:35:24.846000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:30:11.962116Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "692310b7c9e8378cfa27",
+          "url": "https://huggingface.co/blog/nvidia/fine-tune-asr-with-nvidia-nemotron-speech-skills",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:35:24.846000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:30:11.962116Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "qwen:qwen-code:0.25.2",
+      "milestone": "0.25.2-preview.0 TS mods and persistent team plan approval",
+      "title": "Qwen Code 0.25.2 预览版：扩展 TS Mods 与团队计划审批",
+      "category": "opensource",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_2456b7110e9ef68df353",
+      "new_information": "此前0.25.1介绍了基础运行时与后台任务；本次新增 TS Mods 配置、中间件及拦截检查，以及持久计划审批和成员协作路径。",
+      "summary": "Qwen Code 发布0.25.2-preview.0，在稳定0.25.1基础上扩展 TypeScript Mods 编写、中间件恢复和工具拦截权限检查，并补充成员消息、持久团队计划审批及子任务面板。本次为预览版本；同变更 nightly 不另行报道。",
+      "significance": "新增重点在协作状态、审批和扩展边界，显示代码Agent正在补足长期任务的执行治理。可供已有使用团队评估，普遍读者价值低于正式新产品。",
+      "analysis": "预览版改动仍需观察稳定发布；建议先验证恢复、取消和审批路径。版本变更表的全部PR不能自动等同已成熟的生产承诺。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "14a2dd07ff3345b72e90"
+      ],
+      "tags": [
+        "qwen",
+        "opensource"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/QwenLM/qwen-code",
+      "technical_highlights": "成员消息与计划审批持久化；TypeScript Mods；工具拦截与权限检查；多轮任务恢复修复",
+      "target_users": "已有Qwen Code部署的研发团队",
+      "maturity_limitations": "Preview；恢复与权限路径需验证",
+      "event_id": "evt_2456b7110e9ef68df353",
+      "published_at": "2026-10-13T20:01:50Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-14T01:01:24.644337Z",
+      "is_backfill": false,
+      "previous_summary": "Qwen Code 10月11日发布稳定版0.25.1及对应 Desktop 发布。本次 CLI 变更包括实验性 Kubernetes CSI 运行时、持久记录 Managed Agent 工具结果、后台 Shell 与 Monitor，以及侧任务对话等；Desktop 变更包含会话创建失败诊断保留、对话内搜索和 MCP 返回媒体处理改进。本期按同一版本事件合并，未把每日 nightly 当独立重要新闻。",
+      "sources": [
+        {
+          "candidate_id": "14a2dd07ff3345b72e90",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0",
+          "name": "Qwen Code Official Releases",
+          "source_type": "api",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T20:01:50Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-14T01:01:24.644337Z",
+          "publication_basis": "source_metadata"
+        }
+      ],
+      "weighted_score": 3.9,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    }
+  ],
+  "trend_signals": [
+    {
+      "text": "ANALYSIS：LFM2.5、本地运行界面与 NVIDIA 软件准备共同降低本地 Agent 试验门槛。模型许可、设备内存、路由及工具权限仍需要分别验证，不能把不同测试条件的速度或吞吐直接换算成团队收益。",
+      "event_ids": [
+        "evt_98120e23c60f98985127",
+        "evt_77ec720c4843c0653d28",
+        "evt_cb7d64a7d5e6b83a2f80"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "ANALYSIS：Origin 审阅/安全伙伴、Pluto 与 Qwen 的审批增量说明代理交付需要更多监督接口。多个工具并不会自动消除共同盲区，组织仍需可审计权限、人工验收和错误恢复路径。",
+      "event_ids": [
+        "evt_377f892af17d6e79eccb",
+        "evt_3c52c67b794c7c681bce",
+        "evt_2456b7110e9ef68df353"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "ANALYSIS：Workday 的分阶段开放与教育课堂验证展示行业应用的实际推进方式；若进入生产，应把当前可用范围、客户审批及验证结果作为验收对象，而不是把合作公告等同全部功能和效果已经兑现。",
+      "event_ids": [
+        "evt_f1dcaba5e13d07a3f874",
+        "evt_4e81e950042a8d31795d"
+      ],
+      "label": "ANALYSIS"
+    }
+  ],
+  "tracking_updates": [
+    "evt_2456b7110e9ef68df353"
+  ],
+  "coverage_report": {
+    "source_status": [
+      {
+        "source_id": "openai",
+        "name": "OpenAI News",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 40,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "google_ai",
+        "name": "Google AI Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "microsoft",
+        "name": "Microsoft Official Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "agents",
+          "applications",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "nvidia",
+        "name": "NVIDIA Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "infrastructure",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "huggingface",
+        "name": "Hugging Face Blog",
+        "kind": "rss",
+        "region": "europe",
+        "categories": [
+          "opensource",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 30,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "qwen",
+        "name": "Qwen Code Official Releases",
+        "kind": "api",
+        "region": "asia",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 7,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "vllm",
+        "name": "vLLM Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "langgraph",
+        "name": "LangGraph Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 6,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "anthropic",
+        "name": "Anthropic News",
+        "kind": "page",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 11,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:01:24.644337Z"
+      },
+      {
+        "source_id": "search_models",
+        "name": "模型与实验室·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 21,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:06:25Z"
+      },
+      {
+        "source_id": "search_agents",
+        "name": "Agent 与 Coding·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "agents"
+        ],
+        "status": "ok",
+        "fetched": 16,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:09:57Z"
+      },
+      {
+        "source_id": "search_opensource",
+        "name": "开源生态·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 21,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:07:09Z"
+      },
+      {
+        "source_id": "search_business",
+        "name": "商业与创业·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 22,
+        "eligible": 5,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:12:11Z"
+      },
+      {
+        "source_id": "search_applications",
+        "name": "教育与垂直应用·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "applications"
+        ],
+        "status": "ok",
+        "fetched": 15,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:06:45Z"
+      },
+      {
+        "source_id": "search_infrastructure",
+        "name": "基础设施与政策·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:25:55.487985Z"
+      },
+      {
+        "source_id": "search_backfill",
+        "name": "重大新闻·72小时补漏",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-14T01:25:55.487985Z"
+      }
+    ],
+    "categories_checked": [
+      "agents",
+      "applications",
+      "business",
+      "infrastructure",
+      "models",
+      "opensource"
+    ],
+    "categories_missing": [],
+    "regions_checked": [
+      "asia",
+      "europe",
+      "global",
+      "north_america"
+    ],
+    "limitations": []
+  },
+  "quality_report": {
+    "status": "passed",
+    "candidates_collected": 184,
+    "candidates_verified": 34,
+    "published_count": 16,
+    "duplicates_removed": 0,
+    "rejected_count": 16,
+    "limitations": [
+      "所有九个公开采集入口成功返回内容，七项搜索均实际执行；返回候选不等于原文验证成功。失败或发布时间不完整的候选保留在诊断，未用人工填日期补过质量门。",
+      "Google补充页、Cursor市场原公告及部分创业发行页的机器日期/访问校验失败；仅采用已通过的官方主公告、合作方原始公告或可核验发行稿。",
+      "Character条目主要时间与引用证据为公开新闻整理；公司说明已人工式读取核对，但法院PDF403、路透原文及原始PR读取失败。没有独立核对法院材料，不推测资产负债、交易金额或诉讼结果。",
+      "Pluto与AMD官网的短候选摘录分别混入相关文章或图片许可条款；Work另行读取完整原文核对，本期保留全文审查摘要，不能声称1800字摘录独立支持全部事实。",
+      "模型能力、经营及工程效果多依据厂商或作者声明，未独立复测。LFM为专用许可；UIBK仅英语且需审核自定义代码；Speech教程实验不等同安全关键语音场景认证。",
+      "MagicSchool和Buddy已针对性检索，但没有可核验的新产品事件；StudentSim为旧论文的博客介绍、OpenEvidence旧上线再宣发，均未当作新发布凑数。低龄阅读/艺术等垂直应用覆盖仍有限。",
+      "Ubitium、1KOMMA5、Loops、半图、Goodwin等已发现，但访问或机器发布时间门未通过；不能把这些失败理解为领域没有新闻。",
+      "地域与语言覆盖仍可能遗漏事件；本期候选包括中美欧洲来源，不以新闻数量证明全球完备性。",
+      "由 ChatGPT Work 完成检索、编辑与再次事实审查；不是独立模型或人工审稿。",
+      "未调用 OpenAI API；Work 不向本程序提供实际 token、所用模型和订阅消耗，记录为未知。",
+      "代码核验原文可访问性、发布时间、来源引用、结构与历史；无法证明全部语义判断正确。"
+    ]
+  },
+  "usage": [
+    {
+      "mode": "chatgpt_work",
+      "model": "Work（应用选择，未公开）",
+      "purpose": "搜索、研究编辑、事实审查",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "billing_unknown": true
+    }
+  ],
+  "estimated_cost_usd": 0.0,
+  "prompt_sha256": "cfba7d8fe44b1a2389b0bb28b33b3cba6ce4bc5a373b0157927c132b424802ba"
+}
