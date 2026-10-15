@@ -232,35 +232,47 @@
     "evt_098c91a308f181b884dc": {
       "event_key": "langchain:langgraph:2026-10-12-maintenance",
       "aliases": [
-        "langchainlanggraph20261012maintenance"
+        "langchainlanggraph20261012maintenance",
+        "langchainlanggraphpostgresprune"
       ],
       "urls": [
         "https://github.com/langchain-ai/langgraph/releases/tag/1.2.15",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpoint%3D%3D4.3.0",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.1.3",
+        "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.2.0",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.2",
+        "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.35",
         "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.7"
       ],
       "milestones": [
-        "langgraph1215checkpoint430sdk047storagefixes"
+        "langgraph1215checkpoint430sdk047storagefixes",
+        "postgrescheckpoint320andcli0435released20261014"
       ],
       "evidence_hashes": [
+        "42e7ba89c18b5889d2472cc98aaa4ce58c01ff95843f21d480ddb4444d0ba402",
         "5b3a41322dbb6e4d1104aca15b2cd40a104a4944ef2f32bcc25efa97e5fbfd51",
         "6c89119cf326605ad1284b69ca064b09949eab9dd9765114ba049e1063d87bd4",
         "7d2698a1bfb8dae0c358bd3937507c42122c9e8f73daf3f5513a72d3302be277",
         "7e443c153d4e3e50e39b7a96c55260f75f2f3bb1e1e5829ec2583e46e699de50",
+        "984886a552222ae1d973d31a76c4e90aa6fec32739df6d04cad8312acc288ab7",
         "9aa4964c366ac04a5dea19a65b0ecab95a54f3650dd1b8f50333a9c840923223"
       ],
-      "summary": "LangGraph 1.2.15、checkpoint 4.3.0及配套 SDK/存储适配器发布，集中修复 DeltaChannel 状态写入、分支恢复、检查点历史和流式生命周期处理。升级前应验证中断、恢复与持久存储路径；这次更新不属于新模型或全新框架发布。",
+      "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-13",
-      "last_seen_at": "2026-10-13T03:21:16.174971+00:00",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T01:47:10.342502+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
           "milestone": "langgraph1.2.15 checkpoint4.3.0 sdk0.4.7 storage fixes",
           "new_information": "",
           "summary": "LangGraph 1.2.15、checkpoint 4.3.0及配套 SDK/存储适配器发布，集中修复 DeltaChannel 状态写入、分支恢复、检查点历史和流式生命周期处理。升级前应验证中断、恢复与持久存储路径；这次更新不属于新模型或全新框架发布。"
+        },
+        {
+          "report_date": "2026-10-15",
+          "milestone": "postgres checkpoint3.2.0 and cli0.4.35 released 2026-10-14",
+          "new_information": "10月13日日报报道框架1.2.15及checkpoint4.3.0的状态恢复维护；本次PostgreSQL存储组件新增此前未实现的prune，CLI新增私有镜像拉取和失败构建日志支持。",
+          "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。"
         }
       ]
     },
@@ -699,6 +711,359 @@
           "summary": "财务咨询公司Accordion于10月13日宣布已收购软件工程公司Stride。Stride为医疗、金融等行业构建企业代理系统，其工程团队将加入Accordion，支持私募股权投资组合企业的财务与运营AI工作流。交易金额未披露。"
         }
       ]
+    },
+    "evt_291b75f46bf0e891b520": {
+      "event_key": "deepmind-govtech:scam-detection:on-device-gemma",
+      "aliases": [
+        "deepmindgovtechscamdetectionondevicegemma"
+      ],
+      "urls": [
+        "https://deepmind.google/blog/on-device-ai-scam-detection-mddi"
+      ],
+      "milestones": [
+        "finetunedmodelcollaborationannounced"
+      ],
+      "evidence_hashes": [
+        "4737a91499e0b5b2aa7e0c1ffa2dd277be1ec87580d8dade27137cdcaba7d59b"
+      ],
+      "summary": "Google DeepMind 于 10 月 14 日披露与新加坡 GovTech 合作开发反诈模型：以轻量 Gemma 针对本地诈骗对话微调，并采用先快速筛查、再交给模型分析的双阶段流程。公告称获用户同意后可在设备本地处理对话，计划分阶段集成到面向公众的应用，但未给出上线时间和准确率。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "fine-tuned-model-collaboration-announced",
+          "new_information": "",
+          "summary": "Google DeepMind 于 10 月 14 日披露与新加坡 GovTech 合作开发反诈模型：以轻量 Gemma 针对本地诈骗对话微调，并采用先快速筛查、再交给模型分析的双阶段流程。公告称获用户同意后可在设备本地处理对话，计划分阶段集成到面向公众的应用，但未给出上线时间和准确率。"
+        }
+      ]
+    },
+    "evt_d61c8aed3cdc1f27ba2b": {
+      "event_key": "salience-labs:funding:series-b-2026",
+      "aliases": [
+        "saliencelabsfundingseriesb2026"
+      ],
+      "urls": [
+        "https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding"
+      ],
+      "milestones": [
+        "125millionseriesbannounced"
+      ],
+      "evidence_hashes": [
+        "88544a56e8c4d4b72423392b230d33255a2e4ceefdcfd4ec1cf2797b94af2c3d"
+      ],
+      "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布获得 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "125-million-series-b-announced",
+          "new_information": "",
+          "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布获得 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。"
+        }
+      ]
+    },
+    "evt_3ed8d1c77cd7cea961c9": {
+      "event_key": "xai:grok-voice-3:release",
+      "aliases": [
+        "xaigrokvoice3release"
+      ],
+      "urls": [
+        "https://x.ai/news/grok-voice-3"
+      ],
+      "milestones": [
+        "voiceagentapirelease20261014"
+      ],
+      "evidence_hashes": [
+        "d3ddfb6505e74c0a381559d717e3e1f737605e20bf15c9684c9cf614ebe47d2a"
+      ],
+      "summary": "xAI 发布语音到语音模型 Grok Voice 3.0，并宣布当天开放 Voice Agent API。新版强调交替发言、打断处理及客服等实时对话场景；已有集成若使用 grok-voice-latest 别名，已自动切换至新版，无须修改调用代码。官方同时展示多个评测与部署案例，但这些不等于所有业务环境下的独立验证。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "voice-agent-api-release-2026-10-14",
+          "new_information": "",
+          "summary": "xAI 发布语音到语音模型 Grok Voice 3.0，并宣布当天开放 Voice Agent API。新版强调交替发言、打断处理及客服等实时对话场景；已有集成若使用 grok-voice-latest 别名，已自动切换至新版，无须修改调用代码。官方同时展示多个评测与部署案例，但这些不等于所有业务环境下的独立验证。"
+        }
+      ]
+    },
+    "evt_9fa3635d820aa815607e": {
+      "event_key": "anthropic:scion:source-control",
+      "aliases": [
+        "anthropicscionsourcecontrol"
+      ],
+      "urls": [
+        "https://www.anthropic.com/engineering/redesigning-source-control"
+      ],
+      "milestones": [
+        "architectureandmigrationdisclosure20261013"
+      ],
+      "evidence_hashes": [
+        "bce28825faf14ad87a674d021410ede09af5b37f6de6073681237c44444e34d2"
+      ],
+      "summary": "Anthropic 披露内部源码控制系统 Scion，称其主代码仓已在五个月迁移后转入新系统，以应对大量编码代理并发提交。方案将提交、合并、变基和历史等操作集中到服务端，客户端通过缓存与按需物化访问文件，并配套内部评审工具。文章也强调，人仍需检查代理是否遵守设计约束与工程意图。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "architecture-and-migration-disclosure-2026-10-13",
+          "new_information": "",
+          "summary": "Anthropic 披露内部源码控制系统 Scion，称其主代码仓已在五个月迁移后转入新系统，以应对大量编码代理并发提交。方案将提交、合并、变基和历史等操作集中到服务端，客户端通过缓存与按需物化访问文件，并配套内部评审工具。文章也强调，人仍需检查代理是否遵守设计约束与工程意图。"
+        }
+      ]
+    },
+    "evt_76dd9ebf91f0d78412e2": {
+      "event_key": "anthropic:self-replicating-ai:iot-research",
+      "aliases": [
+        "anthropicselfreplicatingaiiotresearch"
+      ],
+      "urls": [
+        "https://www.anthropic.com/research/self-replicating-ai"
+      ],
+      "milestones": [
+        "researchpublication20261012"
+      ],
+      "evidence_hashes": [
+        "73c2763636b5c069f77569a51f77afaee02e77a499698eced7a54cc607be2ed5"
+      ],
+      "summary": "Anthropic 研究在廉价、分散设备上运行模型及完成复制任务的可能性：一项实验把模型推理分布到多台安卓电视盒，另一项在隔离且简化的模拟网络中测试复制链条。研究分别验证了部分硬件与任务能力，但明确尚未得到完整的自主复制体；模拟中较强模型还依赖另设的推理服务器。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "research-publication-2026-10-12",
+          "new_information": "",
+          "summary": "Anthropic 研究在廉价、分散设备上运行模型及完成复制任务的可能性：一项实验把模型推理分布到多台安卓电视盒，另一项在隔离且简化的模拟网络中测试复制链条。研究分别验证了部分硬件与任务能力，但明确尚未得到完整的自主复制体；模拟中较强模型还依赖另设的推理服务器。"
+        }
+      ]
+    },
+    "evt_a2175f72574b5b89dfa8": {
+      "event_key": "jrc:eu-strategic-sectors:ai-adoption-report",
+      "aliases": [
+        "jrceustrategicsectorsaiadoptionreport"
+      ],
+      "urls": [
+        "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/ai-adoption-more-doubles-almost-every-eu-strategic-sector-2026-10-14_en"
+      ],
+      "milestones": [
+        "20212025sectoraladoptionanalysispublished20261014"
+      ],
+      "evidence_hashes": [
+        "443bfdc28376e94131db9bd3b014b96297fa08066e35bc8f35b452a207450693"
+      ],
+      "summary": "欧盟联合研究中心10月14日发布分析：按Eurostat的2021—2025年企业ICT调查，十大战略行业使用AI的企业占比从7%升至18%；全经济口径则由8%升至20%。报告指出行业差异明显，现成工具的采用不代表已深入生产流程，专业技能和监管不确定性仍是主要障碍。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "2021-2025 sectoral adoption analysis published 2026-10-14",
+          "new_information": "",
+          "summary": "欧盟联合研究中心10月14日发布分析：按Eurostat的2021—2025年企业ICT调查，十大战略行业使用AI的企业占比从7%升至18%；全经济口径则由8%升至20%。报告指出行业差异明显，现成工具的采用不代表已深入生产流程，专业技能和监管不确定性仍是主要障碍。"
+        }
+      ]
+    },
+    "evt_b2df3722ceaf6415a02f": {
+      "event_key": "metr:internal-loss-of-control:assessment-proposal",
+      "aliases": [
+        "metrinternallossofcontrolassessmentproposal"
+      ],
+      "urls": [
+        "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks",
+        "https://metr.org/blog/2026-10-14-control-assessment-proposal"
+      ],
+      "milestones": [
+        "publicevidenceandinternalmonitoringassessmentproposalspublished20261014"
+      ],
+      "evidence_hashes": [
+        "e09bebdd56f416a929bfe43e2f6749417d18b002e6ca0beffb9c2dc5e27788dc",
+        "f3cdffef5c9e67e18df0869a7dbc96061cc513bcbb68deec542e6e6572b283fe"
+      ],
+      "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "public evidence and internal monitoring assessment proposals published 2026-10-14",
+          "new_information": "",
+          "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。"
+        }
+      ]
+    },
+    "evt_058400a6445a08ca51e3": {
+      "event_key": "us-states:openai:consumer-protection-suits",
+      "aliases": [
+        "usstatesopenaiconsumerprotectionsuits"
+      ],
+      "urls": [
+        "https://www.ag.idaho.gov/newsroom/ag-labrador-announces-lawsuit-against-openai-for-deceiving-idaho-parents-about-the-safety-of-chatgpt"
+      ],
+      "milestones": [
+        "idahoannouncesstateconsumerprotectionlawsuit20261014"
+      ],
+      "evidence_hashes": [
+        "e328bade8814a80e3d99fb471cf8229b6133adf3986baa08161f47fe933d75a0"
+      ],
+      "summary": "爱达荷州检察长10月14日宣布针对OpenAI提起消费者保护诉讼，称案件已在本州Ada县第四司法区法院提交。公告主张ChatGPT的安全宣传与未成年人风险保护存在问题，并指出其他州也依据消费者保护法规提起类似诉讼。相关指控是原告立场，本期未逐份核对各州诉状、被告回应及后续裁定。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "idaho announces state consumer-protection lawsuit 2026-10-14",
+          "new_information": "",
+          "summary": "爱达荷州检察长10月14日宣布针对OpenAI提起消费者保护诉讼，称案件已在本州Ada县第四司法区法院提交。公告主张ChatGPT的安全宣传与未成年人风险保护存在问题，并指出其他州也依据消费者保护法规提起类似诉讼。相关指控是原告立场，本期未逐份核对各州诉状、被告回应及后续裁定。"
+        }
+      ]
+    },
+    "evt_da68307c81e54c58698b": {
+      "event_key": "scuba:funding:shared-context-stealth-exit",
+      "aliases": [
+        "scubafundingsharedcontextstealthexit"
+      ],
+      "urls": [
+        "https://www.accel.com/news/ai-that-knows-what-your-team-knows"
+      ],
+      "milestones": [
+        "34milliontotalfundingannounced"
+      ],
+      "evidence_hashes": [
+        "2caae6ccf9edf7e3d575cbdd08b36cc966b4551d5dcc1e867930d08bd7d0dae4"
+      ],
+      "summary": "Accel 于 10 月 13 日介绍 Scuba，并披露其累计融资 3,400 万美元。产品面向团队和 AI Agent，把文档、讨论串中的决策及背景保存为可复用的共享上下文。公司由前 Slack 首席产品官 Noah Desai Weiss 与前 Browser Company 工程负责人 Dolapo Falola 创办；该金额为累计融资，非单笔轮次金额。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "34-million-total-funding-announced",
+          "new_information": "",
+          "summary": "Accel 于 10 月 13 日介绍 Scuba，并披露其累计融资 3,400 万美元。产品面向团队和 AI Agent，把文档、讨论串中的决策及背景保存为可复用的共享上下文。公司由前 Slack 首席产品官 Noah Desai Weiss 与前 Browser Company 工程负责人 Dolapo Falola 创办；该金额为累计融资，非单笔轮次金额。"
+        }
+      ]
+    },
+    "evt_ea93e5192cc197fb7bef": {
+      "event_key": "allenai:hiro-acev2:release",
+      "aliases": [
+        "allenaihiroacev2release"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/allenai/hiro-acev2"
+      ],
+      "milestones": [
+        "multifieldextremeclimatedownscalingmodelannounced20261014"
+      ],
+      "evidence_hashes": [
+        "539b5b679fe5cbecadae02a7672a415242b2488a9ae9349c2d0f8f2e43aa0c4a"
+      ],
+      "summary": "Ai2 发布 HiRO-ACEv2，将约100公里尺度的ACE气候模拟与3公里HiRO降尺度连接起来。新HiROv2同时输出降雨、风和气压等高分辨率场，重点改善罕见极端事件统计；团队开放模型下载、推理配置、教程和可视化演示。当前版本针对X-SHiELD模拟气候训练，并非实时天气预报系统。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T01:47:10.342502+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "multi-field extreme climate downscaling model announced 2026-10-14",
+          "new_information": "",
+          "summary": "Ai2 发布 HiRO-ACEv2，将约100公里尺度的ACE气候模拟与3公里HiRO降尺度连接起来。新HiROv2同时输出降雨、风和气压等高分辨率场，重点改善罕见极端事件统计；团队开放模型下载、推理配置、教程和可视化演示。当前版本针对X-SHiELD模拟气候训练，并非实时天气预报系统。"
+        }
+      ]
+    },
+    "evt_8ed6441f0fa9fdb70a30": {
+      "event_key": "dmis-lab:ultrabert:release",
+      "aliases": [
+        "dmislabultrabertrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/dmis-lab/ultrabert"
+      ],
+      "milestones": [
+        "englishencoderfamilyandembedmodelannounced20261014"
+      ],
+      "evidence_hashes": [
+        "f5345bce215229f5c99f3271d1873ab84580dca409249dc269238181550246df"
+      ],
+      "summary": "DMIS Lab 发布 UltraBERT 英语编码器系列及即用型 UltraBERT-Embed-150M，提供150M、380M两个规格和原生32K上下文，权重采用Apache2.0。训练时混合低、高遮蔽比例序列，共享编码器但分离语言模型输出头，以缓解分类与检索目标冲突；低遮蔽分支结合教师蒸馏，高遮蔽分支使用MLM。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "english encoder family and embed model announced 2026-10-14",
+          "new_information": "",
+          "summary": "DMIS Lab 发布 UltraBERT 英语编码器系列及即用型 UltraBERT-Embed-150M，提供150M、380M两个规格和原生32K上下文，权重采用Apache2.0。训练时混合低、高遮蔽比例序列，共享编码器但分离语言模型输出头，以缓解分类与检索目标冲突；低遮蔽分支结合教师蒸馏，高遮蔽分支使用MLM。"
+        }
+      ]
+    },
+    "evt_48958a59cac7f99c06e4": {
+      "event_key": "sainaptic:funding:ai-assessment-2026",
+      "aliases": [
+        "sainapticfundingaiassessment2026"
+      ],
+      "urls": [
+        "https://ufi.co.uk/news-insights/investing-in-sainaptic-and-the-future-of-assessment"
+      ],
+      "milestones": [
+        "onemillionpoundroundannounced"
+      ],
+      "evidence_hashes": [
+        "5605916e437b593d0679bddedfadbf2a6edb76ef9e949c04d899e28ad4757008"
+      ],
+      "summary": "Ufi Ventures 于 10 月 13 日宣布与 Cornerstone VC 共同领投 Sainaptic 的 100 万英镑融资，Brighteye Ventures、Elm VP 参投。Sainaptic 面向职业和专业资格评估，使用 AI 按标准整理、判断复杂作答证据，为评估者提供辅助；最终决定仍由人类作出，资金将支持扩展业务。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "one-million-pound-round-announced",
+          "new_information": "",
+          "summary": "Ufi Ventures 于 10 月 13 日宣布与 Cornerstone VC 共同领投 Sainaptic 的 100 万英镑融资，Brighteye Ventures、Elm VP 参投。Sainaptic 面向职业和专业资格评估，使用 AI 按标准整理、判断复杂作答证据，为评估者提供辅助；最终决定仍由人类作出，资金将支持扩展业务。"
+        }
+      ]
+    },
+    "evt_48bb8963ecb34ec5a492": {
+      "event_key": "uvi:funding:seed-company-context-2026",
+      "aliases": [
+        "uvifundingseedcompanycontext2026"
+      ],
+      "urls": [
+        "https://siliconangle.com/2026/10/14/uvi-raises-7-5m-help-ai-agents-learn-business-context"
+      ],
+      "milestones": [
+        "sevenpointfivemillionseedreported"
+      ],
+      "evidence_hashes": [
+        "ecc3e13f7c1bdb48e2db74af625b25ad60b13f38fcce26247c7bb794e70fb6a5"
+      ],
+      "summary": "SiliconANGLE 于 10 月 14 日报道，Uvi 获得 750 万美元种子融资。其产品连接企业沟通、项目、客户和代码系统，把历史决策及相关信息组织为上下文图谱，为 AI Agent 提供执行任务所需背景。报道涉及访问控制设计；本轮尚未找到可核验金额与日期的官方公告。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "seven-point-five-million-seed-reported",
+          "new_information": "",
+          "summary": "SiliconANGLE 于 10 月 14 日报道，Uvi 获得 750 万美元种子融资。其产品连接企业沟通、项目、客户和代码系统，把历史决策及相关信息组织为上下文图谱，为 AI Agent 提供执行任务所需背景。报道涉及访问控制设计；本轮尚未找到可核验金额与日期的官方公告。"
+        }
+      ]
     }
   },
   "reports": {
@@ -720,6 +1085,16 @@
       "sha256": {
         "reports/2026-10-14.html": "63da9b06f532b00819b51d812b26735ef823209b4e8531cea1e4d026efe14dcf",
         "data/2026-10-14.json": "326b139bd11d29aaa8c6b5abedf3651a6f4dcc14fcb7890677d720d202bf0d72"
+      }
+    },
+    "2026-10-15": {
+      "window_start": "2026-10-14T01:01:24.644337+00:00",
+      "window_end": "2026-10-15T01:47:10.342502+00:00",
+      "count": 14,
+      "summary": "本期关注语音API升级、规模化编码代理的工程基础，以及端侧反诈和行业应用。Grok Voice 3.0上线，Anthropic披露内部Scion源码控制实践；UltraBERT和HiRO-ACEv2分别拓展编码器与气候模拟工具。企业上下文和教育评估出现融资进展，METR提出内部Agent风险评估方案，JRC提供截至2025年的行业采用基线。部分重要公告因访问或发布时间核验不足未收录，已保留覆盖限制。 美国多州宣布针对OpenAI的消费者保护诉讼；报道仅确认公告和程序事实，指控不等于裁判结论。",
+      "sha256": {
+        "reports/2026-10-15.html": "edf3d0d933b5ea482ec4436b5e13ed4237106634f7a34972e04eca63fd4bda79",
+        "data/2026-10-15.json": "073a7f61b7994a2efed5dec6f5c04c7c689ac3f72bda1a554df7a7f6137037e6"
       }
     }
   }

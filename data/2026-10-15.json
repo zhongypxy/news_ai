@@ -1,0 +1,1258 @@
+{
+  "schema_version": "2.0",
+  "report_date": "2026-10-15",
+  "window_start": "2026-10-14T01:01:24.644337Z",
+  "window_end": "2026-10-15T01:47:10.342502Z",
+  "backfill_start": "2026-10-12T01:47:10.342502Z",
+  "generated_at": "2026-10-15T02:04:18.765102Z",
+  "timezone": "Asia/Singapore",
+  "executive_summary": "本期关注语音API升级、规模化编码代理的工程基础，以及端侧反诈和行业应用。Grok Voice 3.0上线，Anthropic披露内部Scion源码控制实践；UltraBERT和HiRO-ACEv2分别拓展编码器与气候模拟工具。企业上下文和教育评估出现融资进展，METR提出内部Agent风险评估方案，JRC提供截至2025年的行业采用基线。部分重要公告因访问或发布时间核验不足未收录，已保留覆盖限制。 美国多州宣布针对OpenAI的消费者保护诉讼；报道仅确认公告和程序事实，指控不等于裁判结论。",
+  "top_stories": [
+    "evt_058400a6445a08ca51e3",
+    "evt_3ed8d1c77cd7cea961c9",
+    "evt_9fa3635d820aa815607e",
+    "evt_291b75f46bf0e891b520"
+  ],
+  "news_items": [
+    {
+      "event_key": "deepmind-govtech:scam-detection:on-device-gemma",
+      "milestone": "fine-tuned-model-collaboration-announced",
+      "title": "DeepMind 与新加坡 GovTech 公布端侧反诈模型方案，应用集成仍待推进",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Google DeepMind 于 10 月 14 日披露与新加坡 GovTech 合作开发反诈模型：以轻量 Gemma 针对本地诈骗对话微调，并采用先快速筛查、再交给模型分析的双阶段流程。公告称获用户同意后可在设备本地处理对话，计划分阶段集成到面向公众的应用，但未给出上线时间和准确率。",
+      "significance": "反诈应用同时涉及实时判断、本地语言和敏感对话。轻量筛查结合端侧模型提供了一种可关注的架构路径，便于技术管理者比较延迟、能耗、隐私与误报之间的取舍。",
+      "analysis": "方案价值仍需真实诈骗分布与误报测试验证，尤其是多轮对话、语境变化和新型诈骗。应将已完成的模型微调与未来公众应用部署分开，不能据此认定保护已经普遍生效。",
+      "followup_questions": [
+        "何时进入公众应用，如何披露误报、漏报及用户同意机制？"
+      ],
+      "candidate_ids": [
+        "b84d7081b47cbeca4b68"
+      ],
+      "tags": [
+        "端侧AI",
+        "反诈",
+        "Gemma",
+        "新加坡",
+        "隐私"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_291b75f46bf0e891b520",
+      "published_at": "2026-10-14T02:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b84d7081b47cbeca4b68",
+          "url": "https://deepmind.google/blog/on-device-ai-scam-detection-mddi",
+          "name": "deepmind.google",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T02:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "salience-labs:funding:series-b-2026",
+      "milestone": "125-million-series-b-announced",
+      "title": "Salience Labs 宣布 1.25 亿美元 B 轮融资，扩展 AI 数据中心光交换",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布获得 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。",
+      "significance": "AI 基础设施融资继续扩展到互连环节。对技术管理者而言，值得关注的不只是算力供给，还包括光交换能否进入现有网络架构、供应链和运维体系。",
+      "analysis": "融资可支持制造与工程投入，但不能直接证明其性能、单位成本或商用成熟度。后续应跟踪可采购产品、客户部署及独立测量，区分资金到位与交付进度。",
+      "followup_questions": [
+        "何时披露量产、客户部署或可比较的网络性能指标？"
+      ],
+      "candidate_ids": [
+        "f9dc28472892a5ceb9d2"
+      ],
+      "tags": [
+        "融资",
+        "光子",
+        "数据中心",
+        "英国"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_d61c8aed3cdc1f27ba2b",
+      "published_at": "2026-10-14T10:23:49Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f9dc28472892a5ceb9d2",
+          "url": "https://www.saliencelabs.ai/salience-labs-125-million-series-b-funding",
+          "name": "www.saliencelabs.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T10:23:49Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.05,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "xai:grok-voice-3:release",
+      "milestone": "voice-agent-api-release-2026-10-14",
+      "title": "Grok Voice 3.0 上线语音 API，默认别名自动切换",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "xAI 发布语音到语音模型 Grok Voice 3.0，并宣布当天开放 Voice Agent API。新版强调交替发言、打断处理及客服等实时对话场景；已有集成若使用 grok-voice-latest 别名，已自动切换至新版，无须修改调用代码。官方同时展示多个评测与部署案例，但这些不等于所有业务环境下的独立验证。",
+      "significance": "语音助手的落地效果依赖轮次控制、响应与工具执行的完整体验。默认模型别名自动更新，会把模型升级直接传导给现有服务；技术负责人应关注既有集成的行为变化及业务回归结果，而不只比较榜单成绩。",
+      "analysis": "这条更新的重要性在于可用 API 和默认路由变化。它降低接入新版的操作成本，也使采用浮动别名的产品承担更频繁的模型行为变动；固定版本策略与实际通话评测仍需结合自身业务决定。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "902fa7b15b17cb590e8a"
+      ],
+      "tags": [
+        "xAI",
+        "Grok Voice 3.0",
+        "实时语音",
+        "API"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_3ed8d1c77cd7cea961c9",
+      "published_at": "2026-10-14T00:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "902fa7b15b17cb590e8a",
+          "url": "https://x.ai/news/grok-voice-3",
+          "name": "x.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T00:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "anthropic:scion:source-control",
+      "milestone": "architecture-and-migration-disclosure-2026-10-13",
+      "title": "Anthropic 披露 Scion：为大量编码代理重建内部源码控制",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Anthropic 披露内部源码控制系统 Scion，称其主代码仓已在五个月迁移后转入新系统，以应对大量编码代理并发提交。方案将提交、合并、变基和历史等操作集中到服务端，客户端通过缓存与按需物化访问文件，并配套内部评审工具。文章也强调，人仍需检查代理是否遵守设计约束与工程意图。",
+      "significance": "当代理数量与变更频率上升，瓶颈会延伸到仓库检出、合并、存储及代码审查。Scion 提供的是一家公司的内部工程实践，提示规模化采用编码代理时，需要同时评估开发基础设施和质量控制的承载能力。",
+      "analysis": "值得关注的是工程系统随代理工作量重构，而非单纯更换模型。服务端统一处理状态、按需访问文件可以减少重复工作，但会增加集中服务依赖；普通团队应先依据自身仓库负载与评审流程判断是否需要类似改造。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "2a4ea9991478c3c86baa"
+      ],
+      "tags": [
+        "Anthropic",
+        "Scion",
+        "编码代理",
+        "源码控制",
+        "重要补录"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_9fa3635d820aa815607e",
+      "published_at": "2026-10-13T00:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "2a4ea9991478c3c86baa",
+          "url": "https://www.anthropic.com/engineering/redesigning-source-control",
+          "name": "www.anthropic.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T00:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "anthropic:self-replicating-ai:iot-research",
+      "milestone": "research-publication-2026-10-12",
+      "title": "Anthropic 研究低端设备上的 AI 复制能力，完整自主复制仍未实现",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Anthropic 研究在廉价、分散设备上运行模型及完成复制任务的可能性：一项实验把模型推理分布到多台安卓电视盒，另一项在隔离且简化的模拟网络中测试复制链条。研究分别验证了部分硬件与任务能力，但明确尚未得到完整的自主复制体；模拟中较强模型还依赖另设的推理服务器。",
+      "significance": "风险评估不能只假设先进模型必须集中运行在大型机房，也不能把分散推理与完整自主传播混为一谈。研究提示需持续观察小模型任务能力、可用边缘算力与系统权限的组合变化，同时保留实验条件与现实部署的距离。",
+      "analysis": "这是一项能力边界研究，而非已发生的真实网络扩散事件。对企业更有参考价值的是更新资产与代理风险假设：把模型能否运行、能否完成单步任务、能否持续独立复制分别评估，避免从局部实验直接外推现实威胁程度。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "f06309f88027bbe5d2a6"
+      ],
+      "tags": [
+        "Anthropic",
+        "AI安全",
+        "边缘推理",
+        "自复制研究",
+        "重要补录"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_76dd9ebf91f0d78412e2",
+      "published_at": "2026-10-12T19:30:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f06309f88027bbe5d2a6",
+          "url": "https://www.anthropic.com/research/self-replicating-ai",
+          "name": "www.anthropic.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-12T19:30:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "jrc:eu-strategic-sectors:ai-adoption-report",
+      "milestone": "2021-2025 sectoral adoption analysis published 2026-10-14",
+      "title": "JRC 发布行业 AI 采用报告：2025年战略行业使用率为18%",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "欧盟联合研究中心10月14日发布分析：按Eurostat的2021—2025年企业ICT调查，十大战略行业使用AI的企业占比从7%升至18%；全经济口径则由8%升至20%。报告指出行业差异明显，现成工具的采用不代表已深入生产流程，专业技能和监管不确定性仍是主要障碍。",
+      "significance": "这提供了衡量行业落地的较清晰基线。对技术管理者，区分购买工具、改变工作方式和纳入核心生产环节，有助于避免把员工偶尔使用聊天工具直接当作企业自动化成熟度。",
+      "analysis": "18%对应2025年战略行业调查，并非2026年即时渗透率，也不能外推为全球比例。行业之间的组织和基础设施条件不同；本期未独立重算调查，也不从相关性直接推断AI造成确定的生产率增幅。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "ffee3ffc00737666a287"
+      ],
+      "tags": [
+        "JRC",
+        "欧盟",
+        "AI采用",
+        "行业数据"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_a2175f72574b5b89dfa8",
+      "published_at": "2026-10-14T08:11:09Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "ffee3ffc00737666a287",
+          "url": "https://joint-research-centre.ec.europa.eu/jrc-news-and-updates/ai-adoption-more-doubles-almost-every-eu-strategic-sector-2026-10-14_en",
+          "name": "joint-research-centre.ec.europa.eu",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T08:11:09Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "metr:internal-loss-of-control:assessment-proposal",
+      "milestone": "public evidence and internal monitoring assessment proposals published 2026-10-14",
+      "title": "METR 提出内部 Agent 风险评估方案：公开访问范围与审查限制",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。",
+      "significance": "外部模型评测通常难以看到企业内部Agent的真实权限和监测链路。这套提案把需要收集的证据和访问缺口说得更具体，适合用于反查企业自身是否保留了足够的运行与响应记录。",
+      "analysis": "这些是自愿评估提案，不是已完成的风险审计、合规认证或已生效监管。METR明确说明科学方法尚不成熟，提案不能提供安全保证，也不覆盖全部权重安全、沙箱及组织治理问题。两篇同机构文章只计一个来源。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "1fedf21c50ea8de832e0",
+        "b37dd704edda7ac5072c"
+      ],
+      "tags": [
+        "METR",
+        "Agent安全",
+        "监测",
+        "风险评估"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_b2df3722ceaf6415a02f",
+      "published_at": "2026-10-14T07:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "1fedf21c50ea8de832e0",
+          "url": "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks",
+          "name": "metr.org",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T07:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "b37dd704edda7ac5072c",
+          "url": "https://metr.org/blog/2026-10-14-control-assessment-proposal",
+          "name": "metr.org",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T07:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "us-states:openai:consumer-protection-suits",
+      "milestone": "idaho announces state consumer-protection lawsuit 2026-10-14",
+      "title": "美国多州针对 ChatGPT 安全宣传提起诉讼，爱达荷州公布本州案件",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "爱达荷州检察长10月14日宣布针对OpenAI提起消费者保护诉讼，称案件已在本州Ada县第四司法区法院提交。公告主张ChatGPT的安全宣传与未成年人风险保护存在问题，并指出其他州也依据消费者保护法规提起类似诉讼。相关指控是原告立场，本期未逐份核对各州诉状、被告回应及后续裁定。",
+      "significance": "面向消费者的AI服务同时面对不同州的消费者保护要求。对产品团队，这一事件提示需要核查安全宣传是否与实际可用的年龄、权限和风险处理机制一致，并持续跟踪案件程序。",
+      "analysis": "诉讼公告不等于法院已认定违法，也不证明争议中的伤害因果关系。各州分别采取行动不等于一件联合诉讼；本期仅报道州检察长公告所支持的程序事实，不推断赔偿金额、禁令或最终经营影响。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "6c1f20cafe86faae8fca"
+      ],
+      "tags": [
+        "OpenAI",
+        "美国",
+        "消费者保护",
+        "未成年人",
+        "诉讼"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_058400a6445a08ca51e3",
+      "published_at": "2026-10-14T20:44:16Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "6c1f20cafe86faae8fca",
+          "url": "https://www.ag.idaho.gov/newsroom/ag-labrador-announces-lawsuit-against-openai-for-deceiving-idaho-parents-about-the-safety-of-chatgpt",
+          "name": "www.ag.idaho.gov",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T20:44:16Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "scuba:funding:shared-context-stealth-exit",
+      "milestone": "34-million-total-funding-announced",
+      "title": "Scuba 携累计 3,400 万美元融资亮相，建设团队与 Agent 的共享上下文",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Accel 于 10 月 13 日介绍 Scuba，并披露其累计融资 3,400 万美元。产品面向团队和 AI Agent，把文档、讨论串中的决策及背景保存为可复用的共享上下文。公司由前 Slack 首席产品官 Noah Desai Weiss 与前 Browser Company 工程负责人 Dolapo Falola 创办；该金额为累计融资，非单笔轮次金额。",
+      "significance": "企业 Agent 的可用性取决于能否找到决策背后的上下文。Scuba 的切入点是组织记忆，技术管理者可关注它如何连接现有协作系统，并避免重复维护另一套知识库。",
+      "analysis": "共享记忆有望减少员工与 Agent 反复解释背景的成本，但长期价值取决于权限继承、内容更新、来源追溯和错误纠正。累计融资与投资方背书尚不能验证这些能力。",
+      "followup_questions": [
+        "上下文捕获、权限同步与内容过期如何处理？"
+      ],
+      "candidate_ids": [
+        "b1a530e2c8e1916aaabc"
+      ],
+      "tags": [
+        "融资",
+        "企业服务",
+        "上下文",
+        "Agent",
+        "补漏"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_da68307c81e54c58698b",
+      "published_at": "2026-10-13T16:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b1a530e2c8e1916aaabc",
+          "url": "https://www.accel.com/news/ai-that-knows-what-your-team-knows",
+          "name": "www.accel.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T16:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.95,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "allenai:hiro-acev2:release",
+      "milestone": "multi-field extreme climate downscaling model announced 2026-10-14",
+      "title": "Ai2 更新 HiRO-ACEv2：以3公里输出模拟多类极端气候",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 3,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Ai2 发布 HiRO-ACEv2，将约100公里尺度的ACE气候模拟与3公里HiRO降尺度连接起来。新HiROv2同时输出降雨、风和气压等高分辨率场，重点改善罕见极端事件统计；团队开放模型下载、推理配置、教程和可视化演示。当前版本针对X-SHiELD模拟气候训练，并非实时天气预报系统。",
+      "significance": "较低成本的高分辨率模拟，有望让研究者进行更多长期或区域极端气候实验。它的价值是加速气候模型采样与对比，而不是直接宣布替代物理气象模型；企业应先核对模拟气候和所研究风险是否一致，再决定是否纳入分析链路。",
+      "analysis": "官方对比基准是训练所依赖的X-SHiELD气候模型。当前权重不能直接泛化到更暖的未来气候或ERA5历史气候，模型卡也明确不适合天气预报。规划中的变暖数据训练、温度与冰雪输出应保留为后续计划。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "f135b6ce373702a63ecf"
+      ],
+      "tags": [
+        "Ai2",
+        "气候模拟",
+        "AI for Science",
+        "HiRO"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_ea93e5192cc197fb7bef",
+      "published_at": "2026-10-14T16:12:42.470000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T01:47:10.342502Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f135b6ce373702a63ecf",
+          "url": "https://huggingface.co/blog/allenai/hiro-acev2",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T16:12:42.470000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T01:47:10.342502Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.8,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "dmis-lab:ultrabert:release",
+      "milestone": "english encoder family and embed model announced 2026-10-14",
+      "title": "UltraBERT 发布：用分离训练头兼顾分类与检索",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "DMIS Lab 发布 UltraBERT 英语编码器系列及即用型 UltraBERT-Embed-150M，提供150M、380M两个规格和原生32K上下文，权重采用Apache2.0。训练时混合低、高遮蔽比例序列，共享编码器但分离语言模型输出头，以缓解分类与检索目标冲突；低遮蔽分支结合教师蒸馏，高遮蔽分支使用MLM。",
+      "significance": "小型编码器适合大批量分类、文本筛选和RAG检索，不必为每项非生成任务使用聊天模型。UltraBERT把训练目标的权衡作为改进重点，为团队提供了在较小规模下兼顾多类任务的选项；实际收益仍需要结合业务数据、索引成本和下游微调预算衡量。",
+      "analysis": "基础编码器需要针对任务微调，不能当作开箱即用分类器；Embed版才是直接使用的检索模型。英语与32K容量也不代表中文效果或任意长文理解已验证。应分别评估长文本检索、分类准确率和吞吐，作者榜单结果不能替代自身测试。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "2c3204aace1f648467a4"
+      ],
+      "tags": [
+        "UltraBERT",
+        "Embedding",
+        "Encoder",
+        "开放权重"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_8ed6441f0fa9fdb70a30",
+      "published_at": "2026-10-14T03:11:54.276000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "2c3204aace1f648467a4",
+          "url": "https://huggingface.co/blog/dmis-lab/ultrabert",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T03:11:54.276000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "sainaptic:funding:ai-assessment-2026",
+      "milestone": "one-million-pound-round-announced",
+      "title": "Sainaptic 获 100 万英镑融资，用 AI 辅助职业教育评估",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Ufi Ventures 于 10 月 13 日宣布与 Cornerstone VC 共同领投 Sainaptic 的 100 万英镑融资，Brighteye Ventures、Elm VP 参投。Sainaptic 面向职业和专业资格评估，使用 AI 按标准整理、判断复杂作答证据，为评估者提供辅助；最终决定仍由人类作出，资金将支持扩展业务。",
+      "significance": "教育 AI 正从通用答疑延伸到教师和评估机构的工作流。职业教育题目通常依赖标准与证据，产品价值在于减轻审核负担，同时保留评估者责任和可追溯记录。",
+      "analysis": "这类产品应按标准版本、证据引用、人工复核和申诉流程评估，而不只看模型答题能力。融资及厂商效率描述不能替代不同课程、群体和语言下的有效性验证。",
+      "followup_questions": [
+        "是否提供分课程的独立评估、人工纠错及申诉记录？"
+      ],
+      "candidate_ids": [
+        "eea6b42022c90f12b9d1"
+      ],
+      "tags": [
+        "教育",
+        "职业教育",
+        "评估",
+        "融资",
+        "英国",
+        "补漏"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_48958a59cac7f99c06e4",
+      "published_at": "2026-10-13T05:00:09Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "eea6b42022c90f12b9d1",
+          "url": "https://ufi.co.uk/news-insights/investing-in-sainaptic-and-the-future-of-assessment",
+          "name": "ufi.co.uk",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-13T05:00:09Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "uvi:funding:seed-company-context-2026",
+      "milestone": "seven-point-five-million-seed-reported",
+      "title": "Uvi 获 750 万美元种子融资，向企业 Agent 提供组织上下文",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "SiliconANGLE 于 10 月 14 日报道，Uvi 获得 750 万美元种子融资。其产品连接企业沟通、项目、客户和代码系统，把历史决策及相关信息组织为上下文图谱，为 AI Agent 提供执行任务所需背景。报道涉及访问控制设计；本轮尚未找到可核验金额与日期的官方公告。",
+      "significance": "随着企业部署多个 Agent，检索文件之外的组织背景成为新产品方向。管理者可将此类上下文服务与现有知识检索、身份权限及审计系统一并评估，避免形成信息孤岛。",
+      "analysis": "Uvi 与 Scuba 的定位都显示组织上下文受到创业资本关注，但产品成效尚需独立验证。关键比较点是信息来源、权限隔离、更新时效和错误溯源，而非厂商宣称的倍数提升。",
+      "followup_questions": [
+        "是否披露正式融资公告及独立客户验证？"
+      ],
+      "candidate_ids": [
+        "e92e514e989e8f6a5e5c"
+      ],
+      "tags": [
+        "融资",
+        "企业服务",
+        "上下文",
+        "Agent"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_48bb8963ecb34ec5a492",
+      "published_at": "2026-10-14T12:00:43Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T02:04:18.765102Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "e92e514e989e8f6a5e5c",
+          "url": "https://siliconangle.com/2026/10/14/uvi-raises-7-5m-help-ai-agents-learn-business-context",
+          "name": "siliconangle.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T12:00:43Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T02:04:18.765102Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.55,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "open_source_items": [
+    {
+      "event_key": "langchain:langgraph:postgres-prune",
+      "milestone": "postgres checkpoint3.2.0 and cli0.4.35 released 2026-10-14",
+      "title": "LangGraph 增加PostgreSQL检查点裁剪及私有镜像部署支持",
+      "category": "opensource",
+      "priority": "P2",
+      "score": {
+        "impact": 2,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_098c91a308f181b884dc",
+      "new_information": "10月13日日报报道框架1.2.15及checkpoint4.3.0的状态恢复维护；本次PostgreSQL存储组件新增此前未实现的prune，CLI新增私有镜像拉取和失败构建日志支持。",
+      "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。",
+      "significance": "更新触及长时间运行Agent的检查点存储和企业部署流程。相较此前已报的状态恢复维护，本次有明确新功能，适合已使用PostgreSQL持久化或私有镜像仓库的团队关注。",
+      "analysis": "keep_latest会删除旧检查点及不再引用的blob，保留状态但不能继续从已删历史回放。它拒绝DeltaChannel线程；裁剪期间并行fork或replay仍不安全。数据库空间可复用，但不会自动缩小表文件。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "bbb53a2bca7decfc7493",
+        "49b242ed3bec35096b49"
+      ],
+      "tags": [
+        "LangGraph",
+        "Checkpoint",
+        "PostgreSQL",
+        "运维"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/langchain-ai/langgraph",
+      "technical_highlights": "PostgresSaver／AsyncPostgresSaver的delete和keep_latest策略；事务快照裁剪；私有registry部署参数及失败日志保留。",
+      "target_users": "持久化长任务Agent和私有部署LangGraph的工程团队。",
+      "maturity_limitations": "keep_latest拒绝DeltaChannel；并发裁剪可能需重试；裁剪时不可fork/replay；旧版本线程可能绕过DeltaChannel识别。",
+      "event_id": "evt_098c91a308f181b884dc",
+      "published_at": "2026-10-14T19:54:57Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-15T01:47:10.342502Z",
+      "is_backfill": false,
+      "previous_summary": "LangGraph 1.2.15、checkpoint 4.3.0及配套 SDK/存储适配器发布，集中修复 DeltaChannel 状态写入、分支恢复、检查点历史和流式生命周期处理。升级前应验证中断、恢复与持久存储路径；这次更新不属于新模型或全新框架发布。",
+      "sources": [
+        {
+          "candidate_id": "bbb53a2bca7decfc7493",
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.2.0",
+          "name": "LangGraph Releases",
+          "source_type": "api",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T19:54:57Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T01:47:10.342502Z",
+          "publication_basis": "source_metadata"
+        },
+        {
+          "candidate_id": "49b242ed3bec35096b49",
+          "url": "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.35",
+          "name": "LangGraph Releases",
+          "source_type": "api",
+          "verification_status": "verified",
+          "published_at": "2026-10-14T16:11:12Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-15T01:47:10.342502Z",
+          "publication_basis": "source_metadata"
+        }
+      ],
+      "weighted_score": 3.2,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    }
+  ],
+  "trend_signals": [
+    {
+      "text": "Agent工程的瓶颈延伸到共享上下文、源码控制和持久化运维。三类进展反映基础设施需要跟上代理工作量，但不能据此推断所有团队都需要替换现有系统。",
+      "event_ids": [
+        "evt_9fa3635d820aa815607e",
+        "evt_da68307c81e54c58698b",
+        "evt_098c91a308f181b884dc"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "小型与专用模型分别服务检索、端侧反诈和科学模拟。评估时需要匹配语言、训练分布、能耗与错误成本，模型开放或成本宣传不能代替业务验证。",
+      "event_ids": [
+        "evt_8ed6441f0fa9fdb70a30",
+        "evt_291b75f46bf0e891b520",
+        "evt_ea93e5192cc197fb7bef"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "从工具采用到核心流程集成仍需要组织和审查能力。行业调查与评估提案分别提供采用基线和证据清单，二者都不等同于AI系统已被证明安全或产生确定收益。",
+      "event_ids": [
+        "evt_a2175f72574b5b89dfa8",
+        "evt_b2df3722ceaf6415a02f"
+      ],
+      "label": "ANALYSIS"
+    }
+  ],
+  "tracking_updates": [
+    "evt_098c91a308f181b884dc"
+  ],
+  "coverage_report": {
+    "source_status": [
+      {
+        "source_id": "openai",
+        "name": "OpenAI News",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 40,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "google_ai",
+        "name": "Google AI Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "microsoft",
+        "name": "Microsoft Official Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "agents",
+          "applications",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "nvidia",
+        "name": "NVIDIA Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "infrastructure",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 5,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "huggingface",
+        "name": "Hugging Face Blog",
+        "kind": "rss",
+        "region": "europe",
+        "categories": [
+          "opensource",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 30,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "qwen",
+        "name": "Qwen Code Official Releases",
+        "kind": "api",
+        "region": "asia",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "vllm",
+        "name": "vLLM Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "langgraph",
+        "name": "LangGraph Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 8,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "anthropic",
+        "name": "Anthropic News",
+        "kind": "page",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 11,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:47:10.342502Z"
+      },
+      {
+        "source_id": "search_models",
+        "name": "模型与实验室·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 15,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:53:06Z"
+      },
+      {
+        "source_id": "search_agents",
+        "name": "Agent 与 Coding·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "agents"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:53:06Z"
+      },
+      {
+        "source_id": "search_opensource",
+        "name": "开源生态·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:52:00Z"
+      },
+      {
+        "source_id": "search_business",
+        "name": "商业与创业·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:52:54Z"
+      },
+      {
+        "source_id": "search_applications",
+        "name": "教育与垂直应用·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "applications"
+        ],
+        "status": "ok",
+        "fetched": 15,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:52:54Z"
+      },
+      {
+        "source_id": "search_infrastructure",
+        "name": "基础设施与政策·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T01:53:47Z"
+      },
+      {
+        "source_id": "search_backfill",
+        "name": "重大新闻·72小时补漏",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 14,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-15T02:01:20.438223Z"
+      }
+    ],
+    "categories_checked": [
+      "agents",
+      "applications",
+      "business",
+      "infrastructure",
+      "models",
+      "opensource"
+    ],
+    "categories_missing": [],
+    "regions_checked": [
+      "asia",
+      "europe",
+      "global",
+      "north_america"
+    ],
+    "limitations": []
+  },
+  "quality_report": {
+    "status": "passed",
+    "candidates_collected": 199,
+    "candidates_verified": 33,
+    "published_count": 14,
+    "duplicates_removed": 0,
+    "rejected_count": 17,
+    "limitations": [
+      "九个公开采集入口及七项实时搜索均执行，采集成功不代表每篇候选原文可用；全部机器失败、日期边界和编辑排除保留在本期诊断。",
+      "OpenAI客户案例原文程序访问失败；GPT-4 API弃用页与Claude Code新tag缺程序可解析发布时间；Anthropic新加坡/选举公告仅日期精度跨截止，未补造时间收录。",
+      "ChipAgents、NVIDIA芯片制造及英国安全算力、vLLM两篇技术文、云蝶、HITLAB和CARPL等已发现并读取，但未通过原文机器时间或访问校验。英国议会及美国参议员公告程序访问失败。重要候选漏报是已知限制，不等于相应领域没有新闻。",
+      "NVIDIA Open Agent Safety Platform原文为9月28日，发布列表搜索日期容易混淆，未当成本期新品；NVIDIA英国与城市生态博客可见日期13日、机器元数据14日，保守排除。",
+      "Uvi采用署名媒体原文，尚无可核验的正式融资公告，媒体对领投者表述不同，未收录领投方或宣传效果倍数。",
+      "Scuba为累计融资而非单轮；Sainaptic评分最终由人类决定；反诈方案未宣布公众应用上线；HiRO仅训练气候模拟，不用于实时天气预报。",
+      "模型、工程和产品效果主要依据作者或厂商陈述，未独立复测。没有连续Star快照，不报告增长。",
+      "MagicSchool、Buddy及低龄阅读/语音/绘画已专项检索，未找到本轮合格新增；中国部分候选因日期或原文缺口未收录，地域和垂直领域覆盖仍不完备。",
+      "UltraBERT与HiRO作为模型和科学应用报道，核对了公开模型及代码线索，但当前候选直接引用未包含可供程序定位的GitHub代码链接，未虚填开源项目字段。",
+      "美国多州诉讼主要引用爱达荷州检察长公告；艾奥瓦州官网和现场记者报道机器HTTP失败。未逐份核对各州诉状、被告回应及裁定，不把原告指控作为已证实伤害或违法结论；不同时间公告总数有差异，未给确定州数。",
+      "由 ChatGPT Work 完成检索、编辑与再次事实审查；不是独立模型或人工审稿。",
+      "未调用 OpenAI API；Work 不向本程序提供实际 token、所用模型和订阅消耗，记录为未知。",
+      "代码核验原文可访问性、发布时间、来源引用、结构与历史；无法证明全部语义判断正确。"
+    ]
+  },
+  "usage": [
+    {
+      "mode": "chatgpt_work",
+      "model": "Work（应用选择，未公开）",
+      "purpose": "搜索、研究编辑、事实审查",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "billing_unknown": true
+    }
+  ],
+  "estimated_cost_usd": 0.0,
+  "prompt_sha256": "cfba7d8fe44b1a2389b0bb28b33b3cba6ce4bc5a373b0157927c132b424802ba"
+}
