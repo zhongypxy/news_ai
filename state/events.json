@@ -260,7 +260,7 @@
       "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。",
       "first_report": "2026-10-13",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T01:47:10.342502+00:00",
+      "last_seen_at": "2026-10-15T02:29:08.780799+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -729,7 +729,7 @@
       "summary": "Google DeepMind 于 10 月 14 日披露与新加坡 GovTech 合作开发反诈模型：以轻量 Gemma 针对本地诈骗对话微调，并采用先快速筛查、再交给模型分析的双阶段流程。公告称获用户同意后可在设备本地处理对话，计划分阶段集成到面向公众的应用，但未给出上线时间和准确率。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -753,16 +753,22 @@
       "evidence_hashes": [
         "88544a56e8c4d4b72423392b230d33255a2e4ceefdcfd4ec1cf2797b94af2c3d"
       ],
-      "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布获得 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。",
+      "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布完成 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
           "milestone": "125-million-series-b-announced",
           "new_information": "",
           "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布获得 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。"
+        },
+        {
+          "report_date": "2026-10-15",
+          "milestone": "125-million-series-b-announced",
+          "new_information": "",
+          "summary": "英国光子技术公司 Salience Labs 于 10 月 14 日宣布完成 1.25 亿美元超额认购 B 轮融资，由 Bullhound Capital 领投，AMD Ventures、Intel Capital 等参投。公司面向 AI 数据中心开发光路交换技术，计划将资金用于扩大制造、美国业务与部署能力；公告未给出量产或客户上线时间。"
         }
       ]
     },
@@ -783,7 +789,7 @@
       "summary": "xAI 发布语音到语音模型 Grok Voice 3.0，并宣布当天开放 Voice Agent API。新版强调交替发言、打断处理及客服等实时对话场景；已有集成若使用 grok-voice-latest 别名，已自动切换至新版，无须修改调用代码。官方同时展示多个评测与部署案例，但这些不等于所有业务环境下的独立验证。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -810,7 +816,7 @@
       "summary": "Anthropic 披露内部源码控制系统 Scion，称其主代码仓已在五个月迁移后转入新系统，以应对大量编码代理并发提交。方案将提交、合并、变基和历史等操作集中到服务端，客户端通过缓存与按需物化访问文件，并配套内部评审工具。文章也强调，人仍需检查代理是否遵守设计约束与工程意图。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -837,7 +843,7 @@
       "summary": "Anthropic 研究在廉价、分散设备上运行模型及完成复制任务的可能性：一项实验把模型推理分布到多台安卓电视盒，另一项在隔离且简化的模拟网络中测试复制链条。研究分别验证了部分硬件与任务能力，但明确尚未得到完整的自主复制体；模拟中较强模型还依赖另设的推理服务器。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -864,7 +870,7 @@
       "summary": "欧盟联合研究中心10月14日发布分析：按Eurostat的2021—2025年企业ICT调查，十大战略行业使用AI的企业占比从7%升至18%；全经济口径则由8%升至20%。报告指出行业差异明显，现成工具的采用不代表已深入生产流程，专业技能和监管不确定性仍是主要障碍。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -893,7 +899,7 @@
       "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -920,7 +926,7 @@
       "summary": "爱达荷州检察长10月14日宣布针对OpenAI提起消费者保护诉讼，称案件已在本州Ada县第四司法区法院提交。公告主张ChatGPT的安全宣传与未成年人风险保护存在问题，并指出其他州也依据消费者保护法规提起类似诉讼。相关指控是原告立场，本期未逐份核对各州诉状、被告回应及后续裁定。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -947,7 +953,7 @@
       "summary": "Accel 于 10 月 13 日介绍 Scuba，并披露其累计融资 3,400 万美元。产品面向团队和 AI Agent，把文档、讨论串中的决策及背景保存为可复用的共享上下文。公司由前 Slack 首席产品官 Noah Desai Weiss 与前 Browser Company 工程负责人 Dolapo Falola 创办；该金额为累计融资，非单笔轮次金额。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -969,12 +975,13 @@
         "multifieldextremeclimatedownscalingmodelannounced20261014"
       ],
       "evidence_hashes": [
-        "539b5b679fe5cbecadae02a7672a415242b2488a9ae9349c2d0f8f2e43aa0c4a"
+        "539b5b679fe5cbecadae02a7672a415242b2488a9ae9349c2d0f8f2e43aa0c4a",
+        "862b9c17de21e58848440f3711cc979f37f293c378c553a3fc09501ca5266efc"
       ],
       "summary": "Ai2 发布 HiRO-ACEv2，将约100公里尺度的ACE气候模拟与3公里HiRO降尺度连接起来。新HiROv2同时输出降雨、风和气压等高分辨率场，重点改善罕见极端事件统计；团队开放模型下载、推理配置、教程和可视化演示。当前版本针对X-SHiELD模拟气候训练，并非实时天气预报系统。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T01:47:10.342502+00:00",
+      "last_seen_at": "2026-10-15T02:29:08.780799+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -996,12 +1003,13 @@
         "englishencoderfamilyandembedmodelannounced20261014"
       ],
       "evidence_hashes": [
+        "ae6d76d1f8ae8c3b80bb651e8c3f5de4ff42dd73be086bbd4e2e064b04672bc4",
         "f5345bce215229f5c99f3271d1873ab84580dca409249dc269238181550246df"
       ],
       "summary": "DMIS Lab 发布 UltraBERT 英语编码器系列及即用型 UltraBERT-Embed-150M，提供150M、380M两个规格和原生32K上下文，权重采用Apache2.0。训练时混合低、高遮蔽比例序列，共享编码器但分离语言模型输出头，以缓解分类与检索目标冲突；低遮蔽分支结合教师蒸馏，高遮蔽分支使用MLM。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -1028,7 +1036,7 @@
       "summary": "Ufi Ventures 于 10 月 13 日宣布与 Cornerstone VC 共同领投 Sainaptic 的 100 万英镑融资，Brighteye Ventures、Elm VP 参投。Sainaptic 面向职业和专业资格评估，使用 AI 按标准整理、判断复杂作答证据，为评估者提供辅助；最终决定仍由人类作出，资金将支持扩展业务。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -1055,13 +1063,121 @@
       "summary": "SiliconANGLE 于 10 月 14 日报道，Uvi 获得 750 万美元种子融资。其产品连接企业沟通、项目、客户和代码系统，把历史决策及相关信息组织为上下文图谱，为 AI Agent 提供执行任务所需背景。报道涉及访问控制设计；本轮尚未找到可核验金额与日期的官方公告。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:04:18.765102+00:00",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
           "milestone": "seven-point-five-million-seed-reported",
           "new_information": "",
           "summary": "SiliconANGLE 于 10 月 14 日报道，Uvi 获得 750 万美元种子融资。其产品连接企业沟通、项目、客户和代码系统，把历史决策及相关信息组织为上下文图谱，为 AI Agent 提供执行任务所需背景。报道涉及访问控制设计；本轮尚未找到可核验金额与日期的官方公告。"
+        }
+      ]
+    },
+    "evt_80198e7f88404ce1af0b": {
+      "event_key": "morluto:rea:6.5.0",
+      "aliases": [
+        "morlutorea650"
+      ],
+      "urls": [
+        "https://github.com/morluto/rea/releases/tag/rea-agents-6.5.0"
+      ],
+      "milestones": [
+        "stablereleasepublished20261014"
+      ],
+      "evidence_hashes": [
+        "b5ec2136e6b1959f0756c56e05969e4fcb6469e1148029e55fcaaf1829766ace"
+      ],
+      "summary": "REA 正式发布6.5.0，以CLI和MCP连接逆向分析工具。新版本支持精确选择JavaScript输入、恢复选定文件间的代码分块关系，并在多类分析中提供精简摘要和保留证据分页；还扩展SQLite快照、已保存网络包、WASM与Electron fuse的离线检查。GitHub实际发布时间为10月14日，版本说明标题日期为10月13日。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:29:08.780799+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "stable release published 2026-10-14",
+          "new_information": "",
+          "summary": "REA 正式发布6.5.0，以CLI和MCP连接逆向分析工具。新版本支持精确选择JavaScript输入、恢复选定文件间的代码分块关系，并在多类分析中提供精简摘要和保留证据分页；还扩展SQLite快照、已保存网络包、WASM与Electron fuse的离线检查。GitHub实际发布时间为10月14日，版本说明标题日期为10月13日。"
+        }
+      ]
+    },
+    "evt_e3a777c111fec313bb50": {
+      "event_key": "moby:docker-engine:29.9.1",
+      "aliases": [
+        "mobydockerengine2991"
+      ],
+      "urls": [
+        "https://github.com/moby/moby/releases/tag/docker-v29.9.1"
+      ],
+      "milestones": [
+        "stablereleasepublished20261014"
+      ],
+      "evidence_hashes": [
+        "536b8b69b01b2c7396e380dd15119c6256fc552da0bd743ded7f32da6be0acc2"
+      ],
+      "summary": "Moby发布Docker Engine29.9.1，静态二进制所带containerd更新至2.4.2，纳入恶意镜像清单、特制Content-Length及无界层数据流引发的崩溃或磁盘耗尽修复；同时修复用户命名空间构建、镜像清理、firewalld桥接恢复和rootless域名等问题。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "stable release published 2026-10-14",
+          "new_information": "",
+          "summary": "Moby发布Docker Engine29.9.1，静态二进制所带containerd更新至2.4.2，纳入恶意镜像清单、特制Content-Length及无界层数据流引发的崩溃或磁盘耗尽修复；同时修复用户命名空间构建、镜像清理、firewalld桥接恢复和rootless域名等问题。"
+        }
+      ]
+    },
+    "evt_ad30c345306ffe9c33e8": {
+      "event_key": "immich:3.3.3",
+      "aliases": [
+        "immich333"
+      ],
+      "urls": [
+        "https://github.com/immich-app/immich/releases/tag/v3.3.3"
+      ],
+      "milestones": [
+        "stablereleasepublished20261014"
+      ],
+      "evidence_hashes": [
+        "1c18db62cdf9079bff383821a0c2c85f8d5bcda1faf8059205f397ae6a710436"
+      ],
+      "summary": "自托管照片视频管理项目Immich发布3.3.3正式补丁版，优化人物查询，以改善探索页性能，并修复移动端在不同语言下显示回忆日期的问题。发布说明的完整比较范围为3.3.1至3.3.3；本次没有引入新的照片管理范式或AI功能。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "stable release published 2026-10-14",
+          "new_information": "",
+          "summary": "自托管照片视频管理项目Immich发布3.3.3正式补丁版，优化人物查询，以改善探索页性能，并修复移动端在不同语言下显示回忆日期的问题。发布说明的完整比较范围为3.3.1至3.3.3；本次没有引入新的照片管理范式或AI功能。"
+        }
+      ]
+    },
+    "evt_a7c98d589f75d1b5d142": {
+      "event_key": "telus-digital-parloa:enterprise-cx:implementation-partnership",
+      "aliases": [
+        "telusdigitalparloaenterprisecximplementationpartnership"
+      ],
+      "urls": [
+        "https://www.parloa.com/parloa-in-the-press/telus-digital-partners-with-parloa"
+      ],
+      "milestones": [
+        "implementationpartnershipannounced"
+      ],
+      "evidence_hashes": [
+        "1b300b6639bbad0203b04cce3544726580ce52133430e6328c1cfeb279af7978"
+      ],
+      "summary": "TELUS Digital 与 Parloa10月14日宣布合作：客户可直接向 Parloa 购买客服 Agent 平台，再由 TELUS 提供集成、变更管理及托管服务。合作涉及零售、金融等行业，未披露新客户上线或实际成效。",
+      "first_report": "2026-10-15",
+      "last_report": "2026-10-15",
+      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-15",
+          "milestone": "implementation-partnership-announced",
+          "new_information": "",
+          "summary": "TELUS Digital 与 Parloa10月14日宣布合作：客户可直接向 Parloa 购买客服 Agent 平台，再由 TELUS 提供集成、变更管理及托管服务。合作涉及零售、金融等行业，未披露新客户上线或实际成效。"
         }
       ]
     }
@@ -1095,6 +1211,18 @@
       "sha256": {
         "reports/2026-10-15.html": "edf3d0d933b5ea482ec4436b5e13ed4237106634f7a34972e04eca63fd4bda79",
         "data/2026-10-15.json": "073a7f61b7994a2efed5dec6f5c04c7c689ac3f72bda1a554df7a7f6137037e6"
+      },
+      "latest_revision": {
+        "html": "reports/2026-10-15-r2.html",
+        "json": "data/2026-10-15-r2.json",
+        "count": 18,
+        "summary": "修订版 · 本轮按V2.1重新采集和研究，扩展GitHub全领域项目雷达：补入REA 6.5.0逆向分析工具、Docker Engine 29.9.1容器安全维护及Immich自托管照片库更新，同时保留模型、Agent、商业、教育、科学应用和政策六领域覆盖。REA仅按正式Release描述，不把主分支未发布能力写成已交付；榜单抓取失败已披露，未编造Star增长或排名。",
+        "window_end": "2026-10-15T02:29:08.780799+00:00",
+        "sha256": {
+          "reports/2026-10-15-r2.html": "f1b412a26d07ac84d45e16095cba59eea5917adb073d6800f2849cdce54cb490",
+          "data/2026-10-15-r2.json": "cd16ff4a78c937ebaf02c1efc429939d8e32cb2b4feb775f3b3d9bd24e09705c",
+          "data/2026-10-15-r2.manifest.json": "080f12c206b502bfeb5f32e04a8743028beffddd8d4ab17c256c57657aab774f"
+        }
       }
     }
   }

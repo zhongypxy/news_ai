@@ -1,0 +1,27 @@
+{
+  "report_date": "2026-10-15",
+  "revision": "r2",
+  "reason": "User requested a complete rerun with V2.1 all-domain GitHub discovery",
+  "original_html": "reports/2026-10-15.html",
+  "original_json": "data/2026-10-15.json",
+  "original_sha256": {
+    "reports/2026-10-15.html": "edf3d0d933b5ea482ec4436b5e13ed4237106634f7a34972e04eca63fd4bda79",
+    "data/2026-10-15.json": "073a7f61b7994a2efed5dec6f5c04c7c689ac3f72bda1a554df7a7f6137037e6"
+  },
+  "prompt_sha256": "6adcbaa7f2deb49514132b6e70169ce0babfc0c24cd596d021838863065757ce",
+  "window_start": "2026-10-14T01:01:24.644337+00:00",
+  "window_end": "2026-10-15T02:29:08.780799+00:00",
+  "generated_at": "2026-10-15T02:44:40.521974+00:00",
+  "promoted_at": "2026-10-15T02:46:00.694757+00:00",
+  "history_baseline": "2026-10-14",
+  "artifacts_sha256": {
+    "reports/2026-10-15-r2.html": "f1b412a26d07ac84d45e16095cba59eea5917adb073d6800f2849cdce54cb490",
+    "data/2026-10-15-r2.json": "cd16ff4a78c937ebaf02c1efc429939d8e32cb2b4feb775f3b3d9bd24e09705c"
+  },
+  "added_event_ids": [
+    "evt_80198e7f88404ce1af0b",
+    "evt_a7c98d589f75d1b5d142",
+    "evt_ad30c345306ffe9c33e8",
+    "evt_e3a777c111fec313bb50"
+  ]
+}

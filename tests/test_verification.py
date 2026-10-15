@@ -41,6 +41,25 @@ def test_search_claimed_date_is_not_treated_as_original_evidence():
         verifier(body("")).verify(item, source("web_search"))
 
 
+def test_github_release_uses_release_time_instead_of_commit_verification_time():
+    item = cand(url="https://github.com/owner/project/releases/tag/v1.0", published_at=None,
+                time_precision="unknown", publication_basis="search_unverified")
+    src = source("web_search").model_copy(update={"allowed_domains": ["github.com"]})
+    html = body("").replace('<article>', '<div>Verified <relative-time datetime="2026-10-12T01:00:00Z"></relative-time></div>'
+                           '<div>released this <relative-time datetime="2026-10-13T00:00:00Z"></relative-time></div><article>')
+    result = verifier(html).verify(item, src)
+    assert result.published_at == NOW-timedelta(hours=1)
+    assert result.publication_basis == "original_page_metadata"
+
+
+@pytest.mark.parametrize("url", ["https://example.com/releases/tag/v1", "https://github.com/owner/project/commit/123"])
+def test_release_time_markup_is_not_accepted_on_unrelated_pages(url):
+    src = source("web_search").model_copy(update={"allowed_domains": []})
+    html = body("").replace('<article>', '<div>released this <relative-time datetime="2026-10-13T00:00:00Z"></relative-time></div><article>')
+    with pytest.raises(ValueError, match="original source metadata"):
+        verifier(html).verify(cand(url=url, publication_basis="search_unverified"), src)
+
+
 def test_conflicting_original_time_blocks_candidate():
     html = body('<meta property="article:published_time" content="2026-09-01T00:00:00Z">')
     with pytest.raises(ValueError, match="Conflicting"):

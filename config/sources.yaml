@@ -90,10 +90,14 @@ sources:
     categories: [agents]
     queries: ["Latest AI coding agents Codex Claude Code Cursor MCP A2A framework official release"]
   - id: search_opensource
-    name: 开源生态·广度检索
+    name: GitHub 全领域热门项目·广度检索
     kind: web_search
     categories: [opensource]
-    queries: ["Recent high value AI open source GitHub releases Hugging Face RAG embedding inference framework"]
+    queries:
+      - "GitHub Trending daily weekly monthly all languages popular open source developer tools security systems database self hosted releases"
+      - "GitHub 热门 开源 项目 日榜 周榜 月榜 开发工具 逆向 安全 数据库 自托管 不限AI"
+      - "Recent high value AI open source GitHub releases Hugging Face RAG embedding inference framework"
+      - "morluto rea Reverse Engineer Anything official latest release"
   - id: search_business
     name: 商业与创业·广度检索
     kind: web_search
@@ -116,4 +120,13 @@ sources:
     kind: web_search
     categories: [models, agents, opensource, business, applications, infrastructure]
     queries:
-      - "Check past 72 hours major AI launches coding agents open source emerging startups financing education vertical apps globally; inspect the supplied watchlist and history for missed events"
+      - "Check past 72 hours major AI launches coding agents GitHub trending projects including non-AI open source emerging startups financing education vertical apps globally; inspect the supplied watchlist and history for missed events"
+  - id: rea
+    name: REA Official Releases
+    kind: api
+    url: https://api.github.com/repos/morluto/rea/releases?per_page=5
+    allowed_domains: [api.github.com, github.com]
+    region: global
+    categories: [opensource]
+    max_items: 5
+    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}

@@ -41,7 +41,7 @@ class TestCollector:
 
 def test_offline_pipeline_publish_then_repeat_without_api(tmp_path):
     root = project(tmp_path)
-    ids = ["openai", "google_ai", "microsoft", "nvidia", "huggingface", "qwen", "vllm", "langgraph", "anthropic"]
+    ids = ["openai", "google_ai", "microsoft", "nvidia", "huggingface", "qwen", "vllm", "langgraph", "anthropic", "rea"]
     ai = FakeAI([EditorialBatch(news_items=[], rejected_candidate_ids=ids)])
     ai.search = lambda *args: []
     ai.search_notes = []
@@ -99,7 +99,7 @@ def test_unknown_page_date_is_resolved_from_original_source(tmp_path):
                 item.published_at = NOW-timedelta(hours=1)
                 item.time_precision = "exact"
             return item
-    ids = ["openai", "google_ai", "microsoft", "nvidia", "huggingface", "qwen", "vllm", "langgraph", "anthropic"]
+    ids = ["openai", "google_ai", "microsoft", "nvidia", "huggingface", "qwen", "vllm", "langgraph", "anthropic", "rea"]
     ai = FakeAI([EditorialBatch(news_items=[], rejected_candidate_ids=ids)])
     ai.search = lambda *args: []
     ai.search_notes = []

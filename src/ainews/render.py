@@ -4,7 +4,7 @@ from jinja2 import Environment, FileSystemLoader, StrictUndefined, select_autoes
 
 CATEGORY_LABELS = {
     "models": "前沿模型与研究", "agents": "Agent、AI Coding 与技术工程", "business": "AI 产品与公司动态",
-    "opensource": "GitHub 与优秀开源项目", "applications": "AI 教育与垂直应用",
+    "opensource": "GitHub 热门与优秀开源项目（不限 AI）", "applications": "AI 教育与垂直应用",
     "infrastructure": "基础设施、研究与政策",
 }
 

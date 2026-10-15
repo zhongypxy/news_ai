@@ -50,6 +50,7 @@ def run_daily(root, day=None, now=None, ai_factory=AIClient, collector_factory=C
         renderer = Renderer(root/"templates")
         publisher = Publisher(root, renderer)
         publisher.recover()
+        publisher.validate_history()
         if publisher.completed(day.isoformat()):
             return "already_published"
         state = publisher.load_state()

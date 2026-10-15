@@ -2,6 +2,7 @@ import copy
 import hashlib
 import json
 import os
+import re
 import tempfile
 from pathlib import Path
 
@@ -108,7 +109,33 @@ class Publisher:
             Report.model_validate_json((self.root / f"data/{day}.json").read_bytes())
         except ValueError:
             raise QualityError("Archived JSON failed schema validation") from None
+        if "latest_revision" in record:
+            try:
+                revision = record["latest_revision"]
+                if not isinstance(revision, dict):
+                    raise ValueError()
+                match = re.fullmatch(rf"reports/{re.escape(day)}-(r(?:[2-9]|[1-9][0-9]+))\.html", revision["html"])
+                if not match or revision["json"] != f"data/{day}-{match[1]}.json":
+                    raise ValueError()
+                required = {revision["html"], revision["json"]}
+                if not required.issubset(revision["sha256"]):
+                    raise ValueError()
+                for relative, expected in revision["sha256"].items():
+                    path = self._path(relative)
+                    if not path.exists() or digest(path.read_bytes()) != expected:
+                        raise ValueError()
+                revised = Report.model_validate_json(self._path(revision["json"]).read_bytes())
+                if (revised.report_date.isoformat() != day or revised.window_end.isoformat() != revision["window_end"]
+                        or type(revision["count"]) is not int or revision["count"] != len(revised.all_items)
+                        or revision["summary"] != revised.executive_summary):
+                    raise ValueError()
+            except (ValueError, KeyError, TypeError):
+                raise QualityError("Report revision integrity check failed; no overwrite allowed") from None
         return True
+
+    def validate_history(self):
+        for day in self.load_state()["reports"]:
+            self.completed(day)
 
     def _path(self, relative):
         path = (self.root / relative).resolve()

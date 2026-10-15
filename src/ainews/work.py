@@ -70,6 +70,7 @@ def prepare_work(root, now=None, collector_factory=Collector):
     with RepositoryLock(root):
         publisher = Publisher(root, Renderer(root/'templates'))
         publisher.recover()
+        publisher.validate_history()
         if publisher.completed(day.isoformat()):
             return None
         state = publisher.load_state()

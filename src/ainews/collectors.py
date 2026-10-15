@@ -1,5 +1,6 @@
 import hashlib
 import json
+import re
 from urllib.parse import urljoin, urlsplit
 from urllib.robotparser import RobotFileParser
 
@@ -189,6 +190,14 @@ class Collector:
                         raise ValueError("Paywalled source")
                     if not stamp and part.get("datePublished"):
                         stamp = part["datePublished"]
+        # GitHub release pages expose publication in a custom element; nearby
+        # signed-commit timestamps describe verification, not publication.
+        parsed = urlsplit(str(response.url))
+        if not stamp and parsed.hostname == "github.com" and re.fullmatch(r"/[^/]+/[^/]+/releases/tag/[^/]+", parsed.path):
+            release_times = [node.get("datetime") for node in soup.select("relative-time[datetime]")
+                             if "released this" in node.parent.get_text(" ", strip=True)]
+            if len(release_times) == 1:
+                stamp = release_times[0]
         if stamp:
             published, precision = parse_time(stamp, source.timezone)
             if published:

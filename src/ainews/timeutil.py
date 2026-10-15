@@ -27,7 +27,8 @@ def report_window(day: date, timezone: str, hour: int):
 
 
 def research_window(now: datetime, state: dict, day: date):
-    previous = [datetime.fromisoformat(r["window_end"]) for d, r in state["reports"].items() if d < day.isoformat()]
+    previous = [datetime.fromisoformat(r.get("latest_revision", {}).get("window_end", r["window_end"]))
+                for d, r in state["reports"].items() if d < day.isoformat()]
     start = max(previous) if previous else now - timedelta(days=1)
     if start >= now:
         raise ValueError("Invalid report window: historical cutoff is in the future")
