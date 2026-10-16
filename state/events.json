@@ -144,22 +144,26 @@
       ],
       "urls": [
         "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.1",
+        "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.2",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0"
       ],
       "milestones": [
         "0252preview0tsmodsandpersistentteamplanapproval",
-        "stableclianddesktop0251released20261011"
+        "stableclianddesktop0251released20261011",
+        "stableclianddesktop0252released20261015"
       ],
       "evidence_hashes": [
         "108d980689f7cfba76d24a1608d102c00416510e001cc9606bfb393f61e2acd5",
         "4fe57e20c7445fcc182611e8a3296d0da603e0f7349e053ff80f81bdff666b47",
-        "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a"
+        "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a",
+        "a2e8130b456c57fc98bdb663adec2d23b0d43c073ffda9cfa9c97895cb005602"
       ],
-      "summary": "Qwen Code 发布0.25.2-preview.0，在稳定0.25.1基础上扩展 TypeScript Mods 编写、中间件恢复和工具拦截权限检查，并补充成员消息、持久团队计划审批及子任务面板。本次为预览版本；同变更 nightly 不另行报道。",
+      "summary": "Qwen Code发布0.25.2正式版及对应桌面版本，将此前预览阶段的Mods与团队协作能力带入稳定发行。本次发布说明还包括MCP App消息提交前审阅、工作区文件浏览与只读Excel预览，以及取消意图跨恢复保留、已提交文件结果恢复等改进。Managed Agent参考分发仍明确标为实验性。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-14",
-      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -172,6 +176,12 @@
           "milestone": "0.25.2-preview.0 TS mods and persistent team plan approval",
           "new_information": "此前0.25.1介绍了基础运行时与后台任务；本次新增 TS Mods 配置、中间件及拦截检查，以及持久计划审批和成员协作路径。",
           "summary": "Qwen Code 发布0.25.2-preview.0，在稳定0.25.1基础上扩展 TypeScript Mods 编写、中间件恢复和工具拦截权限检查，并补充成员消息、持久团队计划审批及子任务面板。本次为预览版本；同变更 nightly 不另行报道。"
+        },
+        {
+          "report_date": "2026-10-16",
+          "milestone": "stable-cli-and-desktop-0.25.2-released-2026-10-15",
+          "new_information": "此前0.25.2-preview.0是预览；本次正式0.25.2和桌面发行，并整合其后恢复、文件浏览、MCP App审阅等条目。",
+          "summary": "Qwen Code发布0.25.2正式版及对应桌面版本，将此前预览阶段的Mods与团队协作能力带入稳定发行。本次发布说明还包括MCP App消息提交前审阅、工作区文件浏览与只读Excel预览，以及取消意图跨恢复保留、已提交文件结果恢复等改进。Managed Agent参考分发仍明确标为实验性。"
         }
       ]
     },
@@ -637,24 +647,33 @@
         "nvidiartxsparklocalagentsoftwarereadiness"
       ],
       "urls": [
-        "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates"
+        "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates",
+        "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl"
       ],
       "milestones": [
-        "pairgaandlocalagentsoftwareupdatesannounced20261013"
+        "pairgaandlocalagentsoftwareupdatesannounced20261013",
+        "supervlandbolt74bavailable20261015"
       ],
       "evidence_hashes": [
-        "593e37418e7531efb279f4b73cddf3c48a8c4d54da86bbf4f3772d44ac2c744d"
+        "593e37418e7531efb279f4b73cddf3c48a8c4d54da86bbf4f3772d44ac2c744d",
+        "761827b7c685a8bb5496183d0adf2cc8b689fda589e6a85b139d4a11a0bc31c5"
       ],
-      "summary": "NVIDIA 宣布 PAIR 当日退出 beta，新增 llama.cpp 支持、Hub 模型下载和推理配置；Broadcast 2.3 增加离线文件处理与 Agent MCP 控制。编码和本地 Agent 应用同步适配新平台。Nemotron 3.5 Bolt 74B 计划10月15日提供，RTX Spark 笔记本计划10月16日发售，两者不是本期已经交付。",
+      "summary": "NVIDIA 宣布开放的Nemotron 3.5 Super VL 120B与Bolt 74B-A9B 24GB当日可用，前者面向持续运行的多模态企业代理，后者以原生2-bit量化面向本地任务。相比10月13日软件公告中Bolt的未来开放计划，本次新增实际模型交付；更小的Bolt E4B 4GB仍计划10月23日提供。",
       "first_report": "2026-10-14",
-      "last_report": "2026-10-14",
-      "last_seen_at": "2026-10-14T01:01:24.644337+00:00",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
       "updates": [
         {
           "report_date": "2026-10-14",
           "milestone": "PAIR GA and local agent software updates announced 2026-10-13",
           "new_information": "",
           "summary": "NVIDIA 宣布 PAIR 当日退出 beta，新增 llama.cpp 支持、Hub 模型下载和推理配置；Broadcast 2.3 增加离线文件处理与 Agent MCP 控制。编码和本地 Agent 应用同步适配新平台。Nemotron 3.5 Bolt 74B 计划10月15日提供，RTX Spark 笔记本计划10月16日发售，两者不是本期已经交付。"
+        },
+        {
+          "report_date": "2026-10-16",
+          "milestone": "super-vl-and-bolt74b-available-2026-10-15",
+          "new_information": "10/14已报10/13的软件准备和Bolt未来计划；本次10/15确认SuperVL/Bolt74B可用。",
+          "summary": "NVIDIA 宣布开放的Nemotron 3.5 Super VL 120B与Bolt 74B-A9B 24GB当日可用，前者面向持续运行的多模态企业代理，后者以原生2-bit量化面向本地任务。相比10月13日软件公告中Bolt的未来开放计划，本次新增实际模型交付；更小的Bolt E4B 4GB仍计划10月23日提供。"
         }
       ]
     },
@@ -887,25 +906,34 @@
       ],
       "urls": [
         "https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-control-risks",
-        "https://metr.org/blog/2026-10-14-control-assessment-proposal"
+        "https://metr.org/blog/2026-10-14-control-assessment-proposal",
+        "https://www.anthropic.com/news/an-update-on-independent-evaluators"
       ],
       "milestones": [
+        "anthropicembeddedmetraccessconfirmed20261015",
         "publicevidenceandinternalmonitoringassessmentproposalspublished20261014"
       ],
       "evidence_hashes": [
+        "b6e690703f12df48086987945bf655477e1980a4aabd590b05ee709a76634c55",
         "e09bebdd56f416a929bfe43e2f6749417d18b002e6ca0beffb9c2dc5e27788dc",
         "f3cdffef5c9e67e18df0869a7dbc96061cc513bcbb68deec542e6e6572b283fe"
       ],
-      "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。",
+      "summary": "Anthropic 宣布已为六名METR人员提供设备、办公空间及接近内部风险评估团队的工具和系统访问。METR将公开评估，Anthropic不能否决发表，但可按预先限定的敏感类别要求删节。相比10月14日METR提出内部评估方案，本次新增一家前沿实验室确认具体接入安排。",
       "first_report": "2026-10-15",
-      "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:44:40.521974+00:00",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
           "milestone": "public evidence and internal monitoring assessment proposals published 2026-10-14",
           "new_information": "",
           "summary": "METR 于10月14日提出与前沿模型开发者合作评估内部AI风险，覆盖对齐、控制监测和AI研发加速三类问题。方案建议通过内部数据、系统访问及私下员工访谈形成公开报告；控制评估细分监测覆盖、基础设施漏洞、逃避检测、人工响应和潜在影响。访问及敏感信息删节仍由企业决定。"
+        },
+        {
+          "report_date": "2026-10-16",
+          "milestone": "anthropic-embedded-metr-access-confirmed-2026-10-15",
+          "new_information": "此前是METR内部评估提案；本次Anthropic确认具体六人接入与发表/删节规则。",
+          "summary": "Anthropic 宣布已为六名METR人员提供设备、办公空间及接近内部风险评估团队的工具和系统访问。METR将公开评估，Anthropic不能否决发表，但可按预先限定的敏感类别要求删节。相比10月14日METR提出内部评估方案，本次新增一家前沿实验室确认具体接入安排。"
         }
       ]
     },
@@ -1180,6 +1208,386 @@
           "summary": "TELUS Digital 与 Parloa10月14日宣布合作：客户可直接向 Parloa 购买客服 Agent 平台，再由 TELUS 提供集成、变更管理及托管服务。合作涉及零售、金融等行业，未披露新客户上线或实际成效。"
         }
       ]
+    },
+    "evt_8097f79895f182d9aa92": {
+      "event_key": "meta:muse-spark-open:release",
+      "aliases": [
+        "metamusesparkopenrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/meta-muse-spark-open"
+      ],
+      "milestones": [
+        "announcement20261015"
+      ],
+      "evidence_hashes": [
+        "cfa324eb033f58d144fd114bc545f65020798afa9ce8766869b316b21a20a7ea"
+      ],
+      "summary": "Hugging Face介绍Meta的Muse Spark Open开放权重模型，列出约816B总参数、每token激活约42B及最高百万token上下文，可输入文字、图像、视频和音频并输出文字。文章展示Transformers、llama.cpp、SGLang、vLLM和MLX等推理路径，以及多模态工具调用和LoRA微调方案，侧重编码及长期代理任务。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "announcement-2026-10-15",
+          "new_information": "",
+          "summary": "Hugging Face介绍Meta的Muse Spark Open开放权重模型，列出约816B总参数、每token激活约42B及最高百万token上下文，可输入文字、图像、视频和音频并输出文字。文章展示Transformers、llama.cpp、SGLang、vLLM和MLX等推理路径，以及多模态工具调用和LoRA微调方案，侧重编码及长期代理任务。"
+        }
+      ]
+    },
+    "evt_db0d364730c8525fefb9": {
+      "event_key": "bfl:flux-3-image-klein:release",
+      "aliases": [
+        "bflflux3imagekleinrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/flux-3"
+      ],
+      "milestones": [
+        "announcement20261015"
+      ],
+      "evidence_hashes": [
+        "f198dd29a85a4a3b66f03e45d12c91d54ca64d86df1b3245902b314f5f0a05bd"
+      ],
+      "summary": "FLUX.3 Image Klein 已发布并接入Diffusers，统一支持文生图、多参考图编辑及提示中的边界框布局控制。提供蒸馏与基础检查点、BF16及FP8/NVFP4格式，并提供LoRA训练路径。官方模型卡说明图像Transformer为5.6B参数，文本编码器另计，权重采用有条件的FLUX Kommunity许可。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "announcement-2026-10-15",
+          "new_information": "",
+          "summary": "FLUX.3 Image Klein 已发布并接入Diffusers，统一支持文生图、多参考图编辑及提示中的边界框布局控制。提供蒸馏与基础检查点、BF16及FP8/NVFP4格式，并提供LoRA训练路径。官方模型卡说明图像Transformer为5.6B参数，文本编码器另计，权重采用有条件的FLUX Kommunity许可。"
+        }
+      ]
+    },
+    "evt_1d60c48408a10fb6363e": {
+      "event_key": "ibm:granite-switch-4.1:release",
+      "aliases": [
+        "ibmgraniteswitch41release"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+      ],
+      "milestones": [
+        "announcement20261015"
+      ],
+      "evidence_hashes": [
+        "47b16be61952ae04749849d454acd906aec1dd85ae031446586ffcb2c319d81c"
+      ],
+      "summary": "IBM 介绍预配置的Granite Switch 4.1 8B与30B模型，把基础聊天模型、通用Decision和Guardian安全决策aLoRA，以及语音识别编码器组合到同一服务端点。Activated LoRA让基础模型生成的KV缓存供后续适配器决策复用；开发者也可按任务选择适配器自行组合模型。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "announcement-2026-10-15",
+          "new_information": "",
+          "summary": "IBM 介绍预配置的Granite Switch 4.1 8B与30B模型，把基础聊天模型、通用Decision和Guardian安全决策aLoRA，以及语音识别编码器组合到同一服务端点。Activated LoRA让基础模型生成的KV缓存供后续适配器决策复用；开发者也可按任务选择适配器自行组合模型。"
+        }
+      ]
+    },
+    "evt_d0ac1cded206377e1fab": {
+      "event_key": "openai:codex-cli:0.163.0",
+      "aliases": [
+        "openaicodexcli01630"
+      ],
+      "urls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.163.0"
+      ],
+      "milestones": [
+        "announcement20261015"
+      ],
+      "evidence_hashes": [
+        "8b10800edefd46e04b92b00320e54f843f42a8791a559e6ee749db764fcb5a8d"
+      ],
+      "summary": "Codex CLI 发布0.163.0正式版，允许回答时发送后续消息即时调整方向，中断也会停止运行中的Code Mode单元及嵌套工具。新增配置搜索和后台服务重启，并修复恢复线程时的权限、网络批准继承，以及网络代理在DNS解析前检查权限等问题；部分只读工具可以并行执行。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "announcement-2026-10-15",
+          "new_information": "",
+          "summary": "Codex CLI 发布0.163.0正式版，允许回答时发送后续消息即时调整方向，中断也会停止运行中的Code Mode单元及嵌套工具。新增配置搜索和后台服务重启，并修复恢复线程时的权限、网络批准继承，以及网络代理在DNS解析前检查权限等问题；部分只读工具可以并行执行。"
+        }
+      ]
+    },
+    "evt_cc4acff7a85a2dd782d7": {
+      "event_key": "cloudflare-openai:search-discovery:pilot-results",
+      "aliases": [
+        "cloudflareopenaisearchdiscoverypilotresults"
+      ],
+      "urls": [
+        "https://blog.cloudflare.com/cloudflare-openai-discovery-agentic-web"
+      ],
+      "milestones": [
+        "earlyresultsfromjulypilotpublished20261015"
+      ],
+      "evidence_hashes": [
+        "473f3f71d67814926b683b342a54cabddfae79c024380d05997121f5e71f41a2"
+      ],
+      "summary": "Cloudflare 与 OpenAI 披露7月启动的研究试点初步结果：利用网络中的页面与变化信号，帮助搜索爬虫发现新内容，并减少不存在页面、重复内容和无效重访。Cloudflare提供发现线索，OpenAI自行评估页面并排序；双方下一步将改善变化信号，并衡量发现内容后的实际效果。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "early results from july pilot published 2026-10-15",
+          "new_information": "",
+          "summary": "Cloudflare 与 OpenAI 披露7月启动的研究试点初步结果：利用网络中的页面与变化信号，帮助搜索爬虫发现新内容，并减少不存在页面、重复内容和无效重访。Cloudflare提供发现线索，OpenAI自行评估页面并排序；双方下一步将改善变化信号，并衡量发现内容后的实际效果。"
+        }
+      ]
+    },
+    "evt_fdafbcca21b364cd5135": {
+      "event_key": "hkma:art:responsible-ai-framework",
+      "aliases": [
+        "hkmaartresponsibleaiframework"
+      ],
+      "urls": [
+        "https://www.hkma.gov.hk/eng/news-and-media/press-releases/2026/10/20261015-3"
+      ],
+      "milestones": [
+        "artframeworkannounced20261015"
+      ],
+      "evidence_hashes": [
+        "2111f76b591e4007b12b4ae7234e1d073203b5f3e1532d56b14aef78f650bb64"
+      ],
+      "summary": "香港金管局公布ART框架，围绕可问责、韧性和可信赖推进银行业AI应用。公告包括已发出的负责任AI监管指导、与数码港及香港大学合作的数据分享平台，以及在GenA.I. Sandbox++继续测试Agent应用；意图约束问责、重要Agent登记和干预机制将通过后续讨论文件探索。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "art framework announced 2026-10-15",
+          "new_information": "",
+          "summary": "香港金管局公布ART框架，围绕可问责、韧性和可信赖推进银行业AI应用。公告包括已发出的负责任AI监管指导、与数码港及香港大学合作的数据分享平台，以及在GenA.I. Sandbox++继续测试Agent应用；意图约束问责、重要Agent登记和干预机制将通过后续讨论文件探索。"
+        }
+      ]
+    },
+    "evt_a947e08e5fbc2cbd7270": {
+      "event_key": "anthropic:singapore:office-mou",
+      "aliases": [
+        "anthropicsingaporeofficemou"
+      ],
+      "urls": [
+        "https://www.anthropic.com/news/singapore-office-opening"
+      ],
+      "milestones": [
+        "singaporeofficeandgovernmentmouannounced20261014"
+      ],
+      "evidence_hashes": [
+        "35259ff98d0997e247e704d5fbd7d8d06e365cbeeb35a76779573904478ced81"
+      ],
+      "summary": "Anthropic于10月14日宣布开设新加坡办公室，成为其亚太地区第五个办公室，并与新加坡数码发展及新闻部签署合作备忘录。合作范围包括AI安全、模型评估、采用影响研究及负责任应用；后续计划开展测试标准和事件响应技术交流，并支持AI技能与中小企业采用。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "singapore office and government mou announced 2026-10-14",
+          "new_information": "",
+          "summary": "Anthropic于10月14日宣布开设新加坡办公室，成为其亚太地区第五个办公室，并与新加坡数码发展及新闻部签署合作备忘录。合作范围包括AI安全、模型评估、采用影响研究及负责任应用；后续计划开展测试标准和事件响应技术交流，并支持AI技能与中小企业采用。"
+        }
+      ]
+    },
+    "evt_2df2e8906a577005dc42": {
+      "event_key": "anthropic:us-midterms:safeguards-2026",
+      "aliases": [
+        "anthropicusmidtermssafeguards2026"
+      ],
+      "urls": [
+        "https://www.anthropic.com/news/2026-us-midterms"
+      ],
+      "milestones": [
+        "multistepmisuseclassifiersandofficialvotinginformationplansdisclosed20261014"
+      ],
+      "evidence_hashes": [
+        "a144f1728b95194143ea6f9e011e1a212cbcd40888a3429fb930bfbf6230c144"
+      ],
+      "summary": "Anthropic披露中期选举防护更新：测试发现，单个有害请求较容易拒绝，但拆分成多次表面正常任务的恶意活动可能漏检。公司称已增加识别多步骤滥用的分类器及针对性防护，并计划在本月晚些时候将Democracy Works整理的官方投票信息引入美国用户回答；选举夜结果展示也属于后续安排。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "multi-step misuse classifiers and official voting information plans disclosed 2026-10-14",
+          "new_information": "",
+          "summary": "Anthropic披露中期选举防护更新：测试发现，单个有害请求较容易拒绝，但拆分成多次表面正常任务的恶意活动可能漏检。公司称已增加识别多步骤滥用的分类器及针对性防护，并计划在本月晚些时候将Democracy Works整理的官方投票信息引入美国用户回答；选举夜结果展示也属于后续安排。"
+        }
+      ]
+    },
+    "evt_15fa5b9db3f4d636c2c7": {
+      "event_key": "sri-maka:approve:video-analysis-license",
+      "aliases": [
+        "srimakaapprovevideoanalysislicense"
+      ],
+      "urls": [
+        "https://www.sri.com/press/sri-and-maka-collaborate-to-help-families-find-thoughtfully-curated-videos-for-young-children"
+      ],
+      "milestones": [
+        "earlylearningvideoanalysistechnologylicensed"
+      ],
+      "evidence_hashes": [
+        "d676d65e88a7d1d05e53cb0909baaeca066cf1e9e350383868d848fe8028b7ef"
+      ],
+      "summary": "SRI 于10月15日宣布向 Maka 许可视频分析技术 APPROVE，用 AI 识别视频中的早期读写和数学内容。Maka 正在开发面向0至6岁儿童的精选视频应用：AI 先筛查内容库，专家再逐集按其 Imprint 发展框架评估。公告未给出应用上线时间，也未将该技术描述为直接授课的 AI 教师。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "early-learning-video-analysis-technology-licensed",
+          "new_information": "",
+          "summary": "SRI 于10月15日宣布向 Maka 许可视频分析技术 APPROVE，用 AI 识别视频中的早期读写和数学内容。Maka 正在开发面向0至6岁儿童的精选视频应用：AI 先筛查内容库，专家再逐集按其 Imprint 发展框架评估。公告未给出应用上线时间，也未将该技术描述为直接授课的 AI 教师。"
+        }
+      ]
+    },
+    "evt_1d544b68c9587deed35e": {
+      "event_key": "safedep:pmg:0.32.0",
+      "aliases": [
+        "safedeppmg0320"
+      ],
+      "urls": [
+        "https://github.com/safedep/pmg/releases/tag/v0.32.0"
+      ],
+      "milestones": [
+        "stable0320addsgoandcargoproxycoverage"
+      ],
+      "evidence_hashes": [
+        "7c05a6c24e5f70ee067c1a4af0d31a5d6337f0ed64c0f5f2fc5615f55bbefa5f"
+      ],
+      "summary": "SafeDep发布Package Manager Guard0.32.0，在持久代理中加入Go模块下载分析，并支持自定义Cargo registry及Cargo在持久代理和内核强制路由下的检查；同时修复macOS、Windows的CA安装与信任库处理。项目通过代理、威胁情报、依赖冷却期和可选沙箱，为开发者及Coding Agent提供安装时防护，源码采用Apache2.0。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "stable0.32.0 adds Go and Cargo proxy coverage",
+          "new_information": "",
+          "summary": "SafeDep发布Package Manager Guard0.32.0，在持久代理中加入Go模块下载分析，并支持自定义Cargo registry及Cargo在持久代理和内核强制路由下的检查；同时修复macOS、Windows的CA安装与信任库处理。项目通过代理、威胁情报、依赖冷却期和可选沙箱，为开发者及Coding Agent提供安装时防护，源码采用Apache2.0。"
+        }
+      ]
+    },
+    "evt_5ba3085170eb2c3615cf": {
+      "event_key": "aquasecurity:trivy:0.76.0",
+      "aliases": [
+        "aquasecuritytrivy0760"
+      ],
+      "urls": [
+        "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+      ],
+      "milestones": [
+        "importantbackfillstable0760released20261014"
+      ],
+      "evidence_hashes": [
+        "72597b717d0f0eeb6fb8e7786d213eb81ae7edefa1c0dc0e25f8f23bf39a8b92"
+      ],
+      "summary": "Trivy10月14日发布0.76.0，在实验性CBOM中输出算法的经典安全位数和NIST量子安全类别，供下游工具评估密码资产；无法估算的等级不填。该版将Echo修补包识别扩展到Maven与npm，并增加多种RapidFort基底系统扫描。正式发版早于主窗口、处于72小时补漏内，历史未见同版本报道。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "important backfill stable0.76.0 released20261014",
+          "new_information": "",
+          "summary": "Trivy10月14日发布0.76.0，在实验性CBOM中输出算法的经典安全位数和NIST量子安全类别，供下游工具评估密码资产；无法估算的等级不填。该版将Echo修补包识别扩展到Maven与npm，并增加多种RapidFort基底系统扫描。正式发版早于主窗口、处于72小时补漏内，历史未见同版本报道。"
+        }
+      ]
+    },
+    "evt_57de8cc6467ca0be1b9d": {
+      "event_key": "windmill:runtime-isolation:1.836-1.837",
+      "aliases": [
+        "windmillruntimeisolation18361837"
+      ],
+      "urls": [
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.836.0",
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0"
+      ],
+      "milestones": [
+        "stable18360and18370released20261015"
+      ],
+      "evidence_hashes": [
+        "b8c7c80240acb8303dd214c53daec847c677de3669b4bd2f479f66a4d9609fff",
+        "d3eee7142c7f3577ea71788e0a6bd91e9cadc578f64da045d0c063a24f3e85f1"
+      ],
+      "summary": "Windmill10月15日连续发布1.836.0与1.837.0：新建低代码及代码应用（raw app）默认开启前端隔离；DuckDB作业改为独立runner进程，按worker配置使用nsjail、unshare或普通子进程；Agent新增可选的部署者身份运行开关。更新还包括取消作业限批重跑和部署后依赖重新锁定，适用于自托管内部工具与自动化。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "stable1.836.0 and1.837.0 released20261015",
+          "new_information": "",
+          "summary": "Windmill10月15日连续发布1.836.0与1.837.0：新建低代码及代码应用（raw app）默认开启前端隔离；DuckDB作业改为独立runner进程，按worker配置使用nsjail、unshare或普通子进程；Agent新增可选的部署者身份运行开关。更新还包括取消作业限批重跑和部署后依赖重新锁定，适用于自托管内部工具与自动化。"
+        }
+      ]
+    },
+    "evt_abd16c49fe9ed334c37e": {
+      "event_key": "anthropic:claude-code:2.1.301",
+      "aliases": [
+        "anthropicclaudecode21301"
+      ],
+      "urls": [
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+      ],
+      "milestones": [
+        "announcement20261015"
+      ],
+      "evidence_hashes": [
+        "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc"
+      ],
+      "summary": "Claude Code2.1.301新增无人值守重试等待上限及权限判定追踪字段，修复退出时删除可能含未推送提交的hook工作树、代理跳过步骤仍报成功，以及搜索程序失败却显示无匹配等问题。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "announcement-2026-10-15",
+          "new_information": "",
+          "summary": "Claude Code2.1.301新增无人值守重试等待上限及权限判定追踪字段，修复退出时删除可能含未推送提交的hook工作树、代理跳过步骤仍报成功，以及搜索程序失败却显示无匹配等问题。"
+        }
+      ]
+    },
+    "evt_e1b03688326f6a2a881e": {
+      "event_key": "nvidia:europe:science-enablers-pledge",
+      "aliases": [
+        "nvidiaeuropescienceenablerspledge"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/ec-scientific-computing-pledge"
+      ],
+      "milestones": [
+        "scienceenablersparticipationandopencoursewareoutlined20261015"
+      ],
+      "evidence_hashes": [
+        "d81371419860d0d1af63ab69fd815de60c71eaee000fb5210779a7e461c8bdfa"
+      ],
+      "summary": "NVIDIA宣布参与欧洲AI in Science Enablers计划，提供工具、培训和科研协作支持，并推出可下载、开放许可的DLI课程资料；同时与欧洲AI工厂探索初创企业和中小企业的算力接入。",
+      "first_report": "2026-10-16",
+      "last_report": "2026-10-16",
+      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-16",
+          "milestone": "science enablers participation and open courseware outlined 2026-10-15",
+          "new_information": "",
+          "summary": "NVIDIA宣布参与欧洲AI in Science Enablers计划，提供工具、培训和科研协作支持，并推出可下载、开放许可的DLI课程资料；同时与欧洲AI工厂探索初创企业和中小企业的算力接入。"
+        }
+      ]
     }
   },
   "reports": {
@@ -1223,6 +1631,16 @@
           "data/2026-10-15-r2.json": "cd16ff4a78c937ebaf02c1efc429939d8e32cb2b4feb775f3b3d9bd24e09705c",
           "data/2026-10-15-r2.manifest.json": "080f12c206b502bfeb5f32e04a8743028beffddd8d4ab17c256c57657aab774f"
         }
+      }
+    },
+    "2026-10-16": {
+      "window_start": "2026-10-15T02:29:08.780799+00:00",
+      "window_end": "2026-10-16T01:02:06.367769+00:00",
+      "count": 17,
+      "summary": "本期关注开放模型的新选择、编码工具的权限边界和软件供应链防护。Muse Spark Open、FLUX 3 Image Klein与Granite Switch提供不同规模与部署取舍；Codex和Qwen Code更新编码工作流。开源栏目覆盖PMG、Trivy和Windmill等非AI专属工具，教育方向关注儿童视频筛选中的AI初筛与专家复核。部分商业、模型和政策公告因原文时间或访问核验不足未收录，六领域均已执行检索。",
+      "sha256": {
+        "reports/2026-10-16.html": "11607c2b3460e242a83ea32d7513206727a53c715c24d26125e129ebc887c3b4",
+        "data/2026-10-16.json": "04d285cff7fe3b61910dfb849440f50efed88a35a5e0553298b0bb9fbc9f0a96"
       }
     }
   }
