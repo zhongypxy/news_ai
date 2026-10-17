@@ -147,23 +147,26 @@
         "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.2",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2",
-        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0"
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3-preview.0"
       ],
       "milestones": [
         "0252preview0tsmodsandpersistentteamplanapproval",
+        "0253preview0workspaceandsessioncontrols20261016",
         "stableclianddesktop0251released20261011",
         "stableclianddesktop0252released20261015"
       ],
       "evidence_hashes": [
         "108d980689f7cfba76d24a1608d102c00416510e001cc9606bfb393f61e2acd5",
         "4fe57e20c7445fcc182611e8a3296d0da603e0f7349e053ff80f81bdff666b47",
+        "6a807dcf4ff60d4821eb3dcbc1065673ed06435ad881c07ec070887cf1a9d502",
         "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a",
         "a2e8130b456c57fc98bdb663adec2d23b0d43c073ffda9cfa9c97895cb005602"
       ],
-      "summary": "Qwen Code发布0.25.2正式版及对应桌面版本，将此前预览阶段的Mods与团队协作能力带入稳定发行。本次发布说明还包括MCP App消息提交前审阅、工作区文件浏览与只读Excel预览，以及取消意图跨恢复保留、已提交文件结果恢复等改进。Managed Agent参考分发仍明确标为实验性。",
+      "summary": "Qwen Code0.25.3-preview.0加入常驻Workspace文件会话、只读快照子任务及Shell Full Access与会话审批切换，并修复父会话关闭后子任务继续运行、无限重试等问题；这是预览版。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-16",
-      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -182,6 +185,12 @@
           "milestone": "stable-cli-and-desktop-0.25.2-released-2026-10-15",
           "new_information": "此前0.25.2-preview.0是预览；本次正式0.25.2和桌面发行，并整合其后恢复、文件浏览、MCP App审阅等条目。",
           "summary": "Qwen Code发布0.25.2正式版及对应桌面版本，将此前预览阶段的Mods与团队协作能力带入稳定发行。本次发布说明还包括MCP App消息提交前审阅、工作区文件浏览与只读Excel预览，以及取消意图跨恢复保留、已提交文件结果恢复等改进。Managed Agent参考分发仍明确标为实验性。"
+        },
+        {
+          "report_date": "2026-10-17",
+          "milestone": "0.25.3-preview.0-workspace-and-session-controls-2026-10-16",
+          "new_information": "已报0.25.2正式版；新增0.25.3-preview.0的Workspace会话、快照子任务、审批切换及关闭/重试修复。",
+          "summary": "Qwen Code0.25.3-preview.0加入常驻Workspace文件会话、只读快照子任务及Shell Full Access与会话审批切换，并修复父会话关闭后子任务继续运行、无限重试等问题；这是预览版。"
         }
       ]
     },
@@ -247,30 +256,37 @@
       ],
       "urls": [
         "https://github.com/langchain-ai/langgraph/releases/tag/1.2.15",
+        "https://github.com/langchain-ai/langgraph/releases/tag/1.2.16",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpoint%3D%3D4.3.0",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.1.3",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpointpostgres%3D%3D3.2.0",
         "https://github.com/langchain-ai/langgraph/releases/tag/checkpointsqlite%3D%3D3.1.2",
         "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.35",
-        "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.7"
+        "https://github.com/langchain-ai/langgraph/releases/tag/cli%3D%3D0.4.36",
+        "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.7",
+        "https://github.com/langchain-ai/langgraph/releases/tag/sdk%3D%3D0.4.8"
       ],
       "milestones": [
+        "core1216sdk048cli0436released20261016",
         "langgraph1215checkpoint430sdk047storagefixes",
         "postgrescheckpoint320andcli0435released20261014"
       ],
       "evidence_hashes": [
         "42e7ba89c18b5889d2472cc98aaa4ce58c01ff95843f21d480ddb4444d0ba402",
         "5b3a41322dbb6e4d1104aca15b2cd40a104a4944ef2f32bcc25efa97e5fbfd51",
+        "629ee15e522cd5b917161a1e0065d4f226847e309531104f748d851fba2679e3",
         "6c89119cf326605ad1284b69ca064b09949eab9dd9765114ba049e1063d87bd4",
         "7d2698a1bfb8dae0c358bd3937507c42122c9e8f73daf3f5513a72d3302be277",
         "7e443c153d4e3e50e39b7a96c55260f75f2f3bb1e1e5829ec2583e46e699de50",
         "984886a552222ae1d973d31a76c4e90aa6fec32739df6d04cad8312acc288ab7",
-        "9aa4964c366ac04a5dea19a65b0ecab95a54f3650dd1b8f50333a9c840923223"
+        "9aa4964c366ac04a5dea19a65b0ecab95a54f3650dd1b8f50333a9c840923223",
+        "c19402bdff1f0dcc2037dc13310ba929b0409439a7fcffb434bc8b0eee4977dc",
+        "de9bca2bd9a2cc75cc35f0b12891774ff357dca17569cee4da08e77a4bffc09b"
       ],
-      "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。",
+      "summary": "LangGraph发布1.2.16，修复恢复执行时Command更新重复应用、子图已完成任务重新运行及待写入结果重复保存等问题；无效恢复值不再妨碍其他任务完成。Python SDK0.4.8显式呈现线程流错误，并停止重试被拒绝的流。CLI0.4.36接受serverless/dedicated部署别名，部署时沿用当前Docker context。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:29:08.780799+00:00",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:00:59.602141+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -283,6 +299,12 @@
           "milestone": "postgres checkpoint3.2.0 and cli0.4.35 released 2026-10-14",
           "new_information": "10月13日日报报道框架1.2.15及checkpoint4.3.0的状态恢复维护；本次PostgreSQL存储组件新增此前未实现的prune，CLI新增私有镜像拉取和失败构建日志支持。",
           "summary": "LangGraph 的 checkpoint-postgres 3.2.0 为同步和异步Saver加入prune，可清除指定线程的检查点、写入和blob，或保留各命名空间最新检查点；CLI0.4.35支持私有镜像拉取密钥并保留失败部署构建日志。"
+        },
+        {
+          "report_date": "2026-10-17",
+          "milestone": "core1.2.16-sdk0.4.8-cli0.4.36-released-2026-10-16",
+          "new_information": "前期是Postgres3.2.0 prune与CLI0.4.35；本次新增core恢复重复执行修复、SDK流错误传播和CLI部署上下文/别名修复。",
+          "summary": "LangGraph发布1.2.16，修复恢复执行时Command更新重复应用、子图已完成任务重新运行及待写入结果重复保存等问题；无效恢复值不再妨碍其他任务完成。Python SDK0.4.8显式呈现线程流错误，并停止重试被拒绝的流。CLI0.4.36接受serverless/dedicated部署别名，部署时沿用当前Docker context。"
         }
       ]
     },
@@ -648,20 +670,23 @@
       ],
       "urls": [
         "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates",
-        "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl"
+        "https://blogs.nvidia.com/blog/nemotron-3-5-super-vl",
+        "https://developer.nvidia.com/blog/code-test-and-deploy-on-one-machine-with-nvidia-rtx-spark"
       ],
       "milestones": [
+        "laptopsavailableandwindowsarmdevelopmentstackdetailed20261016",
         "pairgaandlocalagentsoftwareupdatesannounced20261013",
         "supervlandbolt74bavailable20261015"
       ],
       "evidence_hashes": [
         "593e37418e7531efb279f4b73cddf3c48a8c4d54da86bbf4f3772d44ac2c744d",
+        "5a532387b1879ae7354b38f57100cb55d78e525285138d7418a7519cc79e130a",
         "761827b7c685a8bb5496183d0adf2cc8b689fda589e6a85b139d4a11a0bc31c5"
       ],
-      "summary": "NVIDIA 宣布开放的Nemotron 3.5 Super VL 120B与Bolt 74B-A9B 24GB当日可用，前者面向持续运行的多模态企业代理，后者以原生2-bit量化面向本地任务。相比10月13日软件公告中Bolt的未来开放计划，本次新增实际模型交付；更小的Bolt E4B 4GB仍计划10月23日提供。",
+      "summary": "NVIDIA 10月16日开发公告表示RTX Spark笔记本现已上市，小型台式机计划11月推出。新文章具体介绍Windows Arm的PyTorch-CUDA构建、原生Python环境、Junie Local支持和媒体SDK，并展示本地与云端模型路由、可选系统级沙箱等集成路径。",
       "first_report": "2026-10-14",
-      "last_report": "2026-10-16",
-      "last_seen_at": "2026-10-16T01:02:06.367769+00:00",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
       "updates": [
         {
           "report_date": "2026-10-14",
@@ -674,6 +699,12 @@
           "milestone": "super-vl-and-bolt74b-available-2026-10-15",
           "new_information": "10/14已报10/13的软件准备和Bolt未来计划；本次10/15确认SuperVL/Bolt74B可用。",
           "summary": "NVIDIA 宣布开放的Nemotron 3.5 Super VL 120B与Bolt 74B-A9B 24GB当日可用，前者面向持续运行的多模态企业代理，后者以原生2-bit量化面向本地任务。相比10月13日软件公告中Bolt的未来开放计划，本次新增实际模型交付；更小的Bolt E4B 4GB仍计划10月23日提供。"
+        },
+        {
+          "report_date": "2026-10-17",
+          "milestone": "laptops available and Windows Arm development stack detailed 2026-10-16",
+          "new_information": "此前报道软件就绪与Nemotron模型，本次原文明确笔记本已可购买，并披露Windows Arm的PyTorch-CUDA、Python原生环境、Junie Local及媒体SDK等开发路径；小型台式机仍计划11月。",
+          "summary": "NVIDIA 10月16日开发公告表示RTX Spark笔记本现已上市，小型台式机计划11月推出。新文章具体介绍Windows Arm的PyTorch-CUDA构建、原生Python环境、Junie Local支持和媒体SDK，并展示本地与云端模型路由、可选系统级沙箱等集成路径。"
         }
       ]
     },
@@ -1513,25 +1544,34 @@
       ],
       "urls": [
         "https://github.com/windmill-labs/windmill/releases/tag/v1.836.0",
-        "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0"
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0",
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.839.0"
       ],
       "milestones": [
-        "stable18360and18370released20261015"
+        "stable18360and18370released20261015",
+        "stable18390addsforkstorageisolationandprotectionrule"
       ],
       "evidence_hashes": [
+        "12436d075404770ba0e4e1b2c7137c149c00f1ce5586de2a6cadd79b2200248f",
         "b8c7c80240acb8303dd214c53daec847c677de3669b4bd2f479f66a4d9609fff",
         "d3eee7142c7f3577ea71788e0a6bd91e9cadc578f64da045d0c063a24f3e85f1"
       ],
-      "summary": "Windmill10月15日连续发布1.836.0与1.837.0：新建低代码及代码应用（raw app）默认开启前端隔离；DuckDB作业改为独立runner进程，按worker配置使用nsjail、unshare或普通子进程；Agent新增可选的部署者身份运行开关。更新还包括取消作业限批重跑和部署后依赖重新锁定，适用于自托管内部工具与自动化。",
+      "summary": "Windmill10月16日发布1.839.0：新fork的工作空间对象存储默认写入独立前缀，读取可回退祖先数据，列表和删除只作用于本fork；新增Require isolated forks保护规则，可要求对象存储、DuckLake及所属数据表采用隔离或克隆。版本还纳入Teams入站Bot Framework JWT验证修复，相关实现位于企业版。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-16",
-      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
           "milestone": "stable1.836.0 and1.837.0 released20261015",
           "new_information": "",
           "summary": "Windmill10月15日连续发布1.836.0与1.837.0：新建低代码及代码应用（raw app）默认开启前端隔离；DuckDB作业改为独立runner进程，按worker配置使用nsjail、unshare或普通子进程；Agent新增可选的部署者身份运行开关。更新还包括取消作业限批重跑和部署后依赖重新锁定，适用于自托管内部工具与自动化。"
+        },
+        {
+          "report_date": "2026-10-17",
+          "milestone": "stable1.839.0 adds fork storage isolation and protection rule",
+          "new_information": "此前1.836/1.837是新应用前端隔离、DuckDB独立进程和可选Agent运行身份；本次新增fork对象存储映射、可配置的跨数据类型隔离保护规则，并纳入企业版Teams入站认证修复。",
+          "summary": "Windmill10月16日发布1.839.0：新fork的工作空间对象存储默认写入独立前缀，读取可回退祖先数据，列表和删除只作用于本fork；新增Require isolated forks保护规则，可要求对象存储、DuckLake及所属数据表采用隔离或克隆。版本还纳入Teams入站Bot Framework JWT验证修复，相关实现位于企业版。"
         }
       ]
     },
@@ -1541,24 +1581,33 @@
         "anthropicclaudecode21301"
       ],
       "urls": [
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.301"
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.302"
       ],
       "milestones": [
-        "announcement20261015"
+        "announcement20261015",
+        "stable21302agentdefaultsandreliability20261016"
       ],
       "evidence_hashes": [
-        "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc"
+        "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc",
+        "cdc76586d818cb3f002e4e28823a8ed90184d2b0398b0a268514865ab675c71f"
       ],
-      "summary": "Claude Code2.1.301新增无人值守重试等待上限及权限判定追踪字段，修复退出时删除可能含未推送提交的hook工作树、代理跳过步骤仍报成功，以及搜索程序失败却显示无匹配等问题。",
+      "summary": "Claude Code2.1.302把fork子代理默认开放至无头模式、Agent SDK、桌面和VS Code，并调整主会话及子代理内部调用的前后台默认行为。新版修复MCP2026-07-28协商字段缺失导致工具不可用、云端计划任务失败后整项重跑，以及Windows exFAT/FAT32项目写入被拒等问题；部分第三方提供商会话改以default权限模式启动。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-16",
-      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
           "milestone": "announcement-2026-10-15",
           "new_information": "",
           "summary": "Claude Code2.1.301新增无人值守重试等待上限及权限判定追踪字段，修复退出时删除可能含未推送提交的hook工作树、代理跳过步骤仍报成功，以及搜索程序失败却显示无匹配等问题。"
+        },
+        {
+          "report_date": "2026-10-17",
+          "milestone": "stable-2.1.302-agent-defaults-and-reliability-2026-10-16",
+          "new_information": "2.1.301上期已报；本次新增fork子代理与前后台默认值、第三方提供商权限默认及MCP/计划任务/Windows修复。",
+          "summary": "Claude Code2.1.302把fork子代理默认开放至无头模式、Agent SDK、桌面和VS Code，并调整主会话及子代理内部调用的前后台默认行为。新版修复MCP2026-07-28协商字段缺失导致工具不可用、云端计划任务失败后整项重跑，以及Windows exFAT/FAT32项目写入被拒等问题；部分第三方提供商会话改以default权限模式启动。"
         }
       ]
     },
@@ -1586,6 +1635,390 @@
           "milestone": "science enablers participation and open courseware outlined 2026-10-15",
           "new_information": "",
           "summary": "NVIDIA宣布参与欧洲AI in Science Enablers计划，提供工具、培训和科研协作支持，并推出可下载、开放许可的DLI课程资料；同时与欧洲AI工厂探索初创企业和中小企业的算力接入。"
+        }
+      ]
+    },
+    "evt_29e8a0db5cbf0b8c2b7a": {
+      "event_key": "thu-maic:openmaic:1.2.0",
+      "aliases": [
+        "thumaicopenmaic120"
+      ],
+      "urls": [
+        "https://github.com/THU-MAIC/OpenMAIC/releases/tag/v1.2.0"
+      ],
+      "milestones": [
+        "stableserverfirstandclassroomexportreleased"
+      ],
+      "evidence_hashes": [
+        "5af1b1472c16f0e2eec808e8198340694eaafd64ceabfeb14565be88687f3358"
+      ],
+      "summary": "OpenMAIC 于10月16日发布1.2.0稳定版，将课程生成、资料、模型配置和身份持久化迁到服务端，关闭页面仍可生成，重启后从检查点恢复。课堂可导出 PPTX 或离线 HTML；PPTX 的互动场景以占位、链接和二维码保留。新版需要 PostgreSQL 与常驻 Node 服务，Vercel 部署继续使用1.1.x。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "stable-server-first-and-classroom-export-released",
+          "new_information": "",
+          "summary": "OpenMAIC 于10月16日发布1.2.0稳定版，将课程生成、资料、模型配置和身份持久化迁到服务端，关闭页面仍可生成，重启后从检查点恢复。课堂可导出 PPTX 或离线 HTML；PPTX 的互动场景以占位、链接和二维码保留。新版需要 PostgreSQL 与常驻 Node 服务，Vercel 部署继续使用1.1.x。"
+        }
+      ]
+    },
+    "evt_34f7742252e9b25c864d": {
+      "event_key": "reflection:beam:open-weight-release",
+      "aliases": [
+        "reflectionbeamopenweightrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/reflection-beam"
+      ],
+      "milestones": [
+        "weightsandinferencetrainingrecipesavailable20261016"
+      ],
+      "evidence_hashes": [
+        "03621b4911e0c86ee88c20491c366faf14814a16106b0f36b4e402a4aeba3e2d"
+      ],
+      "summary": "Reflection的Beam权重已在Hugging Face按Apache 2.0开放，提供BF16、FP8、NVFP4及投机解码草稿模型。Beam为501B总参数、每token约23B激活的纯文本MoE，支持百万token上下文；配套材料包括Rust Agent harness，以及推理、监督微调和强化学习接入配方。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:00:59.602141+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "weights-and-inference-training-recipes-available-2026-10-16",
+          "new_information": "",
+          "summary": "Reflection的Beam权重已在Hugging Face按Apache 2.0开放，提供BF16、FP8、NVFP4及投机解码草稿模型。Beam为501B总参数、每token约23B激活的纯文本MoE，支持百万token上下文；配套材料包括Rust Agent harness，以及推理、监督微调和强化学习接入配方。"
+        }
+      ]
+    },
+    "evt_6445a36cd864c4adf05e": {
+      "event_key": "microsoft:mai-base-2:pretraining-report",
+      "aliases": [
+        "microsoftmaibase2pretrainingreport"
+      ],
+      "urls": [
+        "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai"
+      ],
+      "milestones": [
+        "pretrainingcompletionandmethodsdisclosed20261015"
+      ],
+      "evidence_hashes": [
+        "24db9dd85f34ea9a226b6ac0a7616f0374ef6440ae3c7555e0c4936fba7ee90c"
+      ],
+      "summary": "微软披露已完成MAI-Base-2预训练：模型采用2.8T总参数、80B激活参数的MoE，并以无独立编码器的视觉语言架构原生纳入视觉数据。报告介绍数据扩展、处理专家负载不均的多轮dropless MoE、Muon优化器和激活梯度裁剪；模型当前仍在后训练，面向可信伙伴的Foundry权重许可属于后续方向。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "pretraining-completion-and-methods-disclosed-2026-10-15",
+          "new_information": "",
+          "summary": "微软披露已完成MAI-Base-2预训练：模型采用2.8T总参数、80B激活参数的MoE，并以无独立编码器的视觉语言架构原生纳入视觉数据。报告介绍数据扩展、处理专家负载不均的多轮dropless MoE、Muon优化器和激活梯度裁剪；模型当前仍在后训练，面向可信伙伴的Foundry权重许可属于后续方向。"
+        }
+      ]
+    },
+    "evt_4c677cbe524b6ae06d93": {
+      "event_key": "anthropic:quantum-circuits:evaluator-guided-research",
+      "aliases": [
+        "anthropicquantumcircuitsevaluatorguidedresearch"
+      ],
+      "urls": [
+        "https://www.anthropic.com/research/designing-efficient-quantum-circuits"
+      ],
+      "milestones": [
+        "quantumcircuitdesignresearchpublished20261016"
+      ],
+      "evidence_hashes": [
+        "a700831acb36dfac7339a5ba1fab11c652bc70c678d58601d585ebbacd847f46"
+      ],
+      "summary": "Anthropic公布Claude参与量子线路设计的研究：模型根据自然语言规格生成代码，由外部评估程序检查正确性并按资源开销评分，再迭代改进。研究覆盖八类计算原语，探索减少Toffoli门数、量子位数或改善两者权衡，并提出新的可逆模逆方法；相关工作涉及化学、优化与数论等任务。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "quantum-circuit-design-research-published-2026-10-16",
+          "new_information": "",
+          "summary": "Anthropic公布Claude参与量子线路设计的研究：模型根据自然语言规格生成代码，由外部评估程序检查正确性并按资源开销评分，再迭代改进。研究覆盖八类计算原语，探索减少Toffoli门数、量子位数或改善两者权衡，并提出新的可逆模逆方法；相关工作涉及化学、优化与数论等任务。"
+        }
+      ]
+    },
+    "evt_f54f2bcfcdd12e21f09c": {
+      "event_key": "anthropic:ecdsa-curve-origins:research",
+      "aliases": [
+        "anthropicecdsacurveoriginsresearch"
+      ],
+      "urls": [
+        "https://www.anthropic.com/research/ecdsa-curve-origins"
+      ],
+      "milestones": [
+        "curveseedprovenanceresearchpublished20261016"
+      ],
+      "evidence_hashes": [
+        "e2174e38e2157adb201ac0e39d2a678d1bc5170f2fd1398f1c6ac7db5fef17be"
+      ],
+      "summary": "Anthropic报告内部研究模型协助追溯NIST多条椭圆曲线种子的来源，发现若干公开种子可由Unix时间戳初始化的lrand48伪随机数生成器重现，并公开复现代码。研究还解释部分曲线基点的生成过程；B-163种子及多条基点仍未解释，也未确定为何部分可用候选曲线被跳过。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "curve-seed-provenance-research-published-2026-10-16",
+          "new_information": "",
+          "summary": "Anthropic报告内部研究模型协助追溯NIST多条椭圆曲线种子的来源，发现若干公开种子可由Unix时间戳初始化的lrand48伪随机数生成器重现，并公开复现代码。研究还解释部分曲线基点的生成过程；B-163种子及多条基点仍未解释，也未确定为何部分可用候选曲线被跳过。"
+        }
+      ]
+    },
+    "evt_733f8bf467f5f9a25262": {
+      "event_key": "anthropic:work-and-expectations:research-2026",
+      "aliases": [
+        "anthropicworkandexpectationsresearch2026"
+      ],
+      "urls": [
+        "https://www.anthropic.com/research/ai-expectations-gap",
+        "https://www.anthropic.com/research/employment-at-anthropic",
+        "https://www.anthropic.com/research/expectations-for-the-future"
+      ],
+      "milestones": [
+        "employmentandexpectationsreportspublished20261016"
+      ],
+      "evidence_hashes": [
+        "c4ce5f28750e618d23bdb2a64417f63ae4810845b8cc391b206fcf3751a81725",
+        "df8365734bacb3f73c21353f1b0fc421412bcf0c99b44f9130ea77ede3a762a3",
+        "f3cd1841c634993034aab13897669f368c4169c062e738b47fb38164c0c18444"
+      ],
+      "summary": "Anthropic发布两份研究：内部就业分析发现初级技术岗位招聘占比下降，员工更多时间投入Agent监控与协调；按Agent遥测及每人每周40工时估算，8月交互式Agent运行工时约为员工工时六倍。另一份8月调查比较10,980名美国成人与1,334名员工，发现员工对未来AI能力与自身工作自动化的预期更高。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "employment-and-expectations-reports-published-2026-10-16",
+          "new_information": "",
+          "summary": "Anthropic发布两份研究：内部就业分析发现初级技术岗位招聘占比下降，员工更多时间投入Agent监控与协调；按Agent遥测及每人每周40工时估算，8月交互式Agent运行工时约为员工工时六倍。另一份8月调查比较10,980名美国成人与1,334名员工，发现员工对未来AI能力与自身工作自动化的预期更高。"
+        }
+      ]
+    },
+    "evt_41a7360205bd11c1d566": {
+      "event_key": "github:hydrafusion:max-preview",
+      "aliases": [
+        "githubhydrafusionmaxpreview"
+      ],
+      "urls": [
+        "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option"
+      ],
+      "milestones": [
+        "modelpoolorchestrationandmaxresearchpreview20261014"
+      ],
+      "evidence_hashes": [
+        "b2db856c981a7f13f4f2911248d417a6afa5c7b1f56591d35e73b5df7aaffe91"
+      ],
+      "summary": "GitHub更新HydraFusion模型池与编排流程，并推出面向复杂任务的Max选项。新版按阶段分配推理强度：初稿用中等、复核用高强度；Cascade可新增评判和按需修复，Critique用工具直接检查工作区并让多个评论模型并行复核。两者覆盖VS Code、Copilot应用和CLI，均仍处研究预览。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "model-pool-orchestration-and-max-research-preview-2026-10-14",
+          "new_information": "",
+          "summary": "GitHub更新HydraFusion模型池与编排流程，并推出面向复杂任务的Max选项。新版按阶段分配推理强度：初稿用中等、复核用高强度；Cascade可新增评判和按需修复，Critique用工具直接检查工作区并让多个评论模型并行复核。两者覆盖VS Code、Copilot应用和CLI，均仍处研究预览。"
+        }
+      ]
+    },
+    "evt_d6434607c616e59f9dcf": {
+      "event_key": "github:code-security:agentic-autofix-ai-scan-ga",
+      "aliases": [
+        "githubcodesecurityagenticautofixaiscanga"
+      ],
+      "urls": [
+        "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability",
+        "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available"
+      ],
+      "milestones": [
+        "agenticautofixandpraiscanga20261015"
+      ],
+      "evidence_hashes": [
+        "cdc7a03d58d56a3a619605a4a0bae55ee8ee7cb1e759c3ba1ca74664035e3b62",
+        "fe359ab24873d2320d4d6c265cb2722c513fdce971637c6f104ca38dde81114e"
+      ],
+      "summary": "GitHub宣布Agentic Autofix正式可用：Copilot跨文件探索、修补并重跑CodeQL，确认告警关闭后提交草稿PR供人工审阅。同日PR AI Scan正式可用，补充CodeQL尚未覆盖的语言与框架。前者限默认分支告警、需企业云安全套餐和管理员启用；后者发现为建议性质，不阻断合并，也不扫描fork及Dependabot PR。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "agentic-autofix-and-pr-ai-scan-ga-2026-10-15",
+          "new_information": "",
+          "summary": "GitHub宣布Agentic Autofix正式可用：Copilot跨文件探索、修补并重跑CodeQL，确认告警关闭后提交草稿PR供人工审阅。同日PR AI Scan正式可用，补充CodeQL尚未覆盖的语言与框架。前者限默认分支告警、需企业云安全套餐和管理员启用；后者发现为建议性质，不阻断合并，也不扫描fork及Dependabot PR。"
+        }
+      ]
+    },
+    "evt_4bbb1d005b16498e4bbb": {
+      "event_key": "nvidia-ai4bharat:indic-pretraining:corpus-pipeline-announcement",
+      "aliases": [
+        "nvidiaai4bharatindicpretrainingcorpuspipelineannouncement"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/nvidia/scaling-indic-pretraining"
+      ],
+      "milestones": [
+        "22languagecorpusandgenerationpipelineoutlined20261016"
+      ],
+      "evidence_hashes": [
+        "95502ce2dc6d04d659cf0f7dffbf54fd2f1ec37e390e658f5365b6d62b15cdf8"
+      ],
+      "summary": "NVIDIA与IIT Madras/AI4Bharat披露约2.8T token、22种印度语言的Indic预训练语料及生成管线。文章明确语料即将开放；流程包含整文翻译、评分、修复与拉丁转写，并保留来源标识。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:00:59.602141+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "22-language-corpus-and-generation-pipeline-outlined-2026-10-16",
+          "new_information": "",
+          "summary": "NVIDIA与IIT Madras/AI4Bharat披露约2.8T token、22种印度语言的Indic预训练语料及生成管线。文章明确语料即将开放；流程包含整文翻译、评分、修复与拉丁转写，并保留来源标识。"
+        }
+      ]
+    },
+    "evt_657b8c6760f83ac9cde8": {
+      "event_key": "nist:si-incident-response:2026-key-practices",
+      "aliases": [
+        "nistsiincidentresponse2026keypractices"
+      ],
+      "urls": [
+        "https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training"
+      ],
+      "milestones": [
+        "tenvoluntaryincidentreadinesspracticespublished20261016"
+      ],
+      "evidence_hashes": [
+        "8ffd97b25e78ebb0a4a4706e760cf9330ba4fda58644d8f34ea65825990e4346"
+      ],
+      "summary": "NIST CAISSI、NSA SISC与CISA于10月16日联合发布十项自愿性实践，面向前沿系统训练与评估中的非指令性越界行为，覆盖准备、检测、响应、恢复与报告五个阶段。内容包括最小权限、监控完整性、证据留存、停止异常活动，以及恢复前强化隔离。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "ten voluntary incident readiness practices published 2026-10-16",
+          "new_information": "",
+          "summary": "NIST CAISSI、NSA SISC与CISA于10月16日联合发布十项自愿性实践，面向前沿系统训练与评估中的非指令性越界行为，覆盖准备、检测、响应、恢复与报告五个阶段。内容包括最小权限、监控完整性、证据留存、停止异常活动，以及恢复前强化隔离。"
+        }
+      ]
+    },
+    "evt_7a48b8b3ef73c2e5bd2f": {
+      "event_key": "eu:era-generative-ai:2026-october-update",
+      "aliases": [
+        "eueragenerativeai2026octoberupdate"
+      ],
+      "urls": [
+        "https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/era-living-guidelines-responsible-use-generative-ai-research-updated-2026-10-16_en?prefLang=fr"
+      ],
+      "milestones": [
+        "researchguidelinesexpandedtoagentsandproposalevaluation20261016"
+      ],
+      "evidence_hashes": [
+        "7c9462d6ba0eca536e2048c0aa46bf288c14ebc371aba4be306b90c6b736b883"
+      ],
+      "summary": "欧盟委员会10月16日宣布更新ERA科研生成式AI使用指南，新增Agentic AI内容，并细化同行评议和研究资助申请评估中的使用建议。新版继续以科研诚信、问责、透明和责任为基础，强调自主任务增加后对监督与可靠性的要求。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "research guidelines expanded to agents and proposal evaluation 2026-10-16",
+          "new_information": "",
+          "summary": "欧盟委员会10月16日宣布更新ERA科研生成式AI使用指南，新增Agentic AI内容，并细化同行评议和研究资助申请评估中的使用建议。新版继续以科研诚信、问责、透明和责任为基础，强调自主任务增加后对监督与可靠性的要求。"
+        }
+      ]
+    },
+    "evt_cf40d1e902ede4ba7081": {
+      "event_key": "uk-cma:microsoft-business-software:proposed-sms",
+      "aliases": [
+        "ukcmamicrosoftbusinesssoftwareproposedsms"
+      ],
+      "urls": [
+        "https://www.gov.uk/government/news/cma-takes-first-steps-to-ensure-choice-in-business-software"
+      ],
+      "milestones": [
+        "proposeddesignationandindicativeinterventionroadmap20261016"
+      ],
+      "evidence_hashes": [
+        "b6adf117cb7a763458e682ce5b17783dc6a8f6c9be1aadf7f2fe261410607f4d"
+      ],
+      "summary": "英国CMA 10月16日提出拟将微软商业软件生态指定为战略市场地位（SMS），并就该决定与后续路线图征求意见。拟进一步研究的领域包括客户能否自由选择AI功能、Copilot替代提供者的竞争条件，以及软件捆绑、许可和跨云迁移障碍。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "proposed designation and indicative intervention roadmap 2026-10-16",
+          "new_information": "",
+          "summary": "英国CMA 10月16日提出拟将微软商业软件生态指定为战略市场地位（SMS），并就该决定与后续路线图征求意见。拟进一步研究的领域包括客户能否自由选择AI功能、Copilot替代提供者的竞争条件，以及软件捆绑、许可和跨云迁移障碍。"
+        }
+      ]
+    },
+    "evt_0177a1828271354fc4ed": {
+      "event_key": "n8n:worker-shutdown-suspension:2.43.7",
+      "aliases": [
+        "n8nworkershutdownsuspension2437"
+      ],
+      "urls": [
+        "https://github.com/n8n-io/n8n/releases/tag/n8n%402.43.7"
+      ],
+      "milestones": [
+        "stable2437releasesoptinqueueworkersuspension"
+      ],
+      "evidence_hashes": [
+        "ba93fea2d938f851c5f59144a678d23e432386bdfca59a8235d1de5f35b758e2"
+      ],
+      "summary": "n8n10月16日发布2.43.7，将queue-mode worker关停时挂起执行的能力纳入正式版本。开启新配置后，可挂起的生产执行在下一个节点边界保存为waiting，交由主节点重新排队、其他worker续跑。功能默认关闭，流式、MCP、Chat Trigger、手动及评估等执行不在适用范围；项目采用源码可见的fair-code许可。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "stable2.43.7 releases opt-in queue worker suspension",
+          "new_information": "",
+          "summary": "n8n10月16日发布2.43.7，将queue-mode worker关停时挂起执行的能力纳入正式版本。开启新配置后，可挂起的生产执行在下一个节点边界保存为waiting，交由主节点重新排队、其他worker续跑。功能默认关闭，流式、MCP、Chat Trigger、手动及评估等执行不在适用范围；项目采用源码可见的fair-code许可。"
+        }
+      ]
+    },
+    "evt_db981889e1b354d5cfa8": {
+      "event_key": "google:gvisor:20261012.0",
+      "aliases": [
+        "googlegvisor202610120"
+      ],
+      "urls": [
+        "https://github.com/google/gvisor/releases/tag/release-20261012.0"
+      ],
+      "milestones": [
+        "formalreleasepublished20261016despitedateliketag"
+      ],
+      "evidence_hashes": [
+        "c94d3cc625fdc2ba3d6262dbe5589eaefa0bb01dad37039c5e33b4a3f145fc1d"
+      ],
+      "summary": "gVisor于10月16日正式发布release-20261012.0，包含内存型EmptyDir容量限制、并行预编译seccomp，以及保存恢复和网络维护。标签中的20261012不是GitHub实际发布日期。",
+      "first_report": "2026-10-17",
+      "last_report": "2026-10-17",
+      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-17",
+          "milestone": "formal release published20261016 despite date-like tag",
+          "new_information": "",
+          "summary": "gVisor于10月16日正式发布release-20261012.0，包含内存型EmptyDir容量限制、并行预编译seccomp，以及保存恢复和网络维护。标签中的20261012不是GitHub实际发布日期。"
         }
       ]
     }
@@ -1641,6 +2074,16 @@
       "sha256": {
         "reports/2026-10-16.html": "11607c2b3460e242a83ea32d7513206727a53c715c24d26125e129ebc887c3b4",
         "data/2026-10-16.json": "04d285cff7fe3b61910dfb849440f50efed88a35a5e0553298b0bb9fbc9f0a96"
+      }
+    },
+    "2026-10-17": {
+      "window_start": "2026-10-16T01:02:06.367769+00:00",
+      "window_end": "2026-10-17T01:00:59.602141+00:00",
+      "count": 19,
+      "summary": "本期重点是开放模型的实际交付、编码工具的自动修复与执行恢复，以及Agent的治理边界。Reflection开放Beam权重；微软披露MAI-Base-2预训练进展，但模型仍在后训练。GitHub安全功能、LangGraph与Claude Code更新进入开发工作流；OpenMAIC将课程生成迁至服务端。GitHub雷达覆盖Windmill、n8n和gVisor等工程项目。六领域均已检索，部分重要融资与中国政策候选受发布时间解析限制未入选，不能据此判断这些领域没有新闻。",
+      "sha256": {
+        "reports/2026-10-17.html": "c2032edab5cfbec953d72bce3771d10035af763dbb8a34cf191e747a86a9c3ce",
+        "data/2026-10-17.json": "a52766708764a53439b657cb7e416b222d84504c5dfedb8de067ef7fa213a5cd"
       }
     }
   }
