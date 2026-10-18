@@ -1545,21 +1545,24 @@
       "urls": [
         "https://github.com/windmill-labs/windmill/releases/tag/v1.836.0",
         "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0",
-        "https://github.com/windmill-labs/windmill/releases/tag/v1.839.0"
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.839.0",
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.840.0"
       ],
       "milestones": [
         "stable18360and18370released20261015",
-        "stable18390addsforkstorageisolationandprotectionrule"
+        "stable18390addsforkstorageisolationandprotectionrule",
+        "stable18400introducesrunstepno_networkandsandboxedbunnpminstalls"
       ],
       "evidence_hashes": [
         "12436d075404770ba0e4e1b2c7137c149c00f1ce5586de2a6cadd79b2200248f",
+        "680827cbbd41d688de8b0688798da84b48a4754fe2cb48f0846c05bc7e7c277e",
         "b8c7c80240acb8303dd214c53daec847c677de3669b4bd2f479f66a4d9609fff",
         "d3eee7142c7f3577ea71788e0a6bd91e9cadc578f64da045d0c063a24f3e85f1"
       ],
-      "summary": "Windmill10月16日发布1.839.0：新fork的工作空间对象存储默认写入独立前缀，读取可回退祖先数据，列表和删除只作用于本fork；新增Require isolated forks保护规则，可要求对象存储、DuckLake及所属数据表采用隔离或克隆。版本还纳入Teams入站Bot Framework JWT验证修复，相关实现位于企业版。",
+      "summary": "Windmill10月17日发布1.840.0，新增no_network注解，使支持的作业运行阶段进入独立网络命名空间，阻断外网、DNS与本机API，并移除运行环境中的WM_TOKEN；无法进入所需沙箱时拒绝执行。版本还在启用作业沙箱时，将Bun/npm依赖安装放入nsjail，修复Python模块挂载与AI代理路径校验等问题。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-17",
-      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1572,6 +1575,12 @@
           "milestone": "stable1.839.0 adds fork storage isolation and protection rule",
           "new_information": "此前1.836/1.837是新应用前端隔离、DuckDB独立进程和可选Agent运行身份；本次新增fork对象存储映射、可配置的跨数据类型隔离保护规则，并纳入企业版Teams入站认证修复。",
           "summary": "Windmill10月16日发布1.839.0：新fork的工作空间对象存储默认写入独立前缀，读取可回退祖先数据，列表和删除只作用于本fork；新增Require isolated forks保护规则，可要求对象存储、DuckLake及所属数据表采用隔离或克隆。版本还纳入Teams入站Bot Framework JWT验证修复，相关实现位于企业版。"
+        },
+        {
+          "report_date": "2026-10-18",
+          "milestone": "stable1.840.0 introduces run-step no_network and sandboxed bun/npm installs",
+          "new_information": "此前1.839为fork对象存储前缀及可配置隔离规则；本次1.840新增作业run-step断网注解、不能沙箱则拒绝的路径，以及已启用沙箱情况下的Bun/npm安装隔离。",
+          "summary": "Windmill10月17日发布1.840.0，新增no_network注解，使支持的作业运行阶段进入独立网络命名空间，阻断外网、DNS与本机API，并移除运行环境中的WM_TOKEN；无法进入所需沙箱时拒绝执行。版本还在启用作业沙箱时，将Bun/npm依赖安装放入nsjail，修复Python模块挂载与AI代理路径校验等问题。"
         }
       ]
     },
@@ -2021,6 +2030,141 @@
           "summary": "gVisor于10月16日正式发布release-20261012.0，包含内存型EmptyDir容量限制、并行预编译seccomp，以及保存恢复和网络维护。标签中的20261012不是GitHub实际发布日期。"
         }
       ]
+    },
+    "evt_11845a869cf1af21f4e8": {
+      "event_key": "hogan-lovells-cadwalader:harvey:practice-group-adoption-2026",
+      "aliases": [
+        "hoganlovellscadwaladerharveypracticegroupadoption2026"
+      ],
+      "urls": [
+        "https://www.harvey.ai/blog/hogan-lovells-cadwalader-adopts-harvey"
+      ],
+      "milestones": [
+        "practicegroupsandcustomagentscasepublished"
+      ],
+      "evidence_hashes": [
+        "569b37da1a2173b546689a157cd52e20302426e1f1fa9b2b0e752deda5141f50"
+      ],
+      "summary": "Harvey 于10月16日披露，Hogan Lovells Cadwalader 已在公司与金融、诉讼与仲裁、监管及知识产权业务中采用其平台。双方通过业务组答疑、定制工作坊及资深律师的一对一交流推动日常使用；律所律师还为知识管理、资本市场和国际仲裁开发了定制 Agents，并共同构建办案指引。公告没有披露具体上线日期或独立效果评估。",
+      "first_report": "2026-10-18",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-18",
+          "milestone": "practice-groups-and-custom-agents-case-published",
+          "new_information": "",
+          "summary": "Harvey 于10月16日披露，Hogan Lovells Cadwalader 已在公司与金融、诉讼与仲裁、监管及知识产权业务中采用其平台。双方通过业务组答疑、定制工作坊及资深律师的一对一交流推动日常使用；律所律师还为知识管理、资本市场和国际仲裁开发了定制 Agents，并共同构建办案指引。公告没有披露具体上线日期或独立效果评估。"
+        }
+      ]
+    },
+    "evt_0fdc41106171411df678": {
+      "event_key": "ifm-inception42:jais-3:release",
+      "aliases": [
+        "ifminception42jais3release"
+      ],
+      "urls": [
+        "https://www.prnewswire.com/news-releases/institute-of-foundation-models-and-inception42-launch-jais-3-the-worlds-leading-arabic-native-ai-for-speech-writing-and-agents-302909754.html"
+      ],
+      "milestones": [
+        "arabicmodelfleetandspeechrelease20261015"
+      ],
+      "evidence_hashes": [
+        "834fe166702c156ff607cab73015ee70b11c94efe6668a2d24b99c4f249adc63"
+      ],
+      "summary": "IFM与Inception42发布Jais 3，包含六款面向阿拉伯语的开放语言模型，规模从0.9B到375B，并配套阿拉伯语语音识别模型Jais Speech。发行稿称模型及语音模型已在Hugging Face可用；同时提供阶段检查点、经审计的阿拉伯语评测及运行代码，支持研究与适配。",
+      "first_report": "2026-10-18",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-18",
+          "milestone": "arabic-model-fleet-and-speech-release-2026-10-15",
+          "new_information": "",
+          "summary": "IFM与Inception42发布Jais 3，包含六款面向阿拉伯语的开放语言模型，规模从0.9B到375B，并配套阿拉伯语语音识别模型Jais Speech。发行稿称模型及语音模型已在Hugging Face可用；同时提供阶段检查点、经审计的阿拉伯语评测及运行代码，支持研究与适配。"
+        }
+      ]
+    },
+    "evt_19da2964dd69a70e9a0c": {
+      "event_key": "stirling-pdf:3.2.0",
+      "aliases": [
+        "stirlingpdf320"
+      ],
+      "urls": [
+        "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v3.2.0"
+      ],
+      "milestones": [
+        "importantbackfillstable320published20261015"
+      ],
+      "evidence_hashes": [
+        "bcc88de8a5442a34a31a6b442fb4188603c5edd7d9f8ebe02a7168b9a3309ca9"
+      ],
+      "summary": "Stirling PDF于10月15日发布3.2.0，以重做的Page Editor替代旧multi-tool，改善页面重排、图像和文件命名操作。带密码PDF可在不先移除密码的流程中查看并使用常用工具，解锁时保留原有权限设置；签署流程增加邮件通知，同时修复表单草稿、签名及S3重试等问题。本条处于72小时补漏窗口，历史未报。",
+      "first_report": "2026-10-18",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-18",
+          "milestone": "important backfill stable3.2.0 published20261015",
+          "new_information": "",
+          "summary": "Stirling PDF于10月15日发布3.2.0，以重做的Page Editor替代旧multi-tool，改善页面重排、图像和文件命名操作。带密码PDF可在不先移除密码的流程中查看并使用常用工具，解锁时保留原有权限设置；签署流程增加邮件通知，同时修复表单草稿、签名及S3重试等问题。本条处于72小时补漏窗口，历史未报。"
+        }
+      ]
+    },
+    "evt_dcacf10fa8392636146d": {
+      "event_key": "cloudflare:verified-bots:continuous-accountability",
+      "aliases": [
+        "cloudflareverifiedbotscontinuousaccountability"
+      ],
+      "urls": [
+        "https://blog.cloudflare.com/verified-bots-accountability"
+      ],
+      "milestones": [
+        "behaviorbasedtrustevaluationintroduced20261016"
+      ],
+      "evidence_hashes": [
+        "3e191a73844d6e622d05172c8ba59e1f97a63087ac32d2bc6c45cb4ad5c5641f"
+      ],
+      "summary": "Cloudflare介绍对Verified bots持续观察的系统：除确认身份，还评估其是否长期遵守robots.txt，以及收到HTTP 429后是否降低请求速率。系统已用于内部评估，以持续模式而非单次异常形成可解释的信任区间；Radar公开分数与客户可选信任阈值仍是后续计划。",
+      "first_report": "2026-10-18",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-18",
+          "milestone": "behavior-based trust evaluation introduced 2026-10-16",
+          "new_information": "",
+          "summary": "Cloudflare介绍对Verified bots持续观察的系统：除确认身份，还评估其是否长期遵守robots.txt，以及收到HTTP 429后是否降低请求速率。系统已用于内部评估，以持续模式而非单次异常形成可解释的信任区间；Radar公开分数与客户可选信任阈值仍是后续计划。"
+        }
+      ]
+    },
+    "evt_8ce9b759ece6195ca682": {
+      "event_key": "cloudflare:gateway-workers:forward-public-beta",
+      "aliases": [
+        "cloudflaregatewayworkersforwardpublicbeta"
+      ],
+      "urls": [
+        "https://blog.cloudflare.com/programmable-gateway-dlp"
+      ],
+      "milestones": [
+        "forwardactionpublicbetaanddlpvalidationannounced20261015"
+      ],
+      "evidence_hashes": [
+        "68354c8ea1d8090052ba6e9156721c5aea5a0546d596b28a2cb8a71498d24e7f"
+      ],
+      "summary": "Cloudflare宣布Gateway的Forward操作与Workers集成进入公开测试，可把HTTP策略允许且匹配规则的流量送至Worker，处理请求、响应或记录上下文。DLP自定义校验也已提供，用业务自己的数据源验证检测结果。Gateway策略条件中的Custom Functions则预计年底前推出，不能与已公测的Forward混同。",
+      "first_report": "2026-10-18",
+      "last_report": "2026-10-18",
+      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-18",
+          "milestone": "forward action public beta and DLP validation announced 2026-10-15",
+          "new_information": "",
+          "summary": "Cloudflare宣布Gateway的Forward操作与Workers集成进入公开测试，可把HTTP策略允许且匹配规则的流量送至Worker，处理请求、响应或记录上下文。DLP自定义校验也已提供，用业务自己的数据源验证检测结果。Gateway策略条件中的Custom Functions则预计年底前推出，不能与已公测的Forward混同。"
+        }
+      ]
     }
   },
   "reports": {
@@ -2084,6 +2228,16 @@
       "sha256": {
         "reports/2026-10-17.html": "c2032edab5cfbec953d72bce3771d10035af763dbb8a34cf191e747a86a9c3ce",
         "data/2026-10-17.json": "a52766708764a53439b657cb7e416b222d84504c5dfedb8de067ef7fa213a5cd"
+      }
+    },
+    "2026-10-18": {
+      "window_start": "2026-10-17T01:00:59.602141+00:00",
+      "window_end": "2026-10-18T01:00:11.952421+00:00",
+      "count": 6,
+      "summary": "本期入选以工程更新与72小时重要补录为主。Windmill新增作业运行阶段的断网控制；Stirling PDF更新页面编辑和加密文档处理。Jais 3面向阿拉伯语任务，Harvey披露律所业务采用；Cloudflare推进机器人持续行为评估及可编程网关。六领域均已逐项检索并与历史去重。DeepSeek 1017等重要模型及部分融资候选因原文发布时间未通过程序校验而未入选，具体限制已列在质量说明中。",
+      "sha256": {
+        "reports/2026-10-18.html": "8a04a9cb022b2e85af28583ede5716f188c57a71e951ccbb37bafaaa6b1efb10",
+        "data/2026-10-18.json": "92547b8ca25abee2af601a401f64f8dcac538b251f94fdd2352b319e77b8e5d9"
       }
     }
   }

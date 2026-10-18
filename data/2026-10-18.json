@@ -1,0 +1,740 @@
+{
+  "schema_version": "2.0",
+  "report_date": "2026-10-18",
+  "window_start": "2026-10-17T01:00:59.602141Z",
+  "window_end": "2026-10-18T01:00:11.952421Z",
+  "backfill_start": "2026-10-15T01:00:11.952421Z",
+  "generated_at": "2026-10-18T01:12:18.870607Z",
+  "timezone": "Asia/Singapore",
+  "executive_summary": "本期入选以工程更新与72小时重要补录为主。Windmill新增作业运行阶段的断网控制；Stirling PDF更新页面编辑和加密文档处理。Jais 3面向阿拉伯语任务，Harvey披露律所业务采用；Cloudflare推进机器人持续行为评估及可编程网关。六领域均已逐项检索并与历史去重。DeepSeek 1017等重要模型及部分融资候选因原文发布时间未通过程序校验而未入选，具体限制已列在质量说明中。",
+  "top_stories": [
+    "evt_0fdc41106171411df678",
+    "evt_57de8cc6467ca0be1b9d",
+    "evt_19da2964dd69a70e9a0c"
+  ],
+  "news_items": [
+    {
+      "event_key": "hogan-lovells-cadwalader:harvey:practice-group-adoption-2026",
+      "milestone": "practice-groups-and-custom-agents-case-published",
+      "title": "重要补录：Hogan Lovells Cadwalader 披露三类业务采用 Harvey 并定制 Agents",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Harvey 于10月16日披露，Hogan Lovells Cadwalader 已在公司与金融、诉讼与仲裁、监管及知识产权业务中采用其平台。双方通过业务组答疑、定制工作坊及资深律师的一对一交流推动日常使用；律所律师还为知识管理、资本市场和国际仲裁开发了定制 Agents，并共同构建办案指引。公告没有披露具体上线日期或独立效果评估。",
+      "significance": "该案例提供了专业服务团队把 AI 接入具体业务组的组织实施细节：专业人员参与定制任务，同时安排培训和经验沉淀。技术管理者可以关注工具与业务知识、工作流程和内部推广之间的连接。",
+      "analysis": "定制 Agents 的存在并不等于法律任务可完全自主处理。可复制的实施经验仍取决于知识来源、律师复核方式、实际使用情况和维护责任；公告尚未给出这些环节的完整验证数据。",
+      "followup_questions": [
+        "定制Agents的知识来源、复核方式、活跃使用和维护责任如何验证？"
+      ],
+      "candidate_ids": [
+        "404bbe623cdb24675931"
+      ],
+      "tags": [
+        "法律AI",
+        "Harvey",
+        "企业部署",
+        "补漏"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_11845a869cf1af21f4e8",
+      "published_at": "2026-10-16T12:29:26.295000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "404bbe623cdb24675931",
+          "url": "https://www.harvey.ai/blog/hogan-lovells-cadwalader-adopts-harvey",
+          "name": "www.harvey.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-16T12:29:26.295000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.05,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "ifm-inception42:jais-3:release",
+      "milestone": "arabic-model-fleet-and-speech-release-2026-10-15",
+      "title": "IFM与Inception42发布Jais 3阿拉伯语模型系列",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "IFM与Inception42发布Jais 3，包含六款面向阿拉伯语的开放语言模型，规模从0.9B到375B，并配套阿拉伯语语音识别模型Jais Speech。发行稿称模型及语音模型已在Hugging Face可用；同时提供阶段检查点、经审计的阿拉伯语评测及运行代码，支持研究与适配。",
+      "significance": "从小模型到大型模型的组合，为阿拉伯语企业应用提供不同部署规模的选择。语音识别与工具调用可组成多步骤工作流；是否适合特定方言和业务仍须实测，厂商自己的评测及演示不能替代独立验证。",
+      "analysis": "发布边界应区分：模型与语音识别模型已开放，独立Jais Agent平台仍是即将推出。发行稿展示连接工具后的搜索及文档处理能力，不能推断模型自身能在没有工具和权限配置时完成业务操作。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "fa3d88d13b8174f62781"
+      ],
+      "tags": [
+        "Jais",
+        "阿拉伯语",
+        "开放权重",
+        "多语言"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_0fdc41106171411df678",
+      "published_at": "2026-10-15T13:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "fa3d88d13b8174f62781",
+          "url": "https://www.prnewswire.com/news-releases/institute-of-foundation-models-and-inception42-launch-jais-3-the-worlds-leading-arabic-native-ai-for-speech-writing-and-agents-302909754.html",
+          "name": "www.prnewswire.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-15T13:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "cloudflare:verified-bots:continuous-accountability",
+      "milestone": "behavior-based trust evaluation introduced 2026-10-16",
+      "title": "Cloudflare为已验证机器人引入持续行为评估，公开评分仍待推出",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Cloudflare介绍对Verified bots持续观察的系统：除确认身份，还评估其是否长期遵守robots.txt，以及收到HTTP 429后是否降低请求速率。系统已用于内部评估，以持续模式而非单次异常形成可解释的信任区间；Radar公开分数与客户可选信任阈值仍是后续计划。",
+      "significance": "身份验证不等于持续可信，网站需要根据实际访问行为管理自动化流量。该方案将声明、行为与处置连接起来，但不能写成所有客户今天已可使用公开机器人信用分。",
+      "analysis": "企业Agent也需要在身份之外保留行为证据和撤销权限的路径。机器人是否遵守访问偏好，可以成为访问治理的一层信号；它不能代替网站授权，也不能保证每次请求安全。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "b7fd16dcd4042521ac3c"
+      ],
+      "tags": [
+        "Cloudflare",
+        "机器人",
+        "访问治理"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_dcacf10fa8392636146d",
+      "published_at": "2026-10-16T13:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b7fd16dcd4042521ac3c",
+          "url": "https://blog.cloudflare.com/verified-bots-accountability",
+          "name": "blog.cloudflare.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-16T13:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "cloudflare:gateway-workers:forward-public-beta",
+      "milestone": "forward action public beta and DLP validation announced 2026-10-15",
+      "title": "Cloudflare将Workers接入Gateway策略，Forward进入公测",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Cloudflare宣布Gateway的Forward操作与Workers集成进入公开测试，可把HTTP策略允许且匹配规则的流量送至Worker，处理请求、响应或记录上下文。DLP自定义校验也已提供，用业务自己的数据源验证检测结果。Gateway策略条件中的Custom Functions则预计年底前推出，不能与已公测的Forward混同。",
+      "significance": "安全团队获得在流量处理路径中加入自有逻辑的入口，可用于上下文补充、告警及敏感信息校验。功能成熟度与执行成本仍需按具体入口判断，不能把整套可编程安全平台一概写成正式可用。",
+      "analysis": "自定义逻辑也带来代码错误、外部依赖和敏感数据传递的新责任。应限定处理范围、定义失败行为并验证权限；流量会按标准Worker请求计费，免费额度与执行时限仍适用。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "ede2f5dc8bc8c0249cf8"
+      ],
+      "tags": [
+        "Cloudflare",
+        "Workers",
+        "安全网关",
+        "公测"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_8ce9b759ece6195ca682",
+      "published_at": "2026-10-15T17:11:12.510000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "ede2f5dc8bc8c0249cf8",
+          "url": "https://blog.cloudflare.com/programmable-gateway-dlp",
+          "name": "blog.cloudflare.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-15T17:11:12.510000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "open_source_items": [
+    {
+      "event_key": "windmill:runtime-isolation:1.836-1.837",
+      "milestone": "stable1.840.0 introduces run-step no_network and sandboxed bun/npm installs",
+      "title": "Windmill 1.840 为作业运行阶段增加断网注解",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_57de8cc6467ca0be1b9d",
+      "new_information": "此前1.839为fork对象存储前缀及可配置隔离规则；本次1.840新增作业run-step断网注解、不能沙箱则拒绝的路径，以及已启用沙箱情况下的Bun/npm安装隔离。",
+      "summary": "Windmill10月17日发布1.840.0，新增no_network注解，使支持的作业运行阶段进入独立网络命名空间，阻断外网、DNS与本机API，并移除运行环境中的WM_TOKEN；无法进入所需沙箱时拒绝执行。版本还在启用作业沙箱时，将Bun/npm依赖安装放入nsjail，修复Python模块挂载与AI代理路径校验等问题。",
+      "significance": "昨日更新处理fork数据隔离，本次新增的是运行阶段可主动放弃网络访问，以及依赖安装阶段的系统隔离。对仅处理输入数据的脚本和Agent生成任务，这提供更细的执行权限边界；运维团队仍需分别核对运行、安装及外部服务调用的需要。",
+      "analysis": "no_network不覆盖依赖解析和安装，它们仍可联网。Bun/npm安装脚本继续执行，安装时保留网络且仅沙箱已开启时适用；未启用沙箱的worker行为不变。因此不能概括为整条供应链离线，或认为注解能让任意执行器获得同等隔离。 安装隔离可通过DISABLE_BUN_INSTALL_SANDBOX=true显式关闭，需同时检查该配置。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "4a9ad63e73a07f0e1a2b"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "Windmill",
+        "执行隔离",
+        "网络权限",
+        "自托管"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/windmill-labs/windmill",
+      "technical_highlights": "no_network的nsjail网络命名空间和fail-closed；移除run-step token/proxy；Bun/npm安装nsjail。",
+      "target_users": "自托管工作流、平台工程与Agent代码执行团队。",
+      "maturity_limitations": "适用Python/Bash/R及非native Bun/TS等受支持执行路径；需nsjail，安装仍联网、安装脚本仍运行；许可混合；未执行安全测试。；依赖安装隔离可显式关闭。",
+      "event_id": "evt_57de8cc6467ca0be1b9d",
+      "published_at": "2026-10-17T21:24:51Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": false,
+      "previous_summary": "Windmill10月16日发布1.839.0：新fork的工作空间对象存储默认写入独立前缀，读取可回退祖先数据，列表和删除只作用于本fork；新增Require isolated forks保护规则，可要求对象存储、DuckLake及所属数据表采用隔离或克隆。版本还纳入Teams入站Bot Framework JWT验证修复，相关实现位于企业版。",
+      "sources": [
+        {
+          "candidate_id": "4a9ad63e73a07f0e1a2b",
+          "url": "https://github.com/windmill-labs/windmill/releases/tag/v1.840.0",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-17T21:24:51Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.5,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "stirling-pdf:3.2.0",
+      "milestone": "important backfill stable3.2.0 published20261015",
+      "title": "重要补录：Stirling PDF 3.2 重做页面编辑与加密文档处理",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Stirling PDF于10月15日发布3.2.0，以重做的Page Editor替代旧multi-tool，改善页面重排、图像和文件命名操作。带密码PDF可在不先移除密码的流程中查看并使用常用工具，解锁时保留原有权限设置；签署流程增加邮件通知，同时修复表单草稿、签名及S3重试等问题。本条处于72小时补漏窗口，历史未报。",
+      "significance": "文档工具的实际价值不仅在转换格式，也在处理权限、签署和编辑过程中的状态保存。该版把页面管理与加密PDF操作整合得更顺畅，对自托管文档服务和内部办公工具有采用参考价值；性能改善为作者说明，本稿不写未经实测的倍数。",
+      "analysis": "“不先移除密码”描述操作流程，不能理解为绕过未知密码或权限。项目明确为open-core；tag LICENSE将一般内容按MIT许可，但engine、桌面及多个专有或服务目录另有许可，不能把完整产品或所有部署形态都概括为MIT开源。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "0365e41ae578da8e802e"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "重要补录",
+        "PDF",
+        "自托管",
+        "Open Core"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/Stirling-Tools/Stirling-PDF",
+      "technical_highlights": "Page Editor替换旧multi-tool；带密码PDF常用操作与权限保留；签署进度邮件；反向代理redirectBaseUrl。",
+      "target_users": "自托管文档平台、内部办公工具与PDF流程维护团队。",
+      "maturity_limitations": "open-core，特定目录另有许可；本轮只读根许可，不给所有子组件统一许可结论；未实测编辑完整性、性能或签名兼容性。",
+      "event_id": "evt_19da2964dd69a70e9a0c",
+      "published_at": "2026-10-15T20:36:26Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-18T01:12:18.870607Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "0365e41ae578da8e802e",
+          "url": "https://github.com/Stirling-Tools/Stirling-PDF/releases/tag/v3.2.0",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-15T20:36:26Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-18T01:12:18.870607Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.5,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "trend_signals": [
+    {
+      "text": "身份识别、行为观察、网络策略和运行隔离解决不同层面的问题。长期Agent及自动化工具需要把这些控制组合起来，并核对默认值、例外配置和失败行为，单一功能名称无法说明整体边界。",
+      "event_ids": [
+        "evt_dcacf10fa8392636146d",
+        "evt_8ce9b759ece6195ca682",
+        "evt_57de8cc6467ca0be1b9d"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "应用价值越来越依赖领域和工作流适配。阿拉伯语模型与律所定制Agent服务于不同需求，评估时应围绕具体任务、数据权限和人工审阅，分别验证模型能力与真实业务效果。",
+      "event_ids": [
+        "evt_0fdc41106171411df678",
+        "evt_11845a869cf1af21f4e8"
+      ],
+      "label": "ANALYSIS"
+    }
+  ],
+  "tracking_updates": [
+    "evt_57de8cc6467ca0be1b9d"
+  ],
+  "coverage_report": {
+    "source_status": [
+      {
+        "source_id": "openai",
+        "name": "OpenAI News",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 40,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "google_ai",
+        "name": "Google AI Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "microsoft",
+        "name": "Microsoft Official Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "agents",
+          "applications",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "nvidia",
+        "name": "NVIDIA Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "infrastructure",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 6,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "huggingface",
+        "name": "Hugging Face Blog",
+        "kind": "rss",
+        "region": "europe",
+        "categories": [
+          "opensource",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 30,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "qwen",
+        "name": "Qwen Code Official Releases",
+        "kind": "api",
+        "region": "asia",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 9,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "vllm",
+        "name": "vLLM Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "langgraph",
+        "name": "LangGraph Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "anthropic",
+        "name": "Anthropic News",
+        "kind": "page",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 11,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "rea",
+        "name": "REA Official Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 5,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:00:11.952421Z"
+      },
+      {
+        "source_id": "search_models",
+        "name": "模型与实验室·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 14,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:06:59Z"
+      },
+      {
+        "source_id": "search_agents",
+        "name": "Agent 与 Coding·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "agents"
+        ],
+        "status": "ok",
+        "fetched": 8,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:06:59Z"
+      },
+      {
+        "source_id": "search_opensource",
+        "name": "GitHub 全领域热门项目·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 64,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:04:05Z"
+      },
+      {
+        "source_id": "search_business",
+        "name": "商业与创业·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 4,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:05:01Z"
+      },
+      {
+        "source_id": "search_applications",
+        "name": "教育与垂直应用·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "applications"
+        ],
+        "status": "ok",
+        "fetched": 12,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:05:01Z"
+      },
+      {
+        "source_id": "search_infrastructure",
+        "name": "基础设施与政策·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:04:02.098094Z"
+      },
+      {
+        "source_id": "search_backfill",
+        "name": "重大新闻·72小时补漏",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-18T01:04:02.098094Z"
+      }
+    ],
+    "categories_checked": [
+      "agents",
+      "applications",
+      "business",
+      "infrastructure",
+      "models",
+      "opensource"
+    ],
+    "categories_missing": [],
+    "regions_checked": [
+      "asia",
+      "europe",
+      "global",
+      "north_america"
+    ],
+    "limitations": []
+  },
+  "quality_report": {
+    "status": "passed",
+    "candidates_collected": 204,
+    "candidates_verified": 31,
+    "published_count": 6,
+    "duplicates_removed": 0,
+    "rejected_count": 25,
+    "limitations": [
+      "十个公开采集入口与七项实时搜索均已执行；入口成功不代表每篇文章都可读取。原文访问、时间解析及编辑取舍记录保留在本轮日志。",
+      "GitHub无参数Trending入口成功读取官方All languages Today榜并记录观察时刻；带since的日/周/月及语言榜尝试失败，周月点击重试仍失败。已比较21个工程/非AI项目，不声称完整榜单或连续Star增速。",
+      "REA仍是已报6.5.0，n8n与gVisor本轮未核实新正式版本，未重复；Windmill仅报道1.840新增运行阶段网络控制，安装隔离可显式关闭，不能概括为所有阶段默认断网。",
+      "DeepSeek 1017官方模型卡及中英文公告/更新页均已找到并读到，但机器原文发布时间验证失败；Dory与d1-ultra原始入口也未通过。它们是已知重要覆盖遗漏，不能将未入选解释为当天没有重要模型更新。",
+      "RapidCanvas虽找到Vertex投资方10月16日原文，机器仍未取得可接受发布时间；Modal原始10月14日已在本轮72小时之外，未用10月16日转载冒充新消息。融资方向存在覆盖限制。",
+      "Itaú原文HTTP失败；IES教育研究申请页日期字段未被解析，RFA PDF读取超时，未绕过校验收录。MagicSchool/Buddy及低龄阅读语音绘画已专项检查，无更强合格新增不凑数；OpenMAIC1.2已报不重复。",
+      "CERT-In事件、中国技术出口目录及奔驰/Volvo/Adobe合作原文已实际读到，但机器原始日期验证失败，未用人工时间替代。Crusoe低比特LoRA同样受日期限制，其基础权重内存比例也不等于整项训练成本比例。",
+      "GPT-Live社区帖子虽可读且有时间，但作者身份与官方发布性质不足，不当作产品事实。聚合新闻、社区帖子和转载只作线索，不能据标题扩写。",
+      "Jais正式稿只依据发行稿，未借未合格技术页加入许可、上下文和激活参数等细节；性能与能力由发布方描述，未独立复测。Stirling PDF为open-core，部分目录与桌面组件有不同许可，不能说全包MIT或密码破解。",
+      "Harvey主要依据供应商公开采用案例，未独立测量律所效率、效果或覆盖范围；Cloudflare已内部使用、公开测试与未来提供的功能分开，不能把计划写成全量交付。",
+      "周末本期仅收录已通过现有验收的少量事件，不以旧版本、反复转载或活动庆祝补数量。全球与中文覆盖并不完备，时间解析限制可能造成重要遗漏。",
+      "由 ChatGPT Work 完成检索、编辑与再次事实审查；不是独立模型或人工审稿。",
+      "未调用 OpenAI API；Work 不向本程序提供实际 token、所用模型和订阅消耗，记录为未知。",
+      "代码核验原文可访问性、发布时间、来源引用、结构与历史；无法证明全部语义判断正确。"
+    ]
+  },
+  "usage": [
+    {
+      "mode": "chatgpt_work",
+      "model": "Work（应用选择，未公开）",
+      "purpose": "搜索、研究编辑、事实审查",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "billing_unknown": true
+    }
+  ],
+  "estimated_cost_usd": 0.0,
+  "prompt_sha256": "6adcbaa7f2deb49514132b6e70169ce0babfc0c24cd596d021838863065757ce"
+}
