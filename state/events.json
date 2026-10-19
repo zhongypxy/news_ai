@@ -1138,24 +1138,35 @@
         "morlutorea650"
       ],
       "urls": [
-        "https://github.com/morluto/rea/releases/tag/rea-agents-6.5.0"
+        "https://github.com/morluto/rea/releases/tag/rea-agents-6.5.0",
+        "https://github.com/morluto/rea/releases/tag/rea-agents-6.6.0",
+        "https://github.com/morluto/rea/releases/tag/rea-agents-6.7.0"
       ],
       "milestones": [
+        "reaagents670includestagged660",
         "stablereleasepublished20261014"
       ],
       "evidence_hashes": [
-        "b5ec2136e6b1959f0756c56e05969e4fcb6469e1148029e55fcaaf1829766ace"
+        "6981efa5879d95f079a517b059f4d4b88b685799167d7e3b5df1eb4159bf0a35",
+        "b5ec2136e6b1959f0756c56e05969e4fcb6469e1148029e55fcaaf1829766ace",
+        "f25ba536f128861dec3fefa7ab6203c7fb37a25c6309b0511e1f8913f77ca382"
       ],
-      "summary": "REA 正式发布6.5.0，以CLI和MCP连接逆向分析工具。新版本支持精确选择JavaScript输入、恢复选定文件间的代码分块关系，并在多类分析中提供精简摘要和保留证据分页；还扩展SQLite快照、已保存网络包、WASM与Electron fuse的离线检查。GitHub实际发布时间为10月14日，版本说明标题日期为10月13日。",
+      "summary": "REA 发布 6.7，合入仅打标签、未发布 npm 的 6.6 内容：接入由调用者安装的 Kuna 静态分析器，支持保留 JavaScript 事实的筛选分页及 APK 多语言资源表解码；6.7 按 MCP 客户端语义处理 JSON/JSONC 重复键，避免卸载配置时激活被遮蔽的旧值。",
       "first_report": "2026-10-15",
-      "last_report": "2026-10-15",
-      "last_seen_at": "2026-10-15T02:29:08.780799+00:00",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T00:58:38.833840+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
           "milestone": "stable release published 2026-10-14",
           "new_information": "",
           "summary": "REA 正式发布6.5.0，以CLI和MCP连接逆向分析工具。新版本支持精确选择JavaScript输入、恢复选定文件间的代码分块关系，并在多类分析中提供精简摘要和保留证据分页；还扩展SQLite快照、已保存网络包、WASM与Electron fuse的离线检查。GitHub实际发布时间为10月14日，版本说明标题日期为10月13日。"
+        },
+        {
+          "report_date": "2026-10-19",
+          "milestone": "rea-agents-6.7.0-includes-tagged-6.6.0",
+          "new_information": "6.6/6.7为窗口内新正式GitHub Release；6.7说明6.6仅打标签、未发布npm，并合入其变化。新增Kuna静态分析接入、保留JavaScript事实的筛选分页、APK多语言分析及配置重复键安全处理，区别于已报6.5。",
+          "summary": "REA 发布 6.7，合入仅打标签、未发布 npm 的 6.6 内容：接入由调用者安装的 Kuna 静态分析器，支持保留 JavaScript 事实的筛选分页及 APK 多语言资源表解码；6.7 按 MCP 客户端语义处理 JSON/JSONC 重复键，避免卸载配置时激活被遮蔽的旧值。"
         }
       ]
     },
@@ -1653,24 +1664,33 @@
         "thumaicopenmaic120"
       ],
       "urls": [
-        "https://github.com/THU-MAIC/OpenMAIC/releases/tag/v1.2.0"
+        "https://github.com/THU-MAIC/OpenMAIC/releases/tag/v1.2.0",
+        "https://github.com/THU-MAIC/OpenMAIC/releases/tag/v1.2.1"
       ],
       "milestones": [
+        "stable121webresearchandpichatbreakingchange",
         "stableserverfirstandclassroomexportreleased"
       ],
       "evidence_hashes": [
+        "15cbba0e951eabe94ffc0ab0027738a05471e93a307cd06697e7aeef3443e954",
         "5af1b1472c16f0e2eec808e8198340694eaafd64ceabfeb14565be88687f3358"
       ],
-      "summary": "OpenMAIC 于10月16日发布1.2.0稳定版，将课程生成、资料、模型配置和身份持久化迁到服务端，关闭页面仍可生成，重启后从检查点恢复。课堂可导出 PPTX 或离线 HTML；PPTX 的互动场景以占位、链接和二维码保留。新版需要 PostgreSQL 与常驻 Node 服务，Vercel 部署继续使用1.1.x。",
+      "summary": "OpenMAIC10月18日发布1.2.1，新增 Kimi、DeepSeek、Firecrawl 搜索接入，并将网页读取独立为 webFetch 能力位；新服务须显式启用或分配，本地读取仍是默认。课堂聊天统一改用 Pi，移除旧 director-graph 路径与 /api/chat 接口，课堂模型须支持工具调用；新版还增加建议回复按钮，并修复局域网 HTTP 下聊天保存失败的问题。",
       "first_report": "2026-10-17",
-      "last_report": "2026-10-17",
-      "last_seen_at": "2026-10-17T01:12:07.027592+00:00",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
       "updates": [
         {
           "report_date": "2026-10-17",
           "milestone": "stable-server-first-and-classroom-export-released",
           "new_information": "",
           "summary": "OpenMAIC 于10月16日发布1.2.0稳定版，将课程生成、资料、模型配置和身份持久化迁到服务端，关闭页面仍可生成，重启后从检查点恢复。课堂可导出 PPTX 或离线 HTML；PPTX 的互动场景以占位、链接和二维码保留。新版需要 PostgreSQL 与常驻 Node 服务，Vercel 部署继续使用1.1.x。"
+        },
+        {
+          "report_date": "2026-10-19",
+          "milestone": "stable-1.2.1-web-research-and-pi-chat-breaking-change",
+          "new_information": "此前10/17已报1.2.0服务端生成与课程导出；本次正式1.2.1新增Kimi/DeepSeek/Firecrawl可选搜索和webFetch能力位，并移除旧课堂聊天路径、要求工具调用模型。正式Release机器时间为2026-10-18T13:19:58Z。",
+          "summary": "OpenMAIC10月18日发布1.2.1，新增 Kimi、DeepSeek、Firecrawl 搜索接入，并将网页读取独立为 webFetch 能力位；新服务须显式启用或分配，本地读取仍是默认。课堂聊天统一改用 Pi，移除旧 director-graph 路径与 /api/chat 接口，课堂模型须支持工具调用；新版还增加建议回复按钮，并修复局域网 HTTP 下聊天保存失败的问题。"
         }
       ]
     },
@@ -2165,6 +2185,118 @@
           "summary": "Cloudflare宣布Gateway的Forward操作与Workers集成进入公开测试，可把HTTP策略允许且匹配规则的流量送至Worker，处理请求、响应或记录上下文。DLP自定义校验也已提供，用业务自己的数据源验证检测结果。Gateway策略条件中的Custom Functions则预计年底前推出，不能与已公测的Forward混同。"
         }
       ]
+    },
+    "evt_029dab9009275065bd49": {
+      "event_key": "vllm:runtime:0.32.0",
+      "aliases": [
+        "vllmruntime0320"
+      ],
+      "urls": [
+        "https://github.com/vllm-project/vllm/releases/tag/v0.32.0"
+      ],
+      "milestones": [
+        "v0320"
+      ],
+      "evidence_hashes": [
+        "67a86e266c0c5962fdbcb3f535ab48481861952a268973851f51c26555532afd"
+      ],
+      "summary": "vLLM 0.32 新增结构化决策接口 /v1/systemone，并让通用 hf 工具与推理解析器读取模型检查点的 response_template。版本扩展低精度 KV 缓存覆盖，在 Python 与 Rust 前端收紧 CORS 默认值，同时增加多种模型适配。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T00:58:38.833840+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "v0.32.0",
+          "new_information": "",
+          "summary": "vLLM 0.32 新增结构化决策接口 /v1/systemone，并让通用 hf 工具与推理解析器读取模型检查点的 response_template。版本扩展低精度 KV 缓存覆盖，在 Python 与 Rust 前端收紧 CORS 默认值，同时增加多种模型适配。"
+        }
+      ]
+    },
+    "evt_79e9b393826f632b8666": {
+      "event_key": "cline:compatible-gpt6:october-2026-fix",
+      "aliases": [
+        "clinecompatiblegpt6october2026fix"
+      ],
+      "urls": [
+        "https://github.com/cline/cline/releases/tag/cli-v3.0.73",
+        "https://github.com/cline/cline/releases/tag/desktop-v0.0.48",
+        "https://github.com/cline/cline/releases/tag/sdk%2Fsdk%2Fv0.0.95"
+      ],
+      "milestones": [
+        "cli3073desktop0048sdk0095released20261017"
+      ],
+      "evidence_hashes": [
+        "85b63e83536bbdb61d70d80ee9a9204aaf6023b93b738a2aee956d43fa11580e",
+        "953d547b7d5aaa6711029122b95c8498648598ce18a5d3196c235ec839777348",
+        "fe27df7caf59e6cbb24c9fd8dd37bc194e18ae4ceb13c54d3e1c5071a6fb84b3"
+      ],
+      "summary": "Cline于10月17日发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题。新版将相关请求改用max_completion_tokens；默认未指定模型时，Cline提供商恢复使用Claude Sonnet 5.5，并更新模型目录。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "cli3073-desktop0048-sdk0095-released-2026-10-17",
+          "new_information": "",
+          "summary": "Cline于10月17日发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题。新版将相关请求改用max_completion_tokens；默认未指定模型时，Cline提供商恢复使用Claude Sonnet 5.5，并更新模型目录。"
+        }
+      ]
+    },
+    "evt_fa5d750ce10f7f175fc6": {
+      "event_key": "github:license-compliance:general-availability",
+      "aliases": [
+        "githublicensecompliancegeneralavailability"
+      ],
+      "urls": [
+        "https://github.blog/changelog/2026-10-16-open-source-license-compliance-generally-available"
+      ],
+      "milestones": [
+        "enterpriselicensecompliancegaandapiimprovements20261016"
+      ],
+      "evidence_hashes": [
+        "98800968863920bc7737bf3e3f4cb7abac6ab773b83378b3f836d23a98783df8"
+      ],
+      "summary": "GitHub 10月16日将开源许可合规检查推向正式可用，面向已启用Code Security的Enterprise Cloud仓库，包含数据驻留部署。企业可通过规则集要求PR中新加或修改的依赖通过许可检查，并设置例外审批。新增策略管理及包合规查询API，可供编码Agent在引入包前检查企业许可政策。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "enterprise license compliance GA and API improvements 2026-10-16",
+          "new_information": "",
+          "summary": "GitHub 10月16日将开源许可合规检查推向正式可用，面向已启用Code Security的Enterprise Cloud仓库，包含数据驻留部署。企业可通过规则集要求PR中新加或修改的依赖通过许可检查，并设置例外审批。新增策略管理及包合规查询API，可供编码Agent在引入包前检查企业许可政策。"
+        }
+      ]
+    },
+    "evt_828ee01eb0399ad82fb2": {
+      "event_key": "dbeaver:community:26.2.3",
+      "aliases": [
+        "dbeavercommunity2623"
+      ],
+      "urls": [
+        "https://github.com/dbeaver/dbeaver/releases/tag/26.2.3"
+      ],
+      "milestones": [
+        "2623"
+      ],
+      "evidence_hashes": [
+        "9a326e833082937a85f6cfb364951acb6d5192dc7f9897e979c6b4629d410e1e"
+      ],
+      "summary": "DBeaver Community 26.2.3 修复通过 shell 命令获取连接密码时缺少执行确认的问题，并升级 lz4-java 修复漏洞；同时允许直接执行 SQL 脚本文件，在 DDL 成功后提示刷新相关元数据，并修复 PostgreSQL 批量导入的转义处理。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "26.2.3",
+          "new_information": "",
+          "summary": "DBeaver Community 26.2.3 修复通过 shell 命令获取连接密码时缺少执行确认的问题，并升级 lz4-java 修复漏洞；同时允许直接执行 SQL 脚本文件，在 DDL 成功后提示刷新相关元数据，并修复 PostgreSQL 批量导入的转义处理。"
+        }
+      ]
     }
   },
   "reports": {
@@ -2238,6 +2370,16 @@
       "sha256": {
         "reports/2026-10-18.html": "8a04a9cb022b2e85af28583ede5716f188c57a71e951ccbb37bafaaa6b1efb10",
         "data/2026-10-18.json": "92547b8ca25abee2af601a401f64f8dcac538b251f94fdd2352b319e77b8e5d9"
+      }
+    },
+    "2026-10-19": {
+      "window_start": "2026-10-18T01:00:11.952421+00:00",
+      "window_end": "2026-10-19T00:58:38.833840+00:00",
+      "count": 6,
+      "summary": "本期六条入选侧重实际工程变化：REA 6.7合并静态分析扩展并修复MCP配置重复键处理，vLLM 0.32更新推理接口、解析器与安全默认值；DBeaver修复本地命令执行确认与依赖问题，OpenMAIC增加网页研究并改变课堂聊天兼容要求。另补录Cline兼容请求修复及GitHub企业许可合规正式可用。六领域均已检索并执行历史去重；DeepSeek、Dory、Hy Memory SDK等候选及Anthropic公益基金未通过本轮日期核验，未作为正式新闻，覆盖限制详见质量说明。",
+      "sha256": {
+        "reports/2026-10-19.html": "d00248551bb2261e523b5e6466b89c17a95883e040dbadce6d4752794d58f864",
+        "data/2026-10-19.json": "2d2b88d4abac96ecc78f1051714d8765715cabaa30bda485234cbc652884e04e"
       }
     }
   }
