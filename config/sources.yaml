@@ -130,3 +130,36 @@ sources:
     categories: [opensource]
     max_items: 5
     fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
+  # Account discovery is performed by Work live search, not an unofficial scraping proxy.
+  # Execute each account query separately with the bundle's date window.
+  - id: search_chinese_accounts
+    name: 国内AI媒体与博主·逐账号必查
+    kind: web_search
+    region: asia
+    categories: [models, agents, opensource, business, applications, infrastructure]
+    queries:
+      - 'site:aihot.news AIHOT 最新 精选 热点 原文'
+      - '"赛博禅心" 最新 AI (site:mp.weixin.qq.com OR site:huxiu.com)'
+      - '"机器之心" 最新 AI (site:jiqizhixin.com OR site:mp.weixin.qq.com)'
+      - '"新智元" 最新 AI (site:aiera.com.cn OR site:mp.weixin.qq.com)'
+      - '"量子位" 最新 AI (site:qbitai.com OR site:mp.weixin.qq.com)'
+  - id: search_x_accounts
+    name: X官方与AI从业者·逐账号必查
+    kind: web_search
+    region: global
+    categories: [models, agents, opensource, business, applications, infrastructure]
+    queries:
+      - 'site:x.com/OpenAI/status OpenAI latest announcement'
+      - 'site:x.com/OpenAIDevs/status OpenAI developers latest'
+      - 'site:x.com/ChatGPTapp/status ChatGPT latest'
+      - 'site:x.com/OpenAINewsroom/status OpenAI latest'
+      - 'site:x.com/sama/status Sam Altman AI latest'
+      - 'site:x.com/gdb/status Greg Brockman AI latest'
+      - 'site:x.com/AnthropicAI/status Anthropic latest'
+      - 'site:x.com/ClaudeAI/status Claude latest'
+      - 'site:x.com/ClaudeDevs/status Claude developers latest'
+      - 'site:x.com/bcherny/status Boris Cherny Claude Code latest'
+      - 'site:x.com/SpaceXSI/status Grok latest'
+      - 'site:x.com/grok/status Grok product announcement latest'
+      - 'site:x.com/elonmusk/status Grok xAI AI latest'
+      - 'site:x.com/karpathy/status Andrej Karpathy AI latest'

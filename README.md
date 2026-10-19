@@ -4,6 +4,8 @@
 
 核心提示词是用户提供的完整 `prompts/daily_research.md`。RSS、JSON API、官方发布页和搜索查询全部在 `config/sources.yaml` 配置。Work 模型由应用选择，程序无法读取其 token/订阅消耗，日报明确标未知；可选 API 模式的模型名称从配置读取，一般候选 `gpt-5.4-mini`，重大事件 `gpt-5.4`。
 
+V2.2每天额外逐一检查 **AIHOT、赛博禅心、机器之心、新智元、量子位**，以及 OpenAI、Anthropic/Claude、Grok 官方与业内人士的 X 动态。账号、原始身份依据和访问限制见 [账号来源清单](docs/source-watchlist.md)。两个专用搜索组由现有 Work 任务执行，无需 X API Key；保留发现链接并追溯原文，未核实爆料不作为事实新闻。
+
 ## 当前状态与首次启用
 
 项目仓库：<https://github.com/zhongypxy/news_ai>，本机目录 `D:\code\AInewsV2`。沿用并升级原“每日 AI 新闻本地归档”Work 任务，每天 **09:00（UTC+8）**运行，另有 **10:17** Work 兜底检查。运行步骤详见 [Work 执行手册](docs/work-mode.md)。只发布真实研究且通过全部质量门的日报。
