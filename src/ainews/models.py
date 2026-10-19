@@ -11,6 +11,13 @@ class StrictModel(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
 
+class PublicationRule(StrictModel):
+    """Explicit publisher dateline selectors; not a generic search for dates."""
+    selectors: list[str] = Field(min_length=1)
+    timezone: str
+    attribute: str | None = None
+
+
 class Source(StrictModel):
     id: str
     name: str = ""
@@ -31,6 +38,7 @@ class Source(StrictModel):
     excerpt_selector: str = "p"
     respect_robots: bool = True
     queries: list[str] = Field(default_factory=list)
+    publication_rules: dict[str, PublicationRule] = Field(default_factory=dict)
 
 
 class Candidate(StrictModel):

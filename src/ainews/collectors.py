@@ -159,6 +159,9 @@ class Collector:
         if source.respect_robots:
             self.check_robots(item.url, source.allowed_domains or None)
         response = self.http.get(item.url, source.allowed_domains or None)
+        parsed = urlsplit(str(response.url))
+        rule = source.publication_rules.get(parsed.hostname or "")
+        publication_timezone = rule.timezone if rule else source.timezone
         content_type = response.headers.get("content-type", "")
         if "html" not in content_type:
             raise ValueError("Source is not readable HTML")
@@ -169,6 +172,7 @@ class Collector:
             if node.name != "script" or node.get("type") != "application/ld+json":
                 node.decompose()
         stamp = None
+        basis = "original_page_metadata"
         for name in ["article:published_time", "datePublished", "date", "pubdate"]:
             meta = soup.find("meta", attrs={"property": name}) or soup.find("meta", attrs={"name": name})
             if meta and meta.get("content"):
@@ -192,19 +196,30 @@ class Collector:
                         stamp = part["datePublished"]
         # GitHub release pages expose publication in a custom element; nearby
         # signed-commit timestamps describe verification, not publication.
-        parsed = urlsplit(str(response.url))
+        if not stamp and rule:
+            parts = []
+            for selector in rule.selectors:
+                nodes = soup.select(selector)
+                if len(nodes) != 1:
+                    raise ValueError("Configured publication dateline missing or ambiguous")
+                value = nodes[0].get(rule.attribute) if rule.attribute else nodes[0].get_text(" ", strip=True)
+                if not value or len(value) > 120:
+                    raise ValueError("Configured publication dateline is not a date field")
+                parts.append(value)
+            stamp = " ".join(parts)
+            basis = "original_page_configured_dateline"
         if not stamp and parsed.hostname == "github.com" and re.fullmatch(r"/[^/]+/[^/]+/releases/tag/[^/]+", parsed.path):
             release_times = [node.get("datetime") for node in soup.select("relative-time[datetime]")
                              if "released this" in node.parent.get_text(" ", strip=True)]
             if len(release_times) == 1:
                 stamp = release_times[0]
         if stamp:
-            published, precision = parse_time(stamp, source.timezone)
+            published, precision = parse_time(stamp, publication_timezone)
             if published:
                 if item.published_at and item.time_precision == "exact" and abs((published - item.published_at).total_seconds()) > 86400:
                     raise ValueError("Conflicting source publication times")
                 item.published_at, item.time_precision = published, precision
-                item.publication_basis = "original_page_metadata"
+                item.publication_basis = basis
         if source.kind == "web_search" and item.publication_basis == "search_unverified":
             raise ValueError("Search publication time lacks original source metadata")
         if item.published_at is None:

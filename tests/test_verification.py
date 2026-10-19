@@ -94,3 +94,45 @@ def test_missing_robots_file_404_allows_public_page_but_403_fails():
     http.code = 403
     with pytest.raises(httpx.HTTPStatusError):
         Collector(http).check_robots('https://example.com/article')
+
+
+def publication_source(host='example.com', selectors=None, attribute=None):
+    return Source(id='s', kind='web_search', publication_rules={host: {
+        'selectors': selectors or ['.article_info > .date', '.article_info > .time'],
+        'timezone': 'Asia/Shanghai', 'attribute': attribute,
+    }})
+
+
+def test_explicit_publisher_dateline_combines_date_and_time_without_related_article_date():
+    html = body('').replace('<article>', '<article><div class="article_info"><span class="date">2026-10-12</span><span class="time">19:49:49</span></div>')
+    html = html.replace('</article>', '</article><footer>Updated 2026-10-13</footer>')
+    result = verifier(html).verify(cand(published_at=None, publication_basis='search_unverified'), publication_source())
+    assert result.published_at.isoformat() == '2026-10-12T11:49:49+00:00'
+    assert result.time_precision == 'exact'
+    assert result.publication_basis == 'original_page_configured_dateline'
+
+
+def test_configured_date_only_dateline_retains_date_precision():
+    html = body('').replace('<article>', '<article><div class="dateline">October 12, 2026</div>')
+    result = verifier(html).verify(cand(published_at=None, publication_basis='search_unverified'), publication_source(selectors=['.dateline']))
+    assert result.time_precision == 'date'
+    assert result.published_at.isoformat() == '2026-10-11T16:00:00+00:00'
+
+
+@pytest.mark.parametrize('case', ['other_host', 'missing', 'ambiguous'])
+def test_configured_dateline_fails_closed_for_wrong_host_or_nonunique_markup(case):
+    dates = '<span class="date">2026-10-12</span><span class="time">19:49:49</span>'
+    if case == 'ambiguous':
+        dates += dates
+    if case == 'missing':
+        dates = '<span class="date">2026-10-12</span>'
+    html = body('').replace('<article>', '<article><div class="article_info">'+dates+'</div>')
+    src = publication_source('news.example.com' if case == 'other_host' else 'example.com')
+    with pytest.raises(ValueError):
+        verifier(html).verify(cand(published_at=None, publication_basis='search_unverified'), src)
+
+
+def test_explicit_publication_meta_rule_does_not_use_modified_timestamp():
+    html = body('<meta name="PubDate" content="2026-10-12 16:00"><meta name="MakeTime" content="2026-10-13 12:00">')
+    result = verifier(html).verify(cand(published_at=None, publication_basis='search_unverified'), publication_source(selectors=['meta[name="PubDate"]'], attribute='content'))
+    assert result.published_at.isoformat() == '2026-10-12T08:00:00+00:00'

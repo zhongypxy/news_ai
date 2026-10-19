@@ -1,4 +1,15 @@
 # 所有入口均可配置。成功采集不表示当天一定有合格新闻。
+publication_rules: &publication_rules
+  research.google:
+    selectors: ['.basic-hero--blog-detail__description > p:first-child']
+    timezone: America/Los_Angeles
+  www.qbitai.com:
+    selectors: ['.article_info > .date', '.article_info > .time']
+    timezone: Asia/Shanghai
+  www.mofcom.gov.cn:
+    selectors: ['meta[name="PubDate"]']
+    attribute: content
+    timezone: Asia/Shanghai
 sources:
   - id: openai
     name: OpenAI News
@@ -80,6 +91,7 @@ sources:
   - id: search_models
     name: 模型与实验室·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [models]
     queries:
       - "Latest official AI model releases OpenAI Anthropic Google DeepMind Meta xAI Mistral"
@@ -87,11 +99,13 @@ sources:
   - id: search_agents
     name: Agent 与 Coding·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [agents]
     queries: ["Latest AI coding agents Codex Claude Code Cursor MCP A2A framework official release"]
   - id: search_opensource
     name: GitHub 全领域热门项目·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [opensource]
     queries:
       - "GitHub Trending daily weekly monthly all languages popular open source developer tools security systems database self hosted releases"
@@ -101,11 +115,13 @@ sources:
   - id: search_business
     name: 商业与创业·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [business]
     queries: ["Latest AI startup product launch funding acquisition partnership official announcement worldwide"]
   - id: search_applications
     name: 教育与垂直应用·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [applications]
     queries:
       - "Latest AI education AI tutor MagicSchool Buddy.ai teacher learning startup official news"
@@ -113,11 +129,13 @@ sources:
   - id: search_infrastructure
     name: 基础设施与政策·广度检索
     kind: web_search
+    publication_rules: *publication_rules
     categories: [infrastructure]
     queries: ["Latest AI chip cloud inference safety regulation Europe Asia official government research announcement"]
   - id: search_backfill
     name: 重大新闻·72小时补漏
     kind: web_search
+    publication_rules: *publication_rules
     categories: [models, agents, opensource, business, applications, infrastructure]
     queries:
       - "Check past 72 hours major AI launches coding agents GitHub trending projects including non-AI open source emerging startups financing education vertical apps globally; inspect the supplied watchlist and history for missed events"
@@ -135,6 +153,7 @@ sources:
   - id: search_chinese_accounts
     name: 国内AI媒体与博主·逐账号必查
     kind: web_search
+    publication_rules: *publication_rules
     region: asia
     categories: [models, agents, opensource, business, applications, infrastructure]
     queries:
@@ -146,6 +165,7 @@ sources:
   - id: search_x_accounts
     name: X官方与AI从业者·逐账号必查
     kind: web_search
+    publication_rules: *publication_rules
     region: global
     categories: [models, agents, opensource, business, applications, infrastructure]
     queries:

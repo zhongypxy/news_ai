@@ -153,7 +153,12 @@ def work_evidence(root, bundle_path, discoveries_path=None):
             c.region = d.region
             items.append(c)
     eligible, rejected = filter_candidates(items, start, end)
-    pool = balanced_pool(eligible+[c for c in items if c.published_at is None], settings.max_candidates)
+    eligible_ids = {c.id for c in eligible}
+    # A listing with only a day may overlap a boundary while its original article
+    # exposes an exact in-window time. Read it, then apply the unchanged final gate.
+    uncertain = [c for c in items if c.id not in eligible_ids and (c.published_at is None or
+                 c.time_precision == 'date' and c.published_at < end and c.published_at+timedelta(days=1) > start)]
+    pool = balanced_pool(eligible+uncertain, settings.max_candidates)
     http = SafeHTTP(timeout=settings.http_timeout, attempts=settings.attempts)
     verified = []
     try:

@@ -130,3 +130,23 @@ def test_work_search_provenance_blocks_invented_links(tmp_path):
     research_path.write_text(research.model_dump_json(), 'utf-8')
     with pytest.raises(QualityError, match='provenance'):
         publish_work(root, path, research_path, now=NOW)
+
+
+def test_evidence_rechecks_overlapping_date_only_listing_against_exact_original(tmp_path, monkeypatch):
+    from ainews.work import work_evidence
+    root = project(tmp_path)
+    path = prepare_work(root, now=NOW, collector_factory=TestCollector)
+    bundle = json.loads(path.read_text('utf-8'))
+    item = cand(id='openai', source_id='openai', time_precision='date', published_at=NOW-timedelta(hours=2))
+    bundle['candidates'] = [item.model_dump(mode='json')]
+    path.write_text(json.dumps(bundle), encoding='utf-8')
+    class ExactOriginal(TestCollector):
+        def verify(self, item, source):
+            item.published_at = NOW-timedelta(hours=1)
+            item.time_precision = 'exact'
+            item.verified = True
+    monkeypatch.setattr('ainews.work.Collector', ExactOriginal)
+    evidence_path = work_evidence(root, path)
+    evidence = json.loads(evidence_path.read_text('utf-8'))
+    assert [c['id'] for c in evidence['verified']] == ['openai']
+    assert evidence['verified'][0]['time_precision'] == 'exact'

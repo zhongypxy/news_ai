@@ -6,6 +6,8 @@
 
 V2.2每天额外逐一检查 **AIHOT、赛博禅心、机器之心、新智元、量子位**，以及 OpenAI、Anthropic/Claude、Grok 官方与业内人士的 X 动态。账号、原始身份依据和访问限制见 [账号来源清单](docs/source-watchlist.md)。两个专用搜索组由现有 Work 任务执行，无需 X API Key；保留发现链接并追溯原文，未核实爆料不作为事实新闻。
 
+原文日期除标准元数据外，可在 `sources.yaml` 的 `publication_rules` 配置精确主机名、日期专用选择器及发布方时区（目前Google Research、量子位、商务部）。每个选择器必须唯一匹配，缺失或歧义仍失败；只到天的时间保留日期精度，并要求整天落入窗口。列表日期跨边界时先核原文精确时间，再执行相同窗口门禁；不采用HTTP Date、修改时间或搜索抓取时间。
+
 ## 当前状态与首次启用
 
 项目仓库：<https://github.com/zhongypxy/news_ai>，本机目录 `D:\code\AInewsV2`。沿用并升级原“每日 AI 新闻本地归档”Work 任务，每天 **09:00（UTC+8）**运行，另有 **10:17** Work 兜底检查。运行步骤详见 [Work 执行手册](docs/work-mode.md)。只发布真实研究且通过全部质量门的日报。
