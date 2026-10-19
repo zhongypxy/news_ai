@@ -136,3 +136,17 @@ def test_explicit_publication_meta_rule_does_not_use_modified_timestamp():
     html = body('<meta name="PubDate" content="2026-10-12 16:00"><meta name="MakeTime" content="2026-10-13 12:00">')
     result = verifier(html).verify(cand(published_at=None, publication_basis='search_unverified'), publication_source(selectors=['meta[name="PubDate"]'], attribute='content'))
     assert result.published_at.isoformat() == '2026-10-12T08:00:00+00:00'
+
+
+def test_visible_plain_text_repository_url_is_preserved_as_source_evidence():
+    html = body('<meta property="article:published_time" content="2026-10-13T00:00:00Z">')
+    html = html.replace('</article>', '<p>Repository: https://github.com/acme/tool。</p></article>')
+    result = verifier(html).verify(cand(), source())
+    assert 'https://github.com/acme/tool' in result.linked_urls
+
+
+def test_script_only_repository_url_does_not_ground_source_evidence():
+    html = body('<meta property="article:published_time" content="2026-10-13T00:00:00Z">')
+    html = html.replace('</article>', '<script>"https://github.com/acme/fake"</script></article>')
+    result = verifier(html).verify(cand(), source())
+    assert 'https://github.com/acme/fake' not in result.linked_urls

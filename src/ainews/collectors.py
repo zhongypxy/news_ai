@@ -228,8 +228,12 @@ class Collector:
             node.decompose()
         article = soup.select_one(".markdown-body") or soup.find("article") or soup.find("main") or soup.body or soup
         links = []
-        for node in article.select('a[href]'):
-            url = urljoin(str(response.url), node['href'])
+        references = [node['href'] for node in article.select('a[href]')]
+        # Some publishers print project addresses as visible text rather than anchors.
+        # Scripts were removed above; use the same URL validation and cap as hrefs.
+        references.extend(re.findall(r"https?://[^\s<>\"'，。；：！？（）【】《》)]+", article.get_text(" ", strip=True)))
+        for reference in references:
+            url = urljoin(str(response.url), reference.rstrip(".,;:!?]}"))
             try:
                 validate_url(url)
                 url = normalize_url(url)
