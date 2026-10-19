@@ -1143,6 +1143,7 @@
         "https://github.com/morluto/rea/releases/tag/rea-agents-6.7.0"
       ],
       "milestones": [
+        "reaagents670",
         "reaagents670includestagged660",
         "stablereleasepublished20261014"
       ],
@@ -1154,7 +1155,7 @@
       "summary": "REA 发布 6.7，合入仅打标签、未发布 npm 的 6.6 内容：接入由调用者安装的 Kuna 静态分析器，支持保留 JavaScript 事实的筛选分页及 APK 多语言资源表解码；6.7 按 MCP 客户端语义处理 JSON/JSONC 重复键，避免卸载配置时激活被遮蔽的旧值。",
       "first_report": "2026-10-15",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T00:58:38.833840+00:00",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
       "updates": [
         {
           "report_date": "2026-10-15",
@@ -1166,6 +1167,12 @@
           "report_date": "2026-10-19",
           "milestone": "rea-agents-6.7.0-includes-tagged-6.6.0",
           "new_information": "6.6/6.7为窗口内新正式GitHub Release；6.7说明6.6仅打标签、未发布npm，并合入其变化。新增Kuna静态分析接入、保留JavaScript事实的筛选分页、APK多语言分析及配置重复键安全处理，区别于已报6.5。",
+          "summary": "REA 发布 6.7，合入仅打标签、未发布 npm 的 6.6 内容：接入由调用者安装的 Kuna 静态分析器，支持保留 JavaScript 事实的筛选分页及 APK 多语言资源表解码；6.7 按 MCP 客户端语义处理 JSON/JSONC 重复键，避免卸载配置时激活被遮蔽的旧值。"
+        },
+        {
+          "report_date": "2026-10-19",
+          "milestone": "rea-agents-6.7.0",
+          "new_information": "6.7为窗口内正式GitHub Release，原文直接包含6.6能力与迁移说明；6.6曾打标签但未发npm，不单列候选或依赖其时间。新增Kuna分析接入、保留JS事实筛选分页、APK多语言及JSON/JSONC重复键安全处理，区别已报6.5。",
           "summary": "REA 发布 6.7，合入仅打标签、未发布 npm 的 6.6 内容：接入由调用者安装的 Kuna 静态分析器，支持保留 JavaScript 事实的筛选分页及 APK 多语言资源表解码；6.7 按 MCP 客户端语义处理 JSON/JSONC 重复键，避免卸载配置时激活被遮蔽的旧值。"
         }
       ]
@@ -1678,7 +1685,7 @@
       "summary": "OpenMAIC10月18日发布1.2.1，新增 Kimi、DeepSeek、Firecrawl 搜索接入，并将网页读取独立为 webFetch 能力位；新服务须显式启用或分配，本地读取仍是默认。课堂聊天统一改用 Pi，移除旧 director-graph 路径与 /api/chat 接口，课堂模型须支持工具调用；新版还增加建议回复按钮，并修复局域网 HTTP 下聊天保存失败的问题。",
       "first_report": "2026-10-17",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
       "updates": [
         {
           "report_date": "2026-10-17",
@@ -2203,7 +2210,7 @@
       "summary": "vLLM 0.32 新增结构化决策接口 /v1/systemone，并让通用 hf 工具与推理解析器读取模型检查点的 response_template。版本扩展低精度 KV 缓存覆盖，在 Python 与 Rust 前端收紧 CORS 默认值，同时增加多种模型适配。",
       "first_report": "2026-10-19",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T00:58:38.833840+00:00",
+      "last_seen_at": "2026-10-19T03:59:25.753542+00:00",
       "updates": [
         {
           "report_date": "2026-10-19",
@@ -2231,16 +2238,22 @@
         "953d547b7d5aaa6711029122b95c8498648598ce18a5d3196c235ec839777348",
         "fe27df7caf59e6cbb24c9fd8dd37bc194e18ae4ceb13c54d3e1c5071a6fb84b3"
       ],
-      "summary": "Cline于10月17日发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题。新版将相关请求改用max_completion_tokens；默认未指定模型时，Cline提供商恢复使用Claude Sonnet 5.5，并更新模型目录。",
+      "summary": "Cline发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题，改用max_completion_tokens。未选择模型时，Cline提供商恢复使用Claude Sonnet 5.5；SDK还记录启动hub的客户端身份，供可观测性分析。",
       "first_report": "2026-10-19",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
       "updates": [
         {
           "report_date": "2026-10-19",
           "milestone": "cli3073-desktop0048-sdk0095-released-2026-10-17",
           "new_information": "",
           "summary": "Cline于10月17日发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题。新版将相关请求改用max_completion_tokens；默认未指定模型时，Cline提供商恢复使用Claude Sonnet 5.5，并更新模型目录。"
+        },
+        {
+          "report_date": "2026-10-19",
+          "milestone": "cli3073-desktop0048-sdk0095-released-2026-10-17",
+          "new_information": "",
+          "summary": "Cline发布CLI 3.0.73、Desktop 0.0.48与SDK 0.0.95，修复GPT-6模型在OpenAI及Azure兼容端点因输出长度参数错误而被拒绝的问题，改用max_completion_tokens。未选择模型时，Cline提供商恢复使用Claude Sonnet 5.5；SDK还记录启动hub的客户端身份，供可观测性分析。"
         }
       ]
     },
@@ -2261,7 +2274,7 @@
       "summary": "GitHub 10月16日将开源许可合规检查推向正式可用，面向已启用Code Security的Enterprise Cloud仓库，包含数据驻留部署。企业可通过规则集要求PR中新加或修改的依赖通过许可检查，并设置例外审批。新增策略管理及包合规查询API，可供编码Agent在引入包前检查企业许可政策。",
       "first_report": "2026-10-19",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
       "updates": [
         {
           "report_date": "2026-10-19",
@@ -2288,13 +2301,121 @@
       "summary": "DBeaver Community 26.2.3 修复通过 shell 命令获取连接密码时缺少执行确认的问题，并升级 lz4-java 修复漏洞；同时允许直接执行 SQL 脚本文件，在 DDL 成功后提示刷新相关元数据，并修复 PostgreSQL 批量导入的转义处理。",
       "first_report": "2026-10-19",
       "last_report": "2026-10-19",
-      "last_seen_at": "2026-10-19T01:12:49.793444+00:00",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
       "updates": [
         {
           "report_date": "2026-10-19",
           "milestone": "26.2.3",
           "new_information": "",
           "summary": "DBeaver Community 26.2.3 修复通过 shell 命令获取连接密码时缺少执行确认的问题，并升级 lz4-java 修复漏洞；同时允许直接执行 SQL 脚本文件，在 DDL 成功后提示刷新相关元数据，并修复 PostgreSQL 批量导入的转义处理。"
+        }
+      ]
+    },
+    "evt_45e0bdc8cbc7a939c077": {
+      "event_key": "china:technology-export-catalog:2026-draft",
+      "aliases": [
+        "chinatechnologyexportcatalog2026draft"
+      ],
+      "urls": [
+        "https://www.mofcom.gov.cn/zcfb/dwmygl/art/2026/art_61446ab4beee4f63973d4d0ab3097648.html"
+      ],
+      "milestones": [
+        "catalogrevisionconsultationandtemporaryregistrationannounced20261016"
+      ],
+      "evidence_hashes": [
+        "69c2c0742da9c2b28b5ab736ce85517c054ef87daad9af26ea03dd3bdb3d0f17"
+      ],
+      "summary": "商务部、科技部10月16日就技术出口目录修订征求意见，拟增列AI大模型、智能体、算力集群和信息处理等23项技术，并对公告所列技术同步实施出口前临时登记。拟修订内容同时列明，已通过开源或论文进入公共领域的技术不纳入相应管理范围；正式目录修订与临时措施是两个阶段。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "catalog revision consultation and temporary registration announced 2026-10-16",
+          "new_information": "",
+          "summary": "商务部、科技部10月16日就技术出口目录修订征求意见，拟增列AI大模型、智能体、算力集群和信息处理等23项技术，并对公告所列技术同步实施出口前临时登记。拟修订内容同时列明，已通过开源或论文进入公共领域的技术不纳入相应管理范围；正式目录修订与临时措施是两个阶段。"
+        }
+      ]
+    },
+    "evt_20163d02a338a6ca7d85": {
+      "event_key": "anthropic:public-benefit-fund:equity-commitment",
+      "aliases": [
+        "anthropicpublicbenefitfundequitycommitment"
+      ],
+      "urls": [
+        "https://www.anthropic.com/news/public-benefit-fund"
+      ],
+      "milestones": [
+        "fivepercentequitycommitmentannounced20261018"
+      ],
+      "evidence_hashes": [
+        "d44a1d2aac9009cc6fd65ec0a5f8fb3f8309f960c225a54ad7cabca8afda775c"
+      ],
+      "summary": "Anthropic10月18日宣布，拟将5%股份承诺投入新设公益基金，仍须股东批准。公司价值每较设定基准增长50%，董事会可酌情再增加2%股份。基金将以公司全资持有的 LLC 运作，探索向非营利机构捐赠或向特定人群直接分配；公司称基金持股不会用于游说或政治捐款，具体治理和估值里程碑将在后续披露。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T03:59:25.753542+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "five-percent-equity-commitment-announced-2026-10-18",
+          "new_information": "",
+          "summary": "Anthropic10月18日宣布，拟将5%股份承诺投入新设公益基金，仍须股东批准。公司价值每较设定基准增长50%，董事会可酌情再增加2%股份。基金将以公司全资持有的 LLC 运作，探索向非营利机构捐赠或向特定人群直接分配；公司称基金持股不会用于游说或政治捐款，具体治理和估值里程碑将在后续披露。"
+        }
+      ]
+    },
+    "evt_b4ecbee5a08b9383dc6b": {
+      "event_key": "google:wetlab-agents:research-building-blocks",
+      "aliases": [
+        "googlewetlabagentsresearchbuildingblocks"
+      ],
+      "urls": [
+        "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs"
+      ],
+      "milestones": [
+        "veridaptamerbinderresearchdisclosed20261016"
+      ],
+      "evidence_hashes": [
+        "5ab2f64c5547897640bce303a0bbca337ed329d8e981b18ec17b4d0474324c87"
+      ],
+      "summary": "Google Research公布三项湿实验室Agent研究：VERID以实验台数字孪生、仿真和硬件检查约束机器人操作；适配体原型根据实验反馈反复调整设计；蛋白结合剂流程由科学家设定策略、Agent执行局部探索。团队强调序列、实验协议和机器人运行仍有人授权与监督。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "verid-aptamer-binder-research-disclosed-2026-10-16",
+          "new_information": "",
+          "summary": "Google Research公布三项湿实验室Agent研究：VERID以实验台数字孪生、仿真和硬件检查约束机器人操作；适配体原型根据实验反馈反复调整设计；蛋白结合剂流程由科学家设定策略、Agent执行局部探索。团队强调序列、实验协议和机器人运行仍有人授权与监督。"
+        }
+      ]
+    },
+    "evt_6cfa2d1e9e436b59d9c7": {
+      "event_key": "vast:edenlive:public-release",
+      "aliases": [
+        "vastedenlivepublicrelease"
+      ],
+      "urls": [
+        "https://www.qbitai.com/2026/10/504136.html"
+      ],
+      "milestones": [
+        "mediaprojectdiscovery20261018"
+      ],
+      "evidence_hashes": [
+        "620a103eca22a893642b26dfb4ee5036d1e53a5c0c39d374e684ecd410c0e2ea"
+      ],
+      "summary": "据量子位10月18日报道，VAST公开EdenLive模型权重与推理代码，以参考画面、目标首帧及提示词持续生成视觉内容；交互规则和世界状态仍由上游系统维护。报道展示游戏、场景预览及视频重渲染，并指出快速交互、多角色和长时一致性仍有限制。",
+      "first_report": "2026-10-19",
+      "last_report": "2026-10-19",
+      "last_seen_at": "2026-10-19T04:22:17.295941+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-19",
+          "milestone": "media-project-discovery-2026-10-18",
+          "new_information": "",
+          "summary": "据量子位10月18日报道，VAST公开EdenLive模型权重与推理代码，以参考画面、目标首帧及提示词持续生成视觉内容；交互规则和世界状态仍由上游系统维护。报道展示游戏、场景预览及视频重渲染，并指出快速交互、多角色和长时一致性仍有限制。"
         }
       ]
     }
@@ -2380,6 +2501,18 @@
       "sha256": {
         "reports/2026-10-19.html": "d00248551bb2261e523b5e6466b89c17a95883e040dbadce6d4752794d58f864",
         "data/2026-10-19.json": "2d2b88d4abac96ecc78f1051714d8765715cabaa30bda485234cbc652884e04e"
+      },
+      "latest_revision": {
+        "html": "reports/2026-10-19-r2.html",
+        "json": "data/2026-10-19-r2.json",
+        "count": 10,
+        "summary": "本次V2.2修订保留并重新核验原版六条工程资讯，新增Anthropic公益基金股份承诺、Google湿实验室Agent研究、中国技术出口目录征求意见及量子位介绍的EdenLive项目。国内五家与14个X账号均已逐一检索；X主页和部分中文原帖受限，不能视为已完整读取时间线。新闻与观点均追溯原文、执行历史去重，并把方案、研究原型和已交付版本分开表述。",
+        "window_end": "2026-10-19T03:59:25.753542+00:00",
+        "sha256": {
+          "reports/2026-10-19-r2.html": "04238ecba622e71904612181859f72730e1f4d8dcc08f2de8eeaecd3bf771a5e",
+          "data/2026-10-19-r2.json": "755d0bf6611574aedf968897bbf5f37cacc955ad63948550ff823e981d909ff3",
+          "data/2026-10-19-r2.manifest.json": "ff9a49a1db2bbf50f1828cf1fbab05b4f17c5ede169e3eb751b588023ed85bc4"
+        }
       }
     }
   }

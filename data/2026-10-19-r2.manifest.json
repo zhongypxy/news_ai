@@ -1,0 +1,27 @@
+{
+  "report_date": "2026-10-19",
+  "revision": "r2",
+  "reason": "User requested a complete V2.2 rerun including five Chinese media sources and fourteen X accounts",
+  "original_html": "reports/2026-10-19.html",
+  "original_json": "data/2026-10-19.json",
+  "original_sha256": {
+    "reports/2026-10-19.html": "d00248551bb2261e523b5e6466b89c17a95883e040dbadce6d4752794d58f864",
+    "data/2026-10-19.json": "2d2b88d4abac96ecc78f1051714d8765715cabaa30bda485234cbc652884e04e"
+  },
+  "prompt_sha256": "c7c7c65a1f8cdf40a4f40ca2d88f4eb2c1eac116d359e167d4a98ef813a2c53e",
+  "window_start": "2026-10-18T01:00:11.952421+00:00",
+  "window_end": "2026-10-19T03:59:25.753542+00:00",
+  "generated_at": "2026-10-19T04:22:17.295941+00:00",
+  "promoted_at": "2026-10-19T04:22:43.839215+00:00",
+  "history_baseline": "2026-10-18",
+  "artifacts_sha256": {
+    "reports/2026-10-19-r2.html": "04238ecba622e71904612181859f72730e1f4d8dcc08f2de8eeaecd3bf771a5e",
+    "data/2026-10-19-r2.json": "755d0bf6611574aedf968897bbf5f37cacc955ad63948550ff823e981d909ff3"
+  },
+  "added_event_ids": [
+    "evt_20163d02a338a6ca7d85",
+    "evt_45e0bdc8cbc7a939c077",
+    "evt_6cfa2d1e9e436b59d9c7",
+    "evt_b4ecbee5a08b9383dc6b"
+  ]
+}
