@@ -149,11 +149,13 @@
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3",
-        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3-preview.0"
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3-preview.0",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.4-preview.1"
       ],
       "milestones": [
         "0252preview0tsmodsandpersistentteamplanapproval",
         "0253preview0workspaceandsessioncontrols20261016",
+        "0254preview1managedpreflight20261020",
         "stable0253released20261019",
         "stableclianddesktop0251released20261011",
         "stableclianddesktop0252released20261015"
@@ -164,12 +166,13 @@
         "6a807dcf4ff60d4821eb3dcbc1065673ed06435ad881c07ec070887cf1a9d502",
         "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a",
         "a2e8130b456c57fc98bdb663adec2d23b0d43c073ffda9cfa9c97895cb005602",
+        "bdb663879deb5e4d8315587bc877d89307d2813205239dd482be5efea7168c15",
         "fd9cb6359108817c9ffa71f09cdee7892811916fcc2284e37900bb60a4e52beb"
       ],
-      "summary": "Qwen Code10月19日发布0.25.3正式版，已发布的AgentDefinition会话可加载静态Skills及固定的MCP/Hook选择；增加SSH工具运行时、原生macOS工作区运行时，并把受管会话接入首页与侧栏。正式版还包含持久工作区、快照隔离子Agent和审批切换，后面三项已在本刊预览版报道。",
+      "summary": "Qwen Code0.25.4-preview.1加入会话Skills/Extensions定向刷新、只读--check预检和本地/SSH文件引用，并记录Agent创建或修改的文件；修复Hosted stdio MCP进程组收容。仍为预览版。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-20",
-      "last_seen_at": "2026-10-20T01:21:23.830670+00:00",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -200,6 +203,12 @@
           "milestone": "stable-0.25.3-released-2026-10-19",
           "new_information": "前次为0.25.3-preview.0；本次正式CLI0.25.3，且正式Release列出固定Skills/MCP/Hook目录、受管会话UI、SSH与原生macOS运行时等交付。",
           "summary": "Qwen Code10月19日发布0.25.3正式版，已发布的AgentDefinition会话可加载静态Skills及固定的MCP/Hook选择；增加SSH工具运行时、原生macOS工作区运行时，并把受管会话接入首页与侧栏。正式版还包含持久工作区、快照隔离子Agent和审批切换，后面三项已在本刊预览版报道。"
+        },
+        {
+          "report_date": "2026-10-21",
+          "milestone": "0.25.4-preview.1-managed-preflight-2026-10-20",
+          "new_information": "前次正式0.25.3，本次0.25.4预览新增只读预检、定向刷新、文件引用和Agent文件变更记录；仍预览。",
+          "summary": "Qwen Code0.25.4-preview.1加入会话Skills/Extensions定向刷新、只读--check预检和本地/SSH文件引用，并记录Agent创建或修改的文件；修复Hosted stdio MCP进程组收容。仍为预览版。"
         }
       ]
     },
@@ -1582,23 +1591,26 @@
         "https://github.com/windmill-labs/windmill/releases/tag/v1.836.0",
         "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0",
         "https://github.com/windmill-labs/windmill/releases/tag/v1.839.0",
-        "https://github.com/windmill-labs/windmill/releases/tag/v1.840.0"
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.840.0",
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.842.0"
       ],
       "milestones": [
         "stable18360and18370released20261015",
         "stable18390addsforkstorageisolationandprotectionrule",
-        "stable18400introducesrunstepno_networkandsandboxedbunnpminstalls"
+        "stable18400introducesrunstepno_networkandsandboxedbunnpminstalls",
+        "v18420slackagents20261020"
       ],
       "evidence_hashes": [
         "12436d075404770ba0e4e1b2c7137c149c00f1ce5586de2a6cadd79b2200248f",
         "680827cbbd41d688de8b0688798da84b48a4754fe2cb48f0846c05bc7e7c277e",
+        "88b082015ac174de743a24150ace1b657689fdac52a5dc3ccb252f64dafc24f6",
         "b8c7c80240acb8303dd214c53daec847c677de3669b4bd2f479f66a4d9609fff",
         "d3eee7142c7f3577ea71788e0a6bd91e9cadc578f64da045d0c063a24f3e85f1"
       ],
-      "summary": "Windmill10月17日发布1.840.0，新增no_network注解，使支持的作业运行阶段进入独立网络命名空间，阻断外网、DNS与本机API，并移除运行环境中的WM_TOKEN；无法进入所需沙箱时拒绝执行。版本还在启用作业沙箱时，将Bun/npm依赖安装放入nsjail，修复Python模块挂载与AI代理路径校验等问题。",
+      "summary": "Windmill正式发布1.842，新增让AI Agent在Slack中回答，并在聊天工具确认按钮上显示具体操作名称。版本还修复MCP OAuth回调页内嵌JSON转义、OAuth刷新占用数据库连接，以及多个操作等待连接时仍持有连接的问题，为自托管工作流和聊天Agent补充可用性修复。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-18",
-      "last_seen_at": "2026-10-18T01:12:18.870607+00:00",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1617,6 +1629,12 @@
           "milestone": "stable1.840.0 introduces run-step no_network and sandboxed bun/npm installs",
           "new_information": "此前1.839为fork对象存储前缀及可配置隔离规则；本次1.840新增作业run-step断网注解、不能沙箱则拒绝的路径，以及已启用沙箱情况下的Bun/npm安装隔离。",
           "summary": "Windmill10月17日发布1.840.0，新增no_network注解，使支持的作业运行阶段进入独立网络命名空间，阻断外网、DNS与本机API，并移除运行环境中的WM_TOKEN；无法进入所需沙箱时拒绝执行。版本还在启用作业沙箱时，将Bun/npm依赖安装放入nsjail，修复Python模块挂载与AI代理路径校验等问题。"
+        },
+        {
+          "report_date": "2026-10-21",
+          "milestone": "v1.842.0-slack-agents-2026-10-20",
+          "new_information": "历史已报1.840及更早隔离修复；本次10/20 17:27:55Z正式1.842.0新增Slack回答、命名工具确认按钮及连接池/MCP回调修复，区别于未入选1.841。",
+          "summary": "Windmill正式发布1.842，新增让AI Agent在Slack中回答，并在聊天工具确认按钮上显示具体操作名称。版本还修复MCP OAuth回调页内嵌JSON转义、OAuth刷新占用数据库连接，以及多个操作等待连接时仍持有连接的问题，为自托管工作流和聊天Agent补充可用性修复。"
         }
       ]
     },
@@ -1628,22 +1646,25 @@
       "urls": [
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.304"
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.305"
       ],
       "milestones": [
         "announcement20261015",
         "stable21302agentdefaultsandreliability20261016",
-        "stable21304humandecisionandsecuritychecks20261019"
+        "stable21304humandecisionandsecuritychecks20261019",
+        "stable21305toolsearchandworkflowrecovery20261020"
       ],
       "evidence_hashes": [
         "076d7a7425473c3de202e09747ee18f3c052be5bd4849c29cf124af82ba51422",
         "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc",
-        "cdc76586d818cb3f002e4e28823a8ed90184d2b0398b0a268514865ab675c71f"
+        "cdc76586d818cb3f002e4e28823a8ed90184d2b0398b0a268514865ab675c71f",
+        "d3639b2e3ce26f429efa0cd9a5d8eeca982995933b8c5cec50e1ead20b05c9de"
       ],
-      "summary": "Claude Code10月19日发布2.1.304。mod可用decider:\"person\"要求权限对话框或宿主回调由人批准，无人可询问时拒绝；新增只读工具标记。/claude-api managed-agents-secure可只读对照公开安全指南检查配置，/auto-mode-setup扩展多个云端入口；并修复挂载盘删除缺少安全提示和工作树退出可能丢失提交等问题。",
+      "summary": "Claude Code2.1.305修复2.1.304中部分Vertex、Bedrock或网关拒绝ToolSearch后所有请求失败的问题，改为去掉该工具后重试；恢复工作流时已完成的pipeline/parallel Agent改从运行日志读取。新增Linux嵌套用户命名空间选项，发布说明明确提示它可绕过沙盒文件保护。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-20",
-      "last_seen_at": "2026-10-20T01:21:23.830670+00:00",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1662,6 +1683,12 @@
           "milestone": "stable-2.1.304-human-decision-and-security-checks-2026-10-19",
           "new_information": "历史至2.1.302；新增2.1.304正式版的人工裁决mod接口、只读安全配置核对、auto mode设置及挂载盘/worktree安全修复。",
           "summary": "Claude Code10月19日发布2.1.304。mod可用decider:\"person\"要求权限对话框或宿主回调由人批准，无人可询问时拒绝；新增只读工具标记。/claude-api managed-agents-secure可只读对照公开安全指南检查配置，/auto-mode-setup扩展多个云端入口；并修复挂载盘删除缺少安全提示和工作树退出可能丢失提交等问题。"
+        },
+        {
+          "report_date": "2026-10-21",
+          "milestone": "stable-2.1.305-toolsearch-and-workflow-recovery-2026-10-20",
+          "new_information": "历史至2.1.304；新增2.1.305正式版ToolSearch网关回归修复、已完成工作流步骤日志恢复及嵌套用户命名空间选项。",
+          "summary": "Claude Code2.1.305修复2.1.304中部分Vertex、Bedrock或网关拒绝ToolSearch后所有请求失败的问题，改为去掉该工具后重试；恢复工作流时已完成的pipeline/parallel Agent改从运行日志读取。新增Linux嵌套用户命名空间选项，发布说明明确提示它可绕过沙盒文件保护。"
         }
       ]
     },
@@ -2906,6 +2933,494 @@
           "summary": "n8n官方工程文介绍在一台DGX Spark上运行本地模型栈，以LiteLLM统一端点和团队密钥接入工作流，并给出离线发票提取示例。作者也披露启动、内存竞争和OCR误读等限制，性能属于其环境实测。"
         }
       ]
+    },
+    "evt_02d8cd7c67ef8bc3f345": {
+      "event_key": "nvidia:cosmos3-h-dreams:surgical-simulation",
+      "aliases": [
+        "nvidiacosmos3hdreamssurgicalsimulation"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/nvidia/cosmos3-h-dreams"
+      ],
+      "milestones": [
+        "clinicalcholecystectomygenerativesimulatorreleased"
+      ],
+      "evidence_hashes": [
+        "50c924e62c86a2775da9ea399cd8445cf39aebd8dc09fd8ab210a0e151c9bd33"
+      ],
+      "summary": "NVIDIA10月20日介绍 Cosmos3-H-Dreams，用胆囊切除手术录像和机器人运动数据训练可由器械动作控制的生成仿真。模型基于 Cosmos 3，发布分别训练的四步、两步生成 checkpoint，并提供微调与蒸馏配方；作者称可在单张 RTX PRO 6000 上交互运行。项目明确仍是研究模拟器，尚未验证用于患者护理。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "clinical-cholecystectomy-generative-simulator-released",
+          "new_information": "",
+          "summary": "NVIDIA10月20日介绍 Cosmos3-H-Dreams，用胆囊切除手术录像和机器人运动数据训练可由器械动作控制的生成仿真。模型基于 Cosmos 3，发布分别训练的四步、两步生成 checkpoint，并提供微调与蒸馏配方；作者称可在单张 RTX PRO 6000 上交互运行。项目明确仍是研究模拟器，尚未验证用于患者护理。"
+        }
+      ]
+    },
+    "evt_a091008ca9490280fc48": {
+      "event_key": "deepseek:deepinfer:public-release",
+      "aliases": [
+        "deepseekdeepinferpublicrelease"
+      ],
+      "urls": [
+        "https://siliconangle.com/2026/10/20/deepseek-open-sources-deepinfer-the-inference-framework-behind-its-production-services"
+      ],
+      "milestones": [
+        "publicsourcerelease20261020"
+      ],
+      "evidence_hashes": [
+        "5753c7450fe3b9bc444ad7a03376d27cbbcded56d063f3e97b8098342234be55"
+      ],
+      "summary": "据 SiliconANGLE 10月20日报道，DeepSeek 开放 DeepInfer 推理引擎，当前面向 DeepSeek-V4.1-Flash，支持 NVIDIA SM100 与昇腾950，并提供协议与 Token 编解码组件 deepseek-recipe。公开引擎仍未包含 KV 缓存管理和负载均衡代码，完整的预填充与解码分离部署也需运营方补齐。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "public-source-release-2026-10-20",
+          "new_information": "",
+          "summary": "据 SiliconANGLE 10月20日报道，DeepSeek 开放 DeepInfer 推理引擎，当前面向 DeepSeek-V4.1-Flash，支持 NVIDIA SM100 与昇腾950，并提供协议与 Token 编解码组件 deepseek-recipe。公开引擎仍未包含 KV 缓存管理和负载均衡代码，完整的预填充与解码分离部署也需运营方补齐。"
+        }
+      ]
+    },
+    "evt_a6343229442c8ef0d5cd": {
+      "event_key": "llm-d:1.0:production-operations",
+      "aliases": [
+        "llmd10productionoperations"
+      ],
+      "urls": [
+        "https://github.com/llm-d/llm-d/releases/tag/v1.0.0",
+        "https://research.ibm.com/blog/llmd-1-0-is-ready-for-production-inference-serving"
+      ],
+      "milestones": [
+        "v10020261020"
+      ],
+      "evidence_hashes": [
+        "1afb1d56d9682f6a9eb3436dd298b1827a8b08724a6d1cfae5928af427616806",
+        "9b954593ab336c42709d0dcd6408348d7cef69cf029370b4b391111a789af401"
+      ],
+      "summary": "llm-d 发布1.0，为Kubernetes上的分布式模型服务补上运维能力：多租户流控兼顾优先级与公平性，路由器加入热备和滚动更新，DisaggregatedSet协同管理预填充与解码副本。配置API升至v1，并加强会话亲和性和Responses API状态衔接，面向人与Agent混合流量。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "v1.0.0-2026-10-20",
+          "new_information": "",
+          "summary": "llm-d 发布1.0，为Kubernetes上的分布式模型服务补上运维能力：多租户流控兼顾优先级与公平性，路由器加入热备和滚动更新，DisaggregatedSet协同管理预填充与解码副本。配置API升至v1，并加强会话亲和性和Responses API状态衔接，面向人与Agent混合流量。"
+        }
+      ]
+    },
+    "evt_ea8a3dec283554e7da27": {
+      "event_key": "memtensor:memt-1.0:memory-native-release",
+      "aliases": [
+        "memtensormemt10memorynativerelease"
+      ],
+      "urls": [
+        "https://www.qbitai.com/2026/10/504456.html"
+      ],
+      "milestones": [
+        "modelandcodepublication20261020"
+      ],
+      "evidence_hashes": [
+        "f1a82c91c1e22881fc61eb14e99473377163ab1e57d3c4b458fd76fd681eb07f"
+      ],
+      "summary": "据量子位10月20日报道，记忆张量发布MemT 1.0：Nano总参数36B、激活3B，Flash总参数288B、激活17B。模型将可更新的局部记忆状态与可训练超记忆参数纳入并行记忆分支，再与注意力输出融合，使过去经验参与后续任务计算。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "model-and-code-publication-2026-10-20",
+          "new_information": "",
+          "summary": "据量子位10月20日报道，记忆张量发布MemT 1.0：Nano总参数36B、激活3B，Flash总参数288B、激活17B。模型将可更新的局部记忆状态与可训练超记忆参数纳入并行记忆分支，再与注意力输出融合，使过去经验参与后续任务计算。"
+        }
+      ]
+    },
+    "evt_a5b60c90fb1fae606efc": {
+      "event_key": "gitea:28.2.0:auth-actions-hardening",
+      "aliases": [
+        "gitea2820authactionshardening"
+      ],
+      "urls": [
+        "https://github.com/go-gitea/gitea/releases/tag/v28.2.0"
+      ],
+      "milestones": [
+        "importantbackfill20261018v2820"
+      ],
+      "evidence_hashes": [
+        "c932f6918430115d1acbac24002eb7e7464e31ba17fbcef670203c56ea404467"
+      ],
+      "summary": "Gitea于10月18日发布28.2，修复OpenID state验证、LFS对象ID在构造文件路径前的校验，以及无法登录用户的入站邮件Token处理。Actions修复取消的可复用工作流卡住，并限制制品接口请求体大小；同时更新标注安全用途的x/net依赖，预注册VS Code集成OAuth应用。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "important-backfill-2026-10-18-v28.2.0",
+          "new_information": "",
+          "summary": "Gitea于10月18日发布28.2，修复OpenID state验证、LFS对象ID在构造文件路径前的校验，以及无法登录用户的入站邮件Token处理。Actions修复取消的可复用工作流卡住，并限制制品接口请求体大小；同时更新标注安全用途的x/net依赖，预注册VS Code集成OAuth应用。"
+        }
+      ]
+    },
+    "evt_cee4c8e3edfb84d1b0bf": {
+      "event_key": "huggingface:torchtpu:native-backend",
+      "aliases": [
+        "huggingfacetorchtpunativebackend"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/hf-torchtpu"
+      ],
+      "milestones": [
+        "huggingfacenativetpuintegrationguide20261020"
+      ],
+      "evidence_hashes": [
+        "af2e3d9482f20e0cd3d7da1b7e249417a1e5b6587873e568c3ec62d5dcf6a09e"
+      ],
+      "summary": "Hugging Face 10月20日介绍 TorchTPU 原生后端：Transformers、Diffusers 可将 TPU 作为设备，支持 eager、torch.compile 和分布式使用，并可加载 Pallas、Tokamax 内核。官方表示运行这些模型不再必须经过 Optimum TPU；TPU 测试仍有失败项，夜间 CI 的建设也尚在推进。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "huggingface-native-tpu-integration-guide-2026-10-20",
+          "new_information": "",
+          "summary": "Hugging Face 10月20日介绍 TorchTPU 原生后端：Transformers、Diffusers 可将 TPU 作为设备，支持 eager、torch.compile 和分布式使用，并可加载 Pallas、Tokamax 内核。官方表示运行这些模型不再必须经过 Optimum TPU；TPU 测试仍有失败项，夜间 CI 的建设也尚在推进。"
+        }
+      ]
+    },
+    "evt_17024253c9eee2c5527d": {
+      "event_key": "microsoft:sovereign-cloud:2026-october-controls",
+      "aliases": [
+        "microsoftsovereigncloud2026octobercontrols"
+      ],
+      "urls": [
+        "https://blogs.microsoft.com/blog/2026/10/20/advancing-digital-sovereignty-with-greater-control-and-choice"
+      ],
+      "milestones": [
+        "keymanagementgaandlocalroadmap20261020"
+      ],
+      "evidence_hashes": [
+        "94cc1e000b5e304c4d393db98391010dd47bb14af013d7ff02a800aa109f7b93"
+      ],
+      "summary": "微软10月20日更新主权云能力：Azure Managed HSM 外部密钥管理已正式可用，EU/EFTA 的 Data Guardian 和访问记录分阶段部署。Sovereign Control Panel 计划在 Ignite 公开预览，GitHub Enterprise Local 与 Foundry Local 的正式可用也安排在 Ignite；本地连接与断网模式切换则进入公开预览。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "key-management-ga-and-local-roadmap-2026-10-20",
+          "new_information": "",
+          "summary": "微软10月20日更新主权云能力：Azure Managed HSM 外部密钥管理已正式可用，EU/EFTA 的 Data Guardian 和访问记录分阶段部署。Sovereign Control Panel 计划在 Ignite 公开预览，GitHub Enterprise Local 与 Foundry Local 的正式可用也安排在 Ignite；本地连接与断网模式切换则进入公开预览。"
+        }
+      ]
+    },
+    "evt_68b6f223673bc8889528": {
+      "event_key": "openai:orchestra-bio:acquisition",
+      "aliases": [
+        "openaiorchestrabioacquisition"
+      ],
+      "urls": [
+        "https://openai.com/index/openai-to-acquire-orchestra-bio"
+      ],
+      "milestones": [
+        "acquisitioncompletedannounced20261020"
+      ],
+      "evidence_hashes": [
+        "8b509959088637ccf25f7f3fa1559ae021c5b0143989f57eb8ab437c8fdbd4fa"
+      ],
+      "summary": "OpenAI10月20日宣布已收购 Orchestra Bio，将其团队和药物研发协调平台与 Rosalind 模型及工具结合。Orchestra 的 Agents 用于跟踪研究、梳理不同活动和进度的相互影响，供科学家与项目负责人决策；双方拟进一步连接科研发现与后续研究安排，交易金额未披露。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "acquisition-completed-announced-2026-10-20",
+          "new_information": "",
+          "summary": "OpenAI10月20日宣布已收购 Orchestra Bio，将其团队和药物研发协调平台与 Rosalind 模型及工具结合。Orchestra 的 Agents 用于跟踪研究、梳理不同活动和进度的相互影响，供科学家与项目负责人决策；双方拟进一步连接科研发现与后续研究安排，交易金额未披露。"
+        }
+      ]
+    },
+    "evt_0c01b6603ba474698dac": {
+      "event_key": "perplexity:computer:fully-local-mac",
+      "aliases": [
+        "perplexitycomputerfullylocalmac"
+      ],
+      "urls": [
+        "https://www.macrumors.com/2026/10/20/perplexity-computer-local-mac"
+      ],
+      "milestones": [
+        "localmodelandagentmodeavailable20261020"
+      ],
+      "evidence_hashes": [
+        "bf9bfcb21d6ecbaf2551d146eb2dc1a362236df0fc8b9d90360e1e02d6eba776"
+      ],
+      "summary": "据 MacRumors10月20日报道，Perplexity Computer 已在支持的 Apple 芯片 Mac 上提供全本地模式，使用 Qwen 3.6 或 PPLX Pro，将模型、任务规划和文件处理放在设备端。功能面向 Pro、Max 和 Enterprise 订阅用户，建议至少36GB内存；需要当前信息、浏览器或云连接应用时，用户仍可授权云端处理。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "local-model-and-agent-mode-available-2026-10-20",
+          "new_information": "",
+          "summary": "据 MacRumors10月20日报道，Perplexity Computer 已在支持的 Apple 芯片 Mac 上提供全本地模式，使用 Qwen 3.6 或 PPLX Pro，将模型、任务规划和文件处理放在设备端。功能面向 Pro、Max 和 Enterprise 订阅用户，建议至少36GB内存；需要当前信息、浏览器或云连接应用时，用户仍可授权云端处理。"
+        }
+      ]
+    },
+    "evt_2cd700c874de01b1e453": {
+      "event_key": "allenai:fairstress:benchmark-release",
+      "aliases": [
+        "allenaifairstressbenchmarkrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/allenai/fairstress"
+      ],
+      "milestones": [
+        "benchmarkandcoresubsetintroduced20261020"
+      ],
+      "evidence_hashes": [
+        "711de43a9e73d93739dc2428b21f896529bfcbab6219a6d7928f3b2df2f4ee8d"
+      ],
+      "summary": "Ai2在10月20日介绍FairStress：围绕29个领域的300个双候选决策场景，交换人口群体信息并加入配对的对抗性说服前缀，测量模型是否同样坚定地维持有依据的选择。组合展开超过1300万用例，另提供5万项Core子集；数据可下载，团队正将其接入Olmo-eval。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "benchmark-and-core-subset-introduced-2026-10-20",
+          "new_information": "",
+          "summary": "Ai2在10月20日介绍FairStress：围绕29个领域的300个双候选决策场景，交换人口群体信息并加入配对的对抗性说服前缀，测量模型是否同样坚定地维持有依据的选择。组合展开超过1300万用例，另提供5万项Core子集；数据可下载，团队正将其接入Olmo-eval。"
+        }
+      ]
+    },
+    "evt_274c711d7f2901a0eae7": {
+      "event_key": "ibm:altk-evolve:customer-service-guidelines",
+      "aliases": [
+        "ibmaltkevolvecustomerserviceguidelines"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/ibm-research/altk-evolve-bc"
+      ],
+      "milestones": [
+        "customerserviceheldoutresultspublished20261020"
+      ],
+      "evidence_hashes": [
+        "bc796488ee0ee70d621b0056ead5e17ef36fa243e3ec90b8d774b1a69f1e97d8"
+      ],
+      "summary": "IBM10月20日报告ALTK-Evolve客服实验：用Agent训练任务的成功和失败轨迹自动提炼规则，追加到同一模型的系统提示词，不更新权重。GPT-4.1在零售留出测试中的Pass^4由57.5%升至67.5%，即这些任务四次尝试全部成功；航空任务则较少规则更利于一致性，更多规则更利于平均准确率。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "customer-service-heldout-results-published-2026-10-20",
+          "new_information": "",
+          "summary": "IBM10月20日报告ALTK-Evolve客服实验：用Agent训练任务的成功和失败轨迹自动提炼规则，追加到同一模型的系统提示词，不更新权重。GPT-4.1在零售留出测试中的Pass^4由57.5%升至67.5%，即这些任务四次尝试全部成功；航空任务则较少规则更利于一致性，更多规则更利于平均准确率。"
+        }
+      ]
+    },
+    "evt_483a6ddcb5ea758778bd": {
+      "event_key": "asi:funding:series-c-2026",
+      "aliases": [
+        "asifundingseriesc2026"
+      ],
+      "urls": [
+        "https://finance.yahoo.com/technology/ai/articles/asi-secures-325m-series-c-150000021.html"
+      ],
+      "milestones": [
+        "threehundredtwentyfivemillionseriescannounced"
+      ],
+      "evidence_hashes": [
+        "cfdcb7a594dfa3fa81d3d34ca9609dd45d65025d4ec36ff4a720fab84ea65358"
+      ],
+      "summary": "ASI10月20日通过 Business Wire 宣布完成3.25亿美元 C 轮融资，公司估值30亿美元，由 Spark Capital 领投，Citadel Securities 关联机构、Meritech Capital、Craft Ventures 等参与。公司开发面向物理运营的模拟、监控与优化系统，称将用资金扩大能源、物流和边缘环境部署，并扩充波士顿研究及工程团队。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "three-hundred-twenty-five-million-series-c-announced",
+          "new_information": "",
+          "summary": "ASI10月20日通过 Business Wire 宣布完成3.25亿美元 C 轮融资，公司估值30亿美元，由 Spark Capital 领投，Citadel Securities 关联机构、Meritech Capital、Craft Ventures 等参与。公司开发面向物理运营的模拟、监控与优化系统，称将用资金扩大能源、物流和边缘环境部署，并扩充波士顿研究及工程团队。"
+        }
+      ]
+    },
+    "evt_e3052519644895b44588": {
+      "event_key": "dhs:deepseek:civilian-restrictions-public-response",
+      "aliases": [
+        "dhsdeepseekcivilianrestrictionspublicresponse"
+      ],
+      "urls": [
+        "https://www.afp.com/en/us-bans-use-chinas-deepseek-govt-agencies"
+      ],
+      "milestones": [
+        "chinaresponseandpublicrestrictionsreport20261020"
+      ],
+      "evidence_hashes": [
+        "dc0796c0bb56d4d2938f19a4282026243db5e7452a9d1dddf5defc64834b3899"
+      ],
+      "summary": "据 AFP 10月20日报道，中国外交部回应美国对民用政府机构使用 DeepSeek 的限制，反对泛化国家安全概念。报道指出，限制涉及 DeepSeek 自有产品及使用其技术的第三方工具；DHS 的相关指令权限覆盖民用机构，并不等于面向一般个人或企业的全国禁令。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "china-response-and-public-restrictions-report-2026-10-20",
+          "new_information": "",
+          "summary": "据 AFP 10月20日报道，中国外交部回应美国对民用政府机构使用 DeepSeek 的限制，反对泛化国家安全概念。报道指出，限制涉及 DeepSeek 自有产品及使用其技术的第三方工具；DHS 的相关指令权限覆盖民用机构，并不等于面向一般个人或企业的全国禁令。"
+        }
+      ]
+    },
+    "evt_8105a4b13632eeb2de50": {
+      "event_key": "pytorch:mps:2.15-engineering",
+      "aliases": [
+        "pytorchmps215engineering"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/mps-pytorch-2-15"
+      ],
+      "milestones": [
+        "huggingfacemps215technicalguide20261020"
+      ],
+      "evidence_hashes": [
+        "bd1fc7f53366a6aa93aea1e87ac6d5d03d30890806f6084287420257085c6d00"
+      ],
+      "summary": "Hugging Face 的 PyTorch 团队10月20日介绍2.15中 MPS 后端改进，包括 FP8 张量与缩放矩阵乘法、MoE 分组矩阵乘法、Metal padding 和公开 MPS stream 接口。文中给出候选版本测试路径，并注明需要 macOS 15 及 Python 3.11；2.16 的后续优化单独列为预告。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "huggingface-mps-2.15-technical-guide-2026-10-20",
+          "new_information": "",
+          "summary": "Hugging Face 的 PyTorch 团队10月20日介绍2.15中 MPS 后端改进，包括 FP8 张量与缩放矩阵乘法、MoE 分组矩阵乘法、Metal padding 和公开 MPS stream 接口。文中给出候选版本测试路径，并注明需要 macOS 15 及 Python 3.11；2.16 的后续优化单独列为预告。"
+        }
+      ]
+    },
+    "evt_3095afe1767e120d01a1": {
+      "event_key": "speak:phone-speak:ai-tutor-calling-launch-2026",
+      "aliases": [
+        "speakphonespeakaitutorcallinglaunch2026"
+      ],
+      "urls": [
+        "https://www.digitaltoday.co.kr/en/view/116820/speak-launches-phone-speak-ai-english-calling-feature"
+      ],
+      "milestones": [
+        "koreanenglishphonepracticefeaturereported"
+      ],
+      "evidence_hashes": [
+        "377e3047fe05781ac0e03cd83c3b6c855346b0cd1d2961fcc91d8deda26a22c2"
+      ],
+      "summary": "据韩国 DigitalToday10月20日报道，Speak 在应用内推出 Phone Speak，让学习者像打电话一样与 AI 导师练习英语。功能无需固定教材或脚本，会依据学习者的话题继续追问，并支持免手持使用和预约后推送提醒；公司将其定位为利用通勤等零碎时间开展日常口语练习。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "korean-english-phone-practice-feature-reported",
+          "new_information": "",
+          "summary": "据韩国 DigitalToday10月20日报道，Speak 在应用内推出 Phone Speak，让学习者像打电话一样与 AI 导师练习英语。功能无需固定教材或脚本，会依据学习者的话题继续追问，并支持免手持使用和预约后推送提醒；公司将其定位为利用通勤等零碎时间开展日常口语练习。"
+        }
+      ]
+    },
+    "evt_171aafe45655c54fc312": {
+      "event_key": "plinto:funding:preseed-financial-controlling-2026",
+      "aliases": [
+        "plintofundingpreseedfinancialcontrolling2026"
+      ],
+      "urls": [
+        "https://www.eu-startups.com/2026/10/copenhagens-plinto-raises-e2-9-million-to-help-finance-teams-catch-and-fix-errors-with-ai-agents"
+      ],
+      "milestones": [
+        "twopointninemillioneuropreseedreported"
+      ],
+      "evidence_hashes": [
+        "8c6ff89348ed2466246193b7c1d5700d4f598b640016f017f42e9c45c702c44a"
+      ],
+      "summary": "据 EU-Startups10月20日报道，哥本哈根创业公司 Plinto 获290万欧元种子前融资，由 People Ventures 和 Emblem 领投。其 Agents 连接既有 ERP、文档、银行及协作工具，发现交易与合同或规则的偏差后收集证据、联系相关方或准备更正供审批；资金拟用于产品开发、企业客户拓展及进入丹麦以外市场。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "two-point-nine-million-euro-preseed-reported",
+          "new_information": "",
+          "summary": "据 EU-Startups10月20日报道，哥本哈根创业公司 Plinto 获290万欧元种子前融资，由 People Ventures 和 Emblem 领投。其 Agents 连接既有 ERP、文档、银行及协作工具，发现交易与合同或规则的偏差后收集证据、联系相关方或准备更正供审批；资金拟用于产品开发、企业客户拓展及进入丹麦以外市场。"
+        }
+      ]
+    },
+    "evt_bb1f882d97f1c8f560a4": {
+      "event_key": "tessl:ankit-jain:intent-verification-engineering-view",
+      "aliases": [
+        "tesslankitjainintentverificationengineeringview"
+      ],
+      "urls": [
+        "https://tessl.io/blog/we-stopped-reviewing-code-and-started-verifying-intent"
+      ],
+      "milestones": [
+        "authorexperiencepublished20261020"
+      ],
+      "evidence_hashes": [
+        "52d608d74d578d7d791935a9ca7652d97ab323ab743067678a3b04086132ad4c"
+      ],
+      "summary": "Ankit Jain在Tessl博客分享其团队做法：代码生成前先审查验收标准、约束与边界情况，再附证据验证；将反复出现的审查意见固化为机器检查规则。文章是个人团队经验与方法建议。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "author-experience-published-2026-10-20",
+          "new_information": "",
+          "summary": "Ankit Jain在Tessl博客分享其团队做法：代码生成前先审查验收标准、约束与边界情况，再附证据验证；将反复出现的审查意见固化为机器检查规则。文章是个人团队经验与方法建议。"
+        }
+      ]
+    },
+    "evt_6b2bf2988c16281eff72": {
+      "event_key": "nvidia-bsc:ai-factory:inception-service-access",
+      "aliases": [
+        "nvidiabscaifactoryinceptionserviceaccess"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/spain-startups-barcelona-supercomputing-center"
+      ],
+      "milestones": [
+        "somebscservicesavailableininceptionportal"
+      ],
+      "evidence_hashes": [
+        "cb10971d6e537330abeffb93d6ca69f483002596b8ceeb82b419b6209047ce88"
+      ],
+      "summary": "NVIDIA10月20日称，巴塞罗那超级计算中心的 AI Factory 加速计划已在试点后运行，部分服务当日起可经 Inception 门户获取，覆盖算力、技术支持和训练等资源。MareNostrum5的后续扩容仍在计划中。",
+      "first_report": "2026-10-21",
+      "last_report": "2026-10-21",
+      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-21",
+          "milestone": "some-bsc-services-available-in-inception-portal",
+          "new_information": "",
+          "summary": "NVIDIA10月20日称，巴塞罗那超级计算中心的 AI Factory 加速计划已在试点后运行，部分服务当日起可经 Inception 门户获取，覆盖算力、技术支持和训练等资源。MareNostrum5的后续扩容仍在计划中。"
+        }
+      ]
     }
   },
   "reports": {
@@ -3011,6 +3526,16 @@
       "sha256": {
         "reports/2026-10-20.html": "6a44f987ebc5247defa7b494080bf6b82e8e42c7472c17b1032bb321c30d9843",
         "data/2026-10-20.json": "d02793c4280e763b78faa92a2e2d9190aff0b3f94872676d2dc0bf6168dcd53e"
+      }
+    },
+    "2026-10-21": {
+      "window_start": "2026-10-20T01:04:33.932505+00:00",
+      "window_end": "2026-10-21T01:02:04.200561+00:00",
+      "count": 21,
+      "summary": "本期重点是OpenAI收购Orchestra Bio、DeepSeek开放DeepInfer及llm-d 1.0的生产部署进展。公平性压力测试、提示级记忆与模型内记忆提供不同的可靠性研究路径；医疗仿真、英语通话练习和Mac本地Agent也有新增。国内五家与14个X账号均逐项检查，访问、原始日期和独立验证的缺口在质量说明中保留。",
+      "sha256": {
+        "reports/2026-10-21.html": "3700d6fa62319297aac56804007ddf8e8152975be4d10fb5b25bfaf8e2f9f0a8",
+        "data/2026-10-21.json": "e67b62a90a15322c5644fde952a6dbe47ca39817a60ee8506b61d3ce75b210ef"
       }
     }
   }
