@@ -1,0 +1,1910 @@
+{
+  "schema_version": "2.0",
+  "report_date": "2026-10-22",
+  "window_start": "2026-10-21T01:02:04.200561Z",
+  "window_end": "2026-10-22T01:03:35.770185Z",
+  "backfill_start": "2026-10-19T01:03:35.770185Z",
+  "generated_at": "2026-10-22T01:33:54.351494Z",
+  "timezone": "Asia/Singapore",
+  "executive_summary": "本期重点是AI辅助安全研究、软件供应链风险与企业数据能力。Wiz披露PHP2Shell及协同修补过程；LiteLLM制品污染则提示团队同时核查账号、构建与分发链。NVIDIA、IBM等发布检索、预测、语音和科学计算能力，性能数字仍需在自身数据上验证。融资与教育、医疗案例提供采用信号，但投资计划、作者自测和医院测试不能当作已证实的商业或临床效果。国内账号与X已逐项检查，访问、身份和发布时间缺口在文末列出。",
+  "top_stories": [
+    "evt_a7d311e107c03a2c68cd",
+    "evt_fdf44924182474713bde",
+    "evt_c5338764a376c2725291"
+  ],
+  "news_items": [
+    {
+      "event_key": "litellm:1.107.0:supply-chain-compromise",
+      "milestone": "incident-report-2026-10-21",
+      "title": "LiteLLM 1.107.0 分发制品遭投毒，Wiz 披露凭据窃取调查",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 5,
+        "novelty": 5,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 5
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Wiz披露，LiteLLM的1.107.0恶意包与多个Docker标签在10月21日被用于分发窃取凭据的载荷，目标包括云平台、模型服务及开发工具密钥。调查发现载荷来自名称近似的仿冒仓库；Wiz援引维护者称，多个GitHub账号的凭据被盗后用于触发、批准发布，相关制品已被移除。",
+      "significance": "模型网关通常接触多个模型和云平台密钥，一次制品污染可能把风险扩散到开发机、CI与服务环境。事件说明签名和受保护发布也依赖账号权限、构建来源与审批链共同有效，不能只根据仓库tag或签名判断下载制品可信。",
+      "analysis": "制品投毒与源码本身应分开核验。Wiz引用的入口与凭据暴露解释仍带调查限定，不能归结为Claude Code本身已被攻破，也不能外推全部LiteLLM版本受影响。受影响密钥的风险不会因包下架而消失；具体应急处置应依官方持续更新通报。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "50b021f4379888eca4f1"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "供应链安全",
+        "模型网关",
+        "凭据"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_fdf44924182474713bde",
+      "published_at": "2026-10-21T13:44:12Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "50b021f4379888eca4f1",
+          "url": "https://www.wiz.io/blog/litellm-compromised-steals-credentials",
+          "name": "www.wiz.io",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T13:44:12Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.85,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "google-cloud:gtc2026:confidential-and-a5x-infrastructure",
+      "milestone": "g4-ga-and-a5x-next-month-roadmap-2026-10-21",
+      "title": "Google Cloud：Confidential G4 正式可用，A5X 的全面可用仍定于下月",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA与Google Cloud公布A5X基础设施进展：采用Vera Rubin NVL72的实例计划在11月全面可用，并规划扩展到欧洲。NVIDIA正文同时确认，RTX PRO 6000 Blackwell Server Edition驱动的Confidential G4虚拟机已经正式可用，可用于机密推理和微调。两条产品线的交付阶段不同，不能由文章标题推断A5X当前已全面可用。",
+      "significance": "硬件扩容、云服务正式交付和机密计算能力需要分别确认。团队应基于可购买的具体实例、区域和配套环境评估，而不是将未来最大集群规模当作已经部署的算力。",
+      "analysis": "机密计算旨在隔离并保护运行中的模型和敏感数据；它不能自动解决Agent的应用权限和业务逻辑问题。本文只报告厂商公布的阶段，不对性能、成本或安全隔离作独立验证结论。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "53b1013ecd6ed5617519"
+      ],
+      "tags": [
+        "Google Cloud",
+        "机密计算",
+        "Blackwell",
+        "Vera Rubin"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_a6a7644d89d26433d21b",
+      "published_at": "2026-10-21T10:45:17Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "53b1013ecd6ed5617519",
+          "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:45:17Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "recursive:flint:local-coding-model-release",
+      "milestone": "open-weights-local-coding-model-2026-10-21",
+      "title": "Recursive Flint 开放本地编程模型权重，采用 40B 总参数与 2.5B 激活参数",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA在21日本地AI公告中介绍Recursive Superintelligence发布的Flint编程模型：采用MoE架构，总参数400亿、每次激活约25亿。权重以Apache 2.0提供，可用于RTX Spark、DGX Spark及相应GeForce RTX、RTX PRO环境。公告称模型开发使用Eureka Machine自动研究流程优化推理内核，本期未复测其性能。",
+      "significance": "本地编程模型为重视代码数据控制的团队增加选择，但激活参数小不等于权重常驻内存需求小。采用前仍应核对量化配置、硬件支持、真实代码库任务成功率、许可及运行成本。",
+      "analysis": "自动研究流程参与开发不意味着模型在用户设备上自动持续改进；供应方的特定硬件速度结果也不代表任意GPU或编程任务的收益。本文不据未复测排行榜给出优于云端模型的结论。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "f2b0e1542a24d4e4bc64"
+      ],
+      "tags": [
+        "Recursive",
+        "Flint",
+        "本地编程",
+        "开放权重"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_64530a6b340719b00a0f",
+      "published_at": "2026-10-21T10:50:37Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f2b0e1542a24d4e4bc64",
+          "url": "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:50:37Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "pigment:funding:series-e-2026",
+      "milestone": "two-hundred-fifty-million-series-e-announced",
+      "title": "Pigment 宣布2.5亿美元 E 轮融资，NVIDIA 参与仍为计划",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Pigment10月21日宣布2.5亿美元 E 轮融资，估值23亿美元，由 EQT 管理的 Scaleup Europe Fund 领投，WIL 及多家现有投资者参与；NVIDIA 投资仍在计划中。公司提供企业规划平台和模型构建 Agent，拟以新资金加速研发、扩充工程团队；端到端运行规划周期的 Planner Agent 是后续方向。",
+      "significance": "企业规划需要统一业务模型、情景和权限，融资为 Pigment 继续建设这些能力提供资源。对关注垂直 Agent 的读者，这体现了模型能力与既有企业平台结合的路径；未来自治规划能达到何种范围仍需看实际发布。",
+      "analysis": "规划工具可利用企业已有的数据关系与审批规则承接 Agent，但预测和执行承担不同责任。评估后续产品时，应分别核对生成模型、运行情景和执行变更的能力及权限，避免把规划愿景当作当前交付。",
+      "followup_questions": [
+        "Planner Agent何时开放，哪些执行步骤仍需人工审批？"
+      ],
+      "candidate_ids": [
+        "a3fbaa8eb34954bce21a"
+      ],
+      "tags": [
+        "Pigment",
+        "欧洲",
+        "融资",
+        "企业规划",
+        "Agent"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_89d87b2e207d7ad8cb69",
+      "published_at": "2026-10-21T08:08:14.099000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "a3fbaa8eb34954bce21a",
+          "url": "https://www.pigment.com/blog/pigment-announces-250m-series-e-funding",
+          "name": "www.pigment.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T08:08:14.099000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.15,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:nemotron-3.5-retriever:release",
+      "milestone": "embed-rerank-parse-available-2026-10-21",
+      "title": "NVIDIA 发布 Nemotron 3.5 检索套件，将图文检索、重排和文档解析组合提供",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA在10月21日扩展Nemotron Retriever，提供8B及1B图文嵌入、1B NVFP4版本、8B重排模型和631M文档解析模型。套件面向包含表格、图表与扫描件的企业资料，支持开放权重、自行部署及NIM服务；Parse可按单次、双次或三次处理在速度和解析细度间调整。",
+      "significance": "企业Agent的成本不只来自主模型，还取决于检索能否尽早找到有效证据。此次更新把页面解析、候选召回和图文重排放在同一技术链路，便于团队在实际文档集上比较检索质量、输入开销和部署成本；硬件量化版本需要单独核对运行条件。",
+      "analysis": "优先评估完整检索链路的任务成功率，而非只按某一排行榜的向量分数换模型。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "5c39182fa081a316883b"
+      ],
+      "tags": [
+        "NVIDIA",
+        "多模态检索",
+        "RAG",
+        "文档解析"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_c5338764a376c2725291",
+      "published_at": "2026-10-21T10:41:36.079000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "5c39182fa081a316883b",
+          "url": "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:41:36.079000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "ibm:granite-speech-5:release",
+      "milestone": "three-speech-model-updates-2026-10-21",
+      "title": "IBM Granite Speech 5.0 发布：转录、翻译及多说话人模型分别更新",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "IBM发布Granite Speech 5.0 2B，并更新470M Turbo CTC和4.1 2B Plus。2B模型新增语言提示及最多2000词的关键词偏置，改进噪声、混响和长音频翻译；Turbo CTC扩展多语转录，Plus改进说话人归属和时间戳。三款模型均以Apache2.0提供，官方给出Transformers等部署支持。",
+      "significance": "这组更新将会议、客服和端侧转录的需求拆为不同模型，便于按实时性、翻译质量与说话人标注选型。关键词偏置尤其适合术语密集录音，但团队仍需使用本行业口音、噪声和长音频做验证，并分别确认支持的语言和输出能力。",
+      "analysis": "Speech系列实际任务边界比统一模型名称更重要，2B、CTC与Plus不能视为功能完全互换。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "0abe095d34165469606f"
+      ],
+      "tags": [
+        "IBM",
+        "Granite",
+        "ASR",
+        "Apache2.0"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_6bd5cc1e781a15664619",
+      "published_at": "2026-10-21T14:58:18.184000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "0abe095d34165469606f",
+          "url": "https://huggingface.co/blog/ibm-granite/granite-speech-5",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T14:58:18.184000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:kumo-relational:release",
+      "milestone": "relational-model-and-library-available-2026-10-21",
+      "title": "NVIDIA Kumo Relational 发布，让预测查询直接面向关系数据库",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA介绍Kumo Relational：模型在合成关系数据上预训练，接收数据库表间关系与历史样本，通过上下文学习预测流失、需求等结果，不必为每个任务重新训练或手工摊平表。官方同时提供GPU库与NIM部署路径；代码采用Apache2.0，权重采用OpenMDW1.1，二者许可需区分。",
+      "significance": "关系数据上的预测通常需要逐项建特征和训练管线。该模型把部分工作转为预测查询，给业务Agent增加结构化预测接口，值得与现有树模型及关系学习管线比较。业务团队仍需检查时间切分、可达表关系和误判成本，不能直接把基准优势套用到生产决策。",
+      "analysis": "无需逐任务训练不代表没有预训练或永远无需适配；数据关系和历史样本质量仍决定有效性。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "7b7d66a74edfe7ba8f37"
+      ],
+      "tags": [
+        "NVIDIA",
+        "Kumo",
+        "关系数据库",
+        "预测模型"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_848e14aa4e342a989202",
+      "published_at": "2026-10-21T18:26:30.284000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "7b7d66a74edfe7ba8f37",
+          "url": "https://huggingface.co/blog/nvidia/kumo-relational",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T18:26:30.284000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "anthropic:claude-code:2.1.301",
+      "milestone": "stable-2.1.307-safety-events-idempotent-retries-2026-10-21",
+      "title": "Claude Code 2.1.307 增加安全事件审计，并限制非幂等 MCP 调用重试",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_abd16c49fe9ed334c37e",
+      "new_information": "昨日历史到2.1.305；新增2.1.307安全事件、HTTP MCP仅幂等/只读重试和2.1.306云会话修复。",
+      "summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。",
+      "significance": "外部工具可能修改真实业务状态，断线后自动重复执行会产生重复写入风险。此次更新为Agent运行审计补充明确事件，并缩小重试范围；维护集成的团队应验证工具的只读或幂等声明，检查异常恢复时是否保留足够上下文，而非只看会话能否继续。",
+      "analysis": "提高可观察性和重试约束有助于定位事故，但不能替代工具端的幂等键、权限和业务核对。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "d8e5525804091f9c6637",
+        "7814ab73026647c45256"
+      ],
+      "tags": [
+        "Claude Code",
+        "MCP",
+        "工具重试",
+        "审计"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_abd16c49fe9ed334c37e",
+      "published_at": "2026-10-21T22:17:02Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": "Claude Code2.1.305修复2.1.304中部分Vertex、Bedrock或网关拒绝ToolSearch后所有请求失败的问题，改为去掉该工具后重试；恢复工作流时已完成的pipeline/parallel Agent改从运行日志读取。新增Linux嵌套用户命名空间选项，发布说明明确提示它可绕过沙盒文件保护。",
+      "sources": [
+        {
+          "candidate_id": "d8e5525804091f9c6637",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T22:17:02Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "7814ab73026647c45256",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T03:16:31Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:agent-toolkit:knowledge-foundation-openshell-2026",
+      "milestone": "knowledge-foundation-auto-ontology-announced-2026-10-21",
+      "title": "NVIDIA Agent Toolkit 扩展企业数据知识层与运行治理",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA为Agent Toolkit增加Agent Knowledge Foundation，结合CUDA-X库及Auto-Ontology，把公司原始数据映射为客户、产品和订单等业务概念及关系，并组合检索与预测模型。官博将OpenShell定位为控制Agent访问和行动边界的安全运行时，NemoClaw则提供专门Agent的参考设计。",
+      "significance": "企业Agent既要理解公司数据，也要在可控权限内行动。此次工具更新将业务语义和运行边界放入同一开发栈；平台团队应逐项核对数据连接、权限、组件成熟度及自身工作流，而非把伙伴名单视为所有集成已经完成。",
+      "analysis": "数据层与执行层需要配套治理。更多上下文和预测工具可能增加价值，也扩大了应测试的数据访问和操作范围；本文不据此宣称已经证明安全部署。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "bbe1f767b231aebb4521"
+      ],
+      "tags": [
+        "NVIDIA",
+        "OpenShell",
+        "Agent Toolkit",
+        "数据治理"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_5f9fcf182b308e48589f",
+      "published_at": "2026-10-21T10:10:01Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "bbe1f767b231aebb4521",
+          "url": "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:10:01Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "php:wiz-openai:php2shell-coordinated-disclosure",
+      "milestone": "php-patch-and-public-disclosure-2026-10-21",
+      "title": "Wiz 披露 AI 辅助发现 PHP2Shell，PHP 已发布核心漏洞补丁",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Wiz在10月21日披露PHP核心内存安全漏洞，称研究使用Wiz Atlas、Gemini4Argon和GPT-5.6 Sol，展示了未经认证的代码执行及进程内存泄露。缺陷涉及跨请求状态处理，与应用自身是否有漏洞不同。PHP当天发布修补版本，Wiz、Calif、OpenAI及云服务商协同验证补丁并准备防护。",
+      "significance": "模型让复杂漏洞链的研究和适配更容易，也缩短了防守方的响应时间。此案例显示，发现漏洞只是第一步，维护者补丁、云服务商缓解和运营方实际升级需要配合推进；依赖PHP的团队应按官方版本与配置评估暴露面，不能用语言普及率代替实际可利用范围。",
+      "analysis": "公开披露日期是10月21日，发现与协调早在8至9月展开；应将研究能力、可利用条件和补丁覆盖分别判断。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "bf145eeab531d5492022"
+      ],
+      "tags": [
+        "OpenAI",
+        "PHP",
+        "漏洞披露",
+        "Agent安全"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_a7d311e107c03a2c68cd",
+      "published_at": "2026-10-21T13:59:59Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "bf145eeab531d5492022",
+          "url": "https://www.wiz.io/blog/php2shell-php-rce",
+          "name": "www.wiz.io",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T13:59:59Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "lighton:slideon-mslideon:release",
+      "milestone": "sparse-retriever-models-published-2026-10-19",
+      "title": "LightOn 发布 SlideOn 与 mSlideOn，探索可调稀疏度的检索模型",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "LightOn发布174M的SlideOn及339M的mSlideOn，通过稀疏自动编码器预训练和检索微调，把稠密及后期交互模型转换为可用倒排索引检索的稀疏表示。团队提供模型、SAE检查点与训练脚本，并支持按延迟和存储预算调整剪枝程度。",
+      "significance": "RAG团队可用该方案比较检索质量与索引存储开销，尤其适合已有倒排索引能力的系统。作者结果也显示多语言与长文任务仍可能落后原始后期交互模型，实际选型需要同时测量质量、查询延迟和索引更新成本。",
+      "analysis": "稀疏化提供可调工程取舍，不等于所有任务都比稠密或多向量模型更准更快。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "d99954b16d538264efc5"
+      ],
+      "tags": [
+        "LightOn",
+        "稀疏检索",
+        "RAG"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_19265733e273312afa83",
+      "published_at": "2026-10-19T14:55:39.429000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "d99954b16d538264efc5",
+          "url": "https://huggingface.co/blog/lightonai/slideon-mslideon",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-19T14:55:39.429000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "dream-labs:funding:dream-api-launch-2026",
+      "milestone": "ninety-million-seed-and-public-api-announced",
+      "title": "重要补录｜Dream Labs 披露9000万美元种子轮并推出机器人 Dream API",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Dream Labs10月19日宣布9000万美元种子融资，由 B Capital 与 Kindred Ventures 等支持，并推出 Dream API：将机器人相机输入和自然语言任务转为动作。公司还提供演示数据微调及浏览器机器人体验入口；当前重点为双臂夹爪机器人的桌面操作，轮式移动与灵巧手支持仍待扩展，资金主要拟投入算力。",
+      "significance": "它将机器人模型包装成可直接接入的服务，为硬件团队尝试外部控制模型提供了新的路径。融资与 API 开放是可核进展，但跨硬件适应、任务成功率和服务成本，仍决定这种模式能否在演示之外持续使用。",
+      "analysis": "统一服务可能减少每家硬件商重复开发模型的负担，同时增加网络延迟、可用性和安全控制要求。公司声称的迁移能力需要按具体机器人与任务测试；不能从夹爪桌面演示外推到任意机器人和生产环境。",
+      "followup_questions": [
+        "不同硬件任务的成功率、延迟、回退和安全边界是否会公开？"
+      ],
+      "candidate_ids": [
+        "8375accdb1b26cd551a5"
+      ],
+      "tags": [
+        "Dream Labs",
+        "机器人",
+        "融资",
+        "Dream API",
+        "重要补录"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_7f4484f1b24ddeb836d7",
+      "published_at": "2026-10-19T17:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "8375accdb1b26cd551a5",
+          "url": "https://finance.yahoo.com/technology/ai/articles/dream-labs-raises-90m-seed-170000245.html",
+          "name": "finance.yahoo.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-19T17:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia-uw:rfd4-proteina:protein-design-release",
+      "milestone": "open-model-availability-described-2026-10-21",
+      "title": "NVIDIA 与华盛顿大学介绍 RFD4-Proteina，连接蛋白设计与实验筛选",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA在21日模型公告中介绍与华盛顿大学蛋白设计研究所Baker实验室合作的RFD4-Proteina。模型生成蛋白序列与三维结构，面向靶标结合、复杂结构组装和小分子结合设计；研究者可用Agent按设计目标生成、评估候选，再选择哪些送实验室测试。公告列明模型已通过多个模型与开发渠道提供。",
+      "significance": "生成设计与真实生物功能之间仍隔着实验验证。它为科学计算工作流增加候选生成入口，但不能仅凭计算指标推定药物安全性、临床疗效或研发成功率提高。",
+      "analysis": "本期只报道可用模型及其设计范围，不引用未经复测的加速数字。开放模型也不等于每个渠道、权重及商业用途都无条件可用，研究团队应核对具体条款与实验边界。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "3e7241a689e4102e855a"
+      ],
+      "tags": [
+        "蛋白设计",
+        "RFD4-Proteina",
+        "AI for Science",
+        "开放模型"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_5f4643596646da63e9c4",
+      "published_at": "2026-10-21T10:00:07Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "3e7241a689e4102e855a",
+          "url": "https://blogs.nvidia.com/blog/open-models-europe-industry",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:00:07Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "jeet-ai:tutor:hindi-jee-foundation-launch",
+      "milestone": "hindi-tutor-initial-courses-launched-2026-10-21",
+      "title": "印度 JEET AI 推出印地语 AI 导师，首批面向 JEE 和基础课程",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "JEET AI10月21日宣布上线个性化 AI 导师，首批提供印地语 JEE 和 Foundation 课程，月费1499卢比起。公司称产品可在虚拟白板书写、批注，结合多媒体和互动模拟讲解，并通过提问检查理解、调整解释。NEET、CBSE 备考及更多印度语言仍计划在后续数周至数月推出。",
+      "significance": "这项发布将互动问答、可视化讲授和阶段性理解检查组合进面向本地课程的产品，提供了印度语言教育应用的新案例。清晰的首发课程和起价便于观察采用路径，教学准确性与持续学习收益仍需实测。",
+      "analysis": "主动讲授与随时追问扩大了交互方式，也使课程状态、误解识别和纠错责任更复杂。评估应看学生能否独立掌握概念，而不只看对话流畅或内容数量；发布公告尚未提供可复核的学习成效研究。",
+      "followup_questions": [
+        "会否发布教学准确率、真实学习收益及学生数据保护的可验证说明？"
+      ],
+      "candidate_ids": [
+        "f9bab516470a0f139b6f"
+      ],
+      "tags": [
+        "JEET AI",
+        "印度",
+        "AI Tutor",
+        "印地语",
+        "教育产品"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_f2a0f3c731409b75d60d",
+      "published_at": "2026-10-21T10:16:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f9bab516470a0f139b6f",
+          "url": "https://www.prnewswire.com/in/news-releases/jeet-ai-launches-indias-first-ai-tutor-that-goes-beyond-answers-to-actually-teach-302915325.html",
+          "name": "www.prnewswire.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:16:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.9,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "tairex:agent-hospital:multidisciplinary-collaboration",
+      "milestone": "doctor-agent-collaboration-upgrade-reported",
+      "title": "紫荆智康披露多专科医生分身协作，系统仍处医院测试阶段",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 3,
+        "follow_up": 4
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "据量子位10月21日发布会报道，清华 AIR 孵化的紫荆智康升级 Agent Hospital，加入多专科医生分身协作，提供按需提醒和会诊两种模式。系统会分别展示分身意见并高亮分歧，供真人医生结合依据作最终判断；报道指出相关系统正于医院上线测试，未提供本次升级的独立临床结果。",
+      "significance": "这个案例把多 Agent 的重点放在保留不同专业视角，而非强行合成单一答案，便于观察界面如何支持医生复核。其测试阶段也提示，协作机制的可读性与实际临床价值是两个问题，需要分别取得证据。",
+      "analysis": "把分歧显式呈现有助于追溯建议来源，但可能增加复核负担；多个分身也可能共享相同错误。后续应看医生怎样使用这些提示、是否发现遗漏，以及是否形成严谨的前瞻评估，不能从模拟或考试分数推导患者收益。",
+      "followup_questions": [
+        "会否公开真实医院测试方案、错误分布与独立临床评估结果？"
+      ],
+      "candidate_ids": [
+        "041e5f09652aeb6209b4"
+      ],
+      "tags": [
+        "紫荆智康",
+        "中国",
+        "医疗Agent",
+        "多智能体",
+        "国内媒体",
+        "量子位"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_c90ecc440a87b65a6ef5",
+      "published_at": "2026-10-21T11:30:59Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "041e5f09652aeb6209b4",
+          "url": "https://www.qbitai.com/2026/10/504734.html",
+          "name": "www.qbitai.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T11:30:59Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_configured_dateline"
+        }
+      ],
+      "weighted_score": 3.75,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "opply:funding:cpg-agentic-operations-2026",
+      "milestone": "seven-point-five-million-funding-announced",
+      "title": "Opply 获750万美元融资，将 Agents 用于消费品供应链运营",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Opply10月21日宣布获得750万美元融资，由 Chalfen Ventures 领投，Index Ventures、Anthemis 等参与。公司最初面向食品饮料品牌，称其 Opply Brain 结合专用 Agents、企业数据和供应商网络，处理寻源、采购、融资、库存、生产计划及物流；新资金拟将这一运营服务带给更多企业。",
+      "significance": "这是一种把垂直 AI 与实际供应商及资金服务结合的产品形态，任务结果会直接进入采购和交付流程。对创业者，其价值与难点同时来自线上模型和线下运营的连接，融资并不能替代对权限、异常和交付质量的验证。",
+      "analysis": "直接参与交易可能比提供建议更容易形成业务价值，也会承担更具体的履约和资金风险。应观察每一步操作由谁批准、错误由谁纠正，以及服务成本是否可持续；公司增长与客户回报宣传仍需独立证据。",
+      "followup_questions": [
+        "采购支出与融资的审批、异常处理及履约责任如何分配？"
+      ],
+      "candidate_ids": [
+        "a3d69be4dbcf93e96d93"
+      ],
+      "tags": [
+        "Opply",
+        "英国创业",
+        "融资",
+        "供应链",
+        "垂直Agent"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_6660645df47612c647f1",
+      "published_at": "2026-10-21T12:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "a3d69be4dbcf93e96d93",
+          "url": "https://www.prnewswire.com/news-releases/opply-raises-7-5m-after-15x-growth-to-bring-agentic-ai-to-cpg-operations-302914661.html",
+          "name": "www.prnewswire.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T12:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "kevel:funding:commerce-media-capital-2026",
+      "milestone": "fifty-two-million-new-capital-announced",
+      "title": "Kevel 宣布5200万美元新资金，扩展零售媒体 AI 基础设施",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Kevel10月21日宣布获得5200万美元新资金，包括 Fulcrum、dunnhumby Ventures、Iberis Capital 的扩大战略投资及 ORIX USA Growth Capital 的资金。其 API 平台供零售商和电商自建广告媒体网络；公司拟继续开发可解释、可审计和可配置的 AI 排序、出价及投放能力，并扩展业务范围。",
+      "significance": "零售媒体将交易场景、客户数据和广告收入连接起来，Kevel 的定位是为商家提供自建能力。这次资金支持有助于观察 AI 如何进入广告决策基础设施；具体透明度、优化效果和数据控制仍需客户验证。",
+      "analysis": "商家希望保留模型与数据控制，也需要承担系统集成和运营成本。能否展示每次决策依据是有价值的产品方向，但宣传中的透明 AI 不等于已证明投放公平或有效；融资构成也不能简单归为纯股权轮次。",
+      "followup_questions": [
+        "新资金的资本构成及AI决策审计功能何时进一步披露？"
+      ],
+      "candidate_ids": [
+        "59795d9c16d16fc4b3ca"
+      ],
+      "tags": [
+        "Kevel",
+        "零售媒体",
+        "融资",
+        "广告AI",
+        "企业服务"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_b321fdd380a229e1be77",
+      "published_at": "2026-10-21T14:09:07.604000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "59795d9c16d16fc4b3ca",
+          "url": "https://www.kevel.com/blog/kevel-secures-52-million-to-scale-ai-driven-infrastructure-for-the-future-of-commerce-media",
+          "name": "www.kevel.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T14:09:07.604000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.6,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "qwen:qwen-code:0.25.1",
+      "milestone": "stable-cli-and-desktop-0.26.0-2026-10-21",
+      "title": "Qwen Code 与 Desktop 发布 0.26.0 正式版",
+      "category": "agents",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_2456b7110e9ef68df353",
+      "new_information": "上期报道0.25.4-preview.1；本期新增0.26.0正式CLI与Desktop发行节点。增量是正式发布阶段推进，不将预览中已有的功能重新当作首次发布，也不代表性能已经验证。",
+      "summary": "Qwen Code与Desktop在21日发布0.26.0正式版。正式发行说明列出daemon启动与状态控制、WebShell会话MCP目录展示，以及恢复、取消和审批流程改进。部分能力此前已在预览出现；Generated UI仍有实验开关，不能推定全部功能默认开放。",
+      "significance": "使用预览版的团队获得新的正式升级节点，仍应验证自身MCP、恢复和权限工作流。",
+      "analysis": "本次增量包括正式发行状态及明确功能记录，避免将预览版已报道的特性再次当作全新能力。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "e3b188d10acfc343e887",
+        "eafbbca77f0bb9d387a0"
+      ],
+      "tags": [
+        "Qwen Code",
+        "正式版",
+        "事件进展"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_2456b7110e9ef68df353",
+      "published_at": "2026-10-21T23:50:15Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": "Qwen Code0.25.4-preview.1加入会话Skills/Extensions定向刷新、只读--check预检和本地/SSH文件引用，并记录Agent创建或修改的文件；修复Hosted stdio MCP进程组收容。仍为预览版。",
+      "sources": [
+        {
+          "candidate_id": "e3b188d10acfc343e887",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.0",
+          "name": "Qwen Code Official Releases",
+          "source_type": "api",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T23:20:53Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "eafbbca77f0bb9d387a0",
+          "url": "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.26.0",
+          "name": "Qwen Code Official Releases",
+          "source_type": "api",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T23:50:15Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.5,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    },
+    {
+      "event_key": "dharma-ai:vocabx:portuguese-grader-study",
+      "milestone": "tokenizer-cost-study-preview-2026-10-21",
+      "title": "VocabX 词表特化案例：葡语作文评分模型的成本优化仍待复现",
+      "category": "infrastructure",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 3,
+        "follow_up": 3
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Dharma-AI介绍VocabX，以任务中的输入和输出成本选择子词及宏token，调整Qwen3-4B葡语作文评分词表。团队称在RTX 5090、vLLM和500条请求的自测中，按运行耗时计算的成本下降77%；完整论文尚未公开，不能泛化为任意教育应用的收益。",
+      "significance": "对输出格式固定的小模型，词表及输出层也是成本优化入口，压缩时应保留承载评分决定的token。",
+      "analysis": "需同时比较评分质量、训练代价、吞吐与业务偏差。本期报告的是作者公布的工程案例，未独立复现，也不把成本指标当作教学效果证明。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "b586616680257f94cec1"
+      ],
+      "tags": [
+        "小模型",
+        "Tokenizer",
+        "教育技术",
+        "作者自测"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_04c584fedfb8c368c56c",
+      "published_at": "2026-10-21T17:35:36.666000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b586616680257f94cec1",
+          "url": "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T17:35:36.666000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.45,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    },
+    {
+      "event_key": "cvs-health:harvey:corporate-affairs-deployment",
+      "milestone": "post-pilot-access-expansion-announced",
+      "title": "CVS Health 在试点后扩大 Harvey 企业事务部署",
+      "category": "applications",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Harvey10月21日称，CVS Health 在试点后扩大平台使用，支持法律、监管、政策、合规、治理和运营工作，涵盖文档审阅、研究、起草及知识检索。公告未提供独立效果数据，仍强调人员监督。",
+      "significance": "扩展至企业事务部门显示法律 AI 可连接多个相邻知识流程，适合观察试点如何转向组织部署。当前信息仍主要来自供应商与客户的公开声明，实际覆盖人员、权限设置及工作质量需要进一步披露。",
+      "analysis": "从单项任务扩展到跨部门流程，需要处理相互不同的权限与证据标准。部署声明提供采用信号，却不能代替质量或节省的独立验证；持续使用与人工复核结果会更有判断价值。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "3c39a09e66c6565385bd"
+      ],
+      "tags": [
+        "CVS Health",
+        "Harvey",
+        "企业法务",
+        "部署案例"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_954e00ff63c5186d9cec",
+      "published_at": "2026-10-21T12:12:41.709000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "3c39a09e66c6565385bd",
+          "url": "https://www.harvey.ai/blog/cvs-health-deploys-harvey-across-its-corporate-affairs-functions",
+          "name": "www.harvey.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T12:12:41.709000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.35,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    },
+    {
+      "event_key": "nvidia:cudss:general-availability",
+      "milestone": "sparse-direct-solver-ga-2026-10-21",
+      "title": "cuDSS 正式可用，将稀疏线性求解搬到 GPU",
+      "category": "infrastructure",
+      "priority": "P2",
+      "score": {
+        "impact": 3,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA宣布cuDSS正式可用，面向工程与科学仿真中的大型稀疏系统求解，可通过C、C++、Python和Fortran接口集成。厂商列举多款仿真软件接入，但其案例加速比不能泛化为所有工程任务的收益。",
+      "significance": "对芯片、结构和物理仿真团队，求解器是比通用聊天模型更直接的性能优化入口。",
+      "analysis": "应比较端到端耗时、数值精度、数据迁移与GPU费用，不只比较某个求解步骤。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "72b3874c36c1a62e4a31"
+      ],
+      "tags": [
+        "cuDSS",
+        "GPU计算",
+        "工程仿真"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_329f2adb8809934480df",
+      "published_at": "2026-10-21T10:30:25Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:03:35.770185Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "72b3874c36c1a62e4a31",
+          "url": "https://blogs.nvidia.com/blog/cudss-generally-available-engineering-scientific-simulation",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T10:30:25Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:03:35.770185Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.35,
+      "independent_source_count": 1,
+      "verification_limitations": []
+    }
+  ],
+  "open_source_items": [
+    {
+      "event_key": "aquasecurity:trivy:0.76.0",
+      "milestone": "v0.76.1-emudhra-mitigation-2026-10-21",
+      "title": "Trivy 0.76.1更新证书信任，缓解eMudhra中间CA密钥事件",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_5ba3085170eb2c3615cf",
+      "new_information": "历史已报0.76.0功能版本；本次10/21 11:18:34Z正式0.76.1针对独立CA事件更新官方构建与容器信任库。",
+      "summary": "Trivy发布0.76.1安全更新：官方二进制改用含证书不信任缓解的Go 1.27.3构建，官方容器同步更新Alpine CA信任库，以拒绝受eMudhra中间CA密钥事件影响的证书链。发布方建议升级并重新部署镜像；自行编译者还需同步编译工具链与运行环境的信任库。",
+      "significance": "扫描工具本身也依赖HTTPS信任链。此次更新说明基础工具链和容器CA库会影响安全工具的连接信任，升级二进制与重部署镜像需要一起安排；仅更新扫描规则库并不能覆盖这类运行环境变化。",
+      "analysis": "这是证书信任缓解，不是Trivy检测引擎新发现高危漏洞，也不代表全网所有eMudhra证书都应被相同处理。具体受影响证书与策略以CA事件通报为准，本稿只聚焦正式版本明确交付。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "13d272f05afaea3b1327"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "非AI",
+        "安全工具",
+        "证书",
+        "跟进"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/aquasecurity/trivy",
+      "technical_highlights": "正式tag v0.76.1；Apache-2.0；官方Go1.27.3构建与Alpine CA更新；发布说明链接CVE-2026-111943及Cloudflare事件原文。",
+      "target_users": "CI安全扫描、自托管Trivy、容器镜像维护与平台安全团队。",
+      "maturity_limitations": "未复测证书链或扫描器；自行构建和运行环境须分别更新，不能承诺更换版本号后所有环境自动安全。只采用已发布tag，不引入main未发功能。",
+      "event_id": "evt_5ba3085170eb2c3615cf",
+      "published_at": "2026-10-21T11:18:34Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": "Trivy10月14日发布0.76.0，在实验性CBOM中输出算法的经典安全位数和NIST量子安全类别，供下游工具评估密码资产；无法估算的等级不填。该版将Echo修补包识别扩展到Maven与npm，并增加多种RapidFort基底系统扫描。正式发版早于主窗口、处于72小时补漏内，历史未见同版本报道。",
+      "sources": [
+        {
+          "candidate_id": "13d272f05afaea3b1327",
+          "url": "https://github.com/aquasecurity/trivy/releases/tag/v0.76.1",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T11:18:34Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "databasus:3.62.0:wal-restorability",
+      "milestone": "v3.62.0-2026-10-21",
+      "title": "Databasus 3.62把WAL监控改为恢复区间，并改善归档与容器停机",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Databasus发布3.62，WAL监控改为展示备份可恢复的连续区间，避免已被增量备份补齐的缺口误报。每库可并行上传最多四个WAL段并复用存储连接；对正在追赶延迟的接收器延后重建复制槽，同时修复容器关闭顺序及部分绑定目录下内置PostgreSQL启动处理。",
+      "significance": "备份系统更有价值的信号是能恢复到哪里，而非是否出现过短暂归档间隔。此次更新同时涉及恢复可见性、远端存储背压和关闭过程，适合管理PostgreSQL连续归档的团队评估其实际可恢复性。",
+      "analysis": "恢复区间展示与归档吞吐优化不等于端到端恢复已经验证。数据库、网络和对象存储故障条件仍需在自己的环境演练；正式说明中的开发和CI辅助改动不作为产品对用户交付的核心能力。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "b69dc351e62df135e152"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "非AI",
+        "数据库备份",
+        "WAL",
+        "自托管"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/databasus/databasus",
+      "technical_highlights": "WAL归档并发与连接复用、基于可恢复区间的监控、复制槽追赶逻辑、容器先停应用再正常停止数据库。",
+      "target_users": "中小团队DBA、PostgreSQL备份与自托管基础设施维护者。",
+      "maturity_limitations": "未做恢复演练或性能测试。部署前应验证备份链、故障恢复和存储后端兼容性，并分别核查软件及第三方组件条款。",
+      "event_id": "evt_572f3a980f22e3cefa30",
+      "published_at": "2026-10-21T21:06:59Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b69dc351e62df135e152",
+          "url": "https://github.com/databasus/databasus/releases/tag/v3.62.0",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T21:06:59Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "zed:1.25.2:remote-agent-secrets-acp",
+      "milestone": "v1.25.2-2026-10-21",
+      "title": "Zed 1.25.2修复远程Agent密钥暴露，并增加ACP上下文压缩",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Zed正式发布1.25.2，为ACP外部Agent启用会话通知和上下文压缩，并修复远程项目传给外部Agent、MCP服务的环境变量可能在本机进程列表可见的问题。版本还修复部分Agent提示发送阻塞和Windows SSH远端启动故障，并改进内嵌提示编辑与常规代码导航体验。",
+      "significance": "编辑器同时承接远程开发、Agent与MCP后，密钥传递和会话状态成为实际工作流的一部分。这次更新在延长Agent可工作会话的同时收紧凭据暴露路径，安全和可用性应作为同一次升级评估。",
+      "analysis": "进程列表可见性修复不能据此推断发生过外泄，发布说明也未给出CVE或利用事件。源码许可与托管模型服务的商业权益不同；新增模型入口不等于免费调用或所有Agent均支持同样的上下文压缩策略。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "ac67719fc2dcc60c01f4"
+      ],
+      "tags": [
+        "GitHub雷达",
+        "编辑器",
+        "ACP",
+        "远程开发",
+        "密钥"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/zed-industries/zed",
+      "technical_highlights": "源码主要GPL-3.0-or-later、标记组件Apache-2.0；ACP会话通知/压缩；远程外部Agent/MCP环境变量进程列表暴露修复；SSH握手与Agent启动处理。",
+      "target_users": "使用Zed外部Coding Agent、MCP及SSH远程开发的工程团队。",
+      "maturity_limitations": "未独立复测；不声称有已发生攻击或所有环境自动安全。只引用正式v1.25.2，云模型与订阅许可独立于编辑器源码。",
+      "event_id": "evt_fcb973e3e979859b2c07",
+      "published_at": "2026-10-21T20:54:49Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-22T01:33:54.351494Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "ac67719fc2dcc60c01f4",
+          "url": "https://github.com/zed-industries/zed/releases/tag/v1.25.2",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T20:54:49Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-22T01:33:54.351494Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "trend_signals": [
+    {
+      "text": "Agent工程的关注点正在延伸到运行边界与恢复过程：工具调用重试、密钥可见性、发布凭据和审计事件都可能影响真实系统。评价升级时，应把异常路径和权限测试与正常任务效果一起检查。",
+      "event_ids": [
+        "evt_abd16c49fe9ed334c37e",
+        "evt_fcb973e3e979859b2c07",
+        "evt_fdf44924182474713bde"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "企业模型的价值越来越依赖数据适配：检索、文档解析、关系数据预测以及固定输出词表优化，分别解决不同瓶颈。与其只看通用模型排名，更应比较端到端质量、成本和治理条件。",
+      "event_ids": [
+        "evt_c5338764a376c2725291",
+        "evt_848e14aa4e342a989202",
+        "evt_04c584fedfb8c368c56c"
+      ],
+      "label": "ANALYSIS"
+    }
+  ],
+  "tracking_updates": [
+    "evt_5ba3085170eb2c3615cf",
+    "evt_abd16c49fe9ed334c37e",
+    "evt_2456b7110e9ef68df353"
+  ],
+  "coverage_report": {
+    "source_status": [
+      {
+        "source_id": "openai",
+        "name": "OpenAI News",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 40,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "google_ai",
+        "name": "Google AI Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "microsoft",
+        "name": "Microsoft Official Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "agents",
+          "applications",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "nvidia",
+        "name": "NVIDIA Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "infrastructure",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 8,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "huggingface",
+        "name": "Hugging Face Blog",
+        "kind": "rss",
+        "region": "europe",
+        "categories": [
+          "opensource",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 30,
+        "eligible": 9,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "qwen",
+        "name": "Qwen Code Official Releases",
+        "kind": "api",
+        "region": "asia",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 9,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "vllm",
+        "name": "vLLM Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "langgraph",
+        "name": "LangGraph Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "anthropic",
+        "name": "Anthropic News",
+        "kind": "page",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 5,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "rea",
+        "name": "REA Official Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 5,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:03:35.770185Z"
+      },
+      {
+        "source_id": "search_models",
+        "name": "模型与实验室·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 19,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:14:20Z"
+      },
+      {
+        "source_id": "search_agents",
+        "name": "Agent 与 Coding·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "agents"
+        ],
+        "status": "ok",
+        "fetched": 17,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:16:08Z"
+      },
+      {
+        "source_id": "search_opensource",
+        "name": "GitHub 全领域热门项目·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 19,
+        "eligible": 6,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:15:23Z"
+      },
+      {
+        "source_id": "search_business",
+        "name": "商业与创业·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 14,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:12:20Z"
+      },
+      {
+        "source_id": "search_applications",
+        "name": "教育与垂直应用·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "applications"
+        ],
+        "status": "ok",
+        "fetched": 13,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:12:20Z"
+      },
+      {
+        "source_id": "search_infrastructure",
+        "name": "基础设施与政策·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 24,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:28:26.328275Z"
+      },
+      {
+        "source_id": "search_backfill",
+        "name": "重大新闻·72小时补漏",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 13,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:22:32.035691Z"
+      },
+      {
+        "source_id": "search_chinese_accounts",
+        "name": "国内AI媒体与博主·逐账号必查",
+        "kind": "web_search",
+        "region": "asia",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 12,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:15:23Z"
+      },
+      {
+        "source_id": "search_x_accounts",
+        "name": "X官方与AI从业者·逐账号必查",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 35,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-22T01:14:20Z"
+      }
+    ],
+    "categories_checked": [
+      "agents",
+      "applications",
+      "business",
+      "infrastructure",
+      "models",
+      "opensource"
+    ],
+    "categories_missing": [],
+    "regions_checked": [
+      "asia",
+      "europe",
+      "global",
+      "north_america"
+    ],
+    "limitations": []
+  },
+  "quality_report": {
+    "status": "passed",
+    "candidates_collected": 218,
+    "candidates_verified": 52,
+    "published_count": 24,
+    "duplicates_removed": 0,
+    "rejected_count": 26,
+    "limitations": [
+      "已逐项检查AIHOT、赛博禅心、机器之心、新智元、量子位。AIHOT只作发现入口；赛博禅心部分内容为署名转载，机器之心页面抓取不完整，新智元官网/公众号入口受限，量子位部分页面或具体文章时间失败。可读内容与检索索引不能证明已覆盖各账号完整时间线。",
+      "14个X账号均执行单独日期查询及公开主页尝试，主页返回403，未取得可正式引用的新原帖。检索未发现不代表账号没有更新；ClaudeAI、ClaudeDevs等部分身份官网出链仍待确认。新闻优先追到官网、原始研究或正式Release，不使用转发或自动趋势摘要冒充公告。",
+      "GitHub日榜、周榜、月榜及补充方向入口分别尝试，参数榜部分失败，无参数Today入口实际可读；14个仓库进行了公开元信息与Release比较。未取得连续历史快照，不声称Star增长。REA窗口内无合格新版本，不重复旧闻。",
+      "部分OpenAI原文可由网页工具读取，但正常HTTP持续返回403；Google Cloud、NVIDIA新闻稿、EESC、科技部等部分页面未取得程序支持的原始发布时间。OpenAI–Google Cloud合作、广告扩围及AT&T计划等重要线索本轮未能正式归档；补查的TNW和Isaac原始发行渠道也返回访问错误。保留真实诊断，不把访问或日期失败写成无新闻，也不以其他来源日期借壳带入未过门细节。",
+      "Voxtral3官网存在访问或时间缺口；Humming、第四研究所及部分融资/医疗原文未通过日期校验。不能借聚合上架时间、仓库创建时间或转载日期推定项目首发。",
+      "LiteLLM官方通报的发布时间元数据早于其自述恶意上传时间，正式稿以Wiz原始调查为依据，拒绝矛盾候选；不沿用官方独有的精确下架时窗或GitHub同名标签断言。入侵根因仍带调查限定。",
+      "部分模型文章来自Hugging Face团队博客，feed预设地区是欧洲，不代表投稿组织所在地。NVIDIA、IBM等仍按实际发布组织理解；欧洲信息覆盖另有Pigment、Opply及LightOn等原始来源，不能靠feed默认标签证明地区均衡。",
+      "融资、部署、模型和性能数据主要为机构或作者公布，未独立复测。JEET教学效果、医疗测试、VocabX作者试验、未来投资及硬件交付阶段均与成熟效果区分；不把声明、意向或预览写成全面可用。",
+      "由 ChatGPT Work 完成检索、编辑与再次事实审查；不是独立模型或人工审稿。",
+      "未调用 OpenAI API；Work 不向本程序提供实际 token、所用模型和订阅消耗，记录为未知。",
+      "代码核验原文可访问性、发布时间、来源引用、结构与历史；无法证明全部语义判断正确。"
+    ]
+  },
+  "usage": [
+    {
+      "mode": "chatgpt_work",
+      "model": "Work（应用选择，未公开）",
+      "purpose": "搜索、研究编辑、事实审查",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "billing_unknown": true
+    }
+  ],
+  "estimated_cost_usd": 0.0,
+  "prompt_sha256": "c7c7c65a1f8cdf40a4f40ca2d88f4eb2c1eac116d359e167d4a98ef813a2c53e"
+}

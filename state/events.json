@@ -145,12 +145,14 @@
       "urls": [
         "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.1",
         "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.25.2",
+        "https://github.com/QwenLM/qwen-code/releases/tag/desktop-v0.26.0",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.1",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.2-preview.0",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3",
         "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3-preview.0",
-        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.4-preview.1"
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.4-preview.1",
+        "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.0"
       ],
       "milestones": [
         "0252preview0tsmodsandpersistentteamplanapproval",
@@ -158,7 +160,8 @@
         "0254preview1managedpreflight20261020",
         "stable0253released20261019",
         "stableclianddesktop0251released20261011",
-        "stableclianddesktop0252released20261015"
+        "stableclianddesktop0252released20261015",
+        "stableclianddesktop026020261021"
       ],
       "evidence_hashes": [
         "108d980689f7cfba76d24a1608d102c00416510e001cc9606bfb393f61e2acd5",
@@ -167,12 +170,13 @@
         "714607879f57949986bd62b72c8b68ce8ecef4f077130f6508bc137961888a9a",
         "a2e8130b456c57fc98bdb663adec2d23b0d43c073ffda9cfa9c97895cb005602",
         "bdb663879deb5e4d8315587bc877d89307d2813205239dd482be5efea7168c15",
+        "ccc74d54aba93ffcf0ab4ce968228ef778c8d06754f08b88b079335a31787e04",
         "fd9cb6359108817c9ffa71f09cdee7892811916fcc2284e37900bb60a4e52beb"
       ],
-      "summary": "Qwen Code0.25.4-preview.1加入会话Skills/Extensions定向刷新、只读--check预检和本地/SSH文件引用，并记录Agent创建或修改的文件；修复Hosted stdio MCP进程组收容。仍为预览版。",
+      "summary": "Qwen Code与Desktop在21日发布0.26.0正式版。正式发行说明列出daemon启动与状态控制、WebShell会话MCP目录展示，以及恢复、取消和审批流程改进。部分能力此前已在预览出现；Generated UI仍有实验开关，不能推定全部功能默认开放。",
       "first_report": "2026-10-13",
-      "last_report": "2026-10-21",
-      "last_seen_at": "2026-10-21T01:02:04.200561+00:00",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
       "updates": [
         {
           "report_date": "2026-10-13",
@@ -209,6 +213,12 @@
           "milestone": "0.25.4-preview.1-managed-preflight-2026-10-20",
           "new_information": "前次正式0.25.3，本次0.25.4预览新增只读预检、定向刷新、文件引用和Agent文件变更记录；仍预览。",
           "summary": "Qwen Code0.25.4-preview.1加入会话Skills/Extensions定向刷新、只读--check预检和本地/SSH文件引用，并记录Agent创建或修改的文件；修复Hosted stdio MCP进程组收容。仍为预览版。"
+        },
+        {
+          "report_date": "2026-10-22",
+          "milestone": "stable-cli-and-desktop-0.26.0-2026-10-21",
+          "new_information": "上期报道0.25.4-preview.1；本期新增0.26.0正式CLI与Desktop发行节点。增量是正式发布阶段推进，不将预览中已有的功能重新当作首次发布，也不代表性能已经验证。",
+          "summary": "Qwen Code与Desktop在21日发布0.26.0正式版。正式发行说明列出daemon启动与状态控制、WebShell会话MCP目录展示，以及恢复、取消和审批流程改进。部分能力此前已在预览出现；Generated UI仍有实验开关，不能推定全部功能默认开放。"
         }
       ]
     },
@@ -1561,24 +1571,33 @@
         "aquasecuritytrivy0760"
       ],
       "urls": [
-        "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0"
+        "https://github.com/aquasecurity/trivy/releases/tag/v0.76.0",
+        "https://github.com/aquasecurity/trivy/releases/tag/v0.76.1"
       ],
       "milestones": [
-        "importantbackfillstable0760released20261014"
+        "importantbackfillstable0760released20261014",
+        "v0761emudhramitigation20261021"
       ],
       "evidence_hashes": [
+        "08508faa765884cf99ebf8fa3ae9a00c99bafeef98f1eafdc9487e6afa80aaa7",
         "72597b717d0f0eeb6fb8e7786d213eb81ae7edefa1c0dc0e25f8f23bf39a8b92"
       ],
-      "summary": "Trivy10月14日发布0.76.0，在实验性CBOM中输出算法的经典安全位数和NIST量子安全类别，供下游工具评估密码资产；无法估算的等级不填。该版将Echo修补包识别扩展到Maven与npm，并增加多种RapidFort基底系统扫描。正式发版早于主窗口、处于72小时补漏内，历史未见同版本报道。",
+      "summary": "Trivy发布0.76.1安全更新：官方二进制改用含证书不信任缓解的Go 1.27.3构建，官方容器同步更新Alpine CA信任库，以拒绝受eMudhra中间CA密钥事件影响的证书链。发布方建议升级并重新部署镜像；自行编译者还需同步编译工具链与运行环境的信任库。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-16",
-      "last_seen_at": "2026-10-16T01:30:45.818165+00:00",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
           "milestone": "important backfill stable0.76.0 released20261014",
           "new_information": "",
           "summary": "Trivy10月14日发布0.76.0，在实验性CBOM中输出算法的经典安全位数和NIST量子安全类别，供下游工具评估密码资产；无法估算的等级不填。该版将Echo修补包识别扩展到Maven与npm，并增加多种RapidFort基底系统扫描。正式发版早于主窗口、处于72小时补漏内，历史未见同版本报道。"
+        },
+        {
+          "report_date": "2026-10-22",
+          "milestone": "v0.76.1-emudhra-mitigation-2026-10-21",
+          "new_information": "历史已报0.76.0功能版本；本次10/21 11:18:34Z正式0.76.1针对独立CA事件更新官方构建与容器信任库。",
+          "summary": "Trivy发布0.76.1安全更新：官方二进制改用含证书不信任缓解的Go 1.27.3构建，官方容器同步更新Alpine CA信任库，以拒绝受eMudhra中间CA密钥事件影响的证书链。发布方建议升级并重新部署镜像；自行编译者还需同步编译工具链与运行环境的信任库。"
         }
       ]
     },
@@ -1647,24 +1666,29 @@
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.301",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.302",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.305"
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.307"
       ],
       "milestones": [
         "announcement20261015",
         "stable21302agentdefaultsandreliability20261016",
         "stable21304humandecisionandsecuritychecks20261019",
-        "stable21305toolsearchandworkflowrecovery20261020"
+        "stable21305toolsearchandworkflowrecovery20261020",
+        "stable21307safetyeventsidempotentretries20261021"
       ],
       "evidence_hashes": [
         "076d7a7425473c3de202e09747ee18f3c052be5bd4849c29cf124af82ba51422",
         "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc",
+        "39cdb2e960fc4e0139b8d7c69ce7b41686fb0569cbb2c0ebe9233ee235b3f7b3",
+        "486c1ef52a4f6da5f31dace560f579bebae1e2267b58402a966c20a70f7de929",
         "cdc76586d818cb3f002e4e28823a8ed90184d2b0398b0a268514865ab675c71f",
         "d3639b2e3ce26f429efa0cd9a5d8eeca982995933b8c5cec50e1ead20b05c9de"
       ],
-      "summary": "Claude Code2.1.305修复2.1.304中部分Vertex、Bedrock或网关拒绝ToolSearch后所有请求失败的问题，改为去掉该工具后重试；恢复工作流时已完成的pipeline/parallel Agent改从运行日志读取。新增Linux嵌套用户命名空间选项，发布说明明确提示它可绕过沙盒文件保护。",
+      "summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-21",
-      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1689,6 +1713,12 @@
           "milestone": "stable-2.1.305-toolsearch-and-workflow-recovery-2026-10-20",
           "new_information": "历史至2.1.304；新增2.1.305正式版ToolSearch网关回归修复、已完成工作流步骤日志恢复及嵌套用户命名空间选项。",
           "summary": "Claude Code2.1.305修复2.1.304中部分Vertex、Bedrock或网关拒绝ToolSearch后所有请求失败的问题，改为去掉该工具后重试；恢复工作流时已完成的pipeline/parallel Agent改从运行日志读取。新增Linux嵌套用户命名空间选项，发布说明明确提示它可绕过沙盒文件保护。"
+        },
+        {
+          "report_date": "2026-10-22",
+          "milestone": "stable-2.1.307-safety-events-idempotent-retries-2026-10-21",
+          "new_information": "昨日历史到2.1.305；新增2.1.307安全事件、HTTP MCP仅幂等/只读重试和2.1.306云会话修复。",
+          "summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。"
         }
       ]
     },
@@ -3421,6 +3451,573 @@
           "summary": "NVIDIA10月20日称，巴塞罗那超级计算中心的 AI Factory 加速计划已在试点后运行，部分服务当日起可经 Inception 门户获取，覆盖算力、技术支持和训练等资源。MareNostrum5的后续扩容仍在计划中。"
         }
       ]
+    },
+    "evt_fdf44924182474713bde": {
+      "event_key": "litellm:1.107.0:supply-chain-compromise",
+      "aliases": [
+        "litellm11070supplychaincompromise"
+      ],
+      "urls": [
+        "https://www.wiz.io/blog/litellm-compromised-steals-credentials"
+      ],
+      "milestones": [
+        "incidentreport20261021"
+      ],
+      "evidence_hashes": [
+        "02ba8fea17415642d853db0c104ba16d544657a6dcd2ef2bb30efed4e258282a"
+      ],
+      "summary": "Wiz披露，LiteLLM的1.107.0恶意包与多个Docker标签在10月21日被用于分发窃取凭据的载荷，目标包括云平台、模型服务及开发工具密钥。调查发现载荷来自名称近似的仿冒仓库；Wiz援引维护者称，多个GitHub账号的凭据被盗后用于触发、批准发布，相关制品已被移除。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "incident-report-2026-10-21",
+          "new_information": "",
+          "summary": "Wiz披露，LiteLLM的1.107.0恶意包与多个Docker标签在10月21日被用于分发窃取凭据的载荷，目标包括云平台、模型服务及开发工具密钥。调查发现载荷来自名称近似的仿冒仓库；Wiz援引维护者称，多个GitHub账号的凭据被盗后用于触发、批准发布，相关制品已被移除。"
+        }
+      ]
+    },
+    "evt_572f3a980f22e3cefa30": {
+      "event_key": "databasus:3.62.0:wal-restorability",
+      "aliases": [
+        "databasus3620walrestorability"
+      ],
+      "urls": [
+        "https://github.com/databasus/databasus/releases/tag/v3.62.0"
+      ],
+      "milestones": [
+        "v362020261021"
+      ],
+      "evidence_hashes": [
+        "bb81de04049e95bbbaccca2b304d99de97b524570a356a96c2eb0a1ab7e19110"
+      ],
+      "summary": "Databasus发布3.62，WAL监控改为展示备份可恢复的连续区间，避免已被增量备份补齐的缺口误报。每库可并行上传最多四个WAL段并复用存储连接；对正在追赶延迟的接收器延后重建复制槽，同时修复容器关闭顺序及部分绑定目录下内置PostgreSQL启动处理。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "v3.62.0-2026-10-21",
+          "new_information": "",
+          "summary": "Databasus发布3.62，WAL监控改为展示备份可恢复的连续区间，避免已被增量备份补齐的缺口误报。每库可并行上传最多四个WAL段并复用存储连接；对正在追赶延迟的接收器延后重建复制槽，同时修复容器关闭顺序及部分绑定目录下内置PostgreSQL启动处理。"
+        }
+      ]
+    },
+    "evt_fcb973e3e979859b2c07": {
+      "event_key": "zed:1.25.2:remote-agent-secrets-acp",
+      "aliases": [
+        "zed1252remoteagentsecretsacp"
+      ],
+      "urls": [
+        "https://github.com/zed-industries/zed/releases/tag/v1.25.2"
+      ],
+      "milestones": [
+        "v125220261021"
+      ],
+      "evidence_hashes": [
+        "2069e71079abd6c2d2d707027e780f75c4c7954e90c47128d8d5c05024ee9029"
+      ],
+      "summary": "Zed正式发布1.25.2，为ACP外部Agent启用会话通知和上下文压缩，并修复远程项目传给外部Agent、MCP服务的环境变量可能在本机进程列表可见的问题。版本还修复部分Agent提示发送阻塞和Windows SSH远端启动故障，并改进内嵌提示编辑与常规代码导航体验。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "v1.25.2-2026-10-21",
+          "new_information": "",
+          "summary": "Zed正式发布1.25.2，为ACP外部Agent启用会话通知和上下文压缩，并修复远程项目传给外部Agent、MCP服务的环境变量可能在本机进程列表可见的问题。版本还修复部分Agent提示发送阻塞和Windows SSH远端启动故障，并改进内嵌提示编辑与常规代码导航体验。"
+        }
+      ]
+    },
+    "evt_a6a7644d89d26433d21b": {
+      "event_key": "google-cloud:gtc2026:confidential-and-a5x-infrastructure",
+      "aliases": [
+        "googlecloudgtc2026confidentialanda5xinfrastructure"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure"
+      ],
+      "milestones": [
+        "g4gaanda5xnextmonthroadmap20261021"
+      ],
+      "evidence_hashes": [
+        "7ea9acbb4098197712acfecf9164b22e7eb1edcd3e6c89efbb77bff55ccf6ab9"
+      ],
+      "summary": "NVIDIA与Google Cloud公布A5X基础设施进展：采用Vera Rubin NVL72的实例计划在11月全面可用，并规划扩展到欧洲。NVIDIA正文同时确认，RTX PRO 6000 Blackwell Server Edition驱动的Confidential G4虚拟机已经正式可用，可用于机密推理和微调。两条产品线的交付阶段不同，不能由文章标题推断A5X当前已全面可用。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "g4-ga-and-a5x-next-month-roadmap-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA与Google Cloud公布A5X基础设施进展：采用Vera Rubin NVL72的实例计划在11月全面可用，并规划扩展到欧洲。NVIDIA正文同时确认，RTX PRO 6000 Blackwell Server Edition驱动的Confidential G4虚拟机已经正式可用，可用于机密推理和微调。两条产品线的交付阶段不同，不能由文章标题推断A5X当前已全面可用。"
+        }
+      ]
+    },
+    "evt_64530a6b340719b00a0f": {
+      "event_key": "recursive:flint:local-coding-model-release",
+      "aliases": [
+        "recursiveflintlocalcodingmodelrelease"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/local-ai-gtc-rtx-dgx-spark-station-sync"
+      ],
+      "milestones": [
+        "openweightslocalcodingmodel20261021"
+      ],
+      "evidence_hashes": [
+        "855b5ad604f5531bb80ee09ae8cf8f881565d69150bfe65cd9e2b964d8d15af7"
+      ],
+      "summary": "NVIDIA在21日本地AI公告中介绍Recursive Superintelligence发布的Flint编程模型：采用MoE架构，总参数400亿、每次激活约25亿。权重以Apache 2.0提供，可用于RTX Spark、DGX Spark及相应GeForce RTX、RTX PRO环境。公告称模型开发使用Eureka Machine自动研究流程优化推理内核，本期未复测其性能。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "open-weights-local-coding-model-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA在21日本地AI公告中介绍Recursive Superintelligence发布的Flint编程模型：采用MoE架构，总参数400亿、每次激活约25亿。权重以Apache 2.0提供，可用于RTX Spark、DGX Spark及相应GeForce RTX、RTX PRO环境。公告称模型开发使用Eureka Machine自动研究流程优化推理内核，本期未复测其性能。"
+        }
+      ]
+    },
+    "evt_89d87b2e207d7ad8cb69": {
+      "event_key": "pigment:funding:series-e-2026",
+      "aliases": [
+        "pigmentfundingseriese2026"
+      ],
+      "urls": [
+        "https://www.pigment.com/blog/pigment-announces-250m-series-e-funding"
+      ],
+      "milestones": [
+        "twohundredfiftymillionserieseannounced"
+      ],
+      "evidence_hashes": [
+        "b9ce11645e015495384a00b56f78793d28449176e92594e9e0f897d898029b2b"
+      ],
+      "summary": "Pigment10月21日宣布2.5亿美元 E 轮融资，估值23亿美元，由 EQT 管理的 Scaleup Europe Fund 领投，WIL 及多家现有投资者参与；NVIDIA 投资仍在计划中。公司提供企业规划平台和模型构建 Agent，拟以新资金加速研发、扩充工程团队；端到端运行规划周期的 Planner Agent 是后续方向。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "two-hundred-fifty-million-series-e-announced",
+          "new_information": "",
+          "summary": "Pigment10月21日宣布2.5亿美元 E 轮融资，估值23亿美元，由 EQT 管理的 Scaleup Europe Fund 领投，WIL 及多家现有投资者参与；NVIDIA 投资仍在计划中。公司提供企业规划平台和模型构建 Agent，拟以新资金加速研发、扩充工程团队；端到端运行规划周期的 Planner Agent 是后续方向。"
+        }
+      ]
+    },
+    "evt_c5338764a376c2725291": {
+      "event_key": "nvidia:nemotron-3.5-retriever:release",
+      "aliases": [
+        "nvidianemotron35retrieverrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/nvidia/nemotron-retriever-world-class-agentic-retrieval"
+      ],
+      "milestones": [
+        "embedrerankparseavailable20261021"
+      ],
+      "evidence_hashes": [
+        "03e04408b6a809796cba0a8f30d4dfa7fecc707b6e8ad5a5d6bf60a9e342d1fa"
+      ],
+      "summary": "NVIDIA在10月21日扩展Nemotron Retriever，提供8B及1B图文嵌入、1B NVFP4版本、8B重排模型和631M文档解析模型。套件面向包含表格、图表与扫描件的企业资料，支持开放权重、自行部署及NIM服务；Parse可按单次、双次或三次处理在速度和解析细度间调整。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "embed-rerank-parse-available-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA在10月21日扩展Nemotron Retriever，提供8B及1B图文嵌入、1B NVFP4版本、8B重排模型和631M文档解析模型。套件面向包含表格、图表与扫描件的企业资料，支持开放权重、自行部署及NIM服务；Parse可按单次、双次或三次处理在速度和解析细度间调整。"
+        }
+      ]
+    },
+    "evt_6bd5cc1e781a15664619": {
+      "event_key": "ibm:granite-speech-5:release",
+      "aliases": [
+        "ibmgranitespeech5release"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/ibm-granite/granite-speech-5"
+      ],
+      "milestones": [
+        "threespeechmodelupdates20261021"
+      ],
+      "evidence_hashes": [
+        "0a95794912090b4eb34fdedf1feb6428092c89c977860de64b64e06c8efe3d14"
+      ],
+      "summary": "IBM发布Granite Speech 5.0 2B，并更新470M Turbo CTC和4.1 2B Plus。2B模型新增语言提示及最多2000词的关键词偏置，改进噪声、混响和长音频翻译；Turbo CTC扩展多语转录，Plus改进说话人归属和时间戳。三款模型均以Apache2.0提供，官方给出Transformers等部署支持。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "three-speech-model-updates-2026-10-21",
+          "new_information": "",
+          "summary": "IBM发布Granite Speech 5.0 2B，并更新470M Turbo CTC和4.1 2B Plus。2B模型新增语言提示及最多2000词的关键词偏置，改进噪声、混响和长音频翻译；Turbo CTC扩展多语转录，Plus改进说话人归属和时间戳。三款模型均以Apache2.0提供，官方给出Transformers等部署支持。"
+        }
+      ]
+    },
+    "evt_848e14aa4e342a989202": {
+      "event_key": "nvidia:kumo-relational:release",
+      "aliases": [
+        "nvidiakumorelationalrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/nvidia/kumo-relational"
+      ],
+      "milestones": [
+        "relationalmodelandlibraryavailable20261021"
+      ],
+      "evidence_hashes": [
+        "f4376cf9215edeec52f87124304ea4138f88ed1405e83b54bfff5c555c1fa51c"
+      ],
+      "summary": "NVIDIA介绍Kumo Relational：模型在合成关系数据上预训练，接收数据库表间关系与历史样本，通过上下文学习预测流失、需求等结果，不必为每个任务重新训练或手工摊平表。官方同时提供GPU库与NIM部署路径；代码采用Apache2.0，权重采用OpenMDW1.1，二者许可需区分。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "relational-model-and-library-available-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA介绍Kumo Relational：模型在合成关系数据上预训练，接收数据库表间关系与历史样本，通过上下文学习预测流失、需求等结果，不必为每个任务重新训练或手工摊平表。官方同时提供GPU库与NIM部署路径；代码采用Apache2.0，权重采用OpenMDW1.1，二者许可需区分。"
+        }
+      ]
+    },
+    "evt_5f9fcf182b308e48589f": {
+      "event_key": "nvidia:agent-toolkit:knowledge-foundation-openshell-2026",
+      "aliases": [
+        "nvidiaagenttoolkitknowledgefoundationopenshell2026"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/enterprise-platforms-agent-toolkit"
+      ],
+      "milestones": [
+        "knowledgefoundationautoontologyannounced20261021"
+      ],
+      "evidence_hashes": [
+        "22ea6c48a3e74d1e038f81e8c886a1cf31a3ad278647dd915ec7a4dcde843240"
+      ],
+      "summary": "NVIDIA为Agent Toolkit增加Agent Knowledge Foundation，结合CUDA-X库及Auto-Ontology，把公司原始数据映射为客户、产品和订单等业务概念及关系，并组合检索与预测模型。官博将OpenShell定位为控制Agent访问和行动边界的安全运行时，NemoClaw则提供专门Agent的参考设计。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "knowledge-foundation-auto-ontology-announced-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA为Agent Toolkit增加Agent Knowledge Foundation，结合CUDA-X库及Auto-Ontology，把公司原始数据映射为客户、产品和订单等业务概念及关系，并组合检索与预测模型。官博将OpenShell定位为控制Agent访问和行动边界的安全运行时，NemoClaw则提供专门Agent的参考设计。"
+        }
+      ]
+    },
+    "evt_a7d311e107c03a2c68cd": {
+      "event_key": "php:wiz-openai:php2shell-coordinated-disclosure",
+      "aliases": [
+        "phpwizopenaiphp2shellcoordinateddisclosure"
+      ],
+      "urls": [
+        "https://www.wiz.io/blog/php2shell-php-rce"
+      ],
+      "milestones": [
+        "phppatchandpublicdisclosure20261021"
+      ],
+      "evidence_hashes": [
+        "33a1a64bc6aeba2cc6f71696dbb3b917290f193d3a2945517c3c5a3e704400e1"
+      ],
+      "summary": "Wiz在10月21日披露PHP核心内存安全漏洞，称研究使用Wiz Atlas、Gemini4Argon和GPT-5.6 Sol，展示了未经认证的代码执行及进程内存泄露。缺陷涉及跨请求状态处理，与应用自身是否有漏洞不同。PHP当天发布修补版本，Wiz、Calif、OpenAI及云服务商协同验证补丁并准备防护。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "php-patch-and-public-disclosure-2026-10-21",
+          "new_information": "",
+          "summary": "Wiz在10月21日披露PHP核心内存安全漏洞，称研究使用Wiz Atlas、Gemini4Argon和GPT-5.6 Sol，展示了未经认证的代码执行及进程内存泄露。缺陷涉及跨请求状态处理，与应用自身是否有漏洞不同。PHP当天发布修补版本，Wiz、Calif、OpenAI及云服务商协同验证补丁并准备防护。"
+        }
+      ]
+    },
+    "evt_19265733e273312afa83": {
+      "event_key": "lighton:slideon-mslideon:release",
+      "aliases": [
+        "lightonslideonmslideonrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/lightonai/slideon-mslideon"
+      ],
+      "milestones": [
+        "sparseretrievermodelspublished20261019"
+      ],
+      "evidence_hashes": [
+        "cec5deb425d17cc4c18cd427d0e857252c2e46483b00380a70e2398cb7ea7730"
+      ],
+      "summary": "LightOn发布174M的SlideOn及339M的mSlideOn，通过稀疏自动编码器预训练和检索微调，把稠密及后期交互模型转换为可用倒排索引检索的稀疏表示。团队提供模型、SAE检查点与训练脚本，并支持按延迟和存储预算调整剪枝程度。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "sparse-retriever-models-published-2026-10-19",
+          "new_information": "",
+          "summary": "LightOn发布174M的SlideOn及339M的mSlideOn，通过稀疏自动编码器预训练和检索微调，把稠密及后期交互模型转换为可用倒排索引检索的稀疏表示。团队提供模型、SAE检查点与训练脚本，并支持按延迟和存储预算调整剪枝程度。"
+        }
+      ]
+    },
+    "evt_7f4484f1b24ddeb836d7": {
+      "event_key": "dream-labs:funding:dream-api-launch-2026",
+      "aliases": [
+        "dreamlabsfundingdreamapilaunch2026"
+      ],
+      "urls": [
+        "https://finance.yahoo.com/technology/ai/articles/dream-labs-raises-90m-seed-170000245.html"
+      ],
+      "milestones": [
+        "ninetymillionseedandpublicapiannounced"
+      ],
+      "evidence_hashes": [
+        "a69aecfaa0c7ebc0a62ca3585bffcd6c6b0bccfd93d4d454a0669ed6491d048e"
+      ],
+      "summary": "Dream Labs10月19日宣布9000万美元种子融资，由 B Capital 与 Kindred Ventures 等支持，并推出 Dream API：将机器人相机输入和自然语言任务转为动作。公司还提供演示数据微调及浏览器机器人体验入口；当前重点为双臂夹爪机器人的桌面操作，轮式移动与灵巧手支持仍待扩展，资金主要拟投入算力。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "ninety-million-seed-and-public-api-announced",
+          "new_information": "",
+          "summary": "Dream Labs10月19日宣布9000万美元种子融资，由 B Capital 与 Kindred Ventures 等支持，并推出 Dream API：将机器人相机输入和自然语言任务转为动作。公司还提供演示数据微调及浏览器机器人体验入口；当前重点为双臂夹爪机器人的桌面操作，轮式移动与灵巧手支持仍待扩展，资金主要拟投入算力。"
+        }
+      ]
+    },
+    "evt_5f4643596646da63e9c4": {
+      "event_key": "nvidia-uw:rfd4-proteina:protein-design-release",
+      "aliases": [
+        "nvidiauwrfd4proteinaproteindesignrelease"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/open-models-europe-industry"
+      ],
+      "milestones": [
+        "openmodelavailabilitydescribed20261021"
+      ],
+      "evidence_hashes": [
+        "80bd72f764ccbf307c25d27c40b38c4eb9c6ba8adcf623cfbbaac37c76c92cbc"
+      ],
+      "summary": "NVIDIA在21日模型公告中介绍与华盛顿大学蛋白设计研究所Baker实验室合作的RFD4-Proteina。模型生成蛋白序列与三维结构，面向靶标结合、复杂结构组装和小分子结合设计；研究者可用Agent按设计目标生成、评估候选，再选择哪些送实验室测试。公告列明模型已通过多个模型与开发渠道提供。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "open-model-availability-described-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA在21日模型公告中介绍与华盛顿大学蛋白设计研究所Baker实验室合作的RFD4-Proteina。模型生成蛋白序列与三维结构，面向靶标结合、复杂结构组装和小分子结合设计；研究者可用Agent按设计目标生成、评估候选，再选择哪些送实验室测试。公告列明模型已通过多个模型与开发渠道提供。"
+        }
+      ]
+    },
+    "evt_f2a0f3c731409b75d60d": {
+      "event_key": "jeet-ai:tutor:hindi-jee-foundation-launch",
+      "aliases": [
+        "jeetaitutorhindijeefoundationlaunch"
+      ],
+      "urls": [
+        "https://www.prnewswire.com/in/news-releases/jeet-ai-launches-indias-first-ai-tutor-that-goes-beyond-answers-to-actually-teach-302915325.html"
+      ],
+      "milestones": [
+        "hinditutorinitialcourseslaunched20261021"
+      ],
+      "evidence_hashes": [
+        "50265f09437126d954d1f692502239d1a5d0457543715815c16eacffa79493f5"
+      ],
+      "summary": "JEET AI10月21日宣布上线个性化 AI 导师，首批提供印地语 JEE 和 Foundation 课程，月费1499卢比起。公司称产品可在虚拟白板书写、批注，结合多媒体和互动模拟讲解，并通过提问检查理解、调整解释。NEET、CBSE 备考及更多印度语言仍计划在后续数周至数月推出。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "hindi-tutor-initial-courses-launched-2026-10-21",
+          "new_information": "",
+          "summary": "JEET AI10月21日宣布上线个性化 AI 导师，首批提供印地语 JEE 和 Foundation 课程，月费1499卢比起。公司称产品可在虚拟白板书写、批注，结合多媒体和互动模拟讲解，并通过提问检查理解、调整解释。NEET、CBSE 备考及更多印度语言仍计划在后续数周至数月推出。"
+        }
+      ]
+    },
+    "evt_c90ecc440a87b65a6ef5": {
+      "event_key": "tairex:agent-hospital:multidisciplinary-collaboration",
+      "aliases": [
+        "tairexagenthospitalmultidisciplinarycollaboration"
+      ],
+      "urls": [
+        "https://www.qbitai.com/2026/10/504734.html"
+      ],
+      "milestones": [
+        "doctoragentcollaborationupgradereported"
+      ],
+      "evidence_hashes": [
+        "e647d2cb9bd868aed961d8acd2c41e083749acf552cda4efbe628d26b0a06250"
+      ],
+      "summary": "据量子位10月21日发布会报道，清华 AIR 孵化的紫荆智康升级 Agent Hospital，加入多专科医生分身协作，提供按需提醒和会诊两种模式。系统会分别展示分身意见并高亮分歧，供真人医生结合依据作最终判断；报道指出相关系统正于医院上线测试，未提供本次升级的独立临床结果。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "doctor-agent-collaboration-upgrade-reported",
+          "new_information": "",
+          "summary": "据量子位10月21日发布会报道，清华 AIR 孵化的紫荆智康升级 Agent Hospital，加入多专科医生分身协作，提供按需提醒和会诊两种模式。系统会分别展示分身意见并高亮分歧，供真人医生结合依据作最终判断；报道指出相关系统正于医院上线测试，未提供本次升级的独立临床结果。"
+        }
+      ]
+    },
+    "evt_6660645df47612c647f1": {
+      "event_key": "opply:funding:cpg-agentic-operations-2026",
+      "aliases": [
+        "opplyfundingcpgagenticoperations2026"
+      ],
+      "urls": [
+        "https://www.prnewswire.com/news-releases/opply-raises-7-5m-after-15x-growth-to-bring-agentic-ai-to-cpg-operations-302914661.html"
+      ],
+      "milestones": [
+        "sevenpointfivemillionfundingannounced"
+      ],
+      "evidence_hashes": [
+        "ade1fa44375b28762c46d64d3eb3bb94b1b5fd004ed0a52f66e6a8838da4527f"
+      ],
+      "summary": "Opply10月21日宣布获得750万美元融资，由 Chalfen Ventures 领投，Index Ventures、Anthemis 等参与。公司最初面向食品饮料品牌，称其 Opply Brain 结合专用 Agents、企业数据和供应商网络，处理寻源、采购、融资、库存、生产计划及物流；新资金拟将这一运营服务带给更多企业。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "seven-point-five-million-funding-announced",
+          "new_information": "",
+          "summary": "Opply10月21日宣布获得750万美元融资，由 Chalfen Ventures 领投，Index Ventures、Anthemis 等参与。公司最初面向食品饮料品牌，称其 Opply Brain 结合专用 Agents、企业数据和供应商网络，处理寻源、采购、融资、库存、生产计划及物流；新资金拟将这一运营服务带给更多企业。"
+        }
+      ]
+    },
+    "evt_b321fdd380a229e1be77": {
+      "event_key": "kevel:funding:commerce-media-capital-2026",
+      "aliases": [
+        "kevelfundingcommercemediacapital2026"
+      ],
+      "urls": [
+        "https://www.kevel.com/blog/kevel-secures-52-million-to-scale-ai-driven-infrastructure-for-the-future-of-commerce-media"
+      ],
+      "milestones": [
+        "fiftytwomillionnewcapitalannounced"
+      ],
+      "evidence_hashes": [
+        "990ae8b1c251596560d8bcb095af50369b2e8fb66ba45827bb5f0d881223b1c8"
+      ],
+      "summary": "Kevel10月21日宣布获得5200万美元新资金，包括 Fulcrum、dunnhumby Ventures、Iberis Capital 的扩大战略投资及 ORIX USA Growth Capital 的资金。其 API 平台供零售商和电商自建广告媒体网络；公司拟继续开发可解释、可审计和可配置的 AI 排序、出价及投放能力，并扩展业务范围。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "fifty-two-million-new-capital-announced",
+          "new_information": "",
+          "summary": "Kevel10月21日宣布获得5200万美元新资金，包括 Fulcrum、dunnhumby Ventures、Iberis Capital 的扩大战略投资及 ORIX USA Growth Capital 的资金。其 API 平台供零售商和电商自建广告媒体网络；公司拟继续开发可解释、可审计和可配置的 AI 排序、出价及投放能力，并扩展业务范围。"
+        }
+      ]
+    },
+    "evt_04c584fedfb8c368c56c": {
+      "event_key": "dharma-ai:vocabx:portuguese-grader-study",
+      "aliases": [
+        "dharmaaivocabxportuguesegraderstudy"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/Dharma-AI/vocabx-vocabulary-specialization"
+      ],
+      "milestones": [
+        "tokenizercoststudypreview20261021"
+      ],
+      "evidence_hashes": [
+        "316b1cb977707227c17d51b1f18b67d5fd5bc6c881902817dbc1febce931742e"
+      ],
+      "summary": "Dharma-AI介绍VocabX，以任务中的输入和输出成本选择子词及宏token，调整Qwen3-4B葡语作文评分词表。团队称在RTX 5090、vLLM和500条请求的自测中，按运行耗时计算的成本下降77%；完整论文尚未公开，不能泛化为任意教育应用的收益。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "tokenizer-cost-study-preview-2026-10-21",
+          "new_information": "",
+          "summary": "Dharma-AI介绍VocabX，以任务中的输入和输出成本选择子词及宏token，调整Qwen3-4B葡语作文评分词表。团队称在RTX 5090、vLLM和500条请求的自测中，按运行耗时计算的成本下降77%；完整论文尚未公开，不能泛化为任意教育应用的收益。"
+        }
+      ]
+    },
+    "evt_954e00ff63c5186d9cec": {
+      "event_key": "cvs-health:harvey:corporate-affairs-deployment",
+      "aliases": [
+        "cvshealthharveycorporateaffairsdeployment"
+      ],
+      "urls": [
+        "https://www.harvey.ai/blog/cvs-health-deploys-harvey-across-its-corporate-affairs-functions"
+      ],
+      "milestones": [
+        "postpilotaccessexpansionannounced"
+      ],
+      "evidence_hashes": [
+        "1191fe6753b084f4d0acf99ba7251dea9895214cf85f87b92f2b81395f088791"
+      ],
+      "summary": "Harvey10月21日称，CVS Health 在试点后扩大平台使用，支持法律、监管、政策、合规、治理和运营工作，涵盖文档审阅、研究、起草及知识检索。公告未提供独立效果数据，仍强调人员监督。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "post-pilot-access-expansion-announced",
+          "new_information": "",
+          "summary": "Harvey10月21日称，CVS Health 在试点后扩大平台使用，支持法律、监管、政策、合规、治理和运营工作，涵盖文档审阅、研究、起草及知识检索。公告未提供独立效果数据，仍强调人员监督。"
+        }
+      ]
+    },
+    "evt_329f2adb8809934480df": {
+      "event_key": "nvidia:cudss:general-availability",
+      "aliases": [
+        "nvidiacudssgeneralavailability"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/cudss-generally-available-engineering-scientific-simulation"
+      ],
+      "milestones": [
+        "sparsedirectsolverga20261021"
+      ],
+      "evidence_hashes": [
+        "4c4804fb058733d5e7baee78b932d71cc1352581cff239b28c5fec458e43b433"
+      ],
+      "summary": "NVIDIA宣布cuDSS正式可用，面向工程与科学仿真中的大型稀疏系统求解，可通过C、C++、Python和Fortran接口集成。厂商列举多款仿真软件接入，但其案例加速比不能泛化为所有工程任务的收益。",
+      "first_report": "2026-10-22",
+      "last_report": "2026-10-22",
+      "last_seen_at": "2026-10-22T01:03:35.770185+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-22",
+          "milestone": "sparse-direct-solver-ga-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA宣布cuDSS正式可用，面向工程与科学仿真中的大型稀疏系统求解，可通过C、C++、Python和Fortran接口集成。厂商列举多款仿真软件接入，但其案例加速比不能泛化为所有工程任务的收益。"
+        }
+      ]
     }
   },
   "reports": {
@@ -3536,6 +4133,16 @@
       "sha256": {
         "reports/2026-10-21.html": "3700d6fa62319297aac56804007ddf8e8152975be4d10fb5b25bfaf8e2f9f0a8",
         "data/2026-10-21.json": "e67b62a90a15322c5644fde952a6dbe47ca39817a60ee8506b61d3ce75b210ef"
+      }
+    },
+    "2026-10-22": {
+      "window_start": "2026-10-21T01:02:04.200561+00:00",
+      "window_end": "2026-10-22T01:03:35.770185+00:00",
+      "count": 24,
+      "summary": "本期重点是AI辅助安全研究、软件供应链风险与企业数据能力。Wiz披露PHP2Shell及协同修补过程；LiteLLM制品污染则提示团队同时核查账号、构建与分发链。NVIDIA、IBM等发布检索、预测、语音和科学计算能力，性能数字仍需在自身数据上验证。融资与教育、医疗案例提供采用信号，但投资计划、作者自测和医院测试不能当作已证实的商业或临床效果。国内账号与X已逐项检查，访问、身份和发布时间缺口在文末列出。",
+      "sha256": {
+        "reports/2026-10-22.html": "4d0d966a49459b544c6a38f581857bcd721d6f9f2f921c81c636cc19a8a12653",
+        "data/2026-10-22.json": "0309e05d150cd6a81646ab9af56852cfa5e0da20485a14ce088dcdcc0193ff7a"
       }
     }
   }
