@@ -1611,25 +1611,28 @@
         "https://github.com/windmill-labs/windmill/releases/tag/v1.837.0",
         "https://github.com/windmill-labs/windmill/releases/tag/v1.839.0",
         "https://github.com/windmill-labs/windmill/releases/tag/v1.840.0",
-        "https://github.com/windmill-labs/windmill/releases/tag/v1.842.0"
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.842.0",
+        "https://github.com/windmill-labs/windmill/releases/tag/v1.847.0"
       ],
       "milestones": [
         "stable18360and18370released20261015",
         "stable18390addsforkstorageisolationandprotectionrule",
         "stable18400introducesrunstepno_networkandsandboxedbunnpminstalls",
-        "v18420slackagents20261020"
+        "v18420slackagents20261020",
+        "v18470"
       ],
       "evidence_hashes": [
+        "11c00c0f9b09f87a300e5cfcde02560d689e6a27d305aa7b72ff23d672bad154",
         "12436d075404770ba0e4e1b2c7137c149c00f1ce5586de2a6cadd79b2200248f",
         "680827cbbd41d688de8b0688798da84b48a4754fe2cb48f0846c05bc7e7c277e",
         "88b082015ac174de743a24150ace1b657689fdac52a5dc3ccb252f64dafc24f6",
         "b8c7c80240acb8303dd214c53daec847c677de3669b4bd2f479f66a4d9609fff",
         "d3eee7142c7f3577ea71788e0a6bd91e9cadc578f64da045d0c063a24f3e85f1"
       ],
-      "summary": "Windmill正式发布1.842，新增让AI Agent在Slack中回答，并在聊天工具确认按钮上显示具体操作名称。版本还修复MCP OAuth回调页内嵌JSON转义、OAuth刷新占用数据库连接，以及多个操作等待连接时仍持有连接的问题，为自托管工作流和聊天Agent补充可用性修复。",
+      "summary": "Windmill正式发布1.847.0，原生触发器可通过每用户或共享连接执行；保存的Agent可经agent runnable接入raw app，Slack Agent可使用工作区自有Slack app。新版还为流程步骤错误增加job_id与flow_path，提供工作组开关以避免将worker代理注入job，并修复审计写入导致保存静默回滚等问题。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-21",
-      "last_seen_at": "2026-10-21T01:24:54.954744+00:00",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1654,6 +1657,12 @@
           "milestone": "v1.842.0-slack-agents-2026-10-20",
           "new_information": "历史已报1.840及更早隔离修复；本次10/20 17:27:55Z正式1.842.0新增Slack回答、命名工具确认按钮及连接池/MCP回调修复，区别于未入选1.841。",
           "summary": "Windmill正式发布1.842，新增让AI Agent在Slack中回答，并在聊天工具确认按钮上显示具体操作名称。版本还修复MCP OAuth回调页内嵌JSON转义、OAuth刷新占用数据库连接，以及多个操作等待连接时仍持有连接的问题，为自托管工作流和聊天Agent补充可用性修复。"
+        },
+        {
+          "report_date": "2026-10-23",
+          "milestone": "v1.847.0",
+          "new_information": "上次已报1.842的Slack回答、命名确认按钮和连接池修复；本次1.847新增触发器每用户/共享连接、raw app的Agent嵌入、工作区自有Slack app及审计保存修复。",
+          "summary": "Windmill正式发布1.847.0，原生触发器可通过每用户或共享连接执行；保存的Agent可经agent runnable接入raw app，Slack Agent可使用工作区自有Slack app。新版还为流程步骤错误增加job_id与flow_path，提供工作组开关以避免将worker代理注入job，并修复审计写入导致保存静默回滚等问题。"
         }
       ]
     },
@@ -1668,27 +1677,30 @@
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.304",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.305",
         "https://github.com/anthropics/claude-code/releases/tag/v2.1.306",
-        "https://github.com/anthropics/claude-code/releases/tag/v2.1.307"
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.307",
+        "https://github.com/anthropics/claude-code/releases/tag/v2.1.309"
       ],
       "milestones": [
         "announcement20261015",
         "stable21302agentdefaultsandreliability20261016",
         "stable21304humandecisionandsecuritychecks20261019",
         "stable21305toolsearchandworkflowrecovery20261020",
-        "stable21307safetyeventsidempotentretries20261021"
+        "stable21307safetyeventsidempotentretries20261021",
+        "stable21309sandboxpermissionhardening20261022"
       ],
       "evidence_hashes": [
         "076d7a7425473c3de202e09747ee18f3c052be5bd4849c29cf124af82ba51422",
         "212f64594c12f88e0fdc1330c23f79a187c8f1cc3fcc9120fc78e708f622f8fc",
+        "2b78ca8426aafa6648807424858525ca22c9790b3c4fe032e4563e1628a8e3d4",
         "39cdb2e960fc4e0139b8d7c69ce7b41686fb0569cbb2c0ebe9233ee235b3f7b3",
         "486c1ef52a4f6da5f31dace560f579bebae1e2267b58402a966c20a70f7de929",
         "cdc76586d818cb3f002e4e28823a8ed90184d2b0398b0a268514865ab675c71f",
         "d3639b2e3ce26f429efa0cd9a5d8eeca982995933b8c5cec50e1ead20b05c9de"
       ],
-      "summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。",
+      "summary": "Claude Code2.1.309修复多项执行边界问题，包括Shell启动文件在沙箱外运行、符号链接路径写入拒绝失效、受保护MCP配置可被修改，以及分屏子Agent未继承上层工具拒绝规则。版本还修复Windows PowerShell Hook未阻断和部分权限检查问题，并要求ultrareview验证工作区信任。",
       "first_report": "2026-10-16",
-      "last_report": "2026-10-22",
-      "last_seen_at": "2026-10-22T01:33:54.351494+00:00",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
       "updates": [
         {
           "report_date": "2026-10-16",
@@ -1719,6 +1731,12 @@
           "milestone": "stable-2.1.307-safety-events-idempotent-retries-2026-10-21",
           "new_information": "昨日历史到2.1.305；新增2.1.307安全事件、HTTP MCP仅幂等/只读重试和2.1.306云会话修复。",
           "summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。"
+        },
+        {
+          "report_date": "2026-10-23",
+          "milestone": "stable-2.1.309-sandbox-permission-hardening-2026-10-22",
+          "new_information": "历史最新2.1.307是安全事件和幂等重试；本次新增2.1.309跨平台沙箱/权限规则及子Agent继承修复。",
+          "summary": "Claude Code2.1.309修复多项执行边界问题，包括Shell启动文件在沙箱外运行、符号链接路径写入拒绝失效、受保护MCP配置可被修改，以及分屏子Agent未继承上层工具拒绝规则。版本还修复Windows PowerShell Hook未阻断和部分权限检查问题，并要求ultrareview验证工作区信任。"
         }
       ]
     },
@@ -4018,6 +4036,629 @@
           "summary": "NVIDIA宣布cuDSS正式可用，面向工程与科学仿真中的大型稀疏系统求解，可通过C、C++、Python和Fortran接口集成。厂商列举多款仿真软件接入，但其案例加速比不能泛化为所有工程任务的收益。"
         }
       ]
+    },
+    "evt_e177225bccc506bb9d9a": {
+      "event_key": "openai:google-cloud:model-garden-partnership",
+      "aliases": [
+        "openaigooglecloudmodelgardenpartnership"
+      ],
+      "urls": [
+        "https://community.openai.com/t/openai-models-are-coming-to-google-cloud/1408440"
+      ],
+      "milestones": [
+        "distributionpartnershipannouncement20261021"
+      ],
+      "evidence_hashes": [
+        "ccfa3d9e6302d68a2928b3f21039beb6384b2b72e0d118b92e7922dea4181659"
+      ],
+      "summary": "OpenAI与Google Cloud宣布合作，将OpenAI前沿模型和Codex工作流带入Google Cloud的Model Garden。开发者社区Announcements栏目确认这项合作，并称Google Antigravity与Gemini Agent的相关接入将随后推出。公告将访问控制、集中数据治理和云基础设施作为企业运行复杂Agent工作流的支撑。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "distribution-partnership-announcement-2026-10-21",
+          "new_information": "",
+          "summary": "OpenAI与Google Cloud宣布合作，将OpenAI前沿模型和Codex工作流带入Google Cloud的Model Garden。开发者社区Announcements栏目确认这项合作，并称Google Antigravity与Gemini Agent的相关接入将随后推出。公告将访问控制、集中数据治理和云基础设施作为企业运行复杂Agent工作流的支撑。"
+        }
+      ]
+    },
+    "evt_d1b631a14fc0928aed92": {
+      "event_key": "harvey:connector-library:general-availability-2026",
+      "aliases": [
+        "harveyconnectorlibrarygeneralavailability2026"
+      ],
+      "urls": [
+        "https://blog.courtroominsight.com/index.php/2026/10/21/courtroom-insight-brings-verified-people-and-matter-data-to-harvey-through-new-mcp-in-harveys-connector-library",
+        "https://www.harvey.ai/blog/harvey-connector-library"
+      ],
+      "milestones": [
+        "generalavailabilityandcourtroominsightmcp"
+      ],
+      "evidence_hashes": [
+        "726a08d8e9a4f27ca36d85bb0b617a4afba7f888393101dd93bc1c85fabafbd0",
+        "81f4eabade85765ffd16047d2909c4236db54ab8f8480b28473b90f0a7175371"
+      ],
+      "summary": "Harvey21日宣布 Connector Library 正式开放，使 Agent 可结合文档管理、邮件、合同等外部系统分析，并支持自定义 MCP；写回从文档管理平台起步。合作方 Courtroom Insight 同日表示，其只读 MCP 已向双方共同客户开放，可在 Harvey 中查询法律人员和案件关系，用户可通过管理员设置启用。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "general-availability-and-courtroom-insight-mcp",
+          "new_information": "",
+          "summary": "Harvey21日宣布 Connector Library 正式开放，使 Agent 可结合文档管理、邮件、合同等外部系统分析，并支持自定义 MCP；写回从文档管理平台起步。合作方 Courtroom Insight 同日表示，其只读 MCP 已向双方共同客户开放，可在 Harvey 中查询法律人员和案件关系，用户可通过管理员设置启用。"
+        }
+      ]
+    },
+    "evt_83ae08db7737fbb1aa42": {
+      "event_key": "microsoft:mai-dxo:science-sequential-diagnosis-2026",
+      "aliases": [
+        "microsoftmaidxosciencesequentialdiagnosis2026"
+      ],
+      "urls": [
+        "https://microsoft.ai/news/building-medical-superintelligence"
+      ],
+      "milestones": [
+        "sciencepublicationandbidmcprospectivestudyannounced"
+      ],
+      "evidence_hashes": [
+        "e718cb6fbed2887b9bee8f399ed5398f329f5e4f9df0ef35d6cbfadbd072d11d"
+      ],
+      "summary": "微软22日发布 MAI-DxO 与 SDBench 的研究进展，称论文当日发表于 Science。基准让系统逐步请求信息并选择检查，而非一次读完病例答题；公司报告其在复杂 NEJM 病例及 MIMIC-IV-ED 急诊病例集取得较高诊断准确率，并公开部分评测代码。与波士顿 BIDMC 的前瞻研究将另行评估真实环境表现。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "science-publication-and-bidmc-prospective-study-announced",
+          "new_information": "",
+          "summary": "微软22日发布 MAI-DxO 与 SDBench 的研究进展，称论文当日发表于 Science。基准让系统逐步请求信息并选择检查，而非一次读完病例答题；公司报告其在复杂 NEJM 病例及 MIMIC-IV-ED 急诊病例集取得较高诊断准确率，并公开部分评测代码。与波士顿 BIDMC 的前瞻研究将另行评估真实环境表现。"
+        }
+      ]
+    },
+    "evt_4420449a90d047b4e180": {
+      "event_key": "nvidia:minerva:ai-factory-observability",
+      "aliases": [
+        "nvidiaminervaaifactoryobservability"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/minerva-platform-infrastructure"
+      ],
+      "milestones": [
+        "platformlaunch20261022"
+      ],
+      "evidence_hashes": [
+        "49e9f5ca816939913fd17e91a69f953f7aa30f1fa16c2c81cc16f3d4824d9e02"
+      ],
+      "summary": "NVIDIA发布面向AI工厂的Minerva AIOps平台，将GPU、网络、存储、调度器和AI作业的遥测关联为动态知识图谱，用机器学习识别异常、预测故障并归并相关告警。运维人员可通过内置助手调查问题，再人工处理或连接外部自动化。IREN被列为使用方，其他多家伙伴仍计划部署。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T00:57:07.051247+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "platform-launch-2026-10-22",
+          "new_information": "",
+          "summary": "NVIDIA发布面向AI工厂的Minerva AIOps平台，将GPU、网络、存储、调度器和AI作业的遥测关联为动态知识图谱，用机器学习识别异常、预测故障并归并相关告警。运维人员可通过内置助手调查问题，再人工处理或连接外部自动化。IREN被列为使用方，其他多家伙伴仍计划部署。"
+        }
+      ]
+    },
+    "evt_33228f24c7f1df288024": {
+      "event_key": "mave:funding:secops-stealth-exit-2026",
+      "aliases": [
+        "mavefundingsecopsstealthexit2026"
+      ],
+      "urls": [
+        "https://www.mave.com/resources/mave-launches-with-34-million"
+      ],
+      "milestones": [
+        "thirtyfourmilliontotalfundingannounced"
+      ],
+      "evidence_hashes": [
+        "fb141d2fe30a34164015a150acc928e097571d19b0480327ae2de0c5b3299442"
+      ],
+      "summary": "安全运营创业公司 Mave 披露累计3400万美元融资，其中2800万美元 A 轮由 RedDot Capital Partners 领投，另含此前600万美元种子轮。其 Agent 直接查询企业现有安全和 IT 系统，收集现场证据、调查威胁，并按客户策略执行获准响应；资金将用于研发、平台和团队扩张。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "thirty-four-million-total-funding-announced",
+          "new_information": "",
+          "summary": "安全运营创业公司 Mave 披露累计3400万美元融资，其中2800万美元 A 轮由 RedDot Capital Partners 领投，另含此前600万美元种子轮。其 Agent 直接查询企业现有安全和 IT 系统，收集现场证据、调查威胁，并按客户策略执行获准响应；资金将用于研发、平台和团队扩张。"
+        }
+      ]
+    },
+    "evt_d1d348adf234bb2d48c2": {
+      "event_key": "anthropic-theorem:oss-formal-verification:123-libraries",
+      "aliases": [
+        "anthropictheoremossformalverification123libraries"
+      ],
+      "urls": [
+        "https://www.anthropic.com/research/formal-verification"
+      ],
+      "milestones": [
+        "20261022researchandpublicproofs"
+      ],
+      "evidence_hashes": [
+        "db68f58b685a57bfd4adb36c084bdcfec8bcb36ebfde3229badea15e41198889"
+      ],
+      "summary": "重要补录：Anthropic与Theorem于10月22日披露，Claude为123个OSS-Fuzz库的239个入口生成RISC-V汇编级安全属性证明，并用Rocq检查。团队公开其中一部分证明及相关RISC-V和操作系统语义模型。结论针对特定静态二进制、输入大小和内存条件，不代表整库无漏洞。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "2026-10-22-research-and-public-proofs",
+          "new_information": "",
+          "summary": "重要补录：Anthropic与Theorem于10月22日披露，Claude为123个OSS-Fuzz库的239个入口生成RISC-V汇编级安全属性证明，并用Rocq检查。团队公开其中一部分证明及相关RISC-V和操作系统语义模型。结论针对特定静态二进制、输入大小和内存条件，不代表整库无漏洞。"
+        }
+      ]
+    },
+    "evt_c7bc2ba8561edd2913ab": {
+      "event_key": "nsa:ghidra:12.2-security-and-debugging",
+      "aliases": [
+        "nsaghidra122securityanddebugging"
+      ],
+      "urls": [
+        "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.2_build"
+      ],
+      "milestones": [
+        "ghidra_122_build"
+      ],
+      "evidence_hashes": [
+        "2209e62e15607b2115186106ca5b961a65ac0edd317a7cf513fea8cffadc9edb"
+      ],
+      "summary": "NSA正式发布Ghidra 12.2。新版要求客户端对Ghidra Server和BSim PostgreSQL服务执行TLS服务端认证，加入服务器允许列表，并调整BSim部署默认值；同时提供基于Intel PIN与TENET格式的实验性时间旅行调试视图。运行最低要求升为JDK 25，旧项目可升级，但新版改写的数据未必能回退。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "Ghidra_12.2_build",
+          "new_information": "",
+          "summary": "NSA正式发布Ghidra 12.2。新版要求客户端对Ghidra Server和BSim PostgreSQL服务执行TLS服务端认证，加入服务器允许列表，并调整BSim部署默认值；同时提供基于Intel PIN与TENET格式的实验性时间旅行调试视图。运行最低要求升为JDK 25，旧项目可升级，但新版改写的数据未必能回退。"
+        }
+      ]
+    },
+    "evt_dcd1bfec2730a3ae2c32": {
+      "event_key": "wiz:artex:software-vendor-campaign-oct2026",
+      "aliases": [
+        "wizartexsoftwarevendorcampaignoct2026"
+      ],
+      "urls": [
+        "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors"
+      ],
+      "milestones": [
+        "20261022wizinvestigation"
+      ],
+      "evidence_hashes": [
+        "3912adb672a3ffbc62e70c4b59c6223e8af100df19b00459bbeb27221ea2562e"
+      ],
+      "summary": "Wiz 10月22日公布针对IT与软件供应商的ARTEX关联活动调查。团队在实际HTTP和身份日志中观察到下载源码映射后调用内部API、探测OAuth与无签名JWT、滥用账号恢复和租户访问检查，并在限流或封IP后换入口继续尝试。其观察与微软Storm-0940报告部分重叠，多数攻击尝试失败。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "2026-10-22-wiz-investigation",
+          "new_information": "",
+          "summary": "Wiz 10月22日公布针对IT与软件供应商的ARTEX关联活动调查。团队在实际HTTP和身份日志中观察到下载源码映射后调用内部API、探测OAuth与无签名JWT、滥用账号恢复和租户访问检查，并在限流或封IP后换入口继续尝试。其观察与微软Storm-0940报告部分重叠，多数攻击尝试失败。"
+        }
+      ]
+    },
+    "evt_4067c5867c5bbbfc6041": {
+      "event_key": "china-telecom:xing4-intent:release",
+      "aliases": [
+        "chinatelecomxing4intentrelease"
+      ],
+      "urls": [
+        "https://www.qbitai.com/2026/10/504832.html"
+      ],
+      "milestones": [
+        "xing4029bintent20261022"
+      ],
+      "evidence_hashes": [
+        "fc2fad38d7552ffbb2c9966138a3c0b3fd40680f3855b483a0f2baaddf85fff9"
+      ],
+      "summary": "中国电信星辰通用人工智能实验室发布Xing4.0-29B-Intent，并开放模型权重、配套代码和约275.3万条训练样本。模型基于Xing4.0-29B-A4B底座微调，按预设规则将意图、实体、关系和事件转成类别与参数的层级JSON结构，兼顾分类和参数抽取。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "Xing4.0-29B-Intent-2026-10-22",
+          "new_information": "",
+          "summary": "中国电信星辰通用人工智能实验室发布Xing4.0-29B-Intent，并开放模型权重、配套代码和约275.3万条训练样本。模型基于Xing4.0-29B-A4B底座微调，按预设规则将意图、实体、关系和事件转成类别与参数的层级JSON结构，兼顾分类和参数抽取。"
+        }
+      ]
+    },
+    "evt_584b18a7e563e0a3fcf9": {
+      "event_key": "ant-digital:lingdt-decision1:release",
+      "aliases": [
+        "antdigitallingdtdecision1release"
+      ],
+      "urls": [
+        "https://www.qbitai.com/2026/10/504879.html"
+      ],
+      "milestones": [
+        "lingdtdecision1020261022"
+      ],
+      "evidence_hashes": [
+        "f3d47386935062f85972e0a59134fb67d36d6c643067fb2f2bcc054a5914d007"
+      ],
+      "summary": "蚂蚁数科发布LingDT-Decision-1.0，提供4B和27B版本，已在DTMaaS平台上线限时免费体验。模型面向限定候选中的决策任务，除分类、评级和单选，还支持一次识别多项诉求，并按任务依赖关系安排决策顺序，覆盖客服、工具选择和风控等场景。本文未见可核权重下载或代码开源许可。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "LingDT-Decision-1.0-2026-10-22",
+          "new_information": "",
+          "summary": "蚂蚁数科发布LingDT-Decision-1.0，提供4B和27B版本，已在DTMaaS平台上线限时免费体验。模型面向限定候选中的决策任务，除分类、评级和单选，还支持一次识别多项诉求，并按任务依赖关系安排决策顺序，覆盖客服、工具选择和风控等场景。本文未见可核权重下载或代码开源许可。"
+        }
+      ]
+    },
+    "evt_7e3411e670c949e3baf7": {
+      "event_key": "anthropic:agent-skills:aaif-donation",
+      "aliases": [
+        "anthropicagentskillsaaifdonation"
+      ],
+      "urls": [
+        "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation"
+      ],
+      "milestones": [
+        "standardidentityandinfrastructuredonated20261022"
+      ],
+      "evidence_hashes": [
+        "1121c3c54847268dbba257973d63a400a9222c2572a66e09a7c093fa24c55050"
+      ],
+      "summary": "Anthropic宣布将Agent Skills标准捐赠给Linux Foundation旗下AAIF，移交名称、标识、GitHub组织和agentskills.io域名。标准由跨公司工程师以个人身份维护，无需加入基金会也可使用或贡献。公司提出版本化发布、正式提案流程及技能编写安装安全指南作为初始路线图，尚非已经交付的规范更新。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T00:57:07.051247+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "standard-identity-and-infrastructure-donated-2026-10-22",
+          "new_information": "",
+          "summary": "Anthropic宣布将Agent Skills标准捐赠给Linux Foundation旗下AAIF，移交名称、标识、GitHub组织和agentskills.io域名。标准由跨公司工程师以个人身份维护，无需加入基金会也可使用或贡献。公司提出版本化发布、正式提案流程及技能编写安装安全指南作为初始路线图，尚非已经交付的规范更新。"
+        }
+      ]
+    },
+    "evt_9e556de46e1a636dd4ab": {
+      "event_key": "microsoft:thinkingbox-training:database-state-rl",
+      "aliases": [
+        "microsoftthinkingboxtrainingdatabasestaterl"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/microsoft/thinkingbox-training"
+      ],
+      "milestones": [
+        "rltrainingstackandrepeatabilityresults20261022"
+      ],
+      "evidence_hashes": [
+        "53d5f211a36ac4b56cf715d9e92fa07a08b6552695f1b2e924ee3c70cf085906"
+      ],
+      "summary": "Microsoft与Hugging Face公开ThinkingBox-Training，用任务结束后的数据库状态检验给Agent强化学习提供奖励。作者在与507项测试任务分离的训练池上，对Qwen3.8-27B进行50步GRPO；平均成功率由51.70%升至60.78%，20次均成功的任务由38项增至107项，但至少成功一次的覆盖从453项降至446项。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T00:57:07.051247+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "rl-training-stack-and-repeatability-results-2026-10-22",
+          "new_information": "",
+          "summary": "Microsoft与Hugging Face公开ThinkingBox-Training，用任务结束后的数据库状态检验给Agent强化学习提供奖励。作者在与507项测试任务分离的训练池上，对Qwen3.8-27B进行50步GRPO；平均成功率由51.70%升至60.78%，20次均成功的任务由38项增至107项，但至少成功一次的覆盖从453项降至446项。"
+        }
+      ]
+    },
+    "evt_9d2a2f536b7270b5741d": {
+      "event_key": "allenai:olmoearth-1.3:global-embeddings-release",
+      "aliases": [
+        "allenaiolmoearth13globalembeddingsrelease"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/allenai/olmoearth-v1-3"
+      ],
+      "milestones": [
+        "globalembeddingsexplorerandv13announced20261022"
+      ],
+      "evidence_hashes": [
+        "c3830a38b6d0a27bbd24f659766bd21596276d21db05e4fee3c5a86d2fe2dd6d"
+      ],
+      "summary": "Ai2发布OlmoEarth1.3及10米分辨率的64/128维预计算年度卫星嵌入，配套Explorer可浏览变化、寻找相似地点并用少量标注训练分类器。首发2023—2025年覆盖全球陆地及邻近海岸，2017—2022年仅覆盖部分国家；模型、数据和代码按OlmoEarth Artifact License提供，并附影像来源记录。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "global-embeddings-explorer-and-v1.3-announced-2026-10-22",
+          "new_information": "",
+          "summary": "Ai2发布OlmoEarth1.3及10米分辨率的64/128维预计算年度卫星嵌入，配套Explorer可浏览变化、寻找相似地点并用少量标注训练分类器。首发2023—2025年覆盖全球陆地及邻近海岸，2017—2022年仅覆盖部分国家；模型、数据和代码按OlmoEarth Artifact License提供，并附影像来源记录。"
+        }
+      ]
+    },
+    "evt_7373f55ae16d7c9c8417": {
+      "event_key": "ibm:granite-timeseries:ensemble-r1",
+      "aliases": [
+        "ibmgranitetimeseriesensembler1"
+      ],
+      "urls": [
+        "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1"
+      ],
+      "milestones": [
+        "fourmodelensemblerecipepublished20261022"
+      ],
+      "evidence_hashes": [
+        "27ff6b1d4b571fe9c64d963d2b9cf1784cd3330fbe5b19b98ceaee6f1eddb1e7"
+      ],
+      "summary": "IBM介绍Granite Timeseries Ensemble，用统一配方组合四类预训练架构，输出中位数与分位数预测，无需为新数据重训或拟合组合权重。默认概率池给予各成员同等影响，也提供按预测区间宽度加权的IQR方案。配方保存配置而非合并权重，运行时加载四个检查点；作者提醒同时评估质量、校准和资源开销。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "four-model-ensemble-recipe-published-2026-10-22",
+          "new_information": "",
+          "summary": "IBM介绍Granite Timeseries Ensemble，用统一配方组合四类预训练架构，输出中位数与分位数预测，无需为新数据重训或拟合组合权重。默认概率池给予各成员同等影响，也提供按预测区间宽度加权的IQR方案。配方保存配置而非合并权重，运行时加载四个检查点；作者提醒同时评估质量、校准和资源开销。"
+        }
+      ]
+    },
+    "evt_94a947e0630a122eb11d": {
+      "event_key": "nvidia:cosmos:data-factory-and-post-training-2026",
+      "aliases": [
+        "nvidiacosmosdatafactoryandposttraining2026"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models"
+      ],
+      "milestones": [
+        "specificdatablueprintstrainingtoolssimulationvariants20261021"
+      ],
+      "evidence_hashes": [
+        "b76d3cc2d3072fc0ba9735cb7f77ab3828bbcb9ab4162cdded93222a7a27e388"
+      ],
+      "summary": "NVIDIA扩展Cosmos，Data Factory提供五类数据生成和增强蓝图，Curator增加多模态多传感器处理支持；Framework把训练、强化学习、蒸馏及部署配方扩展到更多兼容开放模型。同期新增Cosmos3 Nano仿真变体及适配代码，用于在多视角、多传感器场景下测试自动驾驶和双臂机器人策略。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "specific-data-blueprints-training-tools-simulation-variants-2026-10-21",
+          "new_information": "",
+          "summary": "NVIDIA扩展Cosmos，Data Factory提供五类数据生成和增强蓝图，Curator增加多模态多传感器处理支持；Framework把训练、强化学习、蒸馏及部署配方扩展到更多兼容开放模型。同期新增Cosmos3 Nano仿真变体及适配代码，用于在多视角、多传感器场景下测试自动驾驶和双臂机器人策略。"
+        }
+      ]
+    },
+    "evt_06035eb97ff03ed454aa": {
+      "event_key": "replit:monitoring-agent:production-autofix-release",
+      "aliases": [
+        "replitmonitoringagentproductionautofixrelease"
+      ],
+      "urls": [
+        "https://replit.com/blog/replit-monitoring-agent"
+      ],
+      "milestones": [
+        "productionalertautofixoptionalautopublish20261022"
+      ],
+      "evidence_hashes": [
+        "5eb760a24f3143e4052cdc23343fc5f96f4839beef990564b3115b52a1798273"
+      ],
+      "summary": "Replit推出Monitoring Agent，可访问生产日志和指标，在启用告警与自动修复后调查异常、生成并验证修复，再邮件说明处理情况。用户另行启用auto-publish后，Agent可将验证后的修复部署到生产；这是此前App Monitoring告警能力的扩展，开启位置在应用Publishing设置中。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "production-alert-autofix-optional-auto-publish-2026-10-22",
+          "new_information": "",
+          "summary": "Replit推出Monitoring Agent，可访问生产日志和指标，在启用告警与自动修复后调查异常、生成并验证修复，再邮件说明处理情况。用户另行启用auto-publish后，Agent可将验证后的修复部署到生产；这是此前App Monitoring告警能力的扩展，开启位置在应用Publishing设置中。"
+        }
+      ]
+    },
+    "evt_89610b6407530f931806": {
+      "event_key": "sierra:tau-entity:voice-field-capture-benchmark",
+      "aliases": [
+        "sierratauentityvoicefieldcapturebenchmark"
+      ],
+      "urls": [
+        "https://sierra.ai/blog/tau-entity-can-voice-agents-get-the-details-right"
+      ],
+      "milestones": [
+        "singlefieldsixlanguagebenchmark20261022"
+      ],
+      "evidence_hashes": [
+        "0c4702fa299953ac254e9ec1bb1f021215f14a15b0962a01c8056c12eaafe360"
+      ],
+      "summary": "Sierra推出τ-Entity，使用200项任务与十类实体，检验语音Agent能否询问、核对并正确存储姓名、电话或邮箱等单个字段。Pass³要求同一任务在常规、重噪声和强语音干扰三种条件下均成功。作者发现规定读回、拼读和确认流程可改善可靠性，但延长通话；榜单已覆盖六种语言。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "single-field-six-language-benchmark-2026-10-22",
+          "new_information": "",
+          "summary": "Sierra推出τ-Entity，使用200项任务与十类实体，检验语音Agent能否询问、核对并正确存储姓名、电话或邮箱等单个字段。Pass³要求同一任务在常规、重噪声和强语音干扰三种条件下均成功。作者发现规定读回、拼读和确认流程可改善可靠性，但延长通话；榜单已覆盖六种语言。"
+        }
+      ]
+    },
+    "evt_a9018e1f6f64ffb52d05": {
+      "event_key": "openai:decisions-api:general-availability",
+      "aliases": [
+        "openaidecisionsapigeneralavailability"
+      ],
+      "urls": [
+        "https://community.openai.com/t/decisions-api-is-now-generally-available-with-new-updates/1408934"
+      ],
+      "milestones": [
+        "dedicateddecisionsendpointga20261022"
+      ],
+      "evidence_hashes": [
+        "be381a68e73e42184f3e03cc341e1bc9d62867a56c4231381f1b71e54ae331e9"
+      ],
+      "summary": "OpenAI开发者社区Announcements栏目公告，Decisions API已结束测试，使用GPT-6 Luna对文本、图像及结构化输入进行有界判断。此次新增GPT-Live原生集成、重复上下文缓存、原生JSON、问题指令内图像及每请求最多400问，面向应用分类和下一步动作选择，不必生成完整模型回复。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "dedicated-decisions-endpoint-ga-2026-10-22",
+          "new_information": "",
+          "summary": "OpenAI开发者社区Announcements栏目公告，Decisions API已结束测试，使用GPT-6 Luna对文本、图像及结构化输入进行有界判断。此次新增GPT-Live原生集成、重复上下文缓存、原生JSON、问题指令内图像及每请求最多400问，面向应用分类和下一步动作选择，不必生成完整模型回复。"
+        }
+      ]
+    },
+    "evt_fc414a3a968f4ac212b8": {
+      "event_key": "nvidia:earth2:stormscope-eu-and-regional-workflows",
+      "aliases": [
+        "nvidiaearth2stormscopeeuandregionalworkflows"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction"
+      ],
+      "milestones": [
+        "regionalmodelandcasestudies20261022"
+      ],
+      "evidence_hashes": [
+        "dc269aa28888937d9ee71a1a0350043879ce16f67602909b28172ab0249fabf2"
+      ],
+      "summary": "NVIDIA公布Earth-2区域化应用进展：新加入的StormScope EU利用欧洲卫星观测预测云层变化，柏林演示通过Earth2Studio与Earthmover以10分钟间隔更新结果。AXA用FourCastNet 3研究模拟气旋风险，曼彻斯特大学改造CorrDiff用于英国空气质量，TotalEnergies仍在两个光伏站点评估短时太阳辐射预报。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "regional-model-and-case-studies-2026-10-22",
+          "new_information": "",
+          "summary": "NVIDIA公布Earth-2区域化应用进展：新加入的StormScope EU利用欧洲卫星观测预测云层变化，柏林演示通过Earth2Studio与Earthmover以10分钟间隔更新结果。AXA用FourCastNet 3研究模拟气旋风险，曼彻斯特大学改造CorrDiff用于英国空气质量，TotalEnergies仍在两个光伏站点评估短时太阳辐射预报。"
+        }
+      ]
+    },
+    "evt_5f89269acf01ba05ea61": {
+      "event_key": "nvidia:retail-blueprints:early-access-nebius-2026",
+      "aliases": [
+        "nvidiaretailblueprintsearlyaccessnebius2026"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/european-retail-open-models-robotics"
+      ],
+      "milestones": [
+        "threeretailblueprintsearlyaccess"
+      ],
+      "evidence_hashes": [
+        "42d0a95705c80c8b9fd37612f18a97a17a5ad4830a6b8bb54b31064893e38f7b"
+      ],
+      "summary": "NVIDIA22日介绍欧洲零售应用时明确，三项零售蓝图已在 Nebius 提供早期访问：面向门店经理的员工效率 Agent、用于需求和补货情景试验的库存仿真优化，以及生成数据、微调和反馈相衔接的 Agentic Finetuning Flywheel。文章还列举电商与仓储案例，但其中原型、仿真和生产使用处于不同阶段。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "three-retail-blueprints-early-access",
+          "new_information": "",
+          "summary": "NVIDIA22日介绍欧洲零售应用时明确，三项零售蓝图已在 Nebius 提供早期访问：面向门店经理的员工效率 Agent、用于需求和补货情景试验的库存仿真优化，以及生成数据、微调和反馈相衔接的 Agentic Finetuning Flywheel。文章还列举电商与仓储案例，但其中原型、仿真和生产使用处于不同阶段。"
+        }
+      ]
+    },
+    "evt_68b989dc7ae936587862": {
+      "event_key": "nvidia:dsx:power-grid-integration-oct2026",
+      "aliases": [
+        "nvidiadsxpowergridintegrationoct2026"
+      ],
+      "urls": [
+        "https://blogs.nvidia.com/blog/dsx-power"
+      ],
+      "milestones": [
+        "energypartnerintegrationupdate20261022"
+      ],
+      "evidence_hashes": [
+        "743c76e1ca798f17f8365e18c83e1cf938c0e5a0927dcd589b6bb3a1e5a2f9de"
+      ],
+      "summary": "NVIDIA介绍DSX能源伙伴进展：Hitachi Energy储能系统获得DSX Ready资格，Schneider Electric与AVEVA、ETAP推进电力冷却参考架构和数字孪生，Siemens Energy则开发电网感知供电参考设计。DSX Sim面向联合仿真，Flex用于协调算力负载与电网条件；多项工作仍属于开发和验证阶段。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "energy-partner-integration-update-2026-10-22",
+          "new_information": "",
+          "summary": "NVIDIA介绍DSX能源伙伴进展：Hitachi Energy储能系统获得DSX Ready资格，Schneider Electric与AVEVA、ETAP推进电力冷却参考架构和数字孪生，Siemens Energy则开发电网感知供电参考设计。DSX Sim面向联合仿真，Flex用于协调算力负载与电网条件；多项工作仍属于开发和验证阶段。"
+        }
+      ]
+    },
+    "evt_752ffd42f61cc8c225c2": {
+      "event_key": "enact-intelligence:funding:pre-seed-2026",
+      "aliases": [
+        "enactintelligencefundingpreseed2026"
+      ],
+      "urls": [
+        "https://tech.eu/2026/10/22/mistral-boss-and-yann-lecun-back-swiss-robotics-startup-enact-in-30m-pre-seed-round"
+      ],
+      "milestones": [
+        "thirtymillionpreseedstealthexitreported"
+      ],
+      "evidence_hashes": [
+        "b277c409b110999f3002ffbffb58fe7a465c441836bd98a1ff21238316cfcad9"
+      ],
+      "summary": "据 Tech.eu 原始报道，瑞士机器人创业公司 Enact Intelligence 退出隐身并获3000万美元预种子轮，参与方包括 Redalpine、Notion Capital、Firstminute Capital，以及 Arthur Mensch、Yann LeCun、Thomas Wolf 等个人投资者。公司研发通过执行器感知力与触觉的机器人技术，资金将用于扩充团队和硬件研发。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "thirty-million-pre-seed-stealth-exit-reported",
+          "new_information": "",
+          "summary": "据 Tech.eu 原始报道，瑞士机器人创业公司 Enact Intelligence 退出隐身并获3000万美元预种子轮，参与方包括 Redalpine、Notion Capital、Firstminute Capital，以及 Arthur Mensch、Yann LeCun、Thomas Wolf 等个人投资者。公司研发通过执行器感知力与触觉的机器人技术，资金将用于扩充团队和硬件研发。"
+        }
+      ]
+    },
+    "evt_59d4f72484a4ad3c7b62": {
+      "event_key": "nirva:funding:pre-series-a-2026",
+      "aliases": [
+        "nirvafundingpreseriesa2026"
+      ],
+      "urls": [
+        "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you"
+      ],
+      "milestones": [
+        "twentyfivemillionpreaandwearableplan"
+      ],
+      "evidence_hashes": [
+        "f4b387718da0ac6004c88b2824d4cf00978a51b178a9cb27f94d9e177f123da9"
+      ],
+      "summary": "TechCrunch 报道，Nirva 新获2500万美元 pre-Series A，加上此前800万美元使累计融资达3300万美元。公司展示可作手链佩戴的语音吊坠及配套应用，称会识别佩戴者声音、从其讲话生成个人沟通和情绪洞察。设备标价249美元，计划11月开始接单、年底向早期用户发货，尚非已经交付。",
+      "first_report": "2026-10-23",
+      "last_report": "2026-10-23",
+      "last_seen_at": "2026-10-23T01:22:52.492402+00:00",
+      "updates": [
+        {
+          "report_date": "2026-10-23",
+          "milestone": "twenty-five-million-pre-a-and-wearable-plan",
+          "new_information": "",
+          "summary": "TechCrunch 报道，Nirva 新获2500万美元 pre-Series A，加上此前800万美元使累计融资达3300万美元。公司展示可作手链佩戴的语音吊坠及配套应用，称会识别佩戴者声音、从其讲话生成个人沟通和情绪洞察。设备标价249美元，计划11月开始接单、年底向早期用户发货，尚非已经交付。"
+        }
+      ]
     }
   },
   "reports": {
@@ -4143,6 +4784,16 @@
       "sha256": {
         "reports/2026-10-22.html": "4d0d966a49459b544c6a38f581857bcd721d6f9f2f921c81c636cc19a8a12653",
         "data/2026-10-22.json": "0309e05d150cd6a81646ab9af56852cfa5e0da20485a14ce088dcdcc0193ff7a"
+      }
+    },
+    "2026-10-23": {
+      "window_start": "2026-10-22T01:03:35.770185+00:00",
+      "window_end": "2026-10-23T00:57:07.051247+00:00",
+      "count": 25,
+      "summary": "本期重点是Agent行为如何被检查、治理与持续维护。Anthropic与Theorem公布限定条件下的开源库安全证明，ThinkingBox用数据库终态训练重复执行能力，Claude Code继续修补沙箱与权限传递问题。Agent Skills移交AAIF，提供了跨平台治理的新进展；Minerva则把AI集群的硬件与作业信号联系起来。国内决策模型、欧洲机器人创业和医学研究也有新增内容，研究结果、客户案例与未来部署计划分别标明。国内五家账号及14个X账号均逐项检查，访问和日期限制见文末。",
+      "sha256": {
+        "reports/2026-10-23.html": "c9e57d1a863c0ae19efb203956bce6923fb55929bd3b707fe84638562c61c722",
+        "data/2026-10-23.json": "068ddedd431072aff2ae03c63c5ac40d6b88ca98413b1112a76c137edb25743d"
       }
     }
   }

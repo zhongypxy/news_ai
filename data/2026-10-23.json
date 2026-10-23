@@ -1,0 +1,1962 @@
+{
+  "schema_version": "2.0",
+  "report_date": "2026-10-23",
+  "window_start": "2026-10-22T01:03:35.770185Z",
+  "window_end": "2026-10-23T00:57:07.051247Z",
+  "backfill_start": "2026-10-20T00:57:07.051247Z",
+  "generated_at": "2026-10-23T01:22:52.492402Z",
+  "timezone": "Asia/Singapore",
+  "executive_summary": "本期重点是Agent行为如何被检查、治理与持续维护。Anthropic与Theorem公布限定条件下的开源库安全证明，ThinkingBox用数据库终态训练重复执行能力，Claude Code继续修补沙箱与权限传递问题。Agent Skills移交AAIF，提供了跨平台治理的新进展；Minerva则把AI集群的硬件与作业信号联系起来。国内决策模型、欧洲机器人创业和医学研究也有新增内容，研究结果、客户案例与未来部署计划分别标明。国内五家账号及14个X账号均逐项检查，访问和日期限制见文末。",
+  "top_stories": [
+    "evt_d1d348adf234bb2d48c2",
+    "evt_7e3411e670c949e3baf7",
+    "evt_abd16c49fe9ed334c37e"
+  ],
+  "news_items": [
+    {
+      "event_key": "openai:google-cloud:model-garden-partnership",
+      "milestone": "distribution-partnership-announcement-2026-10-21",
+      "title": "重要补录：OpenAI 与 Google Cloud 宣布模型及 Codex 分发合作",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 5,
+        "novelty": 5,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 5
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "OpenAI与Google Cloud宣布合作，将OpenAI前沿模型和Codex工作流带入Google Cloud的Model Garden。开发者社区Announcements栏目确认这项合作，并称Google Antigravity与Gemini Agent的相关接入将随后推出。公告将访问控制、集中数据治理和云基础设施作为企业运行复杂Agent工作流的支撑。",
+      "significance": "企业既有的云环境与治理体系开始承载更多模型选择，模型分发与采购路径值得持续观察。合作宣布不能等同于所有企业已经取得相同权限和完整配套能力。",
+      "analysis": "社区公告转述原始合作，属于同一发布证据链，不能当作独立交叉验证。已核公告未列完整模型清单、区域与正式开放日期，企业仍需逐项确认接入条件。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "40c41bd592a8e9bb44c9"
+      ],
+      "tags": [
+        "OpenAI",
+        "Google Cloud",
+        "Codex",
+        "重要补录"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_e177225bccc506bb9d9a",
+      "published_at": "2026-10-21T12:15:52Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "40c41bd592a8e9bb44c9",
+          "url": "https://community.openai.com/t/openai-models-are-coming-to-google-cloud/1408440",
+          "name": "community.openai.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T12:15:52Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.85,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "harvey:connector-library:general-availability-2026",
+      "milestone": "general-availability-and-courtroom-insight-mcp",
+      "title": "重要补录：Harvey 宣布连接器库正式开放，CI 人员与案件数据 MCP 上线",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Harvey21日宣布 Connector Library 正式开放，使 Agent 可结合文档管理、邮件、合同等外部系统分析，并支持自定义 MCP；写回从文档管理平台起步。合作方 Courtroom Insight 同日表示，其只读 MCP 已向双方共同客户开放，可在 Harvey 中查询法律人员和案件关系，用户可通过管理员设置启用。",
+      "significance": "法律 Agent 的新进展在于将已有工作系统的上下文接入具体任务，同时按系统和工具控制访问，而非仅扩展聊天能力。正式开放及特定只读数据接入使部署范围更明确，但连接器的审核仍不能替代律所自身的权限配置和业务复核，各连接器的读写能力也需分别确认。",
+      "analysis": "Harvey10月1日工程文章已称连接器库上线并描述早期访问，因此本次应界定为正式GA和具体CI集成。CI连接器明确只读，不能因为主库支持部分DMS写回就推断其可修改案件资料。示例中的合同终止还包括律师审阅、审批与签字，不能写成自动法律决定。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "ed3046bba88a349c8f60",
+        "21c11a573f8d354b48a0"
+      ],
+      "tags": [
+        "Harvey",
+        "法律AI",
+        "MCP",
+        "连接器",
+        "企业服务"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_d1b631a14fc0928aed92",
+      "published_at": "2026-10-21T14:45:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "ed3046bba88a349c8f60",
+          "url": "https://www.harvey.ai/blog/harvey-connector-library",
+          "name": "www.harvey.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T14:45:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        },
+        {
+          "candidate_id": "21c11a573f8d354b48a0",
+          "url": "https://blog.courtroominsight.com/index.php/2026/10/21/courtroom-insight-brings-verified-people-and-matter-data-to-harvey-through-new-mcp-in-harveys-connector-library",
+          "name": "blog.courtroominsight.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T08:30:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.35,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "microsoft:mai-dxo:science-sequential-diagnosis-2026",
+      "milestone": "science-publication-and-bidmc-prospective-study-announced",
+      "title": "微软公布 MAI-DxO 顺序诊断研究，真实医院前瞻验证仍待开展",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 5
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "微软22日发布 MAI-DxO 与 SDBench 的研究进展，称论文当日发表于 Science。基准让系统逐步请求信息并选择检查，而非一次读完病例答题；公司报告其在复杂 NEJM 病例及 MIMIC-IV-ED 急诊病例集取得较高诊断准确率，并公开部分评测代码。与波士顿 BIDMC 的前瞻研究将另行评估真实环境表现。",
+      "significance": "顺序诊断把需要什么证据、要付出多少检查成本纳入评测，比单次医学知识问答更接近临床推理流程。此次新增论文与未来研究安排，提供了继续检验的方法和路径；基准准确率仍不能代替患者结局或医院实际效果，研究阶段的界限应保持清楚。",
+      "analysis": "MAI-DxO 通过多轮虚拟医生讨论协调提问、检查和诊断，并权衡检查成本。微软披露的83%与80%是不同病例集的基准结果，比较组和资料条件亦不同，不能合并成普遍临床优势。Science全文此次访问受限，数字仅归因微软原文；稿件不将未来BIDMC研究写成已完成临床验证。",
+      "followup_questions": [
+        "前瞻研究的注册方案、对照、患者群体和结果何时公开？"
+      ],
+      "candidate_ids": [
+        "3efdf02564846d3190b2"
+      ],
+      "tags": [
+        "Microsoft",
+        "医疗AI",
+        "诊断评测",
+        "MAI-DxO",
+        "临床研究"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_83ae08db7737fbb1aa42",
+      "published_at": "2026-10-22T18:01:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "3efdf02564846d3190b2",
+          "url": "https://microsoft.ai/news/building-medical-superintelligence",
+          "name": "microsoft.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T18:01:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.3,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:minerva:ai-factory-observability",
+      "milestone": "platform-launch-2026-10-22",
+      "title": "NVIDIA 推出 Minerva，把 GPU、网络与作业状态联到同一运维视图",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA发布面向AI工厂的Minerva AIOps平台，将GPU、网络、存储、调度器和AI作业的遥测关联为动态知识图谱，用机器学习识别异常、预测故障并归并相关告警。运维人员可通过内置助手调查问题，再人工处理或连接外部自动化。IREN被列为使用方，其他多家伙伴仍计划部署。",
+      "significance": "大规模训练和推理集群的有效产出受慢卡、网络与存储退化共同影响。跨组件关联有助于缩短排障链路，但平台发布、客户使用和伙伴部署计划应分开评估。",
+      "analysis": "拓扑与工作负载上下文可能比孤立的硬件告警更有用；是否改善停机、修复时间和有效吞吐，仍需在用户自己的环境中测量。原文没有可独立复核的统一收益数值。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "4d0baf72e7ccb029abbf"
+      ],
+      "tags": [
+        "NVIDIA",
+        "AIOps",
+        "可观测性",
+        "AI工厂"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_4420449a90d047b4e180",
+      "published_at": "2026-10-22T15:00:02Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T00:57:07.051247Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "4d0baf72e7ccb029abbf",
+          "url": "https://blogs.nvidia.com/blog/minerva-platform-infrastructure",
+          "name": "NVIDIA Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T15:00:02Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T00:57:07.051247Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.2,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "mave:funding:secops-stealth-exit-2026",
+      "milestone": "thirty-four-million-total-funding-announced",
+      "title": "重要补录：Mave 退出隐身，披露累计3400万美元融资",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "安全运营创业公司 Mave 披露累计3400万美元融资，其中2800万美元 A 轮由 RedDot Capital Partners 领投，另含此前600万美元种子轮。其 Agent 直接查询企业现有安全和 IT 系统，收集现场证据、调查威胁，并按客户策略执行获准响应；资金将用于研发、平台和团队扩张。",
+      "significance": "这类产品尝试让安全团队继续使用原有系统，同时由 Agent 跨系统组织调查证据，减少为自动化另建集中数据平台的前置工作。融资支持这一产品路线继续开发，但企业是否能放心授权处置，仍取决于审计记录、审批边界和实际调查质量。",
+      "analysis": "Mave 的技术定位是对既有系统进行原生查询和行动编排。评估时应区分发现威胁、形成调查结论和执行处置三个环节，并分别核对权限、证据留存与人工复核机制。公告中的客户覆盖及事件处置效果属于公司陈述，本稿未将其作为独立验证的收益。",
+      "followup_questions": [
+        "不同处置动作的人工审批和回滚机制如何提供？"
+      ],
+      "candidate_ids": [
+        "16c514ea978e8d081ea7"
+      ],
+      "tags": [
+        "Mave",
+        "融资",
+        "安全运营",
+        "Agent",
+        "企业服务"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_33228f24c7f1df288024",
+      "published_at": "2026-10-21T18:27:19.749000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "16c514ea978e8d081ea7",
+          "url": "https://www.mave.com/resources/mave-launches-with-34-million",
+          "name": "www.mave.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-21T18:27:19.749000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.15,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "wiz:artex:software-vendor-campaign-oct2026",
+      "milestone": "2026-10-22-wiz-investigation",
+      "title": "Wiz：ARTEX 攻击链持续探测软件供应商身份与租户隔离",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Wiz 10月22日公布针对IT与软件供应商的ARTEX关联活动调查。团队在实际HTTP和身份日志中观察到下载源码映射后调用内部API、探测OAuth与无签名JWT、滥用账号恢复和租户访问检查，并在限流或封IP后换入口继续尝试。其观察与微软Storm-0940报告部分重叠，多数攻击尝试失败。",
+      "significance": "这份调查的价值在于给出可核查的攻击行为与日志模式，而不只是宣称“AI会黑客攻击”。软件供应商应把身份提供商、账号恢复及跨租户访问纳入统一监测；仅阻断一个IP不足以处理会换路径持续运行的自动化攻击链。",
+      "analysis": "Wiz报告支持“关联工具、基础设施和行为重叠”，不等同于本研究独立完成国家归因，也不能推导所有受测企业均已泄露。原项目据报道10月8日转闭源，本次属于安全调查而非新开源发布。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "dadcbaabab4207cdd82d"
+      ],
+      "tags": [
+        "ARTEX",
+        "身份安全",
+        "供应链",
+        "Agent",
+        "云安全"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_dcd1bfec2730a3ae2c32",
+      "published_at": "2026-10-22T13:05:31Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "dadcbaabab4207cdd82d",
+          "url": "https://www.wiz.io/blog/artex-in-the-wild-storm-0940-expands-targeting-of-it-and-software-vendors",
+          "name": "www.wiz.io",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T13:05:31Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "china-telecom:xing4-intent:release",
+      "milestone": "Xing4.0-29B-Intent-2026-10-22",
+      "title": "电信发布 Xing4.0-29B-Intent：意图识别与参数抽取使用统一结构",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "中国电信星辰通用人工智能实验室发布Xing4.0-29B-Intent，并开放模型权重、配套代码和约275.3万条训练样本。模型基于Xing4.0-29B-A4B底座微调，按预设规则将意图、实体、关系和事件转成类别与参数的层级JSON结构，兼顾分类和参数抽取。",
+      "significance": "对客服路由、设备指令和工具调用而言，业务系统往往同时需要“做什么”和“带哪些参数”。统一Schema与配套语料降低了从模型输出接入业务接口的改造量，但仍需围绕企业自有字段、负例和复合意图重新评测。",
+      "analysis": "量子位正文为厂商授权供稿，评测分数由团队在指定数据与设置下得到，不能写成独立验证的业务准确率。部署资源、底座架构和兼容性仍需按相应文档另行核对，模型名称本身不足以说明实际运行开销。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "1afb0693da4b7c40bc86"
+      ],
+      "tags": [
+        "中国电信",
+        "意图识别",
+        "结构化抽取",
+        "开放权重"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_4067c5867c5bbbfc6041",
+      "published_at": "2026-10-22T07:11:14Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "1afb0693da4b7c40bc86",
+          "url": "https://www.qbitai.com/2026/10/504832.html",
+          "name": "www.qbitai.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T07:11:14Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_configured_dateline"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "ant-digital:lingdt-decision1:release",
+      "milestone": "LingDT-Decision-1.0-2026-10-22",
+      "title": "蚂蚁数科推出 LingDT-Decision-1.0，支持原生多选与依赖顺序决策",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "蚂蚁数科发布LingDT-Decision-1.0，提供4B和27B版本，已在DTMaaS平台上线限时免费体验。模型面向限定候选中的决策任务，除分类、评级和单选，还支持一次识别多项诉求，并按任务依赖关系安排决策顺序，覆盖客服、工具选择和风控等场景。本文未见可核权重下载或代码开源许可。",
+      "significance": "这类专用决策模型将自然语言接口收敛为业务可执行的候选选择，有机会减少自由文本解析成本。原生多选与依赖关系尤其适合复合客服诉求；采用时仍应检查漏选、负例误报、选项变化和越权工具选择。",
+      "analysis": "量子位文章明确由蚂蚁供稿，成本、速度和23项基准排名均为厂商测试主张，缺少完整复现实验，不采用“全面超越”或“全球首创”作结论。平台限时体验不等于永久免费，也不等于模型开放权重。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "e18da7a610e64c2dac3f"
+      ],
+      "tags": [
+        "蚂蚁数科",
+        "决策模型",
+        "多选",
+        "企业AI"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_584b18a7e563e0a3fcf9",
+      "published_at": "2026-10-22T09:07:05Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "e18da7a610e64c2dac3f",
+          "url": "https://www.qbitai.com/2026/10/504879.html",
+          "name": "www.qbitai.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T09:07:05Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_configured_dateline"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "anthropic:agent-skills:aaif-donation",
+      "milestone": "standard-identity-and-infrastructure-donated-2026-10-22",
+      "title": "Anthropic 将 Agent Skills 标准移交 AAIF，中立治理与安全规范列入提议路线图",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Anthropic宣布将Agent Skills标准捐赠给Linux Foundation旗下AAIF，移交名称、标识、GitHub组织和agentskills.io域名。标准由跨公司工程师以个人身份维护，无需加入基金会也可使用或贡献。公司提出版本化发布、正式提案流程及技能编写安装安全指南作为初始路线图，尚非已经交付的规范更新。",
+      "significance": "Skills正连接不同Agent平台的任务知识与工作流，治理归属影响兼容性、变更流程及供应商依赖。此次移交为跨平台维护提供中立组织基础，但互通的标准文件不等于工具权限或运行环境自动一致；团队仍需审核技能附带脚本、来源与执行边界。",
+      "analysis": "治理迁移值得跟踪，其工程价值最终要看规范版本、兼容测试和安全指导能否稳定落地。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "0180db0bc9e2a64d9254"
+      ],
+      "tags": [
+        "Anthropic",
+        "Agent Skills",
+        "AAIF",
+        "标准治理"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_7e3411e670c949e3baf7",
+      "published_at": "2026-10-22T00:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T00:57:07.051247Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "0180db0bc9e2a64d9254",
+          "url": "https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation",
+          "name": "Anthropic News",
+          "source_type": "page",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T00:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T00:57:07.051247Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "microsoft:thinkingbox-training:database-state-rl",
+      "milestone": "rl-training-stack-and-repeatability-results-2026-10-22",
+      "title": "ThinkingBox 将数据库终态检验变成训练奖励，提升 Agent 重复成功表现",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Microsoft与Hugging Face公开ThinkingBox-Training，用任务结束后的数据库状态检验给Agent强化学习提供奖励。作者在与507项测试任务分离的训练池上，对Qwen3.8-27B进行50步GRPO；平均成功率由51.70%升至60.78%，20次均成功的任务由38项增至107项，但至少成功一次的覆盖从453项降至446项。",
+      "significance": "Agent说完成不代表业务记录已正确更新，重复执行可靠性也不同于偶尔找到正确路径。该研究提供用可执行终态检查训练模型的工程路线，同时展示可靠性与覆盖面的取舍；触及订单、退款或审批的团队应分别测量平均成功、重复成功和额外副作用。",
+      "analysis": "可执行业务约束可成为训练信号；观察到20次全成功仍不是生产环境永不失败的保证。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "e1d692eb45c85dfbc45f"
+      ],
+      "tags": [
+        "ThinkingBox",
+        "Microsoft",
+        "Agent训练",
+        "GRPO"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_9e556de46e1a636dd4ab",
+      "published_at": "2026-10-22T22:24:34.816000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T00:57:07.051247Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "e1d692eb45c85dfbc45f",
+          "url": "https://huggingface.co/blog/microsoft/thinkingbox-training",
+          "name": "Hugging Face Blog",
+          "source_type": "rss",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T22:24:34.816000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T00:57:07.051247Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "anthropic:claude-code:2.1.301",
+      "milestone": "stable-2.1.309-sandbox-permission-hardening-2026-10-22",
+      "title": "Claude Code 2.1.309 修复沙箱与权限规则缺口，强化子 Agent 约束传递",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_abd16c49fe9ed334c37e",
+      "new_information": "历史最新2.1.307是安全事件和幂等重试；本次新增2.1.309跨平台沙箱/权限规则及子Agent继承修复。",
+      "summary": "Claude Code2.1.309修复多项执行边界问题，包括Shell启动文件在沙箱外运行、符号链接路径写入拒绝失效、受保护MCP配置可被修改，以及分屏子Agent未继承上层工具拒绝规则。版本还修复Windows PowerShell Hook未阻断和部分权限检查问题，并要求ultrareview验证工作区信任。",
+      "significance": "这些变更涉及Agent从会话规则到实际Shell、配置和子任务的约束传递，影响团队对运行边界的判断。部署维护者应结合自身操作系统、MCP配置及Hook设置评估升级，重点复查被修复的执行路径；不能仅凭开启沙箱就假定所有进程和配置文件都受同样保护。",
+      "analysis": "安全行为需要贯穿启动、工具执行和子任务继承，发行日志中的具体修复比版本号本身更有参考价值。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "54cc6577f70f1da31f15"
+      ],
+      "tags": [
+        "Claude Code",
+        "沙箱",
+        "MCP",
+        "权限"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_abd16c49fe9ed334c37e",
+      "published_at": "2026-10-22T22:18:57Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": "Claude Code 2.1.307为被权限规则、自动模式、安全检查、Hook或沙箱拦截、提示确认或返回的工具调用新增OpenTelemetry安全事件。版本修复HTTP MCP连接中断后的重复调用，只允许重试声明为只读或幂等的工具；本期合并观察2.1.306的云会话等修复。",
+      "sources": [
+        {
+          "candidate_id": "54cc6577f70f1da31f15",
+          "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.309",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T22:18:57Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "allenai:olmoearth-1.3:global-embeddings-release",
+      "milestone": "global-embeddings-explorer-and-v1.3-announced-2026-10-22",
+      "title": "Ai2 发布 OlmoEarth 1.3 与全球预计算卫星嵌入及浏览器探索工具",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Ai2发布OlmoEarth1.3及10米分辨率的64/128维预计算年度卫星嵌入，配套Explorer可浏览变化、寻找相似地点并用少量标注训练分类器。首发2023—2025年覆盖全球陆地及邻近海岸，2017—2022年仅覆盖部分国家；模型、数据和代码按OlmoEarth Artifact License提供，并附影像来源记录。",
+      "significance": "预计算嵌入把反复下载卫星影像、用GPU训练的部分工作转为较轻量的分类与比较，降低农业、土地变化和环境监测的试验门槛。团队仍需检查年份与地区覆盖、输入影像和现场标签；卫星表征的变化信号不能直接证明某种经济活动或因果关系。",
+      "analysis": "共享一次计算的表征可能扩大遥感应用范围，但业务地图仍需用真实样本和领域知识验证。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "c7755e4d7fc9999bcf15"
+      ],
+      "tags": [
+        "Ai2",
+        "OlmoEarth",
+        "遥感",
+        "Embedding"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_9d2a2f536b7270b5741d",
+      "published_at": "2026-10-22T16:11:31.807000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "c7755e4d7fc9999bcf15",
+          "url": "https://huggingface.co/blog/allenai/olmoearth-v1-3",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T16:11:31.807000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "ibm:granite-timeseries:ensemble-r1",
+      "milestone": "four-model-ensemble-recipe-published-2026-10-22",
+      "title": "IBM 发布 Granite 时序集成配方，以统一接口组合四类预测模型",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "IBM介绍Granite Timeseries Ensemble，用统一配方组合四类预训练架构，输出中位数与分位数预测，无需为新数据重训或拟合组合权重。默认概率池给予各成员同等影响，也提供按预测区间宽度加权的IQR方案。配方保存配置而非合并权重，运行时加载四个检查点；作者提醒同时评估质量、校准和资源开销。",
+      "significance": "预训练时序模型仍需要按序列和预测跨度选型，集成配方提供可比较的默认起点。对需求、工业信号等预测任务，团队应回测代表性历史窗口，分别检查点误差和区间覆盖；更窄的区间可能只是过度自信，组合多个模型也会增加内存和推理时间。",
+      "analysis": "这个发布的价值在减少选型猜测和统一接口，而非证明集成总比最佳单模型更准。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "f0f84231214e9149bd28"
+      ],
+      "tags": [
+        "IBM",
+        "Granite",
+        "时序预测",
+        "模型集成"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_7373f55ae16d7c9c8417",
+      "published_at": "2026-10-22T07:51:31.599000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "f0f84231214e9149bd28",
+          "url": "https://huggingface.co/blog/ibm-research/granite-timeseries-ensemble-r1",
+          "name": "huggingface.co",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T07:51:31.599000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:cosmos:data-factory-and-post-training-2026",
+      "milestone": "specific-data-blueprints-training-tools-simulation-variants-2026-10-21",
+      "title": "NVIDIA 扩展 Cosmos 世界模型工具链，增加数据蓝图与闭环仿真变体",
+      "category": "models",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA扩展Cosmos，Data Factory提供五类数据生成和增强蓝图，Curator增加多模态多传感器处理支持；Framework把训练、强化学习、蒸馏及部署配方扩展到更多兼容开放模型。同期新增Cosmos3 Nano仿真变体及适配代码，用于在多视角、多传感器场景下测试自动驾驶和双臂机器人策略。",
+      "significance": "世界模型开发需要数据准备、后训练和策略测试协同，单独生成视频不能替代闭环验证。此次具体工具与检查点更新，为物理AI团队提供可复用的开发链路；仍需确认蓝图与模型支持范围，并用真实传感器、任务和安全指标检验仿真到现实的差异。",
+      "analysis": "工具链模块化有助于建立数据和评测循环，但合成场景覆盖与真实系统行为之间仍需验证。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "b5e44a46c0017382e9c2"
+      ],
+      "tags": [
+        "NVIDIA",
+        "Cosmos",
+        "世界模型",
+        "仿真"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_94a947e0630a122eb11d",
+      "published_at": "2026-10-22T05:00:27Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "b5e44a46c0017382e9c2",
+          "url": "https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models",
+          "name": "blogs.nvidia.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T05:00:27Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "replit:monitoring-agent:production-autofix-release",
+      "milestone": "production-alert-autofix-optional-auto-publish-2026-10-22",
+      "title": "Replit Monitoring Agent 将生产告警连接到修复与可选自动发布",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Replit推出Monitoring Agent，可访问生产日志和指标，在启用告警与自动修复后调查异常、生成并验证修复，再邮件说明处理情况。用户另行启用auto-publish后，Agent可将验证后的修复部署到生产；这是此前App Monitoring告警能力的扩展，开启位置在应用Publishing设置中。",
+      "significance": "Coding Agent正从生成代码延伸到线上维护，少人团队可在同一平台连接告警、诊断和交付。自动发布由用户选择是重要控制点；团队仍需定义哪些故障适合交给Agent、如何验证修复及保留恢复路径，并用实际运行结果评估可靠性，而非把产品定位当SLA。",
+      "analysis": "生产日志、代码和部署放在同一环境能缩短操作链路，修复验证质量与发布权限则决定自动化实际收益。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "1c3f4427286160a3760b"
+      ],
+      "tags": [
+        "Replit",
+        "Monitoring Agent",
+        "AI Coding",
+        "生产维护"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_06035eb97ff03ed454aa",
+      "published_at": "2026-10-22T20:24:13.430000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "1c3f4427286160a3760b",
+          "url": "https://replit.com/blog/replit-monitoring-agent",
+          "name": "replit.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T20:24:13.430000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "sierra:tau-entity:voice-field-capture-benchmark",
+      "milestone": "single-field-six-language-benchmark-2026-10-22",
+      "title": "Sierra 发布 τ-Entity，用字段精确匹配检验语音 Agent 的采集和纠错",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "Sierra推出τ-Entity，使用200项任务与十类实体，检验语音Agent能否询问、核对并正确存储姓名、电话或邮箱等单个字段。Pass³要求同一任务在常规、重噪声和强语音干扰三种条件下均成功。作者发现规定读回、拼读和确认流程可改善可靠性，但延长通话；榜单已覆盖六种语言。",
+      "significance": "语音对话顺畅并不代表关键字段准确，认证和服务动作可能在姓名或号码录入环节失败。该基准把精确存储与不同噪声条件下的稳定性单独测量，有助于语音产品设计核对和重试策略；业务团队仍应衡量确认耗时、纠错效果及多字段累积错误。",
+      "analysis": "重问只有在系统能使用新答案修正状态时才有价值，语音Agent评估应同时看字段准确、纠错和通话成本。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "e45aa5f14792a65c03e2"
+      ],
+      "tags": [
+        "Sierra",
+        "语音Agent",
+        "Benchmark",
+        "纠错"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_89610b6407530f931806",
+      "published_at": "2026-10-22T14:02:33.939000Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "e45aa5f14792a65c03e2",
+          "url": "https://sierra.ai/blog/tau-entity-can-voice-agents-get-the-details-right",
+          "name": "sierra.ai",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T14:02:33.939000Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "openai:decisions-api:general-availability",
+      "milestone": "dedicated-decisions-endpoint-ga-2026-10-22",
+      "title": "OpenAI 开发者社区公告 Decisions API 正式可用，支持实时语音与400问请求",
+      "category": "agents",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "OpenAI开发者社区Announcements栏目公告，Decisions API已结束测试，使用GPT-6 Luna对文本、图像及结构化输入进行有界判断。此次新增GPT-Live原生集成、重复上下文缓存、原生JSON、问题指令内图像及每请求最多400问，面向应用分类和下一步动作选择，不必生成完整模型回复。",
+      "significance": "Agent流程里大量短决策会累积延迟和成本，把有界输出与开放生成区分处理有助于优化链路。团队应使用真实业务样本验证误判与升级人工的条件，分别比较冷请求、缓存和批量表现；概率分数不能直接替代权限、安全规则或业务审批。",
+      "analysis": "专用决策接口适合频繁而有明确答案空间的步骤，工程收益仍需在完整任务链路上衡量。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "3c8d3f3cc7da59b4fd87"
+      ],
+      "tags": [
+        "OpenAI",
+        "Decisions API",
+        "GPT-Live",
+        "Agent路由"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_a9018e1f6f64ffb52d05",
+      "published_at": "2026-10-22T20:51:09Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "3c8d3f3cc7da59b4fd87",
+          "url": "https://community.openai.com/t/decisions-api-is-now-generally-available-with-new-updates/1408934",
+          "name": "community.openai.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T20:51:09Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:earth2:stormscope-eu-and-regional-workflows",
+      "milestone": "regional-model-and-case-studies-2026-10-22",
+      "title": "Earth-2 加入 StormScope EU，天气 AI 向区域预报与能源场景推进",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA公布Earth-2区域化应用进展：新加入的StormScope EU利用欧洲卫星观测预测云层变化，柏林演示通过Earth2Studio与Earthmover以10分钟间隔更新结果。AXA用FourCastNet 3研究模拟气旋风险，曼彻斯特大学改造CorrDiff用于英国空气质量，TotalEnergies仍在两个光伏站点评估短时太阳辐射预报。",
+      "significance": "天气模型的商业价值需要落实到能源、保险和区域环境任务。实时演示、研究性使用与生产服务有不同成熟度，不能将模拟季节数当作真实世界验证。",
+      "analysis": "开放模型加上私有观测可能缩短领域定制流程，但地方数据、极端天气误差和不确定性评估仍决定实用性。本次未独立验证其预报精度或经济收益。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "2626a3ef1f733c38e97c"
+      ],
+      "tags": [
+        "Earth-2",
+        "天气AI",
+        "能源",
+        "欧洲"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_fc414a3a968f4ac212b8",
+      "published_at": "2026-10-22T05:00:19Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "2626a3ef1f733c38e97c",
+          "url": "https://blogs.nvidia.com/blog/europe-earth-2-open-models-weather-climate-prediction",
+          "name": "blogs.nvidia.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T05:00:19Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.0,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:retail-blueprints:early-access-nebius-2026",
+      "milestone": "three-retail-blueprints-early-access",
+      "title": "NVIDIA 三项零售蓝图在 Nebius 提供早期访问",
+      "category": "applications",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 5,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA22日介绍欧洲零售应用时明确，三项零售蓝图已在 Nebius 提供早期访问：面向门店经理的员工效率 Agent、用于需求和补货情景试验的库存仿真优化，以及生成数据、微调和反馈相衔接的 Agentic Finetuning Flywheel。文章还列举电商与仓储案例，但其中原型、仿真和生产使用处于不同阶段。",
+      "significance": "三项蓝图将零售自动化分为门店操作、决策仿真与模型改进流程，为企业试验提供了具体入口。此次可用性仍是早期访问，尚不能推断部署条件、总体成本或适用所有零售商；对技术管理者而言，值得核对的是数据接入和验证流程能否落到自己的经营环境。",
+      "analysis": "将库存变化先放进仿真环境试验，有助于把模型输出和真实采购决策之间留出验证环节。原文中的搜索原型、仓库数字孪生与已使用服务不能统一写成当日生产交付；本稿只把明确宣布早期访问的三项蓝图作为新事实，不采用厂商列举的未经独立复测的提效数字。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "82d0c9cb10528f220518"
+      ],
+      "tags": [
+        "NVIDIA",
+        "零售",
+        "Agent",
+        "库存仿真",
+        "Nebius"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_5f89269acf01ba05ea61",
+      "published_at": "2026-10-22T05:00:23Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "82d0c9cb10528f220518",
+          "url": "https://blogs.nvidia.com/blog/european-retail-open-models-robotics",
+          "name": "blogs.nvidia.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T05:00:23Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.9,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nvidia:dsx:power-grid-integration-oct2026",
+      "milestone": "energy-partner-integration-update-2026-10-22",
+      "title": "DSX 更新电网与算力协同方案，供电和冷却成为集群规划重点",
+      "category": "infrastructure",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 3,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NVIDIA介绍DSX能源伙伴进展：Hitachi Energy储能系统获得DSX Ready资格，Schneider Electric与AVEVA、ETAP推进电力冷却参考架构和数字孪生，Siemens Energy则开发电网感知供电参考设计。DSX Sim面向联合仿真，Flex用于协调算力负载与电网条件；多项工作仍属于开发和验证阶段。",
+      "significance": "算力可用性越来越取决于接电、冷却和负载调度，采购GPU之外还需要把设施、电力与作业共同规划。参考设计或资格认证的范围不能扩大为完整数据中心已交付。",
+      "analysis": "联合仿真和可调度负载有机会提高既有电力约束下的利用率，但原文的收益来自合作方陈述或模型估算，不能直接外推为全国新增可用电力。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "24a34f2780ae50d5cd8f"
+      ],
+      "tags": [
+        "NVIDIA",
+        "能源",
+        "DSX",
+        "数字孪生"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_68b989dc7ae936587862",
+      "published_at": "2026-10-22T05:00:25Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "24a34f2780ae50d5cd8f",
+          "url": "https://blogs.nvidia.com/blog/dsx-power",
+          "name": "blogs.nvidia.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T05:00:25Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.75,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "enact-intelligence:funding:pre-seed-2026",
+      "milestone": "thirty-million-pre-seed-stealth-exit-reported",
+      "title": "瑞士 Enact Intelligence 披露3000万美元预种子轮，研发触觉机器人技术",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "据 Tech.eu 原始报道，瑞士机器人创业公司 Enact Intelligence 退出隐身并获3000万美元预种子轮，参与方包括 Redalpine、Notion Capital、Firstminute Capital，以及 Arthur Mensch、Yann LeCun、Thomas Wolf 等个人投资者。公司研发通过执行器感知力与触觉的机器人技术，资金将用于扩充团队和硬件研发。",
+      "significance": "这是一家欧洲新创业公司在机器人底层感知和控制方向获得早期资源的进展。它强调力和触觉反馈，对操作物体时仅凭视觉难以判断的接触状态提供另一条研究路线；当前披露主要是技术定位与研发融资，尚不足以判断工业可靠性。",
+      "analysis": "需要区分个人投资与其任职机构的投资，报道没有证明 Mistral、Meta 或 Hugging Face 作为公司出资。触觉路线是否提高数据效率、泛化和精密操作能力，仍应通过公开任务、硬件条件和重复实验判断，不能由融资或创始人背景推导产品已经成熟。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "9262f43e9033bf836da4"
+      ],
+      "tags": [
+        "Enact Intelligence",
+        "欧洲",
+        "融资",
+        "机器人",
+        "触觉"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_752ffd42f61cc8c225c2",
+      "published_at": "2026-10-22T08:52:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "9262f43e9033bf836da4",
+          "url": "https://tech.eu/2026/10/22/mistral-boss-and-yann-lecun-back-swiss-robotics-startup-enact-in-30m-pre-seed-round",
+          "name": "tech.eu",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T08:52:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nirva:funding:pre-series-a-2026",
+      "milestone": "twenty-five-million-pre-a-and-wearable-plan",
+      "title": "Nirva 获2500万美元新融资，个人语音吊坠拟11月接单",
+      "category": "business",
+      "priority": "P1",
+      "score": {
+        "impact": 3,
+        "novelty": 4,
+        "relevance": 4,
+        "confidence": 4,
+        "follow_up": 4
+      },
+      "confidence": "medium",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "TechCrunch 报道，Nirva 新获2500万美元 pre-Series A，加上此前800万美元使累计融资达3300万美元。公司展示可作手链佩戴的语音吊坠及配套应用，称会识别佩戴者声音、从其讲话生成个人沟通和情绪洞察。设备标价249美元，计划11月开始接单、年底向早期用户发货，尚非已经交付。",
+      "significance": "这类海外消费产品将持续语音采集包装为个人反思工具，商业定位与会议转录有区别。融资为设备开发提供资源，但用户价值仍要由真实使用后的反馈检验；语音筛选、原始数据保留方式和长期佩戴意愿，也会直接影响能否形成持续订阅或复购。",
+      "analysis": "公司称通过录制用户声音建立识别模型，过滤周围人的讲话，并在处理后默认删除音频与文本。这些是企业设计与隐私声明，尚不构成独立测试结果。情绪和性格洞察来自对语音的推断，不能视为心理健康诊断；交付节点也仍是计划。",
+      "followup_questions": [
+        "正式接单时的数据处理条款和发货范围是否与目前描述一致？"
+      ],
+      "candidate_ids": [
+        "72d35fd3f21c9dd4420b"
+      ],
+      "tags": [
+        "Nirva",
+        "融资",
+        "消费AI",
+        "可穿戴",
+        "语音"
+      ],
+      "fact_status": "FACT",
+      "repository_url": null,
+      "technical_highlights": null,
+      "target_users": null,
+      "maturity_limitations": null,
+      "event_id": "evt_59d4f72484a4ad3c7b62",
+      "published_at": "2026-10-22T13:26:52Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "72d35fd3f21c9dd4420b",
+          "url": "https://techcrunch.com/2026/10/22/nirva-raises-33m-for-a-pendant-that-only-listens-to-you",
+          "name": "techcrunch.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T13:26:52Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 3.7,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "open_source_items": [
+    {
+      "event_key": "anthropic-theorem:oss-formal-verification:123-libraries",
+      "milestone": "2026-10-22-research-and-public-proofs",
+      "title": "重要补录：Claude 将 123 个开源库的部分模糊测试转成可检查证明",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "重要补录：Anthropic与Theorem于10月22日披露，Claude为123个OSS-Fuzz库的239个入口生成RISC-V汇编级安全属性证明，并用Rocq检查。团队公开其中一部分证明及相关RISC-V和操作系统语义模型。结论针对特定静态二进制、输入大小和内存条件，不代表整库无漏洞。",
+      "significance": "这把AI安全工程从发现样例缺陷推进到证明明确条件下不存在某类错误。已有模糊测试可充当规格入口，使维护者能够复用测试资产；技术管理者应同时评估证明成本、可信基础和生产环境差异，不能用“已验证”替代真实部署审计。",
+      "analysis": "可复用证明和机器检查器是工程价值核心。研究全量结果与公开可复查子集必须分开，可信基础包括机器语义、定理陈述和检查器。后续应看主流架构、动态链接和并发语义扩展，而非仅比较生成证明行数。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "1e8862ed3c40453860fa"
+      ],
+      "tags": [
+        "形式化验证",
+        "Rocq",
+        "OSS-Fuzz",
+        "RISC-V",
+        "重要补录"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/theorem-labs/oss-verify-proofs",
+      "technical_highlights": "将已有OSS-Fuzz测试编译成RISC-V可执行文件，形成无崩溃性质的规格；Claude生成证明，由Rocq检查。研究覆盖239个入口、123个库，证明子集和语义模型已公开，许可应按具体材料另行核对。",
+      "target_users": "开源C/C++库维护者、形式化验证研究者、安全工程与工具链团队。",
+      "maturity_limitations": "研究型交付；针对单线程、固定内存预算的静态RISC-V/Linux二进制与小于64MB的输入。ASan不能发现全部内存错误，入口覆盖不等于整库覆盖，也不能直接外推到x86/ARM动态链接生产构建。本轮未执行证明检查。",
+      "event_id": "evt_d1d348adf234bb2d48c2",
+      "published_at": "2026-10-22T00:00:00Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": true,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "1e8862ed3c40453860fa",
+          "url": "https://www.anthropic.com/research/formal-verification",
+          "name": "www.anthropic.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T00:00:00Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "nsa:ghidra:12.2-security-and-debugging",
+      "milestone": "Ghidra_12.2_build",
+      "title": "Ghidra 12.2 正式发布：强化服务端认证，新增实验性时间旅行调试",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": false,
+      "previous_event_id": null,
+      "new_information": "",
+      "summary": "NSA正式发布Ghidra 12.2。新版要求客户端对Ghidra Server和BSim PostgreSQL服务执行TLS服务端认证，加入服务器允许列表，并调整BSim部署默认值；同时提供基于Intel PIN与TENET格式的实验性时间旅行调试视图。运行最低要求升为JDK 25，旧项目可升级，但新版改写的数据未必能回退。",
+      "significance": "对于多人逆向分析团队，升级不仅影响反汇编能力，也改变共享服务的证书、连接和数据库部署方式。时间线与动态调用树有助于复盘执行路径；管理者需要把运行时升级、证书分发和项目备份一并纳入迁移计划。",
+      "analysis": "此次应优先报道正式tag的安全边界和迁移成本。时间旅行调试明确是Beta，并非无需配置的普遍稳定功能；新增Hexagon等处理器支持也存在指令覆盖限制。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "48147635e9aa1ce0fb69"
+      ],
+      "tags": [
+        "Ghidra",
+        "逆向工程",
+        "安全",
+        "调试"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/NationalSecurityAgency/ghidra",
+      "technical_highlights": "TLS服务端认证、Server Allow List、BSim默认password认证与部署控制；PIN/TENET轨迹导入、断点时间线和动态调用树为Beta；Apache-2.0。",
+      "target_users": "恶意软件分析、漏洞研究、固件和原生二进制逆向团队。",
+      "maturity_limitations": "Windows/macOS/Linux；最低JDK25，调试与源码构建另需受支持的Python版本，依对应组件文档核对。部分平台需自行构建原生组件，新数据可能不兼容旧版；时间旅行界面需启用Experimental组件。本轮未运行项目。",
+      "event_id": "evt_c7bc2ba8561edd2913ab",
+      "published_at": "2026-10-22T08:31:12Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": null,
+      "sources": [
+        {
+          "candidate_id": "48147635e9aa1ce0fb69",
+          "url": "https://github.com/NationalSecurityAgency/ghidra/releases/tag/Ghidra_12.2_build",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T08:31:12Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    },
+    {
+      "event_key": "windmill:runtime-isolation:1.836-1.837",
+      "milestone": "v1.847.0",
+      "title": "Windmill 1.847.0 扩展触发器连接身份与 Agent 嵌入方式",
+      "category": "opensource",
+      "priority": "P1",
+      "score": {
+        "impact": 4,
+        "novelty": 4,
+        "relevance": 5,
+        "confidence": 4,
+        "follow_up": 3
+      },
+      "confidence": "high",
+      "occurred_at": null,
+      "is_followup": true,
+      "previous_event_id": "evt_57de8cc6467ca0be1b9d",
+      "new_information": "上次已报1.842的Slack回答、命名确认按钮和连接池修复；本次1.847新增触发器每用户/共享连接、raw app的Agent嵌入、工作区自有Slack app及审计保存修复。",
+      "summary": "Windmill正式发布1.847.0，原生触发器可通过每用户或共享连接执行；保存的Agent可经agent runnable接入raw app，Slack Agent可使用工作区自有Slack app。新版还为流程步骤错误增加job_id与flow_path，提供工作组开关以避免将worker代理注入job，并修复审计写入导致保存静默回滚等问题。",
+      "significance": "这些变化直接影响工作流在企业内代表谁执行、如何嵌入已有界面以及出错后能否定位任务。对已有Windmill部署而言，连接身份与审计可靠性的改进，比单纯增加模型入口更有实际运维价值。",
+      "analysis": "本次增量是1.847.0正式发布中的连接身份、界面嵌入和可靠性变化。工作区自有Slack app与此前已报的Slack回答能力不同；源码与具体打包发行物的许可仍需分别核对。",
+      "followup_questions": [],
+      "candidate_ids": [
+        "582b7a16f00404eda174"
+      ],
+      "tags": [
+        "Windmill",
+        "工作流",
+        "自托管",
+        "Agent",
+        "身份连接"
+      ],
+      "fact_status": "FACT",
+      "repository_url": "https://github.com/windmill-labs/windmill",
+      "technical_highlights": "每用户/共享触发器连接；raw app调用保存的Agent；Slack工作区自有App；job_id/flow_path错误对象；审计插入与OAuth关联修复。",
+      "target_users": "自托管工作流、内部开发平台、企业自动化和Agent运维团队。",
+      "maturity_limitations": "正式发布，本轮已读同tag许可说明，未逐项审计实际发行包组成，也未部署验证。采用前需分别核对源码与实际发行包条款、所需企业功能和升级兼容性。",
+      "event_id": "evt_57de8cc6467ca0be1b9d",
+      "published_at": "2026-10-22T23:38:44Z",
+      "time_precision": "exact",
+      "collected_at": "2026-10-23T01:22:52.492402Z",
+      "is_backfill": false,
+      "previous_summary": "Windmill正式发布1.842，新增让AI Agent在Slack中回答，并在聊天工具确认按钮上显示具体操作名称。版本还修复MCP OAuth回调页内嵌JSON转义、OAuth刷新占用数据库连接，以及多个操作等待连接时仍持有连接的问题，为自托管工作流和聊天Agent补充可用性修复。",
+      "sources": [
+        {
+          "candidate_id": "582b7a16f00404eda174",
+          "url": "https://github.com/windmill-labs/windmill/releases/tag/v1.847.0",
+          "name": "github.com",
+          "source_type": "web_search",
+          "verification_status": "verified",
+          "published_at": "2026-10-22T23:38:44Z",
+          "time_precision": "exact",
+          "collected_at": "2026-10-23T01:22:52.492402Z",
+          "publication_basis": "original_page_metadata"
+        }
+      ],
+      "weighted_score": 4.1,
+      "independent_source_count": 1,
+      "verification_limitations": [
+        "主要依据单一原始来源，尚无独立交叉验证"
+      ]
+    }
+  ],
+  "trend_signals": [
+    {
+      "text": "可检查的条件正在成为Agent工程的重要工具：形式化证明针对特定程序与假设，数据库终态检查针对任务结果。两者都提示团队明确成功标准和适用边界，不能把一次通过或有限覆盖扩大为整体系统可靠。",
+      "event_ids": [
+        "evt_d1d348adf234bb2d48c2",
+        "evt_9e556de46e1a636dd4ab"
+      ],
+      "label": "ANALYSIS"
+    },
+    {
+      "text": "企业自动化的价值需要与执行身份和可追踪性一起评估：Claude Code权限传递、Windmill连接身份以及Minerva跨组件关联分别作用于不同层。把允许执行的动作、失败记录和定位上下文设计清楚，有助于团队评估实际运维成本。",
+      "event_ids": [
+        "evt_abd16c49fe9ed334c37e",
+        "evt_57de8cc6467ca0be1b9d",
+        "evt_4420449a90d047b4e180"
+      ],
+      "label": "ANALYSIS"
+    }
+  ],
+  "tracking_updates": [
+    "evt_57de8cc6467ca0be1b9d",
+    "evt_abd16c49fe9ed334c37e"
+  ],
+  "coverage_report": {
+    "source_status": [
+      {
+        "source_id": "openai",
+        "name": "OpenAI News",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 40,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "google_ai",
+        "name": "Google AI Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "microsoft",
+        "name": "Microsoft Official Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "agents",
+          "applications",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "nvidia",
+        "name": "NVIDIA Blog",
+        "kind": "rss",
+        "region": "north_america",
+        "categories": [
+          "infrastructure",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 18,
+        "eligible": 12,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "huggingface",
+        "name": "Hugging Face Blog",
+        "kind": "rss",
+        "region": "europe",
+        "categories": [
+          "opensource",
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 30,
+        "eligible": 5,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "qwen",
+        "name": "Qwen Code Official Releases",
+        "kind": "api",
+        "region": "asia",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 9,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "vllm",
+        "name": "vLLM Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "langgraph",
+        "name": "LangGraph Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "agents",
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 10,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "anthropic",
+        "name": "Anthropic News",
+        "kind": "page",
+        "region": "north_america",
+        "categories": [
+          "models",
+          "agents",
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 5,
+        "eligible": 2,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "rea",
+        "name": "REA Official Releases",
+        "kind": "api",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 5,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T00:57:07.051247Z"
+      },
+      {
+        "source_id": "search_models",
+        "name": "模型与实验室·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models"
+        ],
+        "status": "ok",
+        "fetched": 17,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:05:59Z"
+      },
+      {
+        "source_id": "search_agents",
+        "name": "Agent 与 Coding·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "agents"
+        ],
+        "status": "ok",
+        "fetched": 21,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:10:06Z"
+      },
+      {
+        "source_id": "search_opensource",
+        "name": "GitHub 全领域热门项目·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "opensource"
+        ],
+        "status": "ok",
+        "fetched": 50,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:10:23Z"
+      },
+      {
+        "source_id": "search_business",
+        "name": "商业与创业·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "business"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:05:51Z"
+      },
+      {
+        "source_id": "search_applications",
+        "name": "教育与垂直应用·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "applications"
+        ],
+        "status": "ok",
+        "fetched": 15,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:05:51Z"
+      },
+      {
+        "source_id": "search_infrastructure",
+        "name": "基础设施与政策·广度检索",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 8,
+        "eligible": 3,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:10:41.473706Z"
+      },
+      {
+        "source_id": "search_backfill",
+        "name": "重大新闻·72小时补漏",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 9,
+        "eligible": 1,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:10:41.473706Z"
+      },
+      {
+        "source_id": "search_chinese_accounts",
+        "name": "国内AI媒体与博主·逐账号必查",
+        "kind": "web_search",
+        "region": "asia",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 20,
+        "eligible": 4,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:10:23Z"
+      },
+      {
+        "source_id": "search_x_accounts",
+        "name": "X官方与AI从业者·逐账号必查",
+        "kind": "web_search",
+        "region": "global",
+        "categories": [
+          "models",
+          "agents",
+          "opensource",
+          "business",
+          "applications",
+          "infrastructure"
+        ],
+        "status": "ok",
+        "fetched": 36,
+        "eligible": 0,
+        "rejected": 0,
+        "error": null,
+        "checked_at": "2026-10-23T01:05:59Z"
+      }
+    ],
+    "categories_checked": [
+      "agents",
+      "applications",
+      "business",
+      "infrastructure",
+      "models",
+      "opensource"
+    ],
+    "categories_missing": [],
+    "regions_checked": [
+      "asia",
+      "europe",
+      "global",
+      "north_america"
+    ],
+    "limitations": []
+  },
+  "quality_report": {
+    "status": "passed",
+    "candidates_collected": 210,
+    "candidates_verified": 56,
+    "published_count": 25,
+    "duplicates_removed": 0,
+    "rejected_count": 30,
+    "limitations": [
+      "国内AIHOT、赛博禅心、机器之心、新智元与量子位已逐项检索。AIHOT用于发现线索，量子位两篇模型报道为厂商授权供稿，非独立性能评测；机器之心与新智元的部分页面、公众号或当日文章时间核验不足，不能据此判断没有更新。赛博禅心转载的可读体验也不能代表完整账号时间线。",
+      "14个X账号均有单独查询和主页检查，公开主页访问返回403，未取得可正式引用的新原帖。检索可用不等于完整时间线可读；部分账号身份或更名仍需从官方出链核对。有关新闻追到官网、原始研究和正式Release，不把搜索自动摘要当原帖。",
+      "GitHub Trending daily、weekly、monthly均实际尝试；网页工具的部分参数入口失败后，通过遵守robots的普通HTTP读取三榜成功。仓库元信息与正式Release另行比较，包含逆向、系统、数据库、自托管及非AI工具。没有连续快照，不声称Star增长；REA没有窗口内合格新版本，不重复旧发布。",
+      "部分OpenAI原文网页工具可读而普通HTTP返回403或访问不稳定。广告扩围第一轮可读但第二轮403，本期未归档；Uber等仍受限。OpenAI–Google Cloud及Decisions采用可读社区Announcements公告，属于同一发布证据链；栏目说明称由OpenAI staff发帖，未另行核实发帖者个人雇佣身份，只采用合格正文支持的细节。Google Cloud原文未取得程序支持的首发时间，不作正式引用。",
+      "NVIDIA多篇GTC文章机器发布时间为22日而站内显示21日；按原文机器元数据归档，发生时间留空，并披露差异，不据此声称案例均在过去24小时首次部署。硬件认证、开发、早期访问、生产使用和未来计划分别表述，未独立复测性能、电力收益或预报精度。",
+      "Voxtral3主文访问或首发时间受限；模型生命周期页的10月20日发布日期不能替代文章首发时间为整篇功能背书。尚未通过的线索保留诊断，不用转载日期、仓库创建时间或聚合上架时间冒充发布。",
+      "Mave正文显示22日而首发元数据为21日，累计3400万美元与本轮2800万美元分开。Nirva累计3300万美元包含此前800万美元，交付仍属计划；Enact融资来自原始媒体报道，个人天使投资不等同其任职公司出资，未独立核对交易文件。",
+      "Science论文全文本轮访问受限，MAI-DxO研究信息与数字归因微软原文；离线病例基准不等同临床验证，BIDMC前瞻研究尚待开展。Eko正文日期与窗口外机器首发冲突而排除。MagicSchool/Buddy.ai等教育入口已检查，本轮未取得合格的新产品或研究发布，未凑数。",
+      "Hugging Face RSS默认地区为欧洲，不代表投稿组织所在地；Microsoft、IBM、Ai2等按实际机构理解，欧洲覆盖另有Enact原始报道及各领域检索。所有厂商、作者和合作方的模型、融资与效果主张未在本研究独立复测或核账。",
+      "由 ChatGPT Work 完成检索、编辑与再次事实审查；不是独立模型或人工审稿。",
+      "未调用 OpenAI API；Work 不向本程序提供实际 token、所用模型和订阅消耗，记录为未知。",
+      "代码核验原文可访问性、发布时间、来源引用、结构与历史；无法证明全部语义判断正确。"
+    ]
+  },
+  "usage": [
+    {
+      "mode": "chatgpt_work",
+      "model": "Work（应用选择，未公开）",
+      "purpose": "搜索、研究编辑、事实审查",
+      "input_tokens": null,
+      "output_tokens": null,
+      "estimated_cost_usd": null,
+      "billing_unknown": true
+    }
+  ],
+  "estimated_cost_usd": 0.0,
+  "prompt_sha256": "c7c7c65a1f8cdf40a4f40ca2d88f4eb2c1eac116d359e167d4a98ef813a2c53e"
+}
