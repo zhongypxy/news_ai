@@ -14,9 +14,12 @@ from ainews.quality import QualityError
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def project(tmp_path):
+def project(tmp_path, profile="multi"):
     for name in ["config", "templates", "prompts"]:
         shutil.copytree(ROOT/name, tmp_path/name)
+    if profile == "multi":
+        for name in ["settings", "sources"]:
+            shutil.copyfile(ROOT/f"config/{name}-multisource.yaml", tmp_path/f"config/{name}.yaml")
     return tmp_path
 
 

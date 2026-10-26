@@ -21,7 +21,7 @@ class PublicationRule(StrictModel):
 class Source(StrictModel):
     id: str
     name: str = ""
-    kind: Literal["rss", "api", "page", "web_search"]
+    kind: Literal["rss", "api", "page", "web_search", "aihot"]
     url: str = ""
     enabled: bool = True
     allowed_domains: list[str] = Field(default_factory=list)
@@ -38,6 +38,8 @@ class Source(StrictModel):
     excerpt_selector: str = "p"
     respect_robots: bool = True
     queries: list[str] = Field(default_factory=list)
+    mcp_tool: str = ""
+    mcp_arguments: dict[str, object] = Field(default_factory=dict)
     publication_rules: dict[str, PublicationRule] = Field(default_factory=dict)
 
 
@@ -56,6 +58,9 @@ class Candidate(StrictModel):
     verified: bool = False
     verification_note: str = "not_checked"
     linked_urls: list[str] = Field(default_factory=list, max_length=30)
+    discovery_url: str | None = None
+    discovered_at: AwareDatetime | None = None
+    upstream_published_at: AwareDatetime | None = None
 
 
 class SourceStatus(StrictModel):
@@ -69,6 +74,8 @@ class SourceStatus(StrictModel):
     eligible: int = 0
     rejected: int = 0
     error: str | None = None
+    transport: str | None = None
+    warning: str | None = None
     checked_at: AwareDatetime
 
 
@@ -141,6 +148,9 @@ class Citation(StrictModel):
     time_precision: Literal["exact", "date"]
     collected_at: AwareDatetime
     publication_basis: str
+    discovery_url: str | None = None
+    discovered_at: AwareDatetime | None = None
+    upstream_published_at: AwareDatetime | None = None
 
 
 class NewsItem(DraftItem):

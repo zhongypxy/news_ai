@@ -1,12 +1,15 @@
 from pathlib import Path
+from typing import Literal
 
 import yaml
 from pydantic import Field
 
+from .aihot import validate_collection_source
 from .models import Source, StrictModel
 
 
 class Settings(StrictModel):
+    discovery_provider: Literal["multi", "aihot"] = "multi"
     timezone: str = "Asia/Singapore"
     report_hour: int = Field(default=9, ge=0, le=23)
     backfill_hours: int = Field(default=72, ge=24, le=168)
@@ -37,6 +40,10 @@ def load_config(root: Path):
     if len({s.id for s in sources}) != len(sources):
         raise ValueError("Duplicate source IDs")
     for source in sources:
+        if settings.discovery_provider == "aihot" and source.enabled and source.kind != "aihot":
+            raise ValueError("AIHOT profile may enable only AIHOT discovery sources")
+        if source.kind == "aihot":
+            validate_collection_source(source)
         if source.kind == "web_search":
             if not source.queries:
                 raise ValueError("Web Search source requires queries")

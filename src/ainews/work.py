@@ -100,7 +100,8 @@ def prepare_work(root, now=None, collector_factory=Collector):
             'candidates': [c.model_dump(mode='json') for c in items],
             'source_status': [s.model_dump(mode='json') for s in statuses],
             'search_sources': [s.model_dump(mode='json') for s in sources if s.kind == 'web_search'],
-            'limitations': ['公开采集已执行；Work 实时搜索、原文核验和研究编辑尚未执行。'],
+            'limitations': ['AIHOT 候选已获取；出链原文核验和 Work 研究编辑尚未执行。'
+                if settings.discovery_provider == 'aihot' else '公开采集已执行；Work 实时搜索、原文核验和研究编辑尚未执行。'],
         })
         return path
 
@@ -145,7 +146,10 @@ def work_evidence(root, bundle_path, discoveries_path=None):
     start, end = [datetime.fromisoformat(ctx[k]) for k in ['BACKFILL_START', 'WINDOW_END']]
     items = [Candidate.model_validate(c) for c in bundle['candidates']]
     if discoveries_path:
-        for raw in json.loads(Path(discoveries_path).read_text('utf-8')):
+        discoveries = json.loads(Path(discoveries_path).read_text('utf-8'))
+        if settings.discovery_provider == 'aihot' and discoveries:
+            raise QualityError('AIHOT candidates must come from the prepared pool; extra discoveries are forbidden')
+        for raw in discoveries:
             d = Discovery.model_validate(raw)
             if d.source_id not in by_source or by_source[d.source_id].kind != 'web_search':
                 raise QualityError('Discovery must reference configured search source')
@@ -210,6 +214,8 @@ def publish_work(root, bundle_path, research_path, now=None, collector_factory=C
             if digest((root/'prompts/daily_research.md').read_bytes()) != bundle['prompt_sha256']:
                 raise QualityError('Research prompt changed since Work bundle preparation')
             source_map = {s.id: s for s in sources}
+            if settings.discovery_provider == 'aihot' and packet.discoveries:
+                raise QualityError('AIHOT candidates must come from the prepared pool; extra discoveries are forbidden')
             searches = {s.id: s for s in sources if s.enabled and s.kind == 'web_search'}
             checks = {s.source_id: s for s in packet.search_checks}
             if set(checks) != set(searches) or len(checks) != len(packet.search_checks):
@@ -271,7 +277,7 @@ def publish_work(root, bundle_path, research_path, now=None, collector_factory=C
             require_verified(verified, len(accounted), settings)
             for status in statuses:
                 status.eligible = sum(c.source_id == status.source_id for c in verified)
-            coverage.regions_checked = sorted({c.region for c in verified})
+            coverage.regions_checked = [] if settings.discovery_provider == 'aihot' else sorted({c.region for c in verified})
             events = EventStore(state)
             editor_settings = settings.model_copy(update={'batch_size': max(1, len(verified))})
             editor = Editor(WorkBackend(packet), (root/'prompts/daily_research.md').read_text('utf-8'), editor_settings, sources)

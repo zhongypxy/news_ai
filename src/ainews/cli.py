@@ -77,7 +77,9 @@ def main(argv=None):
                     print(f"{source.id}: {status.status}, collected {len(items)}" + (f", {status.error}" if status.error else ""), flush=True)
                 atomic_write(root/"logs/source-probe.json", json.dumps({"mode": "real_public_collection_only",
                              "checked_at": datetime.now(UTC).isoformat(), "candidates": count, "source_status": statuses,
-                             "limitations": ["No Web Search, editorial analysis or report generated; requires API Key"]},
+                             "limitations": ["AIHOT candidates only; original verification and Work editing remain pending. No paid API calls."
+                                 if settings.discovery_provider == "aihot" else
+                                 "No Web Search, editorial analysis or report generated; requires API Key"]},
                              ensure_ascii=False, indent=2).encode("utf-8"))
                 if not any(s["status"] == "ok" for s in statuses):
                     raise QualityError("No configured public source collected successfully")

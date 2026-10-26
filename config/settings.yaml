@@ -1,4 +1,5 @@
 timezone: Asia/Singapore
+discovery_provider: aihot
 report_hour: 9
 backfill_hours: 72
 tracking_days: 30
@@ -15,7 +16,7 @@ max_search_tool_calls: 8
 min_source_success_ratio: 0.5
 min_verified_candidates: 5
 max_verification_failure_ratio: 0.6
-required_regions: [north_america, asia, europe]
+required_regions: []
 max_estimated_cost_usd: 3.0
 # 2026-10-13 官方定价，估算值；含缓存 token 的单独价格。请按当前账单调整。
 web_search_call_usd: 0.01
@@ -23,10 +24,7 @@ pricing:
   gpt-5.4-mini: {input: 0.75, cached_input: 0.075, output: 4.50}
   gpt-5.4: {input: 2.50, cached_input: 0.25, output: 15.00}
 watchlist:
-  - 国内账号逐一检查：AIHOT (aihot.news) / 赛博禅心 / 机器之心 / 新智元 / 量子位
-  - X账号逐一检查：OpenAI / OpenAIDevs / ChatGPTapp / OpenAINewsroom / sama / gdb
-  - X账号逐一检查：AnthropicAI / ClaudeAI / ClaudeDevs / bcherny
-  - X账号逐一检查：SpaceXSI (Grok，旧称xAI账号须核对跳转) / grok / elonmusk / karpathy
+  - 仅从 AIHOT 获取候选，再核验候选出链原文；未覆盖的信息明确为未知
   - OpenAI / Codex
   - Anthropic / Claude Code
   - Google DeepMind
@@ -35,7 +33,7 @@ watchlist:
   - Mistral / Microsoft / Amazon / NVIDIA
   - Cursor / MCP / A2A / Agent frameworks
   - Hugging Face / vLLM / RAG
-  - GitHub Trending daily / weekly / monthly / all languages / non-AI projects
+  - AIHOT收录的 GitHub / 非AI项目（不另检索Trending）
   - REA / morluto/rea / reverse engineering / security / developer tools / self-hosted
   - MagicSchool / Buddy.ai / AI Tutor
   - emerging AI startups / 海外 C 端 AI 产品

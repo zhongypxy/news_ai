@@ -38,6 +38,8 @@ def filter_candidates(items, start, end):
 
 
 def check_coverage(statuses, settings):
+    if settings.discovery_provider == "aihot":
+        return check_aihot_coverage(statuses, settings)
     enabled = [s for s in statuses if s.status not in {"disabled", "skipped"}]
     good = [s for s in enabled if s.status == "ok"]
     if not enabled or len(good) / len(enabled) < settings.min_source_success_ratio:
@@ -53,6 +55,27 @@ def check_coverage(statuses, settings):
     regions = {s.region for s in good if s.region != "global"}
     return Coverage(source_status=statuses, categories_checked=sorted(checked), categories_missing=sorted(missing),
                     regions_checked=sorted(regions), limitations=[f"{s.name}: {s.error}" for s in statuses if s.status != "ok"])
+
+
+def check_aihot_coverage(statuses, settings):
+    enabled = [s for s in statuses if s.status != "disabled"]
+    if any(s.kind != "aihot" for s in enabled) or len({s.source_id for s in enabled}) != len(enabled):
+        raise QualityError("AIHOT coverage requires unique AIHOT discovery sources")
+    good = [s for s in enabled if s.status == "ok"]
+    if not enabled or len(good) / len(enabled) < settings.min_source_success_ratio:
+        raise QualityError("Insufficient successful AIHOT source coverage")
+    by_id = {s.source_id: s for s in good}
+    checked = {c for c in CATEGORIES if "aihot_"+c in by_id and by_id["aihot_"+c].categories == [c]}
+    missing = set(CATEGORIES) - checked
+    if missing:
+        raise QualityError("Effective AIHOT query missing for categories: " + ", ".join(sorted(missing)))
+    if "search_backfill" not in by_id:
+        raise QualityError("AIHOT 72-hour major-event backfill query unavailable")
+    limitations = ["候选统一来自 AIHOT 单一发现入口；六领域查询不代表独立全球多源覆盖，地区覆盖未知。"]
+    limitations.extend(f"{s.name}: {s.error or s.warning or s.status}" for s in statuses
+                       if s.status != "ok" or s.warning)
+    return Coverage(source_status=statuses, categories_checked=sorted(checked), categories_missing=[],
+                    regions_checked=[], limitations=limitations)
 
 
 def require_verified(items, attempted_count, settings):

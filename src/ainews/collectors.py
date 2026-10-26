@@ -8,6 +8,7 @@ import feedparser
 import httpx
 from bs4 import BeautifulSoup
 
+from .aihot import AihotClient, validate_collection_source
 from .models import Candidate, SourceStatus
 from .net import normalize_url, validate_url
 from .quality import FatalAPIError
@@ -31,6 +32,14 @@ def nested(value, path, default=None):
     return value
 
 
+def aihot_original(url):
+    validate_url(url)
+    host = urlsplit(url).hostname.lower()
+    if host == "aihot.news" or host.endswith(".aihot.news"):
+        raise ValueError("AIHOT page cannot be an original source")
+    return normalize_url(url)
+
+
 def candidate(source, title, url, published, excerpt, now, basis="source_metadata"):
     validate_url(url, source.allowed_domains)
     url = normalize_url(url)
@@ -46,6 +55,7 @@ class Collector:
         self.http = http
         self.search = search
         self.robots = {}
+        self.aihot_client = AihotClient(http)
 
     def collect(self, source, now):
         status = SourceStatus(source_id=source.id, name=source.name or source.id, kind=source.kind,
@@ -54,7 +64,9 @@ class Collector:
             status.status = "disabled"
             return [], status
         try:
-            if source.kind == "web_search":
+            if source.kind == "aihot":
+                items = self.aihot(source, now, status)
+            elif source.kind == "web_search":
                 if self.search is None:
                     status.status = "skipped"
                     status.error = "Web Search requires authorized OPENAI_API_KEY"
@@ -80,6 +92,60 @@ class Collector:
             code = getattr(getattr(exc, "response", None), "status_code", None)
             status.error = type(exc).__name__ + (f" HTTP {code}" if code else "")
             return [], status
+
+    def aihot(self, source, now, status):
+        validate_collection_source(source)
+        queries = source.queries if source.mcp_tool == "aihot_search" else [None]
+        items, seen, transports, warnings = [], set(), set(), []
+        for query in queries:
+            arguments = source.mcp_arguments | ({"q": query} if query is not None else {})
+            try:
+                data = self.aihot_client.call(source.mcp_tool, arguments)
+            finally:
+                if self.aihot_client.last_transport:
+                    transports.add(self.aihot_client.last_transport)
+                warning = self.aihot_client.last_warning
+                if warning and warning not in warnings:
+                    warnings.append(warning)
+                status.transport = "+".join(sorted(transports)) or None
+                status.warning = "; ".join(warnings) or None
+            entries = data.get("items")
+            if not isinstance(entries, list):
+                raise ValueError("AIHOT structured items must be an array")
+            valid = 0
+            for raw in entries:
+                try:
+                    item = self.aihot_candidate(source, raw, now)
+                except (ValueError, TypeError, AttributeError):
+                    continue
+                valid += 1
+                if item.url not in seen:
+                    seen.add(item.url)
+                    items.append(item)
+            if entries and not valid:
+                raise ValueError("All AIHOT original links rejected")
+        return items[:min(source.max_items, source.mcp_arguments["limit"])]
+
+    @staticmethod
+    def aihot_candidate(source, raw, now):
+        links = raw.get("links", {})
+        original, discovery = links.get("original"), links.get("aihot")
+        if not isinstance(original, str) or not isinstance(discovery, str):
+            raise ValueError("AIHOT original and discovery URLs are required")
+        url = aihot_original(original)
+        validate_url(discovery)
+        parsed = urlsplit(discovery)
+        if (parsed.scheme != "https" or parsed.netloc != "aihot.news" or parsed.query or parsed.fragment
+                or not re.fullmatch(r"/items/[A-Za-z0-9_-]+", parsed.path)):
+            raise ValueError("Invalid AIHOT discovery URL")
+        if raw.get("id") and parsed.path != "/items/" + str(raw["id"]):
+            raise ValueError("AIHOT discovery URL does not match item ID")
+        identity = hashlib.sha256(f"{source.id}|{url}".encode()).hexdigest()[:20]
+        return Candidate(id=identity, source_id=source.id, title=plain(raw.get("title"), 300),
+            url=url, excerpt=plain(raw.get("summary"), 500), published_at=None, time_precision="unknown",
+            collected_at=now, region="global", categories=source.categories, publication_basis="aihot_unverified",
+            discovery_url=discovery, discovered_at=parse_time(raw.get("discoveredAt"))[0],
+            upstream_published_at=parse_time(raw.get("publishedAt"))[0])
 
     def check_robots(self, url, domains=None):
         parsed = urlsplit(url)
@@ -155,11 +221,20 @@ class Collector:
 
     def verify(self, item, source):
         """Read a public source; prefer explicit publication metadata, never HTTP Date/updated time."""
-        validate_url(item.url, source.allowed_domains)
+        domains = None if source.kind == "aihot" else source.allowed_domains or None
+        validate_url(item.url, domains)
+        if source.kind == "aihot":
+            aihot_original(item.url)
+            # AIHOT timestamps are provenance only. Every verification must find
+            # an original publication dateline, including a second publication pass.
+            item.published_at, item.time_precision = None, "unknown"
+            item.publication_basis, item.verified = "aihot_unverified", False
         if source.respect_robots:
-            self.check_robots(item.url, source.allowed_domains or None)
-        response = self.http.get(item.url, source.allowed_domains or None)
+            self.check_robots(item.url, domains)
+        response = self.http.get(item.url, domains)
         parsed = urlsplit(str(response.url))
+        if source.kind == "aihot":
+            aihot_original(str(response.url))
         rule = source.publication_rules.get(parsed.hostname or "")
         publication_timezone = rule.timezone if rule else source.timezone
         content_type = response.headers.get("content-type", "")
@@ -222,6 +297,8 @@ class Collector:
                 item.publication_basis = basis
         if source.kind == "web_search" and item.publication_basis == "search_unverified":
             raise ValueError("Search publication time lacks original source metadata")
+        if source.kind == "aihot" and item.publication_basis == "aihot_unverified":
+            raise ValueError("AIHOT publication time lacks original source metadata")
         if item.published_at is None:
             raise ValueError("Publication time unavailable")
         for node in soup("script"):

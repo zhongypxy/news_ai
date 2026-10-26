@@ -53,6 +53,8 @@ def run_daily(root, day=None, now=None, ai_factory=AIClient, collector_factory=C
         publisher.validate_history()
         if publisher.completed(day.isoformat()):
             return "already_published"
+        if settings.discovery_provider == "aihot":
+            raise QualityError("AIHOT discovery is available only through Work; use work-prepare and work-publish")
         state = publisher.load_state()
         if any(d > day.isoformat() for d in state["reports"]):
             raise QualityError("Historical backdating after a newer report is forbidden")

@@ -1,185 +1,89 @@
-# 所有入口均可配置。成功采集不表示当天一定有合格新闻。
-publication_rules: &publication_rules
-  research.google:
-    selectors: ['.basic-hero--blog-detail__description > p:first-child']
-    timezone: America/Los_Angeles
-  www.qbitai.com:
-    selectors: ['.article_info > .date', '.article_info > .time']
-    timezone: Asia/Shanghai
-  www.mofcom.gov.cn:
-    selectors: ['meta[name="PubDate"]']
-    attribute: content
-    timezone: Asia/Shanghai
+# 单一发现入口。六领域是查询维度，不代表六个独立信息源。
 sources:
-  - id: openai
-    name: OpenAI News
-    kind: rss
-    url: https://openai.com/news/rss.xml
-    allowed_domains: [openai.com]
-    region: north_america
-    categories: [models, agents, business]
-    max_items: 40
-  - id: google_ai
-    name: Google AI Blog
-    kind: rss
-    url: https://blog.google/technology/ai/rss/
-    allowed_domains: [blog.google]
-    region: north_america
-    categories: [models, applications, infrastructure]
-    max_items: 30
-  - id: microsoft
-    name: Microsoft Official Blog
-    kind: rss
-    url: https://blogs.microsoft.com/feed/
-    allowed_domains: [blogs.microsoft.com]
-    region: north_america
-    categories: [agents, applications, business]
-  - id: nvidia
-    name: NVIDIA Blog
-    kind: rss
-    url: https://blogs.nvidia.com/feed/
-    allowed_domains: [blogs.nvidia.com]
-    region: north_america
-    categories: [infrastructure, models]
-    max_items: 30
-  - id: huggingface
-    name: Hugging Face Blog
-    kind: rss
-    url: https://huggingface.co/blog/feed.xml
-    allowed_domains: [huggingface.co]
-    region: europe
-    categories: [opensource, models]
-    max_items: 30
-  - id: qwen
-    name: Qwen Code Official Releases
-    kind: api
-    url: https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=20
-    allowed_domains: [api.github.com, github.com]
-    region: asia
-    categories: [agents, opensource]
-    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
-    timezone: Asia/Shanghai
-  - id: vllm
-    name: vLLM Releases
-    kind: api
-    url: https://api.github.com/repos/vllm-project/vllm/releases?per_page=10
-    allowed_domains: [api.github.com, github.com]
+  - id: aihot_latest
+    name: AIHOT · 24小时精选
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
     region: global
-    categories: [opensource, infrastructure]
-    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
-  - id: langgraph
-    name: LangGraph Releases
-    kind: api
-    url: https://api.github.com/repos/langchain-ai/langgraph/releases?per_page=10
-    allowed_domains: [api.github.com, github.com]
+    categories: [models, agents, opensource, business, applications, infrastructure]
+    max_items: 30
+    mcp_tool: aihot_get_latest
+    mcp_arguments: {window: 24h, mode: selected, limit: 30}
+  - id: aihot_models
+    name: AIHOT · 模型与实验室
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
     region: global
-    categories: [agents, opensource]
-    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
-  - id: anthropic
-    name: Anthropic News
-    kind: page
-    url: https://www.anthropic.com/news
-    allowed_domains: [anthropic.com]
-    region: north_america
-    categories: [models, agents, business]
-    item_selector: 'a[href^="/news/"]'
-    title_selector: 'h3, h2, [class*="title"]'
-    link_selector: ':scope'
-    date_selector: time
-    timezone: America/Los_Angeles
-    # Page selectors can change; failures are reported, web search provides alternate coverage.
-  - id: search_models
-    name: 模型与实验室·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
     categories: [models]
-    queries:
-      - "Latest official AI model releases OpenAI Anthropic Google DeepMind Meta xAI Mistral"
-      - "最新 大模型 发布 DeepSeek 通义千问 智谱 Moonshot MiniMax 官方"
-  - id: search_agents
-    name: Agent 与 Coding·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [模型, OpenAI, Anthropic]
+  - id: aihot_agents
+    name: AIHOT · Agent与Coding
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
+    region: global
     categories: [agents]
-    queries: ["Latest AI coding agents Codex Claude Code Cursor MCP A2A framework official release"]
-  - id: search_opensource
-    name: GitHub 全领域热门项目·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [Agent, Claude Code, Codex]
+  - id: aihot_opensource
+    name: AIHOT · 开源项目
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
+    region: global
     categories: [opensource]
-    queries:
-      - "GitHub Trending daily weekly monthly all languages popular open source developer tools security systems database self hosted releases"
-      - "GitHub 热门 开源 项目 日榜 周榜 月榜 开发工具 逆向 安全 数据库 自托管 不限AI"
-      - "Recent high value AI open source GitHub releases Hugging Face RAG embedding inference framework"
-      - "morluto rea Reverse Engineer Anything official latest release"
-  - id: search_business
-    name: 商业与创业·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [GitHub, 开源, 逆向]
+  - id: aihot_business
+    name: AIHOT · 商业与创业
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
+    region: global
     categories: [business]
-    queries: ["Latest AI startup product launch funding acquisition partnership official announcement worldwide"]
-  - id: search_applications
-    name: 教育与垂直应用·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [融资, 收购]
+  - id: aihot_applications
+    name: AIHOT · 教育与垂直应用
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
+    region: global
     categories: [applications]
-    queries:
-      - "Latest AI education AI tutor MagicSchool Buddy.ai teacher learning startup official news"
-      - "最新 AI 医疗 法律 零售 教育 海外 消费应用 产品发布"
-  - id: search_infrastructure
-    name: 基础设施与政策·广度检索
-    kind: web_search
-    publication_rules: *publication_rules
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [教育, 医疗, 法律]
+  - id: aihot_infrastructure
+    name: AIHOT · 基础设施与政策
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
+    region: global
     categories: [infrastructure]
-    queries: ["Latest AI chip cloud inference safety regulation Europe Asia official government research announcement"]
+    max_items: 30
+    mcp_tool: aihot_search
+    mcp_arguments: {window: 7d, limit: 30}
+    queries: [算力, 芯片, 政策]
   - id: search_backfill
-    name: 重大新闻·72小时补漏
-    kind: web_search
-    publication_rules: *publication_rules
-    categories: [models, agents, opensource, business, applications, infrastructure]
-    queries:
-      - "Check past 72 hours major AI launches coding agents GitHub trending projects including non-AI open source emerging startups financing education vertical apps globally; inspect the supplied watchlist and history for missed events"
-  - id: rea
-    name: REA Official Releases
-    kind: api
-    url: https://api.github.com/repos/morluto/rea/releases?per_page=5
-    allowed_domains: [api.github.com, github.com]
-    region: global
-    categories: [opensource]
-    max_items: 5
-    fields: {title: name, url: html_url, published_at: published_at, excerpt: body}
-  # Account discovery is performed by Work live search, not an unofficial scraping proxy.
-  # Execute each account query separately with the bundle's date window.
-  - id: search_chinese_accounts
-    name: 国内AI媒体与博主·逐账号必查
-    kind: web_search
-    publication_rules: *publication_rules
-    region: asia
-    categories: [models, agents, opensource, business, applications, infrastructure]
-    queries:
-      - 'site:aihot.news AIHOT 最新 精选 热点 原文'
-      - '"赛博禅心" 最新 AI (site:mp.weixin.qq.com OR site:huxiu.com)'
-      - '"机器之心" 最新 AI (site:jiqizhixin.com OR site:mp.weixin.qq.com)'
-      - '"新智元" 最新 AI (site:aiera.com.cn OR site:mp.weixin.qq.com)'
-      - '"量子位" 最新 AI (site:qbitai.com OR site:mp.weixin.qq.com)'
-  - id: search_x_accounts
-    name: X官方与AI从业者·逐账号必查
-    kind: web_search
-    publication_rules: *publication_rules
+    name: AIHOT · 72小时重大事件补漏
+    kind: aihot
+    url: https://aihot.news/api/mcp
+    allowed_domains: [aihot.news]
     region: global
     categories: [models, agents, opensource, business, applications, infrastructure]
-    queries:
-      - 'site:x.com/OpenAI/status OpenAI latest announcement'
-      - 'site:x.com/OpenAIDevs/status OpenAI developers latest'
-      - 'site:x.com/ChatGPTapp/status ChatGPT latest'
-      - 'site:x.com/OpenAINewsroom/status OpenAI latest'
-      - 'site:x.com/sama/status Sam Altman AI latest'
-      - 'site:x.com/gdb/status Greg Brockman AI latest'
-      - 'site:x.com/AnthropicAI/status Anthropic latest'
-      - 'site:x.com/ClaudeAI/status Claude latest'
-      - 'site:x.com/ClaudeDevs/status Claude developers latest'
-      - 'site:x.com/bcherny/status Boris Cherny Claude Code latest'
-      - 'site:x.com/SpaceXSI/status Grok latest'
-      - 'site:x.com/grok/status Grok product announcement latest'
-      - 'site:x.com/elonmusk/status Grok xAI AI latest'
-      - 'site:x.com/karpathy/status Andrej Karpathy AI latest'
+    max_items: 30
+    mcp_tool: aihot_get_latest
+    # 取7天候选，核验原文后按72小时补漏窗口筛选。
+    mcp_arguments: {window: 7d, mode: selected, limit: 30}

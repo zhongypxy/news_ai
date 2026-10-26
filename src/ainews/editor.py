@@ -135,11 +135,13 @@ class Editor:
             if len(accepted) >= self.settings.max_items and item.priority == "P2":
                 continue
             citations = [Citation(candidate_id=c.id, url=c.url,
-                                  name=urlsplit(c.url).hostname if self.sources[c.source_id].kind == 'web_search'
+                                  name=urlsplit(c.url).hostname if self.sources[c.source_id].kind in {'web_search', 'aihot'}
                                   else self.sources[c.source_id].name or c.source_id,
                                   source_type=self.sources[c.source_id].kind, verification_status="verified",
                                   published_at=c.published_at, time_precision=c.time_precision,
-                                  collected_at=c.collected_at, publication_basis=c.publication_basis) for c in evidence]
+                                  collected_at=c.collected_at, publication_basis=c.publication_basis,
+                                  discovery_url=c.discovery_url, discovered_at=c.discovered_at,
+                                  upstream_published_at=c.upstream_published_at) for c in evidence]
             limitations = []
             if review.independent_source_count < 2 and item.priority in {"P0", "P1"}:
                 limitations.append("主要依据单一原始来源，尚无独立交叉验证")
